@@ -4,9 +4,11 @@ DOMAIN-KEYWORD,tw
 DOMAIN-KEYWORD,taiwan
 DOMAIN-KEYWORD,litv.tv
 DOMAIN-KEYWORD,cdi.ofiii
+DOMAIN-KEYWORD,api.ofiii.com
 # 域名后缀匹配
 DOMAIN-SUFFIX,.tw
 DOMAIN-SUFFIX,ptsplus.tv
 DOMAIN-SUFFIX,litv.tv
 DOMAIN-KEYWORD,taiwan
 DOMAIN-KEYWORD,cdi.ofiii.com
+DOMAIN-KEYWORD,api.ofiii.com
