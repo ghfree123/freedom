@@ -2,8 +2,11 @@
 # 域名关键字匹配
 DOMAIN-KEYWORD,tw
 DOMAIN-KEYWORD,taiwan
+DOMAIN-KEYWORD,litv
+DOMAIN-KEYWORD,foiii
 # 域名后缀匹配
 DOMAIN-SUFFIX,.tw
 DOMAIN-SUFFIX,ptsplus.tv
 DOMAIN-SUFFIX,litv.tv
-DOMAIN-SUFFIX,dcard.tw
+DOMAIN-KEYWORD,taiwan
+DOMAIN-KEYWORD,foiii.com
