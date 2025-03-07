@@ -1,6 +1,6 @@
 # 内容：taiwan
 # 域名关键字匹配
-DOMAIN-KEYWORD,tw
+DOMAIN-KEYWORD,.tw
 DOMAIN-KEYWORD,taiwan
 DOMAIN-KEYWORD,litv.tv
 DOMAIN-KEYWORD,cdi.ofiii
@@ -12,5 +12,3 @@ DOMAIN-SUFFIX,litv.tv
 DOMAIN-KEYWORD,taiwan
 DOMAIN-KEYWORD,cdi.ofiii.com
 DOMAIN-KEYWORD,api.ofiii.com
-DOMAIN-SUFFIX,x.com
-DOMAIN-SUFFIX,api.x.com
