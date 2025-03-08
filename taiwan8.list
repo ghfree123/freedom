@@ -1,6 +1,6 @@
 # 内容：taiwan
 # 域名关键字匹配
-DOMAIN-KEYWORD,storage.googleapis.com/prod-ptsplus-image
+DOMAIN-KEYWORD,storage.googleapis.com/
 DOMAIN-KEYWORD,.tw
 DOMAIN-KEYWORD,taiwan
 DOMAIN-KEYWORD,litv.tv
@@ -13,4 +13,4 @@ DOMAIN-SUFFIX,litv.tv
 DOMAIN-KEYWORD,taiwan
 DOMAIN-KEYWORD,cdi.ofiii.com
 DOMAIN-KEYWORD,api.ofiii.com
-DOMAIN-KEYWORD,storage.googleapis.com/prod-ptsplus-image
+DOMAIN-KEYWORD,storage.googleapis.com
