@@ -6,6 +6,7 @@ DOMAIN-KEYWORD,taiwan
 DOMAIN-KEYWORD,litv.tv
 DOMAIN-KEYWORD,cdi.ofiii
 DOMAIN-KEYWORD,api.ofiii.com
+DOMAIN-KEYWORD,tunein
 # 域名后缀匹配
 DOMAIN-SUFFIX,.tw
 DOMAIN-SUFFIX,ptsplus.tv
@@ -14,3 +15,4 @@ DOMAIN-KEYWORD,taiwan
 DOMAIN-KEYWORD,cdi.ofiii.com
 DOMAIN-KEYWORD,api.ofiii.com
 DOMAIN-KEYWORD,storage.googleapis.com
+DOMAIN-KEYWORD,tunein.com
