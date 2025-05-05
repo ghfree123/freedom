@@ -1,4 +1,6 @@
+# 台湾域名组
 # 内容：taiwan
+
 # 域名关键字匹配
 DOMAIN-KEYWORD,storage.googleapis.com/
 DOMAIN-KEYWORD,.tw
@@ -7,12 +9,49 @@ DOMAIN-KEYWORD,litv.tv
 DOMAIN-KEYWORD,cdi.ofiii
 DOMAIN-KEYWORD,api.ofiii.com
 DOMAIN-KEYWORD,tunein
+DOMAIN-KEYWORD,taiwanmobile.com
+DOMAIN-KEYWORD,lihiton.com
+DOMAIN-KEYWORD,news.tvbs.com.tw
+DOMAIN-KEYWORD,ctitv.com.tw
+DOMAIN-KEYWORD,chosunmedia.com.tw
+DOMAIN-KEYWORD,upmedia.mg
+DOMAIN-KEYWORD,myvideo.tvbs.com.tw
+DOMAIN-KEYWORD,storm.mg
+DOMAIN-KEYWORD,momo.com.tw
+DOMAIN-KEYWORD,shopee.tw
+DOMAIN-KEYWORD,pchome.com.tw
+DOMAIN-KEYWORD,taiwannews.com.tw
+DOMAIN-KEYWORD,appledaily.com.tw
+DOMAIN-KEYWORD,ettoday.net
+DOMAIN-KEYWORD,udn.com
+DOMAIN-KEYWORD,fhm.com.tw
+DOMAIN-KEYWORD,behindtv.com.tw
+
 # 域名后缀匹配
 DOMAIN-SUFFIX,.tw
 DOMAIN-SUFFIX,ptsplus.tv
 DOMAIN-SUFFIX,litv.tv
-DOMAIN-KEYWORD,taiwan
-DOMAIN-KEYWORD,cdi.ofiii.com
-DOMAIN-KEYWORD,api.ofiii.com
-DOMAIN-KEYWORD,storage.googleapis.com
-DOMAIN-KEYWORD,tunein.com
+DOMAIN-SUFFIX,chinayes.com
+DOMAIN-SUFFIX,taiwanmobile.com
+DOMAIN-SUFFIX,lihiton.com
+DOMAIN-SUFFIX,news.tvbs.com.tw
+DOMAIN-SUFFIX,ctitv.com.tw
+DOMAIN-SUFFIX,chosunmedia.com.tw
+DOMAIN-SUFFIX,upmedia.mg
+DOMAIN-SUFFIX,myvideo.tvbs.com.tw
+DOMAIN-SUFFIX,storm.mg
+DOMAIN-SUFFIX,momo.com.tw
+DOMAIN-SUFFIX,shopee.tw
+DOMAIN-SUFFIX,pchome.com.tw
+DOMAIN-SUFFIX,taiwannews.com.tw
+DOMAIN-SUFFIX,appledaily.com.tw
+DOMAIN-SUFFIX,ettoday.net
+DOMAIN-SUFFIX,udn.com
+DOMAIN-SUFFIX,fhm.com.tw
+DOMAIN-SUFFIX,behindtv.com.tw
+
+# 特定域名匹配
+DOMAIN,tunein.com
+DOMAIN,cdi.ofiii.com
+DOMAIN,api.ofiii.com
+DOMAIN,storage.googleapis.com
