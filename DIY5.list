@@ -57,3 +57,14 @@ IP-CIDR,84.200.70.40/32,no-resolve
 IP-CIDR,2001:1608:10:25::1c04:b12f/128,no-resolve
 IP-CIDR,2001:1608:10:25::9249:d69a/128,no-resolve
 
+# Google 服务 IP 地址段，防止直连
+IP-CIDR,64.233.160.0/19,no-resolve
+IP-CIDR,66.102.0.0/20,no-resolve
+IP-CIDR,66.249.80.0/20,no-resolve
+IP-CIDR,72.14.192.0/18,no-resolve
+IP-CIDR,74.125.0.0/16,no-resolve
+IP-CIDR,108.177.0.0/17,no-resolve
+IP-CIDR,173.194.0.0/16,no-resolve
+IP-CIDR,209.85.128.0/17,no-resolve
+IP-CIDR,216.58.192.0/19,no-resolve
+IP-CIDR,216.239.32.0/19,no-resolve
