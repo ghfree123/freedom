@@ -55,3 +55,19 @@ DOMAIN,tunein.com
 DOMAIN,cdi.ofiii.com
 DOMAIN,api.ofiii.com
 DOMAIN,storage.googleapis.com
+
+# 台湾中华电信 IP 段（Chunghwa Telecom）
+IP-CIDR,1.34.0.0/15,no-resolve
+IP-CIDR,1.160.0.0/12,no-resolve
+IP-CIDR,36.224.0.0/12,no-resolve
+IP-CIDR,59.112.0.0/12,no-resolve
+IP-CIDR,60.248.0.0/14,no-resolve
+IP-CIDR,61.216.0.0/13,no-resolve
+IP-CIDR,61.224.0.0/13,no-resolve
+IP-CIDR,114.30.32.0/20,no-resolve
+IP-CIDR,175.111.192.0/18,no-resolve
+IP-CIDR,203.160.240.0/20,no-resolve
+IP-CIDR,220.128.56.0/21,no-resolve
+IP-CIDR,220.128.64.0/20,no-resolve
+IP-CIDR,220.128.80.0/20,no-resolve
+IP-CIDR,220.128.91.0/24,no-resolve
