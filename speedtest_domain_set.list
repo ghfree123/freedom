@@ -1,26 +1,18 @@
-# Speedtest 主域名
-domain:speedtest.net
-domain:www.speedtest.net
-domain:c.speedtest.net
-domain:e.speedtest.net
-domain:o.speedtest.net
-domain:config.speedtest.net
+# 内容：Speedtest
 
-# CDN测速节点（动态子域）
-domain-prefix:s
-domain-suffix:speedtest.net
+# 域名关键字匹配
+DOMAIN-KEYWORD,speedtest
+DOMAIN-KEYWORD,ookla
 
-# Ookla 相关
-domain:ookla.com
-domain:enterprise.speedtest.net
-
-# 第三方资源（可选）
-domain:fonts.googleapis.com
-domain:fonts.gstatic.com
-domain:cdnjs.cloudflare.com
-
-# 广告与分析（可拦截，以下为注释）
-# domain:ads.speedtest.net
-# domain:analytics.speedtest.net
-# domain:www.google-analytics.com
-# domain:www.googletagmanager.com
+# 域名后缀匹配
+DOMAIN-SUFFIX,speedtest.net
+DOMAIN-SUFFIX,www.speedtest.net
+DOMAIN-SUFFIX,c.speedtest.net
+DOMAIN-SUFFIX,e.speedtest.net
+DOMAIN-SUFFIX,o.speedtest.net
+DOMAIN-SUFFIX,config.speedtest.net
+DOMAIN-SUFFIX,enterprise.speedtest.net
+DOMAIN-SUFFIX,ookla.com
+DOMAIN-SUFFIX,fonts.googleapis.com
+DOMAIN-SUFFIX,fonts.gstatic.com
+DOMAIN-SUFFIX,cndjs.cloudflare.com
