@@ -49,6 +49,8 @@ DOMAIN-SUFFIX,ettoday.net
 DOMAIN-SUFFIX,udn.com
 DOMAIN-SUFFIX,fhm.com.tw
 DOMAIN-SUFFIX,behindtv.com.tw
+DOMAIN-SUFFIX,tw.piliapp.com
+DOMAIN-SUFFIX,cn.piliapp.com
 
 # 特定域名匹配
 DOMAIN,tunein.com
@@ -71,3 +73,4 @@ IP-CIDR,220.128.56.0/21,no-resolve
 IP-CIDR,220.128.64.0/20,no-resolve
 IP-CIDR,220.128.80.0/20,no-resolve
 IP-CIDR,220.128.91.0/24,no-resolve
+
