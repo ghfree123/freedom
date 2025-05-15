@@ -31,6 +31,9 @@ DOMAIN-SUFFIX,findip.net
 DOMAIN-SUFFIX,ipx.ac
 DOMAIN-SUFFIX,dnsleak.com
 DOMAIN-SUFFIX,whatismyipaddress.com
+DOMAIN-SUFFIX,mitce.com
+DOMAIN-SUFFIX,help.mitce.com
+DOMAIN-SUFFIX,email.mitce.com
 
 # 外国 DNS 服务 IP 地址
 IP-CIDR,8.8.8.8/32,no-resolve
@@ -68,3 +71,4 @@ IP-CIDR,173.194.0.0/16,no-resolve
 IP-CIDR,209.85.128.0/17,no-resolve
 IP-CIDR,216.58.192.0/19,no-resolve
 IP-CIDR,216.239.32.0/19,no-resolve
+
