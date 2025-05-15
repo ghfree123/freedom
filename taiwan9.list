@@ -51,6 +51,7 @@ DOMAIN-SUFFIX,fhm.com.tw
 DOMAIN-SUFFIX,behindtv.com.tw
 DOMAIN-SUFFIX,tw.piliapp.com
 DOMAIN-SUFFIX,cn.piliapp.com
+DOMAIN-SUFFIX,pili.app
 
 # 特定域名匹配
 DOMAIN,tunein.com
