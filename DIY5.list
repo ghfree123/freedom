@@ -1,5 +1,9 @@
 # 内容：DIY
 
+# DoH 地址
+DOMAIN-SUFFIX,dns.google
+DOMAIN-SUFFIX,cloudflare-dns.com
+
 # 域名关键字匹配
 DOMAIN-KEYWORD,lib
 DOMAIN-KEYWORD,z-lib
@@ -72,4 +76,3 @@ IP-CIDR,173.194.0.0/16,no-resolve
 IP-CIDR,209.85.128.0/17,no-resolve
 IP-CIDR,216.58.192.0/19,no-resolve
 IP-CIDR,216.239.32.0/19,no-resolve
-
