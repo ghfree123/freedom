@@ -75,3 +75,5 @@ IP-CIDR,220.128.64.0/20,no-resolve
 IP-CIDR,220.128.80.0/20,no-resolve
 IP-CIDR,220.128.91.0/24,no-resolve
 
+# 台湾常用 IP（手动添加）
+IP-CIDR,168.95.1.1/32,no-resolve
