@@ -1,0 +1,23 @@
+# 内容：Instagram
+
+# 域名关键字匹配
+DOMAIN-KEYWORD,instagram
+DOMAIN-KEYWORD,cdninstagram
+DOMAIN-KEYWORD,fbcdn
+
+# 域名后缀匹配
+DOMAIN-SUFFIX,instagram.com
+DOMAIN-SUFFIX,www.instagram.com
+DOMAIN-SUFFIX,cdninstagram.com
+DOMAIN-SUFFIX,scontent.cdninstagram.com
+DOMAIN-SUFFIX,igcdn.com
+DOMAIN-SUFFIX,fbcdn.net
+DOMAIN-SUFFIX,scontent.xx.fbcdn.net
+DOMAIN-SUFFIX,instagram.fsnc1-1.fna.fbcdn.net
+DOMAIN-SUFFIX,instagram.fsnc1-2.fna.fbcdn.net
+DOMAIN-SUFFIX,instagram.fabc1-1.fna.fbcdn.net
+DOMAIN-SUFFIX,static.cdninstagram.com
+DOMAIN-SUFFIX,graph.instagram.com
+DOMAIN-SUFFIX,i.instagram.com
+DOMAIN-SUFFIX,help.instagram.com
+DOMAIN-SUFFIX,business.instagram.com
