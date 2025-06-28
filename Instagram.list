@@ -1,9 +1,10 @@
-# 内容：Instagram
+# 内容：Instagram + Threads
 
 # 域名关键字匹配
 DOMAIN-KEYWORD,instagram
 DOMAIN-KEYWORD,cdninstagram
 DOMAIN-KEYWORD,fbcdn
+DOMAIN-KEYWORD,threads
 
 # 域名后缀匹配
 DOMAIN-SUFFIX,instagram.com
@@ -21,3 +22,9 @@ DOMAIN-SUFFIX,graph.instagram.com
 DOMAIN-SUFFIX,i.instagram.com
 DOMAIN-SUFFIX,help.instagram.com
 DOMAIN-SUFFIX,business.instagram.com
+DOMAIN-SUFFIX,threads.net
+DOMAIN-SUFFIX,www.threads.net
+DOMAIN-SUFFIX,graph.threads.net
+DOMAIN-SUFFIX,cdn.threads.net
+DOMAIN-SUFFIX,static.threads.net
+DOMAIN-SUFFIX,help.threads.net
