@@ -1,10 +1,10 @@
-# 内容：DIY 自定义国外域名规则
+# 内容：DIY
 
-# ========= DoH 地址 =========
+# DoH 地址
 DOMAIN-SUFFIX,dns.google
 DOMAIN-SUFFIX,cloudflare-dns.com
 
-# ========= 域名关键字匹配 =========
+# 域名关键字匹配
 DOMAIN-KEYWORD,lib
 DOMAIN-KEYWORD,z-lib
 DOMAIN-KEYWORD,1lib
@@ -16,9 +16,8 @@ DOMAIN-KEYWORD,ipleak
 DOMAIN-KEYWORD,dnsleak
 DOMAIN-KEYWORD,whoer
 DOMAIN-KEYWORD,dnscheck
-DOMAIN-KEYWORD,missav               # ✅ 新增
 
-# ========= 域名后缀匹配 =========
+# 域名后缀匹配
 DOMAIN-SUFFIX,ncdn.ec
 DOMAIN-SUFFIX,ygpy.net
 DOMAIN-SUFFIX,z-library.ec
@@ -40,13 +39,8 @@ DOMAIN-SUFFIX,mitce.net
 DOMAIN-SUFFIX,help.mitce.net
 DOMAIN-SUFFIX,email.mitce.net
 DOMAIN-SUFFIX,bulianglin.com
-DOMAIN-SUFFIX,missav.ai            # ✅ 新增
-DOMAIN-SUFFIX,recombee.com         # ✅ 新增
 
-# ========= 精确域名匹配 =========
-DOMAIN,client-rapi-missav.recombee.com  # ✅ 新增
-
-# ========= 国外 DNS 服务 IP 地址 =========
+# 外国 DNS 服务 IP 地址
 IP-CIDR,8.8.8.8/32,no-resolve
 IP-CIDR,8.8.4.4/32,no-resolve
 IP-CIDR,2001:4860:4860::8888/128,no-resolve
@@ -71,7 +65,7 @@ IP-CIDR,84.200.70.40/32,no-resolve
 IP-CIDR,2001:1608:10:25::1c04:b12f/128,no-resolve
 IP-CIDR,2001:1608:10:25::9249:d69a/128,no-resolve
 
-# ========= Google 服务 IP 段 =========
+# Google 服务 IP 地址段，防止直连
 IP-CIDR,64.233.160.0/19,no-resolve
 IP-CIDR,66.102.0.0/20,no-resolve
 IP-CIDR,66.249.80.0/20,no-resolve
@@ -82,4 +76,5 @@ IP-CIDR,173.194.0.0/16,no-resolve
 IP-CIDR,209.85.128.0/17,no-resolve
 IP-CIDR,216.58.192.0/19,no-resolve
 IP-CIDR,216.239.32.0/19,no-resolve
+
 
