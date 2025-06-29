@@ -34,6 +34,8 @@ DOMAIN-SUFFIX,mitce.net
 DOMAIN-SUFFIX,help.mitce.net
 DOMAIN-SUFFIX,email.mitce.net
 DOMAIN-SUFFIX,bulianglin.com
+DOMAIN-SUFFIX,client-rapi-missav.recombee.com
+
 
 # 外国 DNS 服务 IP 地址
 IP-CIDR,8.8.8.8/32,no-resolve
