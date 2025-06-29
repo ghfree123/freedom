@@ -1,9 +1,4 @@
 # 内容：DIY
-
-# DoH 地址
-DOMAIN-SUFFIX,dns.google
-DOMAIN-SUFFIX,cloudflare-dns.com
-
 # 域名关键字匹配
 DOMAIN-KEYWORD,lib
 DOMAIN-KEYWORD,z-lib
