@@ -9,7 +9,7 @@ DOMAIN-KEYWORD,api.ofiii.com
 DOMAIN-KEYWORD,tunein
 DOMAIN-KEYWORD,taiwanmobile.com
 DOMAIN-KEYWORD,lihiton.com
-DOMAIN-KEYWORD,news.tvbs.com.tw
+DOMAIN-KEYWORD,news.tvbs.com
 DOMAIN-KEYWORD,ctitv.com.tw
 DOMAIN-KEYWORD,chosunmedia.com.tw
 DOMAIN-KEYWORD,upmedia.mg
@@ -38,6 +38,11 @@ DOMAIN-KEYWORD,books.com.tw
 DOMAIN-KEYWORD,ibon
 DOMAIN-KEYWORD,tixcraft
 DOMAIN-KEYWORD,17life
+DOMAIN-KEYWORD,hamivideo.hinet.net
+DOMAIN-KEYWORD,linetv.tw
+DOMAIN-KEYWORD,ptsplus.tv
+DOMAIN-KEYWORD,myvideo.net.tw
+DOMAIN-KEYWORD,vocus.cc
 
 # 域名后缀匹配
 DOMAIN-SUFFIX,tw
@@ -88,12 +93,21 @@ DOMAIN-SUFFIX,tw.appledaily.com
 DOMAIN-SUFFIX,cloudfront.net
 DOMAIN-SUFFIX,akamaized.net
 DOMAIN-SUFFIX,facebook.com
+DOMAIN-SUFFIX,hinet.net
+DOMAIN-SUFFIX,linetv.tw
+DOMAIN-SUFFIX,myvideo.net.tw
+DOMAIN-SUFFIX,vocus.cc
 
 # 特定域名匹配
 DOMAIN,tunein.com
 DOMAIN,cdi.ofiii.com
 DOMAIN,api.ofiii.com
 DOMAIN,storage.googleapis.com
+DOMAIN,hamivideo.hinet.net
+DOMAIN,www.linetv.tw
+DOMAIN,www.ptsplus.tv
+DOMAIN,www.myvideo.net.tw
+DOMAIN,www.vocus.cc
 
 # 台湾中华电信 IP 段（Chunghwa Telecom）
 IP-CIDR,1.34.0.0/15,no-resolve
