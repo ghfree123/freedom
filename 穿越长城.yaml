@@ -1,0 +1,180 @@
+# 必读！！！
+# 注意规则在满足自己需求情况下，尽量做到精简，不要过度复杂，以免影响性能。
+# 跑裸核用户请自行去掉下方控制面板模块的注释。
+# 机场订阅
+proxy-providers:
+  Airport1:
+    url: "机场订阅链接"
+    type: http
+    interval: 86400
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+    proxy: 直连    
+
+# 节点信息
+proxies:
+  - {name: 直连, type: direct}
+
+# 全局配置 
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7894
+allow-lan: true
+bind-address: "*"
+ipv6: false
+unified-delay: true
+tcp-concurrent: true
+# interface-name: enp6s18
+log-level: warning
+find-process-mode: 'off'
+global-client-fingerprint: chrome
+keep-alive-idle: 600
+keep-alive-interval: 15
+profile:
+  store-selected: true
+  store-fake-ip: true
+
+# 为防止使用插件朋友遇到面板问题，我注释掉了此模块。
+# 跑裸核朋友自行删除注释即可
+#external-controller: 0.0.0.0:9090
+#secret: ""
+#external-ui: "/etc/mihomo/ui"
+#external-ui-name: zashboard
+#external-ui-url: "https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip"
+
+# 嗅探
+sniffer:
+  enable: true
+  sniff:
+    HTTP:
+      ports: [80, 8080-8880]
+      override-destination: true
+    TLS:
+      ports: [443, 8443]
+    QUIC:
+      ports: [443, 8443]
+  force-domain:
+    - "+.v2ex.com"
+  skip-domain:
+    - "+.baidu.com"
+
+# 入站  
+tun:
+  enable: true
+  # system/gvisor/mixed
+  stack: mixed
+  dns-hijack: ["any:53", "tcp://any:53"]
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
+
+# DNS模块
+dns:
+  enable: true
+  listen: 0.0.0.0:1053
+  ipv6: false
+  respect-rules: true
+  enhanced-mode: fake-ip
+  fake-ip-range: 28.0.0.1/8
+  fake-ip-filter-mode: blacklist
+  fake-ip-filter:
+    - "rule-set:Private / Domain,China / Domain"
+    - "+.msftconnecttest.com"
+    - "+.msftncsi.com"
+    - "time.*.com"
+    - "+.market.xiaomi.com"
+  default-nameserver:
+    - 223.5.5.5
+  proxy-server-nameserver:
+    - https://doh.pub/dns-query
+  # namesever尽量用运营商提供的DNS
+  nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+ 
+# 出站策略，根据自己情况调整每个策略里分组排序，增删都可以，比如把美国自动放到第一个，比如删除香港故转，注意别漏掉表情逗号等。
+# 如果相应分组没有筛选到对应的国家，请根据自己节点名字调整筛选关键字。
+# 没有再使用锚点，是考虑很多新手修改难度，这样新手修改某个分组更容易些。
+proxy-groups:
+  - {name: "🐦‍⬛ Twitter", type: select, proxies: [台湾自动, 香港自动, 日本自动, 韩国自动, 新加坡自动, 台日新韩自动, 美国自动, 自动选择, 全部节点, 直连]}
+  - {name: "📷 Instagram", type: select, proxies: [台湾自动, 香港自动, 日本自动, 韩国自动, 新加坡自动, 台日新韩自动, 美国自动, 自动选择, 全部节点, 直连]}
+  - {name: "🇹🇼 台湾", type: select, proxies: [台湾自动, 香港自动, 日本自动, 韩国自动, 新加坡自动, 台日新韩自动, 美国自动, 自动选择, 全部节点, 直连]}
+  - {name: "🌟 AI", type: select, proxies: [台湾自动, 香港自动, 日本自动, 韩国自动, 新加坡自动, 台日新韩自动, 美国自动, 自动选择, 全部节点, 直连]}
+  - {name: "👽 GitHub", type: select, proxies: [台湾自动, 香港自动, 日本自动, 韩国自动, 新加坡自动, 台日新韩自动, 美国自动, 自动选择, 全部节点, 直连]}
+  - {name: "🎶 TikTok", type: select, proxies: [台湾自动, 香港自动, 日本自动, 韩国自动, 新加坡自动, 台日新韩自动, 美国自动, 自动选择, 全部节点, 直连]}  
+  - {name: "📘 Telegram", type: select, proxies: [台湾自动, 香港自动, 日本自动, 韩国自动, 新加坡自动, 台日新韩自动, 美国自动, 自动选择, 全部节点, 直连]}
+  - {name: "🔍 Google", type: select, proxies: [台湾自动, 香港自动, 日本自动, 韩国自动, 新加坡自动, 台日新韩自动, 美国自动, 自动选择, 全部节点, 直连]}
+  - {name: "🧲 YouTube", type: select, proxies: [台湾自动, 香港自动, 日本自动, 韩国自动, 新加坡自动, 台日新韩自动, 美国自动, 自动选择, 全部节点, 直连]}
+  - {name: "🎙️ 电台", type: select, proxies: [台湾自动, 香港自动, 日本自动, 韩国自动, 新加坡自动, 台日新韩自动, 美国自动, 自动选择, 全部节点, 直连]}
+  - {name: "🎬 流媒体", type: select, proxies: [台湾自动, 香港自动, 日本自动, 韩国自动, 新加坡自动, 台日新韩自动, 美国自动, 自动选择, 全部节点, 直连]}
+  - {name: "🗽 国外", type: select, proxies: [台湾自动, 香港自动, 日本自动, 韩国自动, 新加坡自动, 台日新韩自动, 美国自动, 自动选择, 全部节点, 直连]}
+  - {name: 国内, type: select, proxies: [台湾自动, 香港自动, 日本自动, 韩国自动, 新加坡自动, 台日新韩自动, 美国自动, 自动选择, 全部节点, 直连]}
+  - {name: 台湾自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(台|TW|(?i)Taiwan))^((?!(港|日|韩|新|深|美)).)*$"}
+  - {name: 香港自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美)).)*$"}
+  - {name: 日本自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美)).)*$" }
+  - {name: 韩国自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(韩|KR|(?i)Korea))^((?!(港|台|日|新|美)).)*$" }
+  - {name: 新加坡自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(新加坡|坡|狮城|SG|Singapore))^((?!(港|台|韩|日|美)).)*$" }
+  - {name: 台日新韩自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(台|TW|(?i)Taiwan|日|JP|(?i)Japan|新加坡|坡|狮城|SG|(?i)Singapore|韩|KR|(?i)Korea))^((?!(港|美)).)*$" }
+  - {name: 美国自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(美|US|(?i)States|America))^((?!(港|台|日|韩|新)).)*$"}
+  - {name: 自动选择, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "^((?!(直连)).)*$"}
+  - {name: 全部节点, type: select, include-all: true}
+
+# 规则匹配
+# 此规则部分没有做防泄露处理，因为弊严重大于利！
+rules:
+
+  - RULE-SET,🐦‍⬛ Twitter / Domain,🐦‍⬛ Twitter
+  - RULE-SET,📷 Instagram / Domain,📷 Instagram  
+  - RULE-SET,🇹🇼 台湾 / Domain,🇹🇼 台湾    
+  - RULE-SET,🌟 AI / Domain,🌟 AI
+  - RULE-SET,👽 GitHub / Domain,👽 GitHub
+  - RULE-SET,🎶 TikTok / Domain,🎶 TikTok
+  - RULE-SET,📘 Telegram / Domain,📘 Telegram
+  - RULE-SET,🔍 Google / Domain,🔍 Google
+  - RULE-SET,🧲 YouTube / Domain,🧲 YouTube
+  - RULE-SET,🧲 YouTube1 / Domain,🧲 YouTube
+  - RULE-SET,🎙️ 电台 / Domain,🎙️ 电台
+  - RULE-SET,🎬 HBO / Domain,🎬 流媒体
+  - RULE-SET,🎬 Disney / Domain,🎬 流媒体
+  - RULE-SET,🎬 Netflix / Domain,🎬 流媒体
+  - RULE-SET,🎬 Spotify / Domain,🎬 流媒体
+  - RULE-SET,🗽 自定义 / Domain,🗽 国外
+  - RULE-SET,🗽 国外 / Domain,🗽 国外  
+  - RULE-SET,Direct / Domain,国内
+  - RULE-SET,China / Domain,国内
+  - RULE-SET,China / IP,国内,no-resolve
+  - RULE-SET,Private / Domain,国内
+  - MATCH,国内
+
+# 规则集
+## type：可选http/file/inline  behavior：可选domain/ipcidr/classical format：可选yaml/text/mrs
+rule-anchor:
+  ip: &ip {type: http, interval: 86400, behavior: ipcidr, format: mrs}
+  domain: &domain {type: http, interval: 86400, behavior: domain, format: mrs}
+  class: &class {type: http, interval: 86400, behavior: classical, format: text}
+rule-providers: 
+  🐦‍⬛ Twitter / Domain: {<<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/ghfree123/freedom/refs/heads/main/Twitter.list"}
+  📷 Instagram / Domain: {<<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/ghfree123/freedom/refs/heads/main/Instagram.list"}
+  🇹🇼 台湾 / Domain: {<<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/ghfree123/freedom/refs/heads/main/taiwan9.list"}
+  🌟 AI / Domain: {<<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/ghfree123/freedom/refs/heads/main/AI3.list"}
+  👽 GitHub / Domain: {<<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GitHub/GitHub.list"}
+  🎶 TikTok / Domain: {<<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/TikTok/TikTok.list"}
+  📘 Telegram / Domain: {<<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.list"}
+  🔍 Google / Domain: {<<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/ghfree123/freedom/refs/heads/main/Google.list"}
+  🧲 YouTube / Domain: {<<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/ghfree123/freedom/refs/heads/main/YouTube.list"}
+  🧲 YouTube1 / Domain: {<<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.list"}
+  🎙️ 电台 / Domain: {<<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/ghfree123/freedom/refs/heads/main/Radio.list"}
+  🎬 HBO / Domain: {<<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/HBO/HBO.list"}
+  🎬 Disney / Domain: {<<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Disney/Disney.list"}
+  🎬 Netflix / Domain: {<<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix.list"}
+  🎬 Spotify / Domain: {<<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.list"}
+  🗽 自定义 / Domain: {<<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/ghfree123/freedom/refs/heads/main/DIY7.list"}
+  🗽 国外 / Domain: {<<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Global/Global.list"}
+  Direct / Domain: {<<: *class, url: "https://gh-proxy.com/raw.githubusercontent.com/liandu2024/clash/refs/heads/main/list/Direct.list"}
+  Private / Domain: {<<: *domain, url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geosite/private.mrs"}
+  China / Domain: {<<: *domain, url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geosite/cn.mrs"}
+  China / IP: {<<: *ip, url: "https://gh-proxy.com/github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geoip/cn.mrs"}
