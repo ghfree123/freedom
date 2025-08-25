@@ -97,6 +97,7 @@ DOMAIN-SUFFIX,hinet.net
 DOMAIN-SUFFIX,linetv.tw
 DOMAIN-SUFFIX,myvideo.net.tw
 DOMAIN-SUFFIX,vocus.cc
+DOMAIN-SUFFIX,assets.piliapp.com
 
 # 特定域名匹配
 DOMAIN,tunein.com
