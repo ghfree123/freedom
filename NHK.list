@@ -1,84 +1,61 @@
-# 内容：DIY
+# 内容：NHK & 日本域名 & 日本IP
 # 域名关键字匹配
-DOMAIN-KEYWORD,lib
-DOMAIN-KEYWORD,z-lib
-DOMAIN-KEYWORD,1lib
-DOMAIN-KEYWORD,library
-DOMAIN-KEYWORD,ncdn
-DOMAIN-KEYWORD,chaoyue
-DOMAIN-KEYWORD,browserleaks
-DOMAIN-KEYWORD,ipleak
-DOMAIN-KEYWORD,dnsleak
-DOMAIN-KEYWORD,whoer
-DOMAIN-KEYWORD,dnscheck
+DOMAIN-KEYWORD,nhk
+DOMAIN-KEYWORD,nhkid
 
 # 域名后缀匹配
-DOMAIN-SUFFIX,ncdn.ec
-DOMAIN-SUFFIX,ygpy.net
-DOMAIN-SUFFIX,z-library.ec
-DOMAIN-SUFFIX,z-lib.fo
-DOMAIN-SUFFIX,1lib.sk
-DOMAIN-SUFFIX,destiny.to
-DOMAIN-SUFFIX,tv.garden
-DOMAIN-SUFFIX,chaoyue.shop
-DOMAIN-SUFFIX,browserleaks.com
-DOMAIN-SUFFIX,ipleak.net
-DOMAIN-SUFFIX,dnsleaktest.com
-DOMAIN-SUFFIX,whoer.net
-DOMAIN-SUFFIX,dnscheck.tools
-DOMAIN-SUFFIX,findip.net
-DOMAIN-SUFFIX,ipx.ac
-DOMAIN-SUFFIX,dnsleak.com
-DOMAIN-SUFFIX,whatismyipaddress.com
-DOMAIN-SUFFIX,mitce.net
-DOMAIN-SUFFIX,help.mitce.net
-DOMAIN-SUFFIX,email.mitce.net
-DOMAIN-SUFFIX,bulianglin.com
-DOMAIN-SUFFIX,client-rapi-missav.recombee.com
-DOMAIN-SUFFIX,fourhoi.com
-DOMAIN-SUFFIX,nineyu.com
-DOMAIN-SUFFIX,surrit.com
-DOMAIN-SUFFIX,tw.xiaoyakankan.com
-DOMAIN-SUFFIX,i1.xiaoyakankan.com
-DOMAIN-SUFFIX,missav.ai
+DOMAIN-SUFFIX,nhk.jp
+DOMAIN-SUFFIX,nhkid.jp
+DOMAIN-SUFFIX,nhk.or.jp
+DOMAIN-SUFFIX,jp   # 所有日本域名
 
+# 完整域名匹配（API 和服务）
+DOMAIN,api-plus.nhk.jp
+DOMAIN,location-plus.nhk.jp
+DOMAIN,provision-plus.nhk.jp
+DOMAIN,drm.npd.plus.nhk.jp
+DOMAIN,ctl.npd.plus.nhk.jp
+DOMAIN,vod-npd2.cdn.plus.nhk.jp
+DOMAIN,live-npd2.cdn.plus.nhk.jp
 
+# NHK 主站和认证
+DOMAIN,www.nhk.jp
+DOMAIN,agree.auth.nhkid.jp
 
-# 外国 DNS 服务 IP 地址
-IP-CIDR,8.8.8.8/32,no-resolve
-IP-CIDR,8.8.4.4/32,no-resolve
-IP-CIDR,2001:4860:4860::8888/128,no-resolve
-IP-CIDR,2001:4860:4860::8844/128,no-resolve
-IP-CIDR,1.1.1.1/32,no-resolve
-IP-CIDR,1.0.0.1/32,no-resolve
-IP-CIDR,2606:4700:4700::1111/128,no-resolve
-IP-CIDR,2606:4700:4700::1001/128,no-resolve
-IP-CIDR,9.9.9.9/32,no-resolve
-IP-CIDR,149.112.112.112/32,no-resolve
-IP-CIDR,2620:fe::fe/128,no-resolve
-IP-CIDR,208.67.222.222/32,no-resolve
-IP-CIDR,208.67.220.220/32,no-resolve
-IP-CIDR,2620:0:ccc::2/128,no-resolve
-IP-CIDR,2620:0:ccd::2/128,no-resolve
-IP-CIDR,185.228.168.168/32,no-resolve
-IP-CIDR,185.228.169.168/32,no-resolve
-IP-CIDR,2a0d:2a00:1::1/128,no-resolve
-IP-CIDR,2a0d:2a00:2::1/128,no-resolve
-IP-CIDR,84.200.69.80/32,no-resolve
-IP-CIDR,84.200.70.40/32,no-resolve
-IP-CIDR,2001:1608:10:25::1c04:b12f/128,no-resolve
-IP-CIDR,2001:1608:10:25::9249:d69a/128,no-resolve
+# 其他 NHK 域名
+DOMAIN,mtcs.nhk.or.jp
+DOMAIN,apps.nhk.or.jp
 
-# Google 服务 IP 地址段，防止直连
-IP-CIDR,64.233.160.0/19,no-resolve
-IP-CIDR,66.102.0.0/20,no-resolve
-IP-CIDR,66.249.80.0/20,no-resolve
-IP-CIDR,72.14.192.0/18,no-resolve
-IP-CIDR,74.125.0.0/16,no-resolve
-IP-CIDR,108.177.0.0/17,no-resolve
-IP-CIDR,173.194.0.0/16,no-resolve
-IP-CIDR,209.85.128.0/17,no-resolve
-IP-CIDR,216.58.192.0/19,no-resolve
-IP-CIDR,216.239.32.0/19,no-resolve
+# 日本 IP 段（APNIC 分配）
+IP-CIDR,1.33.0.0/16
+IP-CIDR,1.72.0.0/14
+IP-CIDR,14.0.0.0/11
+IP-CIDR,27.80.0.0/13
+IP-CIDR,36.0.0.0/11
+IP-CIDR,42.0.0.0/10
+IP-CIDR,49.96.0.0/11
+IP-CIDR,58.0.0.0/10
+IP-CIDR,60.32.0.0/11
+IP-CIDR,101.0.0.0/10
+IP-CIDR,106.128.0.0/10
+IP-CIDR,110.0.0.0/10
+IP-CIDR,118.0.0.0/10
+IP-CIDR,121.80.0.0/13
+IP-CIDR,126.0.0.0/8
+IP-CIDR,133.0.0.0/8
+IP-CIDR,150.0.0.0/8
+IP-CIDR,153.128.0.0/9
+IP-CIDR,160.16.0.0/12
+IP-CIDR,175.0.0.0/8
+IP-CIDR,202.0.0.0/8
+IP-CIDR,210.128.0.0/9
+IP-CIDR,220.0.0.0/8
 
-
+# 日本 IPv6 段
+IP-CIDR,2400:0000::/20
+IP-CIDR,2404:0000::/20
+IP-CIDR,2406:0000::/20
+IP-CIDR,2408:0000::/20
+IP-CIDR,2409:0000::/20
+IP-CIDR,240b:0000::/20
+IP-CIDR,240c:0000::/20
