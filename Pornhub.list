@@ -1,0 +1,33 @@
+# 内容：Pornhub
+
+# 域名关键字匹配
+DOMAIN-KEYWORD,pornhub
+DOMAIN-KEYWORD,phncdn
+
+# 域名后缀匹配
+DOMAIN-SUFFIX,pornhub.com
+DOMAIN-SUFFIX,pornhubpremium.com
+DOMAIN-SUFFIX,phncdn.com
+DOMAIN-SUFFIX,phprcdn.com
+DOMAIN-SUFFIX,pornhubselect.com
+DOMAIN-SUFFIX,cdn.pornhub.com
+DOMAIN-SUFFIX,static.pornhub.com
+DOMAIN-SUFFIX,media.pornhub.com
+DOMAIN-SUFFIX,api.pornhub.com
+DOMAIN-SUFFIX,es.pornhub.com
+DOMAIN-SUFFIX,fr.pornhub.com
+DOMAIN-SUFFIX,de.pornhub.com
+DOMAIN-SUFFIX,uk.pornhub.com
+DOMAIN-SUFFIX,www.pornhub.com
+DOMAIN-SUFFIX,www.pornhubpremium.com
+DOMAIN-SUFFIX,ssl.pornhub.com
+DOMAIN-SUFFIX,cdn1.phncdn.com
+DOMAIN-SUFFIX,cdn2.phncdn.com
+DOMAIN-SUFFIX,cdn3.phncdn.com
+DOMAIN-SUFFIX,cdn4.phncdn.com
+DOMAIN-SUFFIX,dl.phncdn.com
+DOMAIN-SUFFIX,embed.pornhub.com
+DOMAIN-SUFFIX,blog.pornhub.com
+DOMAIN-SUFFIX,help.pornhub.com
+DOMAIN-SUFFIX,feedback.pornhub.com
+DOMAIN-SUFFIX,support.pornhub.com
