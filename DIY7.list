@@ -11,6 +11,14 @@ DOMAIN-KEYWORD,ipleak
 DOMAIN-KEYWORD,dnsleak
 DOMAIN-KEYWORD,whoer
 DOMAIN-KEYWORD,dnscheck
+DOMAIN-KEYWORD,saawsedge
+DOMAIN-KEYWORD,doppiocdn
+DOMAIN-KEYWORD,afcdn
+DOMAIN-KEYWORD,strpst
+DOMAIN-KEYWORD,myavlive
+DOMAIN-KEYWORD,blcdog
+DOMAIN-KEYWORD,xlivrdr
+DOMAIN-KEYWORD,magsrv
 
 # 域名后缀匹配
 DOMAIN-SUFFIX,ncdn.ec
@@ -42,6 +50,14 @@ DOMAIN-SUFFIX,tw.xiaoyakankan.com
 DOMAIN-SUFFIX,i1.xiaoyakankan.com
 DOMAIN-SUFFIX,missav.ai
 DOMAIN-SUFFIX,xiaoyakankan.com
+DOMAIN-SUFFIX,saawsedge.com
+DOMAIN-SUFFIX,doppiocdn.com
+DOMAIN-SUFFIX,afcdn.net
+DOMAIN-SUFFIX,strpst.com
+DOMAIN-SUFFIX,myavlive.com
+DOMAIN-SUFFIX,blcdog.com
+DOMAIN-SUFFIX,xlivrdr.com
+DOMAIN-SUFFIX,magsrv.com
 
 
 
