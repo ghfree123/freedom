@@ -1,0 +1,2579 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<style>
+body {
+	margin-top: unset !important
+}
+</style>
+	<head>
+		<meta charset="utf-8">
+		<title>ImmortalWrt - 配置管理 - LuCI</title>
+		<meta name="viewport" content="initial-scale=1.0">
+		<link rel="stylesheet" href="/luci-static/bootstrap_mod/cascade.css?v=20220102">
+		<link rel="stylesheet" media="only screen and (max-device-width: 1600px)" href="/luci-static/bootstrap_mod/mobile.css?v=20220102" type="text/css" />
+		<link rel="shortcut icon" href="/luci-static/bootstrap_mod/favicon.ico">
+		<script src="/cgi-bin/luci/admin/translations/zh-cn"></script>
+		<script src="/luci-static/resources/cbi.js?v=20220102"></script>
+		<!-- <script src="/luci-static/resources/xhr.js?v=20220102"></script> -->
+	</head>
+	
+	<body class="lang_zh-cn Config Manage" data-page="admin-services-openclash-config">
+		<header>
+			<div class="fill">
+				<div class="container">
+					<a class="brand" href="/">ImmortalWrt</a>
+					<ul class="nav" id="topmenu" style="display:none"></ul>
+					<div id="indicators" class="pull-right"></div>
+				</div>
+			</div>
+		</header>
+
+		<div id="maincontent" class="container"><noscript>
+				<div class="alert-message warning">
+					<h4>需要 JavaScript！</h4>
+					<p>必须开启浏览器的 JavaScript 支持，否则 LuCI 无法正常工作。</p>
+				</div>
+			</noscript>
+
+			<div id="tabmenu" style="display:none"></div>
+
+<script type="text/javascript" src="/luci-static/resources/promis.min.js?v=git-23.098.38725-847bd6b"></script>
+<script type="text/javascript" src="/luci-static/resources/luci.js?v=git-23.098.38725-847bd6b"></script>
+<script type="text/javascript">
+	L = new LuCI({"apply_rollback":90,"resource":"\/luci-static\/resources","media":"\/luci-static\/bootstrap_mod","documentroot":"\/www","pathinfo":"\/admin\/services\/openclash\/config","apply_display":1.5,"requestpath":["admin","services","openclash","config"],"ubuspath":"\/ubus\/","scriptname":"\/cgi-bin\/luci","dispatchpath":["admin","services","openclash","config"],"sessionid":"75fa613b3baf41338422fc335ee9d6a6","token":"3b259d2e113221c90bb0741853d66e4e","apply_timeout":5,"apply_holdoff":4,"nodespec":{"wildcard":true,"satisfied":true,"title":"Config Manage","order":80,"readonly":false,"action":{"post":{"cbi.submit":true},"type":"form","path":"openclash\/config"}},"pollinterval":5});
+</script>
+<form method="post" enctype="multipart/form-data" action="/cgi-bin/luci/admin/services/openclash/config">
+			<input type="hidden" name="token" value="3b259d2e113221c90bb0741853d66e4e" />
+			<input type="hidden" name="cbi.submit" value="1" /><div class="cbi-map" id="cbi-upload"><h2 name="content">配置管理</h2><div class="cbi-section">
+	
+	
+	<div class="cbi-section-node">
+		<div id="cbi-upload-0x1ba440a0">
+			<div class="cbi-value" id="cbi-upload-1-" data-index="1" data-depends="[]">
+
+<div style="text-align: center; margin:0 auto; display:block; white-space: nowrap;">
+	<label class="cbi-value" style="display:inline-block; width: 100%;" for="ulfiles">上传文件类型&nbsp;(点击选择)&nbsp;&nbsp;&nbsp;
+	<select name="file_type" style="width:auto">&nbsp;&nbsp;&nbsp;
+		<option value="config" selected="selected">配置文件 (.yaml)</option>
+		<option value="proxy-provider">代理集文件</option>
+		<option value="rule-provider">规则集文件</option>
+		<option value="clash_meta">[Meta] 内核文件 (.tar.gz)</option>
+		<option value="backup-file">备份文件 (.tar.gz)</option>
+	</select>
+  <input class="cbi-input-file" style="width: 30%" type="file" id="ulfile" name="ulfile" />
+	<input type="submit" class="btn cbi-button cbi-input-reload" name="upload" value="上传" />
+	<input type="submit" class="btn cbi-button cbi-button-reset" value="备份" onclick="return backup_all_file(this)"/>
+</div>
+		</div>
+
+
+<script type="text/javascript">//<![CDATA[
+
+function backup_all_file(btn)
+{
+	btn.value    = '备份';
+	btn.disabled = true;
+	window.location.href='backup';
+	btn.disabled = false;
+	return false;
+};
+
+//]]></script><div class="cbi-value cbi-value-last" id="cbi-upload-1-" data-index="2" data-depends="[]">
+
+<div style="text-align: center; margin:2% auto; display: block; width: 100%; text-overflow: ellipsis;">
+	<div>
+		注意：请根据文件类型上传文件，文件将会被保存到提示路径
+	</div>
+	<div style="color: green; margin-top: 1%;">
+		
+	</div>
+</div>
+		</div>
+
+
+		</div>
+		
+	</div>
+</div></div></form>
+
+<script type="text/javascript">cbi_init();</script>
+<form method="post" enctype="multipart/form-data" action="/cgi-bin/luci/admin/services/openclash/config">
+			<input type="hidden" name="token" value="3b259d2e113221c90bb0741853d66e4e" />
+			<input type="hidden" name="cbi.submit" value="1" /><div class="cbi-map" id="cbi-config_file_list"><h2 name="content">配置文件列表</h2><!-- tblsection -->
+<div class="cbi-section cbi-tblsection" id="cbi-table-table">
+	<div class="cbi-section-descr"></div>
+	<table class="table cbi-section-table"><tr class="tr cbi-section-table-titles anonymous"><th class="th cbi-section-table-cell" data-widget="cfg_check">状态</th><th class="th cbi-section-table-cell" data-widget="dvalue">配置文件名</th><th class="th cbi-section-table-cell" data-widget="sub_info_show">订阅信息</th><th class="th cbi-section-table-cell" data-widget="dvalue">更新时间</th><th class="th cbi-section-table-cell" data-widget="dvalue">大小</th><th class="th cbi-section-table-cell" data-widget="other_button">切换</th><th class="th cbi-section-table-cell" data-widget="input_rename">重命名</th><th class="th cbi-section-table-cell" data-widget="lvalue">其他</th><th class="th cbi-section-table-cell" data-widget="button">应用</th></tr><tr class="tr cbi-section-table-row cbi-rowstyle-1" id="cbi-table-1"><td class="td cbi-value-field" data-name="state" data-widget="cfg_check" data-title="状态">
+<div id="cbi-table-1-state" data-index="" data-depends="[]">
+
+
+<div>
+	
+     <div style="color: red; font-weight:bold;">
+禁用
+</div>
+</div>
+</div>
+</td>
+
+
+<td class="td cbi-value-field" data-name="name" data-widget="dvalue" data-title="配置文件名">
+<div id="cbi-table-1-name" data-index="" data-depends="[]">
+
+
+Great Wall.yaml
+<input type="hidden" id="cbid.table.1.name" value="Great Wall.yaml" />
+</div>
+</td>
+
+
+<td class="td cbi-value-field" data-name="name" data-widget="sub_info_show" data-title="订阅信息">
+<div id="cbi-table-1-name" data-index="" data-depends="[]">
+
+
+<style>
+.sub_div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: nowrap;
+    width: calc(100% - 24px);
+    box-sizing: border-box;
+    min-width: 280px;
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+.sub_div > span:first-child {
+    flex: 1;
+    min-width: 0;
+}
+
+.sub_tab{
+    display: block;
+    white-space: nowrap;
+    font-size: 12px;
+    margin: 0;
+    opacity: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.sub_tab_show{
+    display: block;
+    white-space: nowrap;
+    font-size: 12px;
+    margin: 0;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+    opacity: 1;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.sub_setting{
+    display: inline-block;
+    white-space: nowrap;
+    margin: 0;
+    opacity: 1;
+    vertical-align: middle;
+    line-height: 0;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.sub_setting img {
+    vertical-align: middle;
+    display: inline-block;
+    transition: opacity 0.3s ease;
+}
+
+.sub_setting:hover img {
+    opacity: 0.7;
+}
+
+.text_show{
+    color: #333333;
+    line-height: 1.2;
+}
+
+.progress_bar_bg {
+    border: 1px solid #999999;
+    background-color: #f5f5f5;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 220px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    height: 36px;
+}
+
+.progress_bar_high {
+    background-color: #9edd9e;
+}
+
+.progress_bar_medium {
+    background-color: #ffc99f;
+}
+
+.progress_bar_low {
+    background-color: #ffb9b9;
+}
+
+:root[data-darkmode="true"] #icon_wrench {
+    -webkit-filter: invert(1);
+    filter: invert(1);
+}
+
+:root[data-darkmode="true"] #icon_arrow {
+    -webkit-filter: invert(1);
+    filter: invert(1);
+}
+
+:root[data-darkmode="true"] .text_show {
+    color: #e0e0e0;
+    line-height: 1.2;
+}
+
+:root[data-darkmode="true"] .progress_bar_bg {
+    border: 1px solid #666666;
+    background-color: #333333;
+}
+
+:root[data-darkmode="true"] .progress_bar_high {
+    background-color: #5da05d;
+}
+
+:root[data-darkmode="true"] .progress_bar_medium {
+    background-color: #cc8550;
+}
+
+:root[data-darkmode="true"] .progress_bar_low {
+    background-color: #cc6262;
+}
+
+@media (max-width: 1024px) {
+    .sub_tab, .sub_tab_show {
+        font-size: 11px;
+    }
+    
+    .progress_bar_bg {
+        min-width: 220px;
+    }
+    
+    .sub_div {
+        gap: 6px;
+        width: calc(100% - 20px);
+        margin: 0 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sub_tab, .sub_tab_show {
+        font-size: 10px;
+    }
+    
+    .progress_bar_bg {
+        min-width: 200px;
+    }
+    
+    .sub_setting img {
+        height: 18px !important;
+    }
+    
+    .sub_div {
+        gap: 4px;
+        width: calc(100% - 16px);
+        margin: 0 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sub_tab, .sub_tab_show {
+        font-size: 9px;
+    }
+    
+    .progress_bar_bg {
+        min-width: 180px !important;
+    }
+    
+    .sub_setting img {
+        height: 16px !important;
+    }
+    
+    .sub_div {
+        gap: 2px;
+        width: calc(100% - 12px);
+        margin: 0 6px;
+    }
+}
+
+@media (max-width: 320px) {
+    .sub_tab, .sub_tab_show {
+        font-size: 8px;
+    }
+    
+    .progress_bar_bg {
+        min-width: 160px !important;
+    }
+    
+    .sub_setting img {
+        height: 14px !important;
+    }
+    
+    .sub_div {
+        width: calc(100% - 8px);
+        margin: 0 4px;
+    }
+}
+
+.sub_div * {
+    flex-shrink: 0;
+}
+
+.sub_div > span:first-child {
+    flex-shrink: 1;
+}
+</style>
+
+
+
+<div class="sub_div">
+    <span id='1Great' class="sub_tab"></span>
+    <span class="sub_setting">
+        <img id="icon_arrow" src='/luci-static/resources/openclash/img/arrow-clockwise-light.svg' height="20px" title='刷新' alt='刷新' onclick='return sub_info_refresh_1Great(this)'>
+    </span>
+    <span class="sub_setting">
+        <img id="icon_wrench" src='/luci-static/resources/openclash/img/wrench-light.svg' height="20px" title='指定订阅信息获取地址' alt='指定订阅信息获取地址' onclick='return set_subinfo_url_1Great(this,"Great Wall")'>
+    </span>
+</div>
+
+<script type="text/javascript">//<![CDATA[
+
+var retry_1Great = 0;
+var s_1Great;
+sub_info_get_1Great();
+
+setTimeout(function(){
+    if (isDarkBackground(document.body)) {
+        document.documentElement.setAttribute('data-darkmode', 'true');
+    };
+}, 300);
+
+function progressbar_1Great(v, m, pc, np, f, t, tr) {
+    var screenWidth = window.innerWidth || document.documentElement.clientWidth;
+    var fontSize = '12px';
+    var minWidth = '220px';
+    var topPosition = tr == "null" ? '6px' : '2px';
+    
+    if (screenWidth <= 320) {
+        fontSize = '8px';
+        minWidth = '160px';
+        topPosition = tr == "null" ? '8px' : '4px';
+    } else if (screenWidth <= 480) {
+        fontSize = '9px';
+        minWidth = '180px';
+        topPosition = tr == "null" ? '7px' : '3px';
+    } else if (screenWidth <= 768) {
+        fontSize = '10px';
+        minWidth = '200px';
+        topPosition = tr == "null" ? '6px' : '3px';
+    } else if (screenWidth <= 1024) {
+        fontSize = '11px';
+        minWidth = '220px';
+        topPosition = tr == "null" ? '6px' : '2px';
+    }
+    
+    return String.format(
+        '<div class="progress_bar_bg" style="position:relative; border-radius: 6px; min-width: %s; display: flex; align-items: center;">' +
+        (pc >= 50 ? '<div class="progress_bar_high" style="width:%d%%; height:34px; border-radius: 6px">' : 
+        (pc < 50 && pc >= 20 ? '<div class="progress_bar_medium" style="width:%d%%; height:34px; border-radius: 6px">' : 
+        '<div class="progress_bar_low" style="width:%d%%; height:34px; border-radius: 6px">')) +
+        '<div style="position:absolute; left:0; top:50%%; transform: translateY(-50%%); text-align:center; width:100%%; padding:0 4px; box-sizing:border-box; line-height:1.2;">' +
+        '<small class="text_show" style="font-size:%s; line-height:1.2;">%s '+ (f ? f : '/') +' %s ' + (np ? "" : '(%s%%)') + 
+        (tr == "null" ? '<div style="visibility: hidden; line-height:1.2;">' : '<div style="visibility: visible; line-height:1.2;">') + 
+        '%s (剩余 %s 天)</small>' +
+        '</div>' +
+        '</div>' +
+        '</div>', 
+        minWidth, pc, fontSize, v, m, pc, t, tr
+    );
+};
+
+function sub_info_refresh_1Great()
+{
+	if (s_1Great) { clearTimeout(s_1Great);};
+	XHR.get('/cgi-bin/luci/admin/services/openclash/sub_info_get', {filename: "Great Wall"}, function(x, status) {
+		if (x && x.status == 200 && status.sub_info != "" && status.sub_info != "No Sub Info Found") {
+			retry_1Great = 0;
+			localStorage.setItem("sub_info_Great Wall",JSON.stringify(status));
+			document.getElementById('1Great').className = "sub_tab_show";
+			document.getElementById('1Great').innerHTML = progressbar_1Great((status.surplus ? status.surplus : status.used), (status.total), (status.percent), false, false, (status.expire), (status.day_left));
+		}
+		else if ( x && x.status == 200 && status.sub_info == "No Sub Info Found" ) {
+			retry_1Great = 0;
+			localStorage.setItem("sub_info_Great Wall",JSON.stringify(status));
+			document.getElementById('1Great').className = "sub_tab_show";
+			document.getElementById('1Great').innerHTML = "<span>无订阅信息</span>";
+		}
+		else {
+			if (document.getElementById('1Great').innerHTML == "" || retry_1Great > 2) {
+				document.getElementById('1Great').className = "sub_tab_show";
+				document.getElementById('1Great').innerHTML = "<span style=color:red>订阅信息获取失败</span>";
+			}
+			if (retry_1Great > 2) {
+				retry_1Great = 0;
+				localStorage.removeItem("sub_info_Great Wall");
+			}
+			else {
+				retry_1Great ++;
+				s_1Great = setTimeout("sub_info_refresh_1Great()",1000*120);
+				return
+			}
+			
+		};
+		s_1Great = setTimeout("sub_info_refresh_1Great()",1000*1800);
+	});
+};
+
+function sub_info_get_1Great()
+{
+	if (localStorage.getItem("sub_info_Great Wall")) {
+		var save_info = JSON.parse(localStorage.getItem("sub_info_Great Wall"));
+		document.getElementById('1Great').className = "sub_tab_show";
+		if (save_info.sub_info == "No Sub Info Found") {
+			document.getElementById('1Great').innerHTML = "<span>无订阅信息</span>";
+		}
+		else {
+			document.getElementById('1Great').innerHTML = progressbar_1Great((save_info.surplus ? save_info.surplus : save_info.used), (save_info.total), (save_info.percent ? save_info.percent : 0), false, false, (save_info.expire), (save_info.day_left ? save_info.day_left : 0));
+		}
+	}
+	else {
+		sub_info_refresh_1Great();
+	};
+	s_1Great = setTimeout("sub_info_refresh_1Great()",1000*30);
+};
+
+function set_subinfo_url_1Great(btn, filename) {
+	var new_url = prompt("在此处粘贴并指定订阅信息来源的新地址：", "");
+	if (filename == null || filename == "") {
+		return false;
+	}
+	if (new_url == null) {
+		return false;
+	}
+	XHR.get('/cgi-bin/luci/admin/services/openclash/set_subinfo_url', {filename: filename, url: new_url}, function(x, status) {
+		if (x && x.status == 200 && status.info == "Success")
+		{
+			sub_info_refresh_1Great();
+			alert("指定新的订阅信息来源地址成功！");
+		}
+		else if (x && x.status == 200 && status.info == "Delete success")
+		{
+			sub_info_refresh_1Great();
+			alert("已删除指定的订阅信息来源地址！");
+		}
+		else
+		{
+			alert("指定新的订阅信息来源地址失败：\n" + status.info);
+		}
+	});
+};
+
+//]]></script>
+</div>
+</td>
+
+
+<td class="td cbi-value-field" data-name="mtime" data-widget="dvalue" data-title="更新时间">
+<div id="cbi-table-1-mtime" data-index="" data-depends="[]">
+
+
+2025-12-10 19:17:39
+<input type="hidden" id="cbid.table.1.mtime" value="2025-12-10 19:17:39" />
+</div>
+</td>
+
+
+<td class="td cbi-value-field" data-name="size" data-widget="dvalue" data-title="大小">
+<div id="cbi-table-1-size" data-index="" data-depends="[]">
+
+
+11.5 KB
+<input type="hidden" id="cbid.table.1.size" value="11.5 KB" />
+</div>
+</td>
+
+
+<td class="td cbi-value-field" data-name="switch" data-widget="other_button" data-title="切换">
+<div id="cbi-table-1-switch" data-index="" data-depends="[]">
+
+
+	
+		<input class="btn cbi-button cbi-input-apply" style="display: " type="submit" name="cbid.table.1.switch" id="cbid.table.1.switch" value="切换" />
+	
+</div>
+</td>
+
+
+<td class="td cbi-value-field" data-name="/etc/openclash/config/" data-widget="input_rename" data-title="重命名">
+<div id="cbi-table-1-/etc/openclash/config/" data-index="" data-depends="[]">
+
+
+<script type="text/javascript">
+//<![CDATA[
+function import_new_file_name(btn, file_path, file_name) {
+		var new_file_name = prompt("请在此输入新文件名（含扩展名）：", "");
+		if (new_file_name == null || new_file_name == "") {
+			return false;
+		}
+		if (file_path == "/etc/openclash/config/" && new_file_name.split('.').pop() != "yaml" && new_file_name.split('.').pop() != "yml") {
+			alert('不支持的扩展名！')
+			return false;
+		}
+		XHR.get('/cgi-bin/luci/admin/services/openclash/rename_file', {new_file_name: new_file_name, file_path: file_path, file_name: file_name}, function(x, status) {
+			if (x && x.status == 200)
+			{
+				location.reload();
+			}
+		});
+	}
+	//]]>
+</script>
+<input type="button" class="btn cbi-button cbi-input-apply" value="重命名" onclick="return import_new_file_name(this, '/etc/openclash/config/', 'Great Wall.yaml')" />
+</div>
+</td>
+
+
+<td class="td cbi-value-field" data-name="actions" data-widget="lvalue" data-title="其他">
+<div id="cbi-table-1-actions" data-index="" data-depends="[]">
+
+
+<div data-ui-widget="[&#34;Select&#34;,null,{&#34;copy&#34;:&#34;复制配置&#34;,&#34;edit&#34;:&#34;编辑&#34;,&#34;download&#34;:&#34;下载配置&#34;,&#34;remove&#34;:&#34;移除&#34;,&#34;download_run&#34;:&#34;下载运行配置&#34;},{&#34;optional&#34;:false,&#34;name&#34;:&#34;cbid.table.1.actions&#34;,&#34;id&#34;:&#34;cbid.table.1.actions&#34;,&#34;sort&#34;:[&#34;edit&#34;,&#34;copy&#34;,&#34;download&#34;,&#34;download_run&#34;,&#34;remove&#34;],&#34;widget&#34;:&#34;select&#34;,&#34;size&#34;:1}]"></div>
+</div>
+</td>
+
+
+<td class="td cbi-value-field" data-name="apply" data-widget="button" data-title="应用">
+<div id="cbi-table-1-apply" data-index="" data-depends="[]">
+
+
+	
+		<input class="btn cbi-button cbi-button-apply" type="submit" name="cbid.table.1.apply" id="cbid.table.1.apply" value="应用" />
+	
+</div>
+</td>
+
+
+</tr><tr class="tr cbi-section-table-row cbi-rowstyle-2" id="cbi-table-2"><td class="td cbi-value-field" data-name="state" data-widget="cfg_check" data-title="状态">
+<div id="cbi-table-2-state" data-index="" data-depends="[]">
+
+
+<div>
+
+     <div style="color: green; font-weight:bold;">
+启用
+</div>
+</div>
+</div>
+</td>
+
+
+<td class="td cbi-value-field" data-name="name" data-widget="dvalue" data-title="配置文件名">
+<div id="cbi-table-2-name" data-index="" data-depends="[]">
+
+
+终极.yaml
+<input type="hidden" id="cbid.table.2.name" value="终极.yaml" />
+</div>
+</td>
+
+
+<td class="td cbi-value-field" data-name="name" data-widget="sub_info_show" data-title="订阅信息">
+<div id="cbi-table-2-name" data-index="" data-depends="[]">
+
+
+<style>
+.sub_div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: nowrap;
+    width: calc(100% - 24px);
+    box-sizing: border-box;
+    min-width: 280px;
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+.sub_div > span:first-child {
+    flex: 1;
+    min-width: 0;
+}
+
+.sub_tab{
+    display: block;
+    white-space: nowrap;
+    font-size: 12px;
+    margin: 0;
+    opacity: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.sub_tab_show{
+    display: block;
+    white-space: nowrap;
+    font-size: 12px;
+    margin: 0;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+    opacity: 1;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.sub_setting{
+    display: inline-block;
+    white-space: nowrap;
+    margin: 0;
+    opacity: 1;
+    vertical-align: middle;
+    line-height: 0;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.sub_setting img {
+    vertical-align: middle;
+    display: inline-block;
+    transition: opacity 0.3s ease;
+}
+
+.sub_setting:hover img {
+    opacity: 0.7;
+}
+
+.text_show{
+    color: #333333;
+    line-height: 1.2;
+}
+
+.progress_bar_bg {
+    border: 1px solid #999999;
+    background-color: #f5f5f5;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 220px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    height: 36px;
+}
+
+.progress_bar_high {
+    background-color: #9edd9e;
+}
+
+.progress_bar_medium {
+    background-color: #ffc99f;
+}
+
+.progress_bar_low {
+    background-color: #ffb9b9;
+}
+
+:root[data-darkmode="true"] #icon_wrench {
+    -webkit-filter: invert(1);
+    filter: invert(1);
+}
+
+:root[data-darkmode="true"] #icon_arrow {
+    -webkit-filter: invert(1);
+    filter: invert(1);
+}
+
+:root[data-darkmode="true"] .text_show {
+    color: #e0e0e0;
+    line-height: 1.2;
+}
+
+:root[data-darkmode="true"] .progress_bar_bg {
+    border: 1px solid #666666;
+    background-color: #333333;
+}
+
+:root[data-darkmode="true"] .progress_bar_high {
+    background-color: #5da05d;
+}
+
+:root[data-darkmode="true"] .progress_bar_medium {
+    background-color: #cc8550;
+}
+
+:root[data-darkmode="true"] .progress_bar_low {
+    background-color: #cc6262;
+}
+
+@media (max-width: 1024px) {
+    .sub_tab, .sub_tab_show {
+        font-size: 11px;
+    }
+    
+    .progress_bar_bg {
+        min-width: 220px;
+    }
+    
+    .sub_div {
+        gap: 6px;
+        width: calc(100% - 20px);
+        margin: 0 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sub_tab, .sub_tab_show {
+        font-size: 10px;
+    }
+    
+    .progress_bar_bg {
+        min-width: 200px;
+    }
+    
+    .sub_setting img {
+        height: 18px !important;
+    }
+    
+    .sub_div {
+        gap: 4px;
+        width: calc(100% - 16px);
+        margin: 0 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sub_tab, .sub_tab_show {
+        font-size: 9px;
+    }
+    
+    .progress_bar_bg {
+        min-width: 180px !important;
+    }
+    
+    .sub_setting img {
+        height: 16px !important;
+    }
+    
+    .sub_div {
+        gap: 2px;
+        width: calc(100% - 12px);
+        margin: 0 6px;
+    }
+}
+
+@media (max-width: 320px) {
+    .sub_tab, .sub_tab_show {
+        font-size: 8px;
+    }
+    
+    .progress_bar_bg {
+        min-width: 160px !important;
+    }
+    
+    .sub_setting img {
+        height: 14px !important;
+    }
+    
+    .sub_div {
+        width: calc(100% - 8px);
+        margin: 0 4px;
+    }
+}
+
+.sub_div * {
+    flex-shrink: 0;
+}
+
+.sub_div > span:first-child {
+    flex-shrink: 1;
+}
+</style>
+
+
+
+<div class="sub_div">
+    <span id='346' class="sub_tab"></span>
+    <span class="sub_setting">
+        <img id="icon_arrow" src='/luci-static/resources/openclash/img/arrow-clockwise-light.svg' height="20px" title='刷新' alt='刷新' onclick='return sub_info_refresh_346(this)'>
+    </span>
+    <span class="sub_setting">
+        <img id="icon_wrench" src='/luci-static/resources/openclash/img/wrench-light.svg' height="20px" title='指定订阅信息获取地址' alt='指定订阅信息获取地址' onclick='return set_subinfo_url_346(this,"终极")'>
+    </span>
+</div>
+
+<script type="text/javascript">//<![CDATA[
+
+var retry_346 = 0;
+var s_346;
+sub_info_get_346();
+
+setTimeout(function(){
+    if (isDarkBackground(document.body)) {
+        document.documentElement.setAttribute('data-darkmode', 'true');
+    };
+}, 300);
+
+function progressbar_346(v, m, pc, np, f, t, tr) {
+    var screenWidth = window.innerWidth || document.documentElement.clientWidth;
+    var fontSize = '12px';
+    var minWidth = '220px';
+    var topPosition = tr == "null" ? '6px' : '2px';
+    
+    if (screenWidth <= 320) {
+        fontSize = '8px';
+        minWidth = '160px';
+        topPosition = tr == "null" ? '8px' : '4px';
+    } else if (screenWidth <= 480) {
+        fontSize = '9px';
+        minWidth = '180px';
+        topPosition = tr == "null" ? '7px' : '3px';
+    } else if (screenWidth <= 768) {
+        fontSize = '10px';
+        minWidth = '200px';
+        topPosition = tr == "null" ? '6px' : '3px';
+    } else if (screenWidth <= 1024) {
+        fontSize = '11px';
+        minWidth = '220px';
+        topPosition = tr == "null" ? '6px' : '2px';
+    }
+    
+    return String.format(
+        '<div class="progress_bar_bg" style="position:relative; border-radius: 6px; min-width: %s; display: flex; align-items: center;">' +
+        (pc >= 50 ? '<div class="progress_bar_high" style="width:%d%%; height:34px; border-radius: 6px">' : 
+        (pc < 50 && pc >= 20 ? '<div class="progress_bar_medium" style="width:%d%%; height:34px; border-radius: 6px">' : 
+        '<div class="progress_bar_low" style="width:%d%%; height:34px; border-radius: 6px">')) +
+        '<div style="position:absolute; left:0; top:50%%; transform: translateY(-50%%); text-align:center; width:100%%; padding:0 4px; box-sizing:border-box; line-height:1.2;">' +
+        '<small class="text_show" style="font-size:%s; line-height:1.2;">%s '+ (f ? f : '/') +' %s ' + (np ? "" : '(%s%%)') + 
+        (tr == "null" ? '<div style="visibility: hidden; line-height:1.2;">' : '<div style="visibility: visible; line-height:1.2;">') + 
+        '%s (剩余 %s 天)</small>' +
+        '</div>' +
+        '</div>' +
+        '</div>', 
+        minWidth, pc, fontSize, v, m, pc, t, tr
+    );
+};
+
+function sub_info_refresh_346()
+{
+	if (s_346) { clearTimeout(s_346);};
+	XHR.get('/cgi-bin/luci/admin/services/openclash/sub_info_get', {filename: "终极"}, function(x, status) {
+		if (x && x.status == 200 && status.sub_info != "" && status.sub_info != "No Sub Info Found") {
+			retry_346 = 0;
+			localStorage.setItem("sub_info_终极",JSON.stringify(status));
+			document.getElementById('346').className = "sub_tab_show";
+			document.getElementById('346').innerHTML = progressbar_346((status.surplus ? status.surplus : status.used), (status.total), (status.percent), false, false, (status.expire), (status.day_left));
+		}
+		else if ( x && x.status == 200 && status.sub_info == "No Sub Info Found" ) {
+			retry_346 = 0;
+			localStorage.setItem("sub_info_终极",JSON.stringify(status));
+			document.getElementById('346').className = "sub_tab_show";
+			document.getElementById('346').innerHTML = "<span>无订阅信息</span>";
+		}
+		else {
+			if (document.getElementById('346').innerHTML == "" || retry_346 > 2) {
+				document.getElementById('346').className = "sub_tab_show";
+				document.getElementById('346').innerHTML = "<span style=color:red>订阅信息获取失败</span>";
+			}
+			if (retry_346 > 2) {
+				retry_346 = 0;
+				localStorage.removeItem("sub_info_终极");
+			}
+			else {
+				retry_346 ++;
+				s_346 = setTimeout("sub_info_refresh_346()",1000*120);
+				return
+			}
+			
+		};
+		s_346 = setTimeout("sub_info_refresh_346()",1000*1800);
+	});
+};
+
+function sub_info_get_346()
+{
+	if (localStorage.getItem("sub_info_终极")) {
+		var save_info = JSON.parse(localStorage.getItem("sub_info_终极"));
+		document.getElementById('346').className = "sub_tab_show";
+		if (save_info.sub_info == "No Sub Info Found") {
+			document.getElementById('346').innerHTML = "<span>无订阅信息</span>";
+		}
+		else {
+			document.getElementById('346').innerHTML = progressbar_346((save_info.surplus ? save_info.surplus : save_info.used), (save_info.total), (save_info.percent ? save_info.percent : 0), false, false, (save_info.expire), (save_info.day_left ? save_info.day_left : 0));
+		}
+	}
+	else {
+		sub_info_refresh_346();
+	};
+	s_346 = setTimeout("sub_info_refresh_346()",1000*30);
+};
+
+function set_subinfo_url_346(btn, filename) {
+	var new_url = prompt("在此处粘贴并指定订阅信息来源的新地址：", "");
+	if (filename == null || filename == "") {
+		return false;
+	}
+	if (new_url == null) {
+		return false;
+	}
+	XHR.get('/cgi-bin/luci/admin/services/openclash/set_subinfo_url', {filename: filename, url: new_url}, function(x, status) {
+		if (x && x.status == 200 && status.info == "Success")
+		{
+			sub_info_refresh_346();
+			alert("指定新的订阅信息来源地址成功！");
+		}
+		else if (x && x.status == 200 && status.info == "Delete success")
+		{
+			sub_info_refresh_346();
+			alert("已删除指定的订阅信息来源地址！");
+		}
+		else
+		{
+			alert("指定新的订阅信息来源地址失败：\n" + status.info);
+		}
+	});
+};
+
+//]]></script>
+</div>
+</td>
+
+
+<td class="td cbi-value-field" data-name="mtime" data-widget="dvalue" data-title="更新时间">
+<div id="cbi-table-2-mtime" data-index="" data-depends="[]">
+
+
+2025-12-12 15:45:30
+<input type="hidden" id="cbid.table.2.mtime" value="2025-12-12 15:45:30" />
+</div>
+</td>
+
+
+<td class="td cbi-value-field" data-name="size" data-widget="dvalue" data-title="大小">
+<div id="cbi-table-2-size" data-index="" data-depends="[]">
+
+
+12.0 KB
+<input type="hidden" id="cbid.table.2.size" value="12.0 KB" />
+</div>
+</td>
+
+
+<td class="td cbi-value-field" data-name="switch" data-widget="other_button" data-title="切换">
+<div id="cbi-table-2-switch" data-index="" data-depends="[]">
+
+
+	
+		<input class="btn cbi-button cbi-input-apply" style="display: " type="submit" name="cbid.table.2.switch" id="cbid.table.2.switch" value="切换" />
+	
+</div>
+</td>
+
+
+<td class="td cbi-value-field" data-name="/etc/openclash/config/" data-widget="input_rename" data-title="重命名">
+<div id="cbi-table-2-/etc/openclash/config/" data-index="" data-depends="[]">
+
+
+<script type="text/javascript">
+//<![CDATA[
+function import_new_file_name(btn, file_path, file_name) {
+		var new_file_name = prompt("请在此输入新文件名（含扩展名）：", "");
+		if (new_file_name == null || new_file_name == "") {
+			return false;
+		}
+		if (file_path == "/etc/openclash/config/" && new_file_name.split('.').pop() != "yaml" && new_file_name.split('.').pop() != "yml") {
+			alert('不支持的扩展名！')
+			return false;
+		}
+		XHR.get('/cgi-bin/luci/admin/services/openclash/rename_file', {new_file_name: new_file_name, file_path: file_path, file_name: file_name}, function(x, status) {
+			if (x && x.status == 200)
+			{
+				location.reload();
+			}
+		});
+	}
+	//]]>
+</script>
+<input type="button" class="btn cbi-button cbi-input-apply" value="重命名" onclick="return import_new_file_name(this, '/etc/openclash/config/', '终极.yaml')" />
+</div>
+</td>
+
+
+<td class="td cbi-value-field" data-name="actions" data-widget="lvalue" data-title="其他">
+<div id="cbi-table-2-actions" data-index="" data-depends="[]">
+
+
+<div data-ui-widget="[&#34;Select&#34;,null,{&#34;copy&#34;:&#34;复制配置&#34;,&#34;edit&#34;:&#34;编辑&#34;,&#34;download&#34;:&#34;下载配置&#34;,&#34;remove&#34;:&#34;移除&#34;,&#34;download_run&#34;:&#34;下载运行配置&#34;},{&#34;optional&#34;:false,&#34;name&#34;:&#34;cbid.table.2.actions&#34;,&#34;id&#34;:&#34;cbid.table.2.actions&#34;,&#34;sort&#34;:[&#34;edit&#34;,&#34;copy&#34;,&#34;download&#34;,&#34;download_run&#34;,&#34;remove&#34;],&#34;widget&#34;:&#34;select&#34;,&#34;size&#34;:1}]"></div>
+</div>
+</td>
+
+
+<td class="td cbi-value-field" data-name="apply" data-widget="button" data-title="应用">
+<div id="cbi-table-2-apply" data-index="" data-depends="[]">
+
+
+	
+		<input class="btn cbi-button cbi-button-apply" type="submit" name="cbid.table.2.apply" id="cbid.table.2.apply" value="应用" />
+	
+</div>
+</td>
+
+
+</tr></table>
+
+	</div>
+<!-- /tblsection --></div></form>
+
+<script type="text/javascript">cbi_init();</script>
+<form method="post" enctype="multipart/form-data" action="/cgi-bin/luci/admin/services/openclash/config">
+			<input type="hidden" name="token" value="3b259d2e113221c90bb0741853d66e4e" />
+			<input type="hidden" name="cbi.submit" value="1" /><div class="cbi-map" id="cbi-provider_file_manage"><h2 name="content">代理（规则）集文件管理</h2><!-- tblsection -->
+<div class="cbi-section cbi-tblsection" id="cbi-table-table">
+	<div class="cbi-section-descr"></div>
+	<table class="table cbi-section-table"><tr class="tr cbi-section-table-titles anonymous"><th class="th cbi-section-table-cell" data-widget="button"> </th><th class="th cbi-section-table-cell" data-widget="button"> </th><th class="th cbi-section-table-cell" data-widget="button"> </th></tr><tr class="tr cbi-section-table-row cbi-rowstyle-1" id="cbi-table-1"><td class="td cbi-value-field" data-name="proxy_mg" data-widget="button">
+<div id="cbi-table-1-proxy_mg" data-index="" data-depends="[]">
+
+
+	
+		<input class="btn cbi-button cbi-button-reload" type="submit" name="cbid.table.1.proxy_mg" id="cbid.table.1.proxy_mg" value="代理集文件列表" />
+	
+</div>
+</td>
+
+
+<td class="td cbi-value-field" data-name="rule_mg" data-widget="button">
+<div id="cbi-table-1-rule_mg" data-index="" data-depends="[]">
+
+
+	
+		<input class="btn cbi-button cbi-button-reload" type="submit" name="cbid.table.1.rule_mg" id="cbid.table.1.rule_mg" value="规则集文件列表" />
+	
+</div>
+</td>
+
+
+<td class="td cbi-value-field" data-name="game_mg" data-widget="button">
+<div id="cbi-table-1-game_mg" data-index="" data-depends="[]">
+
+
+	
+		<input class="btn cbi-button cbi-button-reload" type="submit" name="cbid.table.1.game_mg" id="cbid.table.1.game_mg" value="游戏规则文件列表" />
+	
+</div>
+</td>
+
+
+</tr></table>
+
+	</div>
+<!-- /tblsection --></div></form>
+
+<script type="text/javascript">cbi_init();</script>
+<form method="post" enctype="multipart/form-data" action="/cgi-bin/luci/admin/services/openclash/config">
+			<input type="hidden" name="token" value="3b259d2e113221c90bb0741853d66e4e" />
+			<input type="hidden" name="cbi.submit" value="1" /><div class="cbi-map" id="cbi-openclash"><h2 name="content">配置文件编辑</h2><!-- tblsection -->
+<div class="cbi-section cbi-tblsection" id="cbi-table-table">
+	<div class="cbi-section-descr"><p align="center">支持语法检查，按钮 <b style=color:green><strong>F10</strong></b> 控制 Diff 显示，按钮 <b style=color:green><strong>F11</strong></b> 进入全屏编辑模式</p></div>
+	<table class="table cbi-section-table"><tr class="tr cbi-section-table-row cbi-rowstyle-2" id="cbi-table-1"><td class="td cbi-value-field" data-name="user" data-widget="tvalue">
+<div id="cbi-table-1-user" data-index="" data-depends="[]">
+
+
+	<textarea class="cbi-input-textarea"  style="width: 100%" data-update="change" name="cbid.table.1.user" id="cbid.table.1.user" rows="40" wrap="off"># 必读！！！
+# 最终安全隐身版：Hosts 强制指派 IP + DoH 加密兜底。
+# 效果：启动不查 DNS (运营商不知情)，国内解析走加密 (防窃听)。
+
+# 全局配置
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+allow-lan: true
+bind-address: &#34;*&#34;
+ipv6: false
+unified-delay: true
+tcp-concurrent: true
+log-level: warning
+find-process-mode: &#39;off&#39;
+global-client-fingerprint: chrome
+keep-alive-idle: 600
+keep-alive-interval: 15
+
+# --- 核心隐身配置 (Hosts) ---
+# 作用：Clash 启动时直接连接指定 IP，不发起 DNS 查询，运营商完全不知情。
+hosts:
+  # Mitce 机场 IP
+  &#39;app.mitce.net&#39;: 172.66.43.4
+  # 备用IP (如果不通，请去掉前面的#号，并注释掉上面那行):
+  # &#39;app.mitce.net&#39;: 172.66.40.252
+
+  # 赔钱机场 IP
+  &#39;dash.pqjc.site&#39;: 172.67.135.41
+  # 备用IP (如果不通，请去掉前面的#号，并注释掉上面那行):
+  # &#39;dash.pqjc.site&#39;: 104.21.26.21
+# ---------------------------
+
+profile:
+  store-selected: true
+  store-fake-ip: true
+
+# 机场订阅
+proxy-providers:
+  mitce:
+    url: &#34;https://app.mitce.net/?sid=211832&#38;token=74b94675eb400457886a&#34;
+    type: http
+    interval: 86400
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+      proxy: 直连
+
+  赔钱机场:
+    url: &#34;https://dash.pqjc.site/api/v1/client/subscribe?token=c66446707317ce38934e551ca3de9f48&#34;
+    type: http
+    interval: 86400
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+      proxy: 直连
+
+# 节点信息
+proxies:
+  - {name: 直连, type: direct}
+
+# 入站
+tun:
+  enable: true
+  stack: mixed
+  dns-hijack: [&#34;any:53&#34;, &#34;tcp://any:53&#34;]
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
+
+# DNS模块
+dns:
+  enable: true
+  listen: 0.0.0.0:7874
+  
+  # --- 高性能配置 ---
+  cache-algorithm: lru      # 最稳的算法
+  dns-cache-size: 4096      # 大缓存
+  use-hosts: true           # 必须开启！这是让上方 hosts 生效的关键
+  # ----------------
+  
+  ipv6: false
+  respect-rules: true
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter-mode: blacklist
+  fake-ip-filter:
+    - &#34;rule-set:Private / Domain,China / Domain&#34;
+    - &#34;+.msftconnecttest.com&#34;
+    - &#34;+.msftncsi.com&#34;
+    - &#34;time.*.com&#34;
+    - &#34;+.market.xiaomi.com&#34;
+    
+  # 基础解析 (国内直连)
+  # 使用加密 DoH，运营商只能看到你连了阿里/腾讯，看不到你在访问什么
+  nameserver:
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
+
+  # 节点解析 (安全兜底)
+  # 只有当上面 hosts 里的 IP 全部失效时，Clash 才会用这个加密 DNS 去查询
+  # 依然安全，因为这是 HTTPS 加密流量
+  proxy-server-nameserver:
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
+
+# 出站策略
+proxy-groups:
+  - {name: &#34;🐦‍⬛ Twitter&#34;, type: select, proxies: [美国自动, 港日韩自动, 台湾自动, 香港自动, 港台自动, 日本自动, 韩国自动, 新加坡自动, 自动选择, 全部节点, 直连]}
+  - {name: &#34;📷 Instagram&#34;, type: select, proxies: [台湾自动, 港日韩自动, 香港自动, 港台自动, 日本自动, 韩国自动, 新加坡自动, 美国自动, 自动选择, 全部节点, 直连]}
+  - {name: &#34;🇹🇼 台湾&#34;, type: select, proxies: [台湾自动, 港日韩自动, 香港自动, 港台自动, 日本自动, 韩国自动, 新加坡自动, 美国自动, 自动选择, 全部节点, 直连]}
+  - {name: &#34;🌟 AI&#34;, type: select, proxies: [美国自动, 日本自动, 港日韩自动, 台湾自动, 香港自动, 港台自动, 韩国自动, 新加坡自动, 自动选择, 全部节点, 直连]}
+  - {name: &#34;👽 GitHub&#34;, type: select, proxies: [港日韩自动, 台湾自动, 香港自动, 港台自动, 日本自动, 韩国自动, 新加坡自动, 美国自动, 自动选择, 全部节点, 直连]}
+  - {name: &#34;🎶 TikTok&#34;, type: select, proxies: [台湾自动, 港日韩自动, 香港自动, 港台自动, 日本自动, 韩国自动, 新加坡自动, 美国自动, 自动选择, 全部节点, 直连]}  
+  - {name: &#34;📘 Telegram&#34;, type: select, proxies: [港日韩自动, 台湾自动, 香港自动, 港台自动, 日本自动, 韩国自动, 新加坡自动, 美国自动, 自动选择, 全部节点, 直连]}
+  - {name: &#34;🔍 Google&#34;, type: select, proxies: [港日韩自动, 台湾自动, 香港自动, 港台自动, 日本自动, 韩国自动, 新加坡自动, 美国自动, 自动选择, 全部节点, 直连]}
+  - {name: &#34;🧲 YouTube&#34;, type: select, proxies: [港日韩自动, 台湾自动, 香港自动, 港台自动, 日本自动, 韩国自动, 新加坡自动, 美国自动, 自动选择, 全部节点, 直连]}
+  - {name: &#34;🇯🇵 日本&#34;, type: select, proxies: [日本自动, 港日韩自动, 台湾自动, 香港自动, 港台自动, 韩国自动, 新加坡自动, 美国自动, 自动选择, 全部节点, 直连]}
+  - {name: &#34;🔞 Pornhub&#34;, type: select, proxies: [港台自动, 港日韩自动, 台湾自动, 香港自动, 日本自动, 韩国自动, 新加坡自动, 美国自动, 自动选择, 全部节点, 直连]}
+  - {name: &#34;🎬 流媒体&#34;, type: select, proxies: [港日韩自动, 台湾自动, 香港自动, 港台自动, 日本自动, 韩国自动, 新加坡自动, 美国自动, 自动选择, 全部节点, 直连]}
+  - {name: &#34;🗽 国外&#34;, type: select, proxies: [港日韩自动, 台湾自动, 香港自动, 港台自动, 日本自动, 韩国自动, 新加坡自动, 美国自动, 自动选择, 全部节点, 直连]}
+  - {name: 国内, type: select, proxies: [直连, 港日韩自动, 台湾自动, 香港自动, 港台自动, 日本自动, 韩国自动, 新加坡自动, 美国自动, 自动选择, 全部节点, ]}
+  - {name: 台湾自动, type: url-test, include-all: true, tolerance: 20, interval: 180, filter: &#34;(?=.*(台|TW|(?i)Taiwan))^((?!(港|日|韩|新|深|美)).)*$&#34;}
+  - {name: 香港自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: &#34;(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美)).)*$&#34;}
+  - {name: 港台自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: &#34;(?=.*(港|HK|(?i)Hong|台|TW|(?i)Taiwan))^((?!(日|韩|新|深|美)).)*$&#34;}
+  - {name: 日本自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: &#34;(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美)).)*$&#34; }
+  - {name: 韩国自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: &#34;(?=.*(韩|KR|(?i)Korea))^((?!(港|台|日|新|美)).)*$&#34; }
+  - {name: 新加坡自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: &#34;(?=.*(新加坡|坡|狮城|SG|Singapore))^((?!(港|台|韩|日|美)).)*$&#34; }
+  - {name: 港日韩自动, type: url-test, include-all: true, tolerance: 20, interval: 200, filter: &#34;(?=.*(港|HK|(?i)Hong|日|JP|(?i)Japan|韩|KR|(?i)Korea))^((?!(台|新|美)).)*$&#34;}
+  - {name: 美国自动, type: url-test, include-all: true, tolerance: 30, interval: 180, filter: &#34;(?=.*(美|US|(?i)States|America))^((?!(港|台|日|韩|新)).)*$&#34;}
+  - {name: 自动选择, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: &#34;^((?!(直连)).)*$&#34;}
+  - {name: 全部节点, type: select, include-all: true}
+
+# 规则匹配
+rules:
+  - RULE-SET,🐦‍⬛ Twitter / Domain,🐦‍⬛ Twitter
+  - RULE-SET,📷 Instagram / Domain,📷 Instagram  
+  - RULE-SET,🇹🇼 台湾 / Domain,🇹🇼 台湾    
+  - RULE-SET,🌟 AI / Domain,🌟 AI
+  - RULE-SET,👽 GitHub / Domain,👽 GitHub
+  - RULE-SET,🎶 TikTok / Domain,🎶 TikTok
+  - RULE-SET,📘 Telegram / Domain,📘 Telegram
+  - RULE-SET,🔍 Google / Domain,🔍 Google
+  - RULE-SET,🧲 YouTube / Domain,🧲 YouTube
+  - RULE-SET,🧲 YouTube1 / Domain,🧲 YouTube
+  - RULE-SET,🇯🇵 日本 / Domain,🇯🇵 日本,no-resolve
+  - RULE-SET,🔞 Pornhub / Domain,🔞 Pornhub
+  - RULE-SET,🎬 HBO / Domain,🎬 流媒体
+  - RULE-SET,🎬 Disney / Domain,🎬 流媒体
+  - RULE-SET,🎬 Netflix / Domain,🎬 流媒体
+  - RULE-SET,🎬 Spotify / Domain,🎬 流媒体
+  - RULE-SET,🗽 自定义 / Domain,🗽 国外
+  - RULE-SET,🗽 国外 / Domain,🗽 国外  
+  - RULE-SET,Direct / Domain,国内
+  - RULE-SET,China / Domain,国内
+  - RULE-SET,China / IP,国内,no-resolve
+  - RULE-SET,Private / Domain,国内
+  - MATCH,国内
+
+# 规则集
+rule-anchor:
+  ip: &#38;ip {type: http, interval: 86400, behavior: ipcidr, format: mrs}
+  domain: &#38;domain {type: http, interval: 86400, behavior: domain, format: mrs}
+  class: &#38;class {type: http, interval: 86400, behavior: classical, format: text}
+
+rule-providers: 
+  🐦‍⬛ Twitter / Domain: {&#60;&#60;: *class, url: &#34;https://gh-proxy.com/https://raw.githubusercontent.com/ghfree123/freedom/refs/heads/main/Twitter.list&#34;}
+  📷 Instagram / Domain: {&#60;&#60;: *class, url: &#34;https://gh-proxy.com/https://raw.githubusercontent.com/ghfree123/freedom/refs/heads/main/Instagram.list&#34;}
+  🇹🇼 台湾 / Domain: {&#60;&#60;: *class, url: &#34;https://gh-proxy.com/https://raw.githubusercontent.com/ghfree123/freedom/refs/heads/main/taiwan9.list&#34;}
+  🌟 AI / Domain: {&#60;&#60;: *class, url: &#34;https://gh-proxy.com/https://raw.githubusercontent.com/ghfree123/freedom/refs/heads/main/AI3.list&#34;}
+  👽 GitHub / Domain: {&#60;&#60;: *class, url: &#34;https://gh-proxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GitHub/GitHub.list&#34;}
+  🎶 TikTok / Domain: {&#60;&#60;: *class, url: &#34;https://gh-proxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/TikTok/TikTok.list&#34;}
+  📘 Telegram / Domain: {&#60;&#60;: *class, url: &#34;https://gh-proxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.list&#34;}
+  🔍 Google / Domain: {&#60;&#60;: *class, url: &#34;https://gh-proxy.com/https://raw.githubusercontent.com/ghfree123/freedom/refs/heads/main/Google.list&#34;}
+  🧲 YouTube / Domain: {&#60;&#60;: *class, url: &#34;https://gh-proxy.com/https://raw.githubusercontent.com/ghfree123/freedom/refs/heads/main/YouTube.list&#34;}
+  🧲 YouTube1 / Domain: {&#60;&#60;: *class, url: &#34;https://gh-proxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.list&#34;}
+  🇯🇵 日本 / Domain: {&#60;&#60;: *class, url: &#34;https://gh-proxy.com/https://raw.githubusercontent.com/ghfree123/freedom/refs/heads/main/NHK.list&#34;}
+  🔞 Pornhub / Domain: {&#60;&#60;: *class, url: &#34;https://gh-proxy.com/https://raw.githubusercontent.com/ghfree123/freedom/refs/heads/main/Pornhub.list&#34;}
+  🎬 HBO / Domain: {&#60;&#60;: *class, url: &#34;https://gh-proxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/HBO/HBO.list&#34;}
+  🎬 Disney / Domain: {&#60;&#60;: *class, url: &#34;https://gh-proxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Disney/Disney.list&#34;}
+  🎬 Netflix / Domain: {&#60;&#60;: *class, url: &#34;https://gh-proxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix.list&#34;}
+  🎬 Spotify / Domain: {&#60;&#60;: *class, url: &#34;https://gh-proxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.list&#34;}
+  🗽 自定义 / Domain: {&#60;&#60;: *class, url: &#34;https://gh-proxy.com/https://raw.githubusercontent.com/ghfree123/freedom/refs/heads/main/DIY7.list&#34;}
+  🗽 国外 / Domain: {&#60;&#60;: *class, url: &#34;https://gh-proxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Global/Global.list&#34;}
+  Direct / Domain: {&#60;&#60;: *class, url: &#34;https://gh-proxy.com/https://raw.githubusercontent.com/liandu2024/clash/refs/heads/main/list/Direct.list&#34;}
+  Private / Domain: {&#60;&#60;: *domain, url: &#34;https://gh-proxy.com/https://github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geosite/private.mrs&#34;}
+  China / Domain: {&#60;&#60;: *domain, url: &#34;https://gh-proxy.com/https://github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geosite/cn.mrs&#34;}
+  China / IP: {&#60;&#60;: *ip, url: &#34;https://gh-proxy.com/https://github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geoip/cn.mrs&#34;}</textarea>
+</div>
+</td>
+
+
+<td class="td cbi-value-field" data-name="default" data-widget="tvalue">
+<div id="cbi-table-1-default" data-index="" data-depends="[]">
+
+
+	<textarea class="cbi-input-textarea"  style="width: 100%" data-update="change" name="cbid.table.1.default" id="cbid.table.1.default" rows="40" wrap="off" readonly="true">---
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+allow-lan: true
+bind-address: &#34;*&#34;
+ipv6: false
+unified-delay: true
+tcp-concurrent: true
+log-level: warning
+find-process-mode: &#39;off&#39;
+global-client-fingerprint: chrome
+keep-alive-idle: 600
+keep-alive-interval: 15
+hosts:
+  app.mitce.net: 172.66.43.4
+  dash.pqjc.site: 172.67.135.41
+profile:
+  store-selected: true
+  store-fake-ip: true
+proxy-providers:
+  mitce:
+    url: https://app.mitce.net/?sid=211832&#38;token=74b94675eb400457886a
+    type: http
+    interval: 86400
+    health-check:
+      enable: true
+      url: https://cp.cloudflare.com/generate_204
+      interval: 180
+      proxy: 直连
+    path: &#34;./proxy_provider/mitce&#34;
+  赔钱机场:
+    url: https://dash.pqjc.site/api/v1/client/subscribe?token=c66446707317ce38934e551ca3de9f48
+    type: http
+    interval: 86400
+    health-check:
+      enable: true
+      url: https://cp.cloudflare.com/generate_204
+      interval: 180
+      proxy: 直连
+    path: &#34;./proxy_provider/赔钱机场&#34;
+proxies:
+- name: 直连
+  type: direct
+dns:
+  enable: true
+  listen: 0.0.0.0:7874
+  cache-algorithm: lru
+  dns-cache-size: 4096
+  use-hosts: true
+  ipv6: false
+  respect-rules: true
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter-mode: blacklist
+  fake-ip-filter:
+  - rule-set:Private / Domain,China / Domain
+  - &#34;+.msftconnecttest.com&#34;
+  - &#34;+.msftncsi.com&#34;
+  - time.*.com
+  - &#34;+.market.xiaomi.com&#34;
+  - &#34;*.lan&#34;
+  - &#34;*.localdomain&#34;
+  - &#34;*.example&#34;
+  - &#34;*.invalid&#34;
+  - &#34;*.localhost&#34;
+  - &#34;*.test&#34;
+  - &#34;*.local&#34;
+  - &#34;*.home.arpa&#34;
+  - time.*.gov
+  - time.*.edu.cn
+  - time.*.apple.com
+  - time-ios.apple.com
+  - time1.*.com
+  - time2.*.com
+  - time3.*.com
+  - time4.*.com
+  - time5.*.com
+  - time6.*.com
+  - time7.*.com
+  - ntp.*.com
+  - ntp1.*.com
+  - ntp2.*.com
+  - ntp3.*.com
+  - ntp4.*.com
+  - ntp5.*.com
+  - ntp6.*.com
+  - ntp7.*.com
+  - &#34;*.time.edu.cn&#34;
+  - &#34;*.ntp.org.cn&#34;
+  - &#34;+.pool.ntp.org&#34;
+  - time1.cloud.tencent.com
+  - music.163.com
+  - &#34;*.music.163.com&#34;
+  - &#34;*.126.net&#34;
+  - musicapi.taihe.com
+  - music.taihe.com
+  - songsearch.kugou.com
+  - trackercdn.kugou.com
+  - &#34;*.kuwo.cn&#34;
+  - api-jooxtt.sanook.com
+  - api.joox.com
+  - joox.com
+  - y.qq.com
+  - &#34;*.y.qq.com&#34;
+  - streamoc.music.tc.qq.com
+  - mobileoc.music.tc.qq.com
+  - isure.stream.qqmusic.qq.com
+  - dl.stream.qqmusic.qq.com
+  - aqqmusic.tc.qq.com
+  - amobile.music.tc.qq.com
+  - &#34;*.xiami.com&#34;
+  - &#34;*.music.migu.cn&#34;
+  - music.migu.cn
+  - localhost.ptlogin2.qq.com
+  - localhost.sec.qq.com
+  - &#34;+.qq.com&#34;
+  - &#34;+.tencent.com&#34;
+  - &#34;+.srv.nintendo.net&#34;
+  - &#34;*.n.n.srv.nintendo.net&#34;
+  - &#34;+.stun.playstation.net&#34;
+  - xbox.*.*.microsoft.com
+  - &#34;*.*.xboxlive.com&#34;
+  - xbox.*.microsoft.com
+  - xnotify.xboxlive.com
+  - &#34;+.battlenet.com.cn&#34;
+  - &#34;+.wotgame.cn&#34;
+  - &#34;+.wggames.cn&#34;
+  - &#34;+.wowsgame.cn&#34;
+  - &#34;+.wargaming.net&#34;
+  - proxy.golang.org
+  - stun.*.*
+  - stun.*.*.*
+  - &#34;+.stun.*.*&#34;
+  - &#34;+.stun.*.*.*&#34;
+  - &#34;+.stun.*.*.*.*&#34;
+  - &#34;+.stun.*.*.*.*.*&#34;
+  - heartbeat.belkin.com
+  - &#34;*.linksys.com&#34;
+  - &#34;*.linksyssmartwifi.com&#34;
+  - &#34;*.router.asus.com&#34;
+  - mesu.apple.com
+  - swscan.apple.com
+  - swquery.apple.com
+  - swdownload.apple.com
+  - swcdn.apple.com
+  - swdist.apple.com
+  - lens.l.google.com
+  - stun.l.google.com
+  - na.b.g-tun.com
+  - &#34;+.nflxvideo.net&#34;
+  - &#34;*.square-enix.com&#34;
+  - &#34;*.finalfantasyxiv.com&#34;
+  - &#34;*.ffxiv.com&#34;
+  - &#34;*.ff14.sdo.com&#34;
+  - ff.dorado.sdo.com
+  - &#34;*.mcdn.bilivideo.cn&#34;
+  - &#34;+.media.dssott.com&#34;
+  - shark007.net
+  - Mijia Cloud
+  - &#34;+.cmbchina.com&#34;
+  - &#34;+.cmbimg.com&#34;
+  - local.adguard.org
+  - &#34;+.sandai.net&#34;
+  - &#34;+.n0808.com&#34;
+  - &#34;+.services.googleapis.cn&#34;
+  - geosite:cn
+  nameserver:
+  - https://dns.alidns.com/dns-query
+  - https://doh.pub/dns-query
+  proxy-server-nameserver:
+  - https://dns.alidns.com/dns-query
+  - https://doh.pub/dns-query
+proxy-groups:
+- name: &#34;\U0001F426‍⬛ Twitter&#34;
+  type: select
+  proxies:
+  - 美国自动
+  - 港日韩自动
+  - 台湾自动
+  - 香港自动
+  - 港台自动
+  - 日本自动
+  - 韩国自动
+  - 新加坡自动
+  - 自动选择
+  - 全部节点
+  - 直连
+- name: &#34;\U0001F4F7 Instagram&#34;
+  type: select
+  proxies:
+  - 台湾自动
+  - 港日韩自动
+  - 香港自动
+  - 港台自动
+  - 日本自动
+  - 韩国自动
+  - 新加坡自动
+  - 美国自动
+  - 自动选择
+  - 全部节点
+  - 直连
+- name: &#34;\U0001F1F9\U0001F1FC 台湾&#34;
+  type: select
+  proxies:
+  - 台湾自动
+  - 港日韩自动
+  - 香港自动
+  - 港台自动
+  - 日本自动
+  - 韩国自动
+  - 新加坡自动
+  - 美国自动
+  - 自动选择
+  - 全部节点
+  - 直连
+- name: &#34;\U0001F31F AI&#34;
+  type: select
+  proxies:
+  - 美国自动
+  - 日本自动
+  - 港日韩自动
+  - 台湾自动
+  - 香港自动
+  - 港台自动
+  - 韩国自动
+  - 新加坡自动
+  - 自动选择
+  - 全部节点
+  - 直连
+- name: &#34;\U0001F47D GitHub&#34;
+  type: select
+  proxies:
+  - 港日韩自动
+  - 台湾自动
+  - 香港自动
+  - 港台自动
+  - 日本自动
+  - 韩国自动
+  - 新加坡自动
+  - 美国自动
+  - 自动选择
+  - 全部节点
+  - 直连
+- name: &#34;\U0001F3B6 TikTok&#34;
+  type: select
+  proxies:
+  - 台湾自动
+  - 港日韩自动
+  - 香港自动
+  - 港台自动
+  - 日本自动
+  - 韩国自动
+  - 新加坡自动
+  - 美国自动
+  - 自动选择
+  - 全部节点
+  - 直连
+- name: &#34;\U0001F4D8 Telegram&#34;
+  type: select
+  proxies:
+  - 港日韩自动
+  - 台湾自动
+  - 香港自动
+  - 港台自动
+  - 日本自动
+  - 韩国自动
+  - 新加坡自动
+  - 美国自动
+  - 自动选择
+  - 全部节点
+  - 直连
+- name: &#34;\U0001F50D Google&#34;
+  type: select
+  proxies:
+  - 港日韩自动
+  - 台湾自动
+  - 香港自动
+  - 港台自动
+  - 日本自动
+  - 韩国自动
+  - 新加坡自动
+  - 美国自动
+  - 自动选择
+  - 全部节点
+  - 直连
+- name: &#34;\U0001F9F2 YouTube&#34;
+  type: select
+  proxies:
+  - 港日韩自动
+  - 台湾自动
+  - 香港自动
+  - 港台自动
+  - 日本自动
+  - 韩国自动
+  - 新加坡自动
+  - 美国自动
+  - 自动选择
+  - 全部节点
+  - 直连
+- name: &#34;\U0001F1EF\U0001F1F5 日本&#34;
+  type: select
+  proxies:
+  - 日本自动
+  - 港日韩自动
+  - 台湾自动
+  - 香港自动
+  - 港台自动
+  - 韩国自动
+  - 新加坡自动
+  - 美国自动
+  - 自动选择
+  - 全部节点
+  - 直连
+- name: &#34;\U0001F51E Pornhub&#34;
+  type: select
+  proxies:
+  - 港台自动
+  - 港日韩自动
+  - 台湾自动
+  - 香港自动
+  - 日本自动
+  - 韩国自动
+  - 新加坡自动
+  - 美国自动
+  - 自动选择
+  - 全部节点
+  - 直连
+- name: &#34;\U0001F3AC 流媒体&#34;
+  type: select
+  proxies:
+  - 港日韩自动
+  - 台湾自动
+  - 香港自动
+  - 港台自动
+  - 日本自动
+  - 韩国自动
+  - 新加坡自动
+  - 美国自动
+  - 自动选择
+  - 全部节点
+  - 直连
+- name: &#34;\U0001F5FD 国外&#34;
+  type: select
+  proxies:
+  - 港日韩自动
+  - 台湾自动
+  - 香港自动
+  - 港台自动
+  - 日本自动
+  - 韩国自动
+  - 新加坡自动
+  - 美国自动
+  - 自动选择
+  - 全部节点
+  - 直连
+- name: 国内
+  type: select
+  proxies:
+  - 直连
+  - 港日韩自动
+  - 台湾自动
+  - 香港自动
+  - 港台自动
+  - 日本自动
+  - 韩国自动
+  - 新加坡自动
+  - 美国自动
+  - 自动选择
+  - 全部节点
+- name: 台湾自动
+  type: url-test
+  include-all: true
+  tolerance: 50
+  interval: 180
+  filter: &#34;(?=.*(台|TW|(?i)Taiwan))^((?!(港|日|韩|新|深|美)).)*$&#34;
+  url: https://cp.cloudflare.com/generate_204
+- name: 香港自动
+  type: url-test
+  include-all: true
+  tolerance: 50
+  interval: 180
+  filter: &#34;(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美)).)*$&#34;
+  url: https://cp.cloudflare.com/generate_204
+- name: 港台自动
+  type: url-test
+  include-all: true
+  tolerance: 50
+  interval: 180
+  filter: &#34;(?=.*(港|HK|(?i)Hong|台|TW|(?i)Taiwan))^((?!(日|韩|新|深|美)).)*$&#34;
+  url: https://cp.cloudflare.com/generate_204
+- name: 日本自动
+  type: url-test
+  include-all: true
+  tolerance: 50
+  interval: 180
+  filter: &#34;(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美)).)*$&#34;
+  url: https://cp.cloudflare.com/generate_204
+- name: 韩国自动
+  type: url-test
+  include-all: true
+  tolerance: 50
+  interval: 180
+  filter: &#34;(?=.*(韩|KR|(?i)Korea))^((?!(港|台|日|新|美)).)*$&#34;
+  url: https://cp.cloudflare.com/generate_204
+- name: 新加坡自动
+  type: url-test
+  include-all: true
+  tolerance: 50
+  interval: 180
+  filter: &#34;(?=.*(新加坡|坡|狮城|SG|Singapore))^((?!(港|台|韩|日|美)).)*$&#34;
+  url: https://cp.cloudflare.com/generate_204
+- name: 港日韩自动
+  type: url-test
+  include-all: true
+  tolerance: 50
+  interval: 180
+  filter: &#34;(?=.*(港|HK|(?i)Hong|日|JP|(?i)Japan|韩|KR|(?i)Korea))^((?!(台|新|美)).)*$&#34;
+  url: https://cp.cloudflare.com/generate_204
+- name: 美国自动
+  type: url-test
+  include-all: true
+  tolerance: 50
+  interval: 180
+  filter: &#34;(?=.*(美|US|(?i)States|America))^((?!(港|台|日|韩|新)).)*$&#34;
+  url: https://cp.cloudflare.com/generate_204
+- name: 自动选择
+  type: url-test
+  include-all: true
+  tolerance: 50
+  interval: 180
+  filter: &#34;^((?!(直连)).)*$&#34;
+  url: https://cp.cloudflare.com/generate_204
+- name: 全部节点
+  type: select
+  include-all: true
+rules:
+- &#34;RULE-SET,\U0001F426‍⬛ Twitter / Domain,\U0001F426‍⬛ Twitter&#34;
+- &#34;RULE-SET,\U0001F4F7 Instagram / Domain,\U0001F4F7 Instagram&#34;
+- &#34;RULE-SET,\U0001F1F9\U0001F1FC 台湾 / Domain,\U0001F1F9\U0001F1FC 台湾&#34;
+- &#34;RULE-SET,\U0001F31F AI / Domain,\U0001F31F AI&#34;
+- &#34;RULE-SET,\U0001F47D GitHub / Domain,\U0001F47D GitHub&#34;
+- &#34;RULE-SET,\U0001F3B6 TikTok / Domain,\U0001F3B6 TikTok&#34;
+- &#34;RULE-SET,\U0001F4D8 Telegram / Domain,\U0001F4D8 Telegram&#34;
+- &#34;RULE-SET,\U0001F50D Google / Domain,\U0001F50D Google&#34;
+- &#34;RULE-SET,\U0001F9F2 YouTube / Domain,\U0001F9F2 YouTube&#34;
+- &#34;RULE-SET,\U0001F9F2 YouTube1 / Domain,\U0001F9F2 YouTube&#34;
+- &#34;RULE-SET,\U0001F1EF\U0001F1F5 日本 / Domain,\U0001F1EF\U0001F1F5 日本,no-resolve&#34;
+- &#34;RULE-SET,\U0001F51E Pornhub / Domain,\U0001F51E Pornhub&#34;
+- &#34;RULE-SET,\U0001F3AC HBO / Domain,\U0001F3AC 流媒体&#34;
+- &#34;RULE-SET,\U0001F3AC Disney / Domain,\U0001F3AC 流媒体&#34;
+- &#34;RULE-SET,\U0001F3AC Netflix / Domain,\U0001F3AC 流媒体&#34;
+- &#34;RULE-SET,\U0001F3AC Spotify / Domain,\U0001F3AC 流媒体&#34;
+- &#34;RULE-SET,\U0001F5FD 自定义 / Domain,\U0001F5FD 国外&#34;
+- &#34;RULE-SET,\U0001F5FD 国外 / Domain,\U0001F5FD 国外&#34;
+- RULE-SET,Direct / Domain,国内
+- RULE-SET,China / Domain,国内
+- RULE-SET,China / IP,国内,no-resolve
+- RULE-SET,Private / Domain,国内
+- MATCH,国内
+rule-anchor:
+  ip:
+    type: http
+    interval: 86400
+    behavior: ipcidr
+    format: mrs
+  domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+  class:
+    type: http
+    interval: 86400
+    behavior: classical
+    format: text
+rule-providers:
+  &#34;\U0001F426‍⬛ Twitter / Domain&#34;:
+    type: http
+    interval: 86400
+    behavior: classical
+    format: text
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/ghfree123/freedom/refs/heads/main/Twitter.list
+    path: &#34;./rule_provider/\U0001F426‍⬛ Twitter / Domain&#34;
+  &#34;\U0001F4F7 Instagram / Domain&#34;:
+    type: http
+    interval: 86400
+    behavior: classical
+    format: text
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/ghfree123/freedom/refs/heads/main/Instagram.list
+    path: &#34;./rule_provider/\U0001F4F7 Instagram / Domain&#34;
+  &#34;\U0001F1F9\U0001F1FC 台湾 / Domain&#34;:
+    type: http
+    interval: 86400
+    behavior: classical
+    format: text
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/ghfree123/freedom/refs/heads/main/taiwan9.list
+    path: &#34;./rule_provider/\U0001F1F9\U0001F1FC 台湾 / Domain&#34;
+  &#34;\U0001F31F AI / Domain&#34;:
+    type: http
+    interval: 86400
+    behavior: classical
+    format: text
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/ghfree123/freedom/refs/heads/main/AI3.list
+    path: &#34;./rule_provider/\U0001F31F AI / Domain&#34;
+  &#34;\U0001F47D GitHub / Domain&#34;:
+    type: http
+    interval: 86400
+    behavior: classical
+    format: text
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GitHub/GitHub.list
+    path: &#34;./rule_provider/\U0001F47D GitHub / Domain&#34;
+  &#34;\U0001F3B6 TikTok / Domain&#34;:
+    type: http
+    interval: 86400
+    behavior: classical
+    format: text
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/TikTok/TikTok.list
+    path: &#34;./rule_provider/\U0001F3B6 TikTok / Domain&#34;
+  &#34;\U0001F4D8 Telegram / Domain&#34;:
+    type: http
+    interval: 86400
+    behavior: classical
+    format: text
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.list
+    path: &#34;./rule_provider/\U0001F4D8 Telegram / Domain&#34;
+  &#34;\U0001F50D Google / Domain&#34;:
+    type: http
+    interval: 86400
+    behavior: classical
+    format: text
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/ghfree123/freedom/refs/heads/main/Google.list
+    path: &#34;./rule_provider/\U0001F50D Google / Domain&#34;
+  &#34;\U0001F9F2 YouTube / Domain&#34;:
+    type: http
+    interval: 86400
+    behavior: classical
+    format: text
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/ghfree123/freedom/refs/heads/main/YouTube.list
+    path: &#34;./rule_provider/\U0001F9F2 YouTube / Domain&#34;
+  &#34;\U0001F9F2 YouTube1 / Domain&#34;:
+    type: http
+    interval: 86400
+    behavior: classical
+    format: text
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.list
+    path: &#34;./rule_provider/\U0001F9F2 YouTube1 / Domain&#34;
+  &#34;\U0001F1EF\U0001F1F5 日本 / Domain&#34;:
+    type: http
+    interval: 86400
+    behavior: classical
+    format: text
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/ghfree123/freedom/refs/heads/main/NHK.list
+    path: &#34;./rule_provider/\U0001F1EF\U0001F1F5 日本 / Domain&#34;
+  &#34;\U0001F51E Pornhub / Domain&#34;:
+    type: http
+    interval: 86400
+    behavior: classical
+    format: text
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/ghfree123/freedom/refs/heads/main/Pornhub.list
+    path: &#34;./rule_provider/\U0001F51E Pornhub / Domain&#34;
+  &#34;\U0001F3AC HBO / Domain&#34;:
+    type: http
+    interval: 86400
+    behavior: classical
+    format: text
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/HBO/HBO.list
+    path: &#34;./rule_provider/\U0001F3AC HBO / Domain&#34;
+  &#34;\U0001F3AC Disney / Domain&#34;:
+    type: http
+    interval: 86400
+    behavior: classical
+    format: text
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Disney/Disney.list
+    path: &#34;./rule_provider/\U0001F3AC Disney / Domain&#34;
+  &#34;\U0001F3AC Netflix / Domain&#34;:
+    type: http
+    interval: 86400
+    behavior: classical
+    format: text
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix.list
+    path: &#34;./rule_provider/\U0001F3AC Netflix / Domain&#34;
+  &#34;\U0001F3AC Spotify / Domain&#34;:
+    type: http
+    interval: 86400
+    behavior: classical
+    format: text
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.list
+    path: &#34;./rule_provider/\U0001F3AC Spotify / Domain&#34;
+  &#34;\U0001F5FD 自定义 / Domain&#34;:
+    type: http
+    interval: 86400
+    behavior: classical
+    format: text
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/ghfree123/freedom/refs/heads/main/DIY7.list
+    path: &#34;./rule_provider/\U0001F5FD 自定义 / Domain&#34;
+  &#34;\U0001F5FD 国外 / Domain&#34;:
+    type: http
+    interval: 86400
+    behavior: classical
+    format: text
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Global/Global.list
+    path: &#34;./rule_provider/\U0001F5FD 国外 / Domain&#34;
+  Direct / Domain:
+    type: http
+    interval: 86400
+    behavior: classical
+    format: text
+    url: https://gh-proxy.com/https://raw.githubusercontent.com/liandu2024/clash/refs/heads/main/list/Direct.list
+    path: &#34;./rule_provider/Direct / Domain&#34;
+  Private / Domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://gh-proxy.com/https://github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geosite/private.mrs
+    path: &#34;./rule_provider/Private / Domain&#34;
+  China / Domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: https://gh-proxy.com/https://github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geosite/cn.mrs
+    path: &#34;./rule_provider/China / Domain&#34;
+  China / IP:
+    type: http
+    interval: 86400
+    behavior: ipcidr
+    format: mrs
+    url: https://gh-proxy.com/https://github.com/metacubex/meta-rules-dat/raw/refs/heads/meta/geo/geoip/cn.mrs
+    path: &#34;./rule_provider/China / IP&#34;
+authentication:
+- Clash:7mWyiCLQ
+mode: rule
+external-controller: 0.0.0.0:9090
+secret: &#39;123456&#39;
+external-ui: &#34;/usr/share/openclash/ui&#34;
+external-ui-name: metacubexd
+geodata-loader: standard
+geox-url:
+  mmdb: https://testingcf.jsdelivr.net/gh/alecthw/mmdb_china_ip_list@release/lite/Country.mmdb
+  geosite: https://testingcf.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geosite.dat
+  asn: https://testingcf.jsdelivr.net/gh/xishang0128/geoip@release/GeoLite2-ASN.mmdb
+sniffer:
+  enable: true
+  override-destination: true
+  sniff:
+    QUIC:
+      ports:
+      - 443
+    TLS:
+      ports:
+      - 443
+      - 8443
+    HTTP:
+      ports:
+      - 80
+      - 8080-8880
+      override-destination: true
+  force-domain:
+  - &#34;+.netflix.com&#34;
+  - &#34;+.nflxvideo.net&#34;
+  - &#34;+.amazonaws.com&#34;
+  - &#34;+.media.dssott.com&#34;
+  skip-domain:
+  - &#34;+.apple.com&#34;
+  - Mijia Cloud
+  - dlg.io.mi.com
+  - &#34;+.oray.com&#34;
+  - &#34;+.sunlogin.net&#34;
+  - &#34;+.push.apple.com&#34;
+  parse-pure-ip: true
+</textarea>
+</div>
+</td>
+
+
+</tr></table>
+
+	</div>
+<!-- /tblsection --><!-- tblsection -->
+<div class="cbi-section cbi-tblsection" id="cbi-table-table">
+	<div class="cbi-section-descr"></div>
+	<table class="table cbi-section-table"><tr class="tr cbi-section-table-titles anonymous"><th class="th cbi-section-table-cell" data-widget="button"> </th><th class="th cbi-section-table-cell" data-widget="input_file_name"> </th><th class="th cbi-section-table-cell" data-widget="button"> </th></tr><tr class="tr cbi-section-table-row cbi-rowstyle-1" id="cbi-table-1"><td class="td cbi-value-field" data-name="Commit" data-widget="button">
+<div id="cbi-table-1-Commit" data-index="" data-depends="[]">
+
+
+	
+		<input class="btn cbi-button cbi-button-apply" type="submit" name="cbid.table.1.Commit" id="cbid.table.1.Commit" value="保存配置" />
+	
+</div>
+</td>
+
+
+<td class="td cbi-value-field" data-name="Create" data-widget="input_file_name">
+<div id="cbi-table-1-Create" data-index="" data-depends="[]">
+
+
+<script type="text/javascript">
+//<![CDATA[
+function import_file_name(btn, option, file_path) {
+	var file_name = prompt("请在此输入要新建的文件名称（含扩展名）：", "");
+	if (file_name == null || file_name == "") {
+		return false;
+	}
+	XHR.get('/cgi-bin/luci/admin/services/openclash/create_file', {filename: file_name, filepath: file_path}, function(x, status) {
+		if (x && x.status == 200)
+		{
+			location.reload();
+		}
+	});
+}
+//]]>
+</script>
+<input type="button" class="btn cbi-button cbi-button-apply" value="新建文件" onclick="return import_file_name(this, 'Create', '/etc/openclash/config/')" />
+</div>
+</td>
+
+
+<td class="td cbi-value-field" data-name="Apply" data-widget="button">
+<div id="cbi-table-1-Apply" data-index="" data-depends="[]">
+
+
+	
+		<input class="btn cbi-button cbi-button-apply" type="submit" name="cbid.table.1.Apply" id="cbid.table.1.Apply" value="应用配置" />
+	
+</div>
+</td>
+
+
+</tr></table>
+
+	</div>
+<!-- /tblsection --><style>
+	.CodeMirror { 
+		text-align: left !important;
+		font-size: 15px;
+		line-height: 150%;
+		resize: both !important;
+	}
+	.CodeMirror-merge {
+		border: none !important;
+	}
+	.CodeMirror-merge-r-chunk {
+    	background: #0095ff2e !important;
+	}
+	.CodeMirror-merge-2pane .CodeMirror-merge-gap {
+		height: 700px !important;
+	}
+	.CodeMirror-merge-r-connect {
+		fill: #0095ff2e !important;
+		stroke: #0095ff2e !important;
+	}
+	.CodeMirror-vscrollbar-oc {
+		display: none !important;
+	}
+	.CodeMirror, .CodeMirror-line {
+		width: 100% !important;
+		max-width: 100% !important;
+		min-width: 0 !important;
+		box-sizing: border-box;
+		word-break: break-all !important;
+		overflow-wrap: break-word !important;
+	}
+	:root[data-darkmode="true"] .CodeMirror-merge-gap {
+		background: #d0cfcf !important;
+	}
+</style>
+<link rel="stylesheet" href="/luci-static/resources/openclash/lib/codemirror.css"/>
+<link rel="stylesheet" href="/luci-static/resources/openclash/theme/material.css"/>
+<link rel="stylesheet" href="/luci-static/resources/openclash/theme/material-log.css"/>
+<link rel="stylesheet" href="/luci-static/resources/openclash/theme/idea.css"/>
+<link rel="stylesheet" href="/luci-static/resources/openclash/addon/fold/foldgutter.css"/>
+<link rel="stylesheet" href="/luci-static/resources/openclash/addon/lint/lint.css">
+<link rel="stylesheet" href="/luci-static/resources/openclash/addon/display/fullscreen.css">
+<link rel="stylesheet" href="/luci-static/resources/openclash/addon/dialog/dialog.css">
+<link rel="stylesheet" href="/luci-static/resources/openclash/addon/search/matchesonscrollbar.css">
+<script src="/luci-static/resources/openclash/lib/codemirror.js"></script>
+<script src="/luci-static/resources/openclash/mode/yaml/yaml.js"></script>
+<script src="/luci-static/resources/openclash/mode/lua/lua.js"></script>
+<script src="/luci-static/resources/openclash/mode/shell/shell.js"></script>
+<script src="/luci-static/resources/openclash/addon/fold/foldcode.js"></script>
+<script src="/luci-static/resources/openclash/addon/fold/foldgutter.js"></script>
+<script src="/luci-static/resources/openclash/addon/fold/indent-fold.js"></script>
+<script src="/luci-static/resources/openclash/addon/edit/matchbrackets.js"></script>
+<script src="/luci-static/resources/openclash/addon/selection/active-line.js"></script>
+<script src="/luci-static/resources/openclash/addon/lint/lint.js"></script>
+<script src="/luci-static/resources/openclash/addon/lint/yaml-lint.js"></script>
+<script src="/luci-static/resources/openclash/addon/lint/js-yaml.min.js"></script>
+<script src="/luci-static/resources/openclash/addon/display/fullscreen.js"></script>
+<script src="/luci-static/resources/openclash/addon/display/autorefresh.js"></script>
+<script src="/luci-static/resources/openclash/addon/dialog/dialog.js"></script>
+<script src="/luci-static/resources/openclash/addon/search/searchcursor.js"></script>
+<script src="/luci-static/resources/openclash/addon/search/search.js"></script>
+<script src="/luci-static/resources/openclash/addon/scroll/annotatescrollbar.js"></script>
+<script src="/luci-static/resources/openclash/addon/search/matchesonscrollbar.js"></script>
+<script src="/luci-static/resources/openclash/addon/search/jump-to-line.js"></script>
+<script src="/luci-static/resources/openclash/addon/merge/diff_match_patch.js"></script>
+<script src="/luci-static/resources/openclash/addon/merge/merge.js"></script>
+<link rel=stylesheet href="/luci-static/resources/openclash/addon/merge/merge.css"><table id="my_editor_div" style="width: 100%; text-align: center; display: none;">
+<tr>
+	<td style="width: 50%; overflow: hidden;">您可以在下方直接修改配置文件: <b style=color:green>终极.yaml</b> ，仅支持未被接管的设置</td><td style="width: 50%; overflow: hidden;">OpenClash 修改后用于启动的配置文件</td></tr>
+</table>
+
+<script type="text/javascript">//<![CDATA[
+
+function isDarkBackground(element) {
+	var cachedTheme = localStorage.getItem('oc-theme');
+	if (cachedTheme === 'dark') {
+		return true;
+	} else if (cachedTheme === 'light') {
+		return false;
+	}
+
+	if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+		return true;
+	}
+
+	var style = window.getComputedStyle(element);
+	var bgColor = style.backgroundColor;
+	let r, g, b;
+	if (/rgb\(/.test(bgColor)) {
+		var rgb = bgColor.match(/\d+/g);
+		r = parseInt(rgb);
+		g = parseInt(rgb);
+		b = parseInt(rgb);
+	} else if (/#/.test(bgColor)) {
+		if (bgColor.length === 4) {
+		r = parseInt(bgColor + bgColor, 16);
+		g = parseInt(bgColor + bgColor, 16);
+		b = parseInt(bgColor + bgColor, 16);
+		} else {
+		r = parseInt(bgColor.slice(1, 3), 16);
+		g = parseInt(bgColor.slice(3, 5), 16);
+		b = parseInt(bgColor.slice(5, 7), 16);
+		}
+	} else {
+		return false;
+	}
+	var luminance = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+	return luminance < 128;
+};
+
+function merge_editor(id, id2, target, target2, readOnly, readOnly2, wid, height)
+{
+	var value, orig1, orig2, merge_editor, descr, gap, vscrollbar, vscrollbar_oc, panes = 2, highlight = true, connect = null, collapse = false;
+	descr = document.getElementById("my_editor_div");
+	target.parentNode.parentNode.parentNode.insertBefore(descr, target.parentNode.parentNode); 
+	descr.style.display="inline-table"
+	value = id.value;
+	if (value == null) {
+		editor(id, readOnly, wid, height);
+		editor(id2, readOnly2, wid, height);
+	}
+	else {
+		target2.parentNode.style.display="none";
+		orig1 = '';
+		orig2 = id2.value;
+		target.style.height= "700px"
+		id.style.display = "none";
+		id2.style.display = "none";
+		merge_editor = CodeMirror.MergeView(target, {
+			mode: "text/yaml",
+			value: value,
+			origLeft: panes == 3 ? orig1 : null,
+			orig: orig2,
+			theme: "material",
+			lineNumbers: true,
+			autoRefresh: true,
+			styleActiveLine: true,
+			lineWrapping: true,
+			matchBrackets: true,
+			foldGutter: true,
+			lint: true,
+			highlightDifferences: highlight,
+			connect: connect,
+			collapseIdentical: collapse,
+			gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter", "CodeMirror-lint-markers"],
+			extraKeys: {
+				"F10": function() {
+					merge_editor.setShowDifferences(highlight = !highlight);
+				},
+				"F11": function(cm) {
+					cm.setOption("fullScreen", !cm.getOption("fullScreen"));
+					gap = document.getElementsByClassName("CodeMirror-merge-gap")[0];
+					vscrollbar = document.getElementsByClassName("CodeMirror-vscrollbar")[0];
+					vscrollbar_oc = document.getElementsByClassName("CodeMirror-vscrollbar-oc")[0];
+					if (cm.getOption("fullScreen")) {
+						console.log(gap.style.display)
+						gap.style.display = "none";
+						vscrollbar.className = "CodeMirror-vscrollbar-oc";
+					}
+					else {
+						gap.style.display = "";
+						vscrollbar_oc.className = "CodeMirror-vscrollbar";
+					};
+				},
+				"Esc": function(cm) {
+					gap = document.getElementsByClassName("CodeMirror-merge-gap")[0];
+					vscrollbar = document.getElementsByClassName("CodeMirror-vscrollbar")[0];
+					vscrollbar_oc = document.getElementsByClassName("CodeMirror-vscrollbar-oc")[0];
+					if (cm.getOption("fullScreen")) {
+						cm.setOption("fullScreen", false);
+						gap.style.display = "";
+						vscrollbar_oc.className = "CodeMirror-vscrollbar";
+					};
+				},
+				"Tab": function(cm) {
+					if (cm.somethingSelected()) {
+						cm.indentSelection('add')
+					} else {
+						var spaces = Array(cm.getOption("indentUnit") + 1).join(" ")
+						cm.replaceSelection(spaces)
+					}
+				}
+			}
+		});
+
+		merge_editor.edit.on("change", function(cm) {
+            id.value = cm.getValue();
+        });
+
+		if (wid && height) {
+			merge_editor.editor().setSize(wid, height);
+			merge_editor.rightOriginal().setSize(wid, height);
+		};
+	};
+};
+
+function editor(id, readOnly, wid, height)
+{
+	var editor = CodeMirror.fromTextArea(id, {
+	mode: "text/yaml",
+	autoRefresh: true,
+	styleActiveLine: true,
+	lineNumbers: true,
+	theme: "material",
+	lineWrapping: true,
+	matchBrackets: true,
+	foldGutter: true,
+	lint: true,
+	gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter", "CodeMirror-lint-markers"],
+	extraKeys: {
+        "F11": function(cm) {
+          cm.setOption("fullScreen", !cm.getOption("fullScreen"));
+        },
+        "Esc": function(cm) {
+          if (cm.getOption("fullScreen")) cm.setOption("fullScreen", false);
+        },
+        "Tab": function(cm) {
+				   if (cm.somethingSelected()) {
+              cm.indentSelection('add')
+           } else {
+              var spaces = Array(cm.getOption("indentUnit") + 1).join(" ")
+              cm.replaceSelection(spaces)
+           }
+        }
+      }
+	});
+	
+	if (readOnly == "true") {
+		editor.setOption("readOnly","true");
+	};
+	
+	if (wid && height) {
+		editor.setSize(wid, height);
+	};
+};
+
+function shell_editor(id, readOnly, wid, height)
+{
+	var editor = CodeMirror.fromTextArea(id, {
+	mode: "shell",
+	autoRefresh: true,
+	styleActiveLine: true,
+	lineNumbers: true,
+	theme: "material",
+	lineWrapping: true,
+	matchBrackets: true,
+	foldGutter: true,
+	gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
+	extraKeys: {
+        "F11": function(cm) {
+          cm.setOption("fullScreen", !cm.getOption("fullScreen"));
+        },
+        "Esc": function(cm) {
+          if (cm.getOption("fullScreen")) cm.setOption("fullScreen", false);
+        },
+        "Tab": function(cm) {
+           if (cm.somethingSelected()) {
+              cm.indentSelection('add')
+           } else {
+              var spaces = Array(cm.getOption("indentUnit") + 1).join(" ")
+              cm.replaceSelection(spaces)
+           }
+        }
+      }
+	});
+
+	if (wid && height) {
+		editor.setSize(wid, height);
+	};
+};
+
+function other_editor(id, readOnly, wid, height)
+{
+	var editor = CodeMirror.fromTextArea(id, {
+	mode: "lua",
+	autoRefresh: true,
+	styleActiveLine: true,
+	lineNumbers: true,
+	theme: "material",
+	lineWrapping: true,
+	matchBrackets: true,
+	foldGutter: true,
+	gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
+	extraKeys: {
+        "F11": function(cm) {
+          cm.setOption("fullScreen", !cm.getOption("fullScreen"));
+        },
+        "Esc": function(cm) {
+          if (cm.getOption("fullScreen")) cm.setOption("fullScreen", false);
+        },
+        "Tab": function(cm) {
+           if (cm.somethingSelected()) {
+              cm.indentSelection('add')
+           } else {
+              var spaces = Array(cm.getOption("indentUnit") + 1).join(" ")
+              cm.replaceSelection(spaces)
+           }
+        }
+      }
+	});
+
+	if (wid && height) {
+		editor.setSize(wid, height);
+	};
+};
+
+function other_log_area(id, readOnly, wid, height)
+{
+	var other_log_area = CodeMirror.fromTextArea(id, {
+	mode: "lua",
+	autoRefresh: true,
+	styleActiveLine: true,
+	lineNumbers: true,
+	theme: "idea",
+	lineWrapping: true,
+	matchBrackets: true,
+	foldGutter: true,
+	gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
+	extraKeys: {
+        "F11": function(cm) {
+          cm.setOption("fullScreen", !cm.getOption("fullScreen"));
+        },
+        "Esc": function(cm) {
+          if (cm.getOption("fullScreen")) cm.setOption("fullScreen", false);
+        }
+      }
+	});
+	
+	if (readOnly == "true") {
+		other_log_area.setOption("readOnly","true");
+	};
+	
+	if (wid && height) {
+		other_log_area.setSize(wid, height);
+	};
+	
+	other_log_area.markText({line:0,ch:0},{line:9999,ch:9999}, {css: 'font-size:13px'});
+};
+
+var custom_cfg_value = document.getElementById("cbid.openclash." + window.location.pathname.split("/")[window.location.pathname.split("/").length - 1] + ".other_parameters");
+if (custom_cfg_value) {
+	editor(custom_cfg_value, 'false', '100%', '300px');
+};
+
+var custom_firewall = document.getElementById("cbid.openclash.config.firewall_custom");
+var custom_ymchange = document.getElementById("cbid.openclash.config.ymchange_custom");
+if (custom_firewall) {
+	shell_editor(custom_firewall, 'false', "100%", '300px');
+};
+
+if (custom_ymchange) {
+	shell_editor(custom_ymchange, 'false', "100%", '300px');
+};
+
+var myEditor_use = document.getElementById("cbid.table.1.user");
+var myEditor_def = document.getElementById("cbid.table.1.default");
+
+if (myEditor_use && myEditor_def) {
+	var myEditor_div_use = document.getElementById("cbi-table-1-user");
+	var myEditor_div_def = document.getElementById("cbi-table-1-default");
+	
+	myEditor_div_def.parentNode.parentNode.style.cssText="text-align: left !important"
+	myEditor_div_def.parentNode.className='cbi-value';
+	myEditor_div_def.parentNode.style.display="revert"
+	myEditor_div_def.parentNode.style.width="100%"
+
+	myEditor_div_use.parentNode.className='cbi-value';
+	myEditor_div_use.parentNode.style.display="revert"
+	myEditor_div_use.parentNode.style.width="100%"
+	merge_editor(myEditor_use, myEditor_def, myEditor_div_use, myEditor_div_def, 'true', 'false', 'auto', '700px');
+};
+
+var myEditor_hosts = document.getElementById("cbid.openclash.config.custom_hosts");
+var myEditor_fall_fil = document.getElementById("cbid.openclash.config.custom_fallback_fil");
+var myEditor_name_pol = document.getElementById("cbid.openclash.config.custom_domain_dns_core");
+var myEditor_name_cus_r1 = document.getElementById("cbid.openclash.config.custom_rules_2");
+var myEditor_name_cus_r2 = document.getElementById("cbid.openclash.config.custom_rules");
+var myEditor_fake_filter = document.getElementById("cbid.openclash.config.custom_fake_filter");
+var myEditor_custom_domain_dns = document.getElementById("cbid.openclash.config.custom_domain_dns");
+var myEditor_edit_file = document.getElementById("cbid.openclash.config.edit_file");
+var myEditor_custom_sniffer = document.getElementById("cbid.openclash.config.sniffer_custom");
+
+if (myEditor_hosts) {
+	editor(myEditor_hosts, 'false', '100%', '300px');
+};
+
+if (myEditor_edit_file) {
+	editor(myEditor_edit_file, 'false', '100%', '700px');
+};
+
+if (myEditor_fall_fil) {
+	editor(myEditor_fall_fil, 'false', '100%', '300px');
+};
+
+if (myEditor_name_pol) {
+	editor(myEditor_name_pol, 'false', '100%', '300px');
+};
+
+if (myEditor_name_cus_r1) {
+	editor(myEditor_name_cus_r1, 'false', '100%', '300px');
+	editor(myEditor_name_cus_r2, 'false', '100%', '300px');
+};
+
+if (myEditor_fake_filter) {
+	other_editor(myEditor_fake_filter, 'false', '100%', '300px');
+};
+
+if (myEditor_custom_domain_dns) {
+	other_editor(myEditor_custom_domain_dns, 'false', '100%', '300px');
+};
+
+if (myEditor_custom_sniffer) {
+	other_editor(myEditor_custom_sniffer, 'false', '100%', '300px');
+};
+
+var core_log = document.getElementById("core_log");
+var oc_log = document.getElementById("cbid.openclash.config.clog");
+if (core_log && oc_log) {
+	var core_editor = CodeMirror.fromTextArea(core_log, {
+	mode: "lua",
+	autoRefresh: true,
+	styleActiveLine: true,
+	lineNumbers: true,
+	theme: "idea",
+	lineWrapping: true,
+	matchBrackets: true,
+	foldGutter: true,
+	gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
+	extraKeys: {
+        "F11": function(cm) {
+          cm.setOption("fullScreen", !cm.getOption("fullScreen"));
+        },
+        "Esc": function(cm) {
+          if (cm.getOption("fullScreen")) cm.setOption("fullScreen", false);
+        }
+      }
+	});
+	
+	var oc_editor = CodeMirror.fromTextArea(oc_log, {
+	mode: "lua",
+	autoRefresh: true,
+	styleActiveLine: true,
+	lineNumbers: true,
+	theme: "idea",
+	lineWrapping: true,
+	matchBrackets: true,
+	foldGutter: true,
+	gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
+	extraKeys: {
+        "F11": function(cm) {
+          cm.setOption("fullScreen", !cm.getOption("fullScreen"));
+        },
+        "Esc": function(cm) {
+          if (cm.getOption("fullScreen")) cm.setOption("fullScreen", false);
+        }
+      }
+	});
+	core_editor.setSize("100%", "540px");
+	core_editor.setOption("readOnly","true");
+	oc_editor.setSize("100%", "540px");
+	oc_editor.setOption("readOnly","true");
+	if (isDarkBackground(document.body)) {
+		core_editor.setOption('theme', 'material-log');
+		oc_editor.setOption('theme', 'material-log');
+		document.documentElement.setAttribute('data-darkmode', 'true');
+	};
+};
+
+var proxy_mg = document.getElementById('cbi-table-1-proxy_mg');
+var rule_mg = document.getElementById('cbi-table-1-rule_mg');
+var game_mg = document.getElementById('cbi-table-1-game_mg');
+var Commit = document.getElementById('cbi-table-1-Commit');
+var Apply = document.getElementById('cbi-table-1-Apply');
+var Create = document.getElementById('cbi-table-1-Create');
+
+if (proxy_mg) {
+	proxy_mg.style.textAlign="center";
+	rule_mg.style.textAlign="center";
+	game_mg.style.textAlign="center";
+	Commit.style.textAlign="center";
+	Apply.style.textAlign="center";
+	Create.style.textAlign="center";
+};
+//]]>
+</script></div></form>
+
+<script type="text/javascript">cbi_init();</script>
+
+
+   <footer>
+    <a href="https://github.com/Lienol/openwrt-luci">Powered by LuCI openwrt-21.02 branch (git-23.098.38725-847bd6b)</a> / ImmortalWrt 21.02-SNAPSHOT r0-e1b4487
+    <ul class="breadcrumb pull-right" id="modemenu" style="display:none"></ul>
+   </footer>
+  </div>
+  <script type="text/javascript">L.require('menu-bootstrap')</script>
+ </body>
+</html>
+<script>
+	function addLoadEvent(func) {
+		var oldonload = window.onload;
+		if (typeof window.onload != 'function') {
+			window.onload = func;
+		} else {
+			window.onload = function () {
+				oldonload();
+				func();
+			}
+		}
+	}
+	addLoadEvent(function(){
+		var content = document.getElementsByName("content");
+		var luci_username = document.getElementsByName("luci_username");
+		var luci_password = document.getElementsByName("luci_password");
+		if (content.length == 1 && luci_username.length == 1 && luci_password.length == 1) {
+			//需要登录
+			document.body.classList.add('node-main-login');
+			luci_username[0].parentElement.parentElement.classList.add('luci_username_div');
+			luci_username[0].parentElement.parentElement.children[0].style.display = "none";
+			luci_password[0].parentElement.parentElement.classList.add('luci_password_div');
+			luci_password[0].parentElement.parentElement.children[0].style.display = "none";
+			
+			var errorbox = document.getElementsByClassName("errorbox");
+			var alert_message = document.getElementsByClassName("alert-message");
+			if (errorbox.length == 1) {
+				var tips = document.getElementsByClassName("cbi-map-descr");
+				if (tips.length == 1) {
+					tips[0].innerHTML = errorbox[0].innerHTML;
+					tips[0].classList.add('errorbox');
+					errorbox[0].style.display = "none";
+				}
+			} else if (alert_message.length == 1) {
+				var tips = document.getElementsByClassName("cbi-map-descr");
+				if (tips.length == 1) {
+					tips[0].innerHTML = alert_message[0].innerHTML;
+					tips[0].classList.add('errorbox');
+					alert_message[0].style.display = "none";
+				}
+			}
+		}
+	});
+</script>
+</html>
+
