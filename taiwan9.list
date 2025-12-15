@@ -1,130 +1,79 @@
-# 台湾域名组
-# 内容：Taiwan
+# 台湾域名组 (最终完美版)
+# 策略建议：指向台湾 (TW) 节点
+# 覆盖范围：流媒体、网银、电商、民生服务
 
-# 域名关键字匹配
-DOMAIN-KEYWORD,taiwan
-DOMAIN-KEYWORD,litv.tv
-DOMAIN-KEYWORD,cdi.ofiii
-DOMAIN-KEYWORD,api.ofiii.com
-DOMAIN-KEYWORD,tunein
-DOMAIN-KEYWORD,taiwanmobile.com
-DOMAIN-KEYWORD,lihiton.com
-DOMAIN-KEYWORD,news.tvbs.com
-DOMAIN-KEYWORD,ctitv.com.tw
-DOMAIN-KEYWORD,chosunmedia.com.tw
-DOMAIN-KEYWORD,upmedia.mg
-DOMAIN-KEYWORD,myvideo.tvbs.com.tw
-DOMAIN-KEYWORD,storm.mg
-DOMAIN-KEYWORD,momo.com.tw
-DOMAIN-KEYWORD,shopee.tw
-DOMAIN-KEYWORD,pchome.com.tw
-DOMAIN-KEYWORD,taiwannews.com.tw
-DOMAIN-KEYWORD,appledaily.com.tw
-DOMAIN-KEYWORD,ettoday.net
-DOMAIN-KEYWORD,udn.com
-DOMAIN-KEYWORD,fhm.com.tw
-DOMAIN-KEYWORD,behindtv.com.tw
-DOMAIN-KEYWORD,setn
-DOMAIN-KEYWORD,tvbs
-DOMAIN-KEYWORD,tpg
-DOMAIN-KEYWORD,ebc
-DOMAIN-KEYWORD,nexttv
-DOMAIN-KEYWORD,ltn
-DOMAIN-KEYWORD,chinatimes
-DOMAIN-KEYWORD,mirrormedia
-DOMAIN-KEYWORD,peoplenews
-DOMAIN-KEYWORD,newtalk
-DOMAIN-KEYWORD,books.com.tw
-DOMAIN-KEYWORD,ibon
-DOMAIN-KEYWORD,tixcraft
-DOMAIN-KEYWORD,17life
-DOMAIN-KEYWORD,hamivideo.hinet.net
-DOMAIN-KEYWORD,linetv.tw
-DOMAIN-KEYWORD,ptsplus.tv
-DOMAIN-KEYWORD,myvideo.net.tw
-DOMAIN-KEYWORD,vocus.cc
+payload:
+  # --- 1. 万能规则 (涵盖 95% 网站) ---
+  - DOMAIN-SUFFIX,tw
 
-# 域名后缀匹配
-DOMAIN-SUFFIX,tw
-DOMAIN-SUFFIX,ptsplus.tv
-DOMAIN-SUFFIX,litv.tv
-DOMAIN-SUFFIX,chinayes.com
-DOMAIN-SUFFIX,taiwanmobile.com
-DOMAIN-SUFFIX,lihiton.com
-DOMAIN-SUFFIX,news.tvbs.com.tw
-DOMAIN-SUFFIX,ctitv.com.tw
-DOMAIN-SUFFIX,chosunmedia.com.tw
-DOMAIN-SUFFIX,upmedia.mg
-DOMAIN-SUFFIX,myvideo.tvbs.com.tw
-DOMAIN-SUFFIX,storm.mg
-DOMAIN-SUFFIX,momo.com.tw
-DOMAIN-SUFFIX,shopee.tw
-DOMAIN-SUFFIX,pchome.com.tw
-DOMAIN-SUFFIX,taiwannews.com.tw
-DOMAIN-SUFFIX,appledaily.com.tw
-DOMAIN-SUFFIX,ettoday.net
-DOMAIN-SUFFIX,udn.com
-DOMAIN-SUFFIX,fhm.com.tw
-DOMAIN-SUFFIX,behindtv.com.tw
-DOMAIN-SUFFIX,tw.piliapp.com
-DOMAIN-SUFFIX,cn.piliapp.com
-DOMAIN-SUFFIX,pili.app
-DOMAIN-SUFFIX,setn.com
-DOMAIN-SUFFIX,tpgnews.com.tw
-DOMAIN-SUFFIX,ebc.net.tw
-DOMAIN-SUFFIX,nexttv.com.tw
-DOMAIN-SUFFIX,ltn.com.tw
-DOMAIN-SUFFIX,chinatimes.com
-DOMAIN-SUFFIX,mirrormedia.mg
-DOMAIN-SUFFIX,peoplenews.tw
-DOMAIN-SUFFIX,newtalk.tw
-DOMAIN-SUFFIX,cna.com.tw
-DOMAIN-SUFFIX,taipeitimes.com
-DOMAIN-SUFFIX,books.com.tw
-DOMAIN-SUFFIX,ibon.com.tw
-DOMAIN-SUFFIX,tixcraft.com
-DOMAIN-SUFFIX,17life.com
-DOMAIN-SUFFIX,moe.edu.tw
-DOMAIN-SUFFIX,ntu.edu.tw
-DOMAIN-SUFFIX,moea.gov.tw
-DOMAIN-SUFFIX,mofa.gov.tw
-DOMAIN-SUFFIX,gov.tw
-DOMAIN-SUFFIX,tw.appledaily.com
-DOMAIN-SUFFIX,cloudfront.net
-DOMAIN-SUFFIX,akamaized.net
-DOMAIN-SUFFIX,facebook.com
-DOMAIN-SUFFIX,hinet.net
-DOMAIN-SUFFIX,linetv.tw
-DOMAIN-SUFFIX,myvideo.net.tw
-DOMAIN-SUFFIX,vocus.cc
-DOMAIN-SUFFIX,assets.piliapp.com
+  # --- 2. 热门流媒体 (必须强制台湾 IP) ---
+  # 巴哈姆特动画疯 (非常敏感)
+  - DOMAIN-SUFFIX,bahamut.com.tw
+  - DOMAIN-SUFFIX,gamer.com.tw
+  # KKTV / KKBOX
+  - DOMAIN-SUFFIX,kktv.com.tw
+  - DOMAIN-SUFFIX,kktv.me
+  - DOMAIN-SUFFIX,kkbox.com
+  - DOMAIN-SUFFIX,kkbox.com.tw
+  # 其他流媒体
+  - DOMAIN-SUFFIX,linetv.tw
+  - DOMAIN-SUFFIX,litv.tv
+  - DOMAIN-SUFFIX,ofiii.com
+  - DOMAIN-SUFFIX,4gtv.tv
+  - DOMAIN-SUFFIX,catchplay.com
+  - DOMAIN-SUFFIX,friday.tw
+  - DOMAIN-SUFFIX,myvideo.net.tw
+  - DOMAIN-KEYWORD,hamivideo
 
-# 特定域名匹配
-DOMAIN,tunein.com
-DOMAIN,cdi.ofiii.com
-DOMAIN,api.ofiii.com
-DOMAIN,storage.googleapis.com
-DOMAIN,hamivideo.hinet.net
-DOMAIN,www.linetv.tw
-DOMAIN,www.ptsplus.tv
-DOMAIN,www.myvideo.net.tw
-DOMAIN,www.vocus.cc
+  # --- 3. 金融与支付 (补漏非 .tw 的银行) ---
+  # 中国信托 (CTBC) - 台湾最大的发卡行，官网是 .com
+  - DOMAIN-SUFFIX,ctbcbank.com
+  # 街口支付 (JKOPAY)
+  - DOMAIN-SUFFIX,jkos.com
+  # 国泰世华
+  - DOMAIN-SUFFIX,cathaybk.com.tw
+  # 玉山银行
+  - DOMAIN-SUFFIX,esunbank.com.tw
+  # 台新银行 / Richart
+  - DOMAIN-SUFFIX,taishinbank.com.tw
+  - DOMAIN-SUFFIX,richart.tw
 
-# 台湾中华电信 IP 段（Chunghwa Telecom）
-IP-CIDR,1.34.0.0/15,no-resolve
-IP-CIDR,1.160.0.0/12,no-resolve
-IP-CIDR,36.224.0.0/12,no-resolve
-IP-CIDR,59.112.0.0/12,no-resolve
-IP-CIDR,60.248.0.0/14,no-resolve
-IP-CIDR,61.216.0.0/13,no-resolve
-IP-CIDR,61.224.0.0/13,no-resolve
-IP-CIDR,114.30.32.0/20,no-resolve
-IP-CIDR,175.111.192.0/18,no-resolve
-IP-CIDR,203.160.240.0/20,no-resolve
-IP-CIDR,220.128.56.0/21,no-resolve
-IP-CIDR,220.128.64.0/20,no-resolve
-IP-CIDR,220.128.80.0/20,no-resolve
-IP-CIDR,220.128.91.0/24,no-resolve
+  # --- 4. 购物与生活 ---
+  - DOMAIN-SUFFIX,shopee.tw
+  - DOMAIN-SUFFIX,momoshop.com.tw
+  - DOMAIN-SUFFIX,ruten.com.tw
+  - DOMAIN-SUFFIX,pchome.com.tw
+  - DOMAIN-SUFFIX,books.com.tw
 
-# 台湾常用 IP（手动添加）
-IP-CIDR,168.95.1.1/32,no-resolve
+  # --- 5. 论坛与新闻 ---
+  - DOMAIN-SUFFIX,dcard.tw
+  - DOMAIN-SUFFIX,ptt.cc
+  - DOMAIN-SUFFIX,mobile01.com
+  - DOMAIN-SUFFIX,vocus.cc
+  - DOMAIN-SUFFIX,ettoday.net
+  - DOMAIN-SUFFIX,storm.mg
+  - DOMAIN-SUFFIX,udn.com
+  - DOMAIN-SUFFIX,ltn.com.tw
+  - DOMAIN-SUFFIX,chinatimes.com
+  - DOMAIN-SUFFIX,cntv.com.tw
+
+  # --- 6. 关键字匹配 (防漏) ---
+  - DOMAIN-KEYWORD,taiwan
+
+  # --- 7. 台湾 IP 段 (最后一层保障) ---
+  - IP-CIDR,1.34.0.0/15,no-resolve
+  - IP-CIDR,1.160.0.0/12,no-resolve
+  - IP-CIDR,36.224.0.0/12,no-resolve
+  - IP-CIDR,59.112.0.0/12,no-resolve
+  - IP-CIDR,60.248.0.0/14,no-resolve
+  - IP-CIDR,61.216.0.0/13,no-resolve
+  - IP-CIDR,61.224.0.0/13,no-resolve
+  - IP-CIDR,114.30.32.0/20,no-resolve
+  - IP-CIDR,175.111.192.0/18,no-resolve
+  - IP-CIDR,203.160.240.0/20,no-resolve
+  - IP-CIDR,210.59.0.0/16,no-resolve
+  - IP-CIDR,211.20.0.0/16,no-resolve
+  - IP-CIDR,220.128.0.0/16,no-resolve
+  # 增加一组常用的台湾 ISP 手动段
+  - IP-CIDR,103.102.0.0/22,no-resolve
+  - IP-CIDR,103.24.80.0/22,no-resolve
