@@ -1,26 +1,25 @@
 # NAME: Instagram & Threads
-# 策略建议：你提到喜欢用“台湾节点”，这非常棒。
+# 策略建议：推荐使用【台湾】节点
 # Meta系应用(IG/FB)在台湾节点下通常加载速度极快，且音乐/Reels功能全开。
 
-payload:
-  # --- 关键字匹配 (防漏) ---
-  - DOMAIN-KEYWORD,instagram
-  - DOMAIN-KEYWORD,threads
-  # 注意：fbcdn 是 Meta 共用的，如果不加这行，IG 图片可能加载不出来
-  - DOMAIN-KEYWORD,fbcdn 
+# --- 关键字匹配 (防漏) ---
+DOMAIN-KEYWORD,instagram
+DOMAIN-KEYWORD,threads
+# 注意：fbcdn 是 Meta 共用的，如果不加这行，IG 图片可能加载不出来
+DOMAIN-KEYWORD,fbcdn
 
-  # --- Instagram 核心 ---
-  - DOMAIN-SUFFIX,instagram.com
-  - DOMAIN-SUFFIX,cdninstagram.com
-  - DOMAIN-SUFFIX,igcdn.com
-  - DOMAIN-SUFFIX,instagr.am
-  
-  # --- Threads 核心 ---
-  - DOMAIN-SUFFIX,threads.net
-  
-  # --- Meta 共享基础设施 (CDN/API) ---
-  # IG 和 Threads 的图片、头像、视频流全在这里
-  - DOMAIN-SUFFIX,fbcdn.net
-  - DOMAIN-SUFFIX,facebook.com
-  - DOMAIN-SUFFIX,facebook.net
-  - DOMAIN-SUFFIX,meta.com
+# --- Instagram 核心 ---
+DOMAIN-SUFFIX,instagram.com
+DOMAIN-SUFFIX,cdninstagram.com
+DOMAIN-SUFFIX,igcdn.com
+DOMAIN-SUFFIX,instagr.am
+
+# --- Threads 核心 ---
+DOMAIN-SUFFIX,threads.net
+
+# --- Meta 共享基础设施 (CDN/API) ---
+# IG 和 Threads 的图片、头像、视频流全在这里
+DOMAIN-SUFFIX,fbcdn.net
+DOMAIN-SUFFIX,facebook.com
+DOMAIN-SUFFIX,facebook.net
+DOMAIN-SUFFIX,meta.com
