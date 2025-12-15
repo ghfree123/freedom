@@ -1,33 +1,16 @@
-# 内容：Pornhub
+# NAME: Pornhub
+# 策略建议：推荐使用【美国】节点 (资源最全/加载最快)
+# 说明：已去除冗余子域名，保留核心匹配
 
-# 域名关键字匹配
-DOMAIN-KEYWORD,pornhub
-DOMAIN-KEYWORD,phncdn
-
-# 域名后缀匹配
+# --- 核心主站 ---
 DOMAIN-SUFFIX,pornhub.com
 DOMAIN-SUFFIX,pornhubpremium.com
+DOMAIN-SUFFIX,pornhubselect.com
+
+# --- 视频流与图片 CDN (非常关键) ---
 DOMAIN-SUFFIX,phncdn.com
 DOMAIN-SUFFIX,phprcdn.com
-DOMAIN-SUFFIX,pornhubselect.com
-DOMAIN-SUFFIX,cdn.pornhub.com
-DOMAIN-SUFFIX,static.pornhub.com
-DOMAIN-SUFFIX,media.pornhub.com
-DOMAIN-SUFFIX,api.pornhub.com
-DOMAIN-SUFFIX,es.pornhub.com
-DOMAIN-SUFFIX,fr.pornhub.com
-DOMAIN-SUFFIX,de.pornhub.com
-DOMAIN-SUFFIX,uk.pornhub.com
-DOMAIN-SUFFIX,www.pornhub.com
-DOMAIN-SUFFIX,www.pornhubpremium.com
-DOMAIN-SUFFIX,ssl.pornhub.com
-DOMAIN-SUFFIX,cdn1.phncdn.com
-DOMAIN-SUFFIX,cdn2.phncdn.com
-DOMAIN-SUFFIX,cdn3.phncdn.com
-DOMAIN-SUFFIX,cdn4.phncdn.com
-DOMAIN-SUFFIX,dl.phncdn.com
-DOMAIN-SUFFIX,embed.pornhub.com
-DOMAIN-SUFFIX,blog.pornhub.com
-DOMAIN-SUFFIX,help.pornhub.com
-DOMAIN-SUFFIX,feedback.pornhub.com
-DOMAIN-SUFFIX,support.pornhub.com
+
+# --- 关键字兜底 (防止变种域名) ---
+DOMAIN-KEYWORD,pornhub
+DOMAIN-KEYWORD,phncdn
