@@ -1,30 +1,26 @@
-# 内容：Instagram + Threads
+# NAME: Instagram & Threads
+# 策略建议：你提到喜欢用“台湾节点”，这非常棒。
+# Meta系应用(IG/FB)在台湾节点下通常加载速度极快，且音乐/Reels功能全开。
 
-# 域名关键字匹配
-DOMAIN-KEYWORD,instagram
-DOMAIN-KEYWORD,cdninstagram
-DOMAIN-KEYWORD,fbcdn
-DOMAIN-KEYWORD,threads
+payload:
+  # --- 关键字匹配 (防漏) ---
+  - DOMAIN-KEYWORD,instagram
+  - DOMAIN-KEYWORD,threads
+  # 注意：fbcdn 是 Meta 共用的，如果不加这行，IG 图片可能加载不出来
+  - DOMAIN-KEYWORD,fbcdn 
 
-# 域名后缀匹配
-DOMAIN-SUFFIX,instagram.com
-DOMAIN-SUFFIX,www.instagram.com
-DOMAIN-SUFFIX,cdninstagram.com
-DOMAIN-SUFFIX,scontent.cdninstagram.com
-DOMAIN-SUFFIX,igcdn.com
-DOMAIN-SUFFIX,fbcdn.net
-DOMAIN-SUFFIX,scontent.xx.fbcdn.net
-DOMAIN-SUFFIX,instagram.fsnc1-1.fna.fbcdn.net
-DOMAIN-SUFFIX,instagram.fsnc1-2.fna.fbcdn.net
-DOMAIN-SUFFIX,instagram.fabc1-1.fna.fbcdn.net
-DOMAIN-SUFFIX,static.cdninstagram.com
-DOMAIN-SUFFIX,graph.instagram.com
-DOMAIN-SUFFIX,i.instagram.com
-DOMAIN-SUFFIX,help.instagram.com
-DOMAIN-SUFFIX,business.instagram.com
-DOMAIN-SUFFIX,threads.net
-DOMAIN-SUFFIX,www.threads.net
-DOMAIN-SUFFIX,graph.threads.net
-DOMAIN-SUFFIX,cdn.threads.net
-DOMAIN-SUFFIX,static.threads.net
-DOMAIN-SUFFIX,help.threads.net
+  # --- Instagram 核心 ---
+  - DOMAIN-SUFFIX,instagram.com
+  - DOMAIN-SUFFIX,cdninstagram.com
+  - DOMAIN-SUFFIX,igcdn.com
+  - DOMAIN-SUFFIX,instagr.am
+  
+  # --- Threads 核心 ---
+  - DOMAIN-SUFFIX,threads.net
+  
+  # --- Meta 共享基础设施 (CDN/API) ---
+  # IG 和 Threads 的图片、头像、视频流全在这里
+  - DOMAIN-SUFFIX,fbcdn.net
+  - DOMAIN-SUFFIX,facebook.com
+  - DOMAIN-SUFFIX,facebook.net
+  - DOMAIN-SUFFIX,meta.com
