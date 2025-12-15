@@ -1,61 +1,67 @@
-# 内容：NHK & 日本域名 & 日本IP
-# 域名关键字匹配
+# NAME: NHK & Japan
+# 策略建议：指向日本 (JP) 节点
+# 说明：DOMAIN-SUFFIX,jp 已覆盖所有日本本土域名
+
+# --- 1. 万能规则 (最强) ---
+# 只要是 .jp 结尾的网站，统统走日本节点
+DOMAIN-SUFFIX,jp
+
+# --- 2. NHK 核心 (防漏) ---
 DOMAIN-KEYWORD,nhk
-DOMAIN-KEYWORD,nhkid
 
-# 域名后缀匹配
-DOMAIN-SUFFIX,nhk.jp
-DOMAIN-SUFFIX,nhkid.jp
-DOMAIN-SUFFIX,nhk.or.jp
-DOMAIN-SUFFIX,jp   # 所有日本域名
+# --- 3. 必须走日本节点的非 .jp 域名 (重要补充) ---
+# Abema TV
+DOMAIN-SUFFIX,abema.io
+DOMAIN-SUFFIX,abema.tv
+DOMAIN-SUFFIX,ameba.jp
+DOMAIN-SUFFIX,hayabusa.io
+# DMM (游戏/视频)
+DOMAIN-SUFFIX,dmm.com
+DOMAIN-SUFFIX,dmm.co.jp
+DOMAIN-SUFFIX,dmm-extension.com
+# Niconico
+DOMAIN-SUFFIX,nicovideo.jp
+DOMAIN-SUFFIX,nimg.jp
+# Pixiv (P站)
+DOMAIN-SUFFIX,pixiv.net
+DOMAIN-SUFFIX,pixiv.org
+DOMAIN-SUFFIX,pximg.net
+# Tver (电视直播)
+DOMAIN-SUFFIX,tver.jp
+# 乐天 (Rakuten)
+DOMAIN-SUFFIX,rakuten.co.jp
+DOMAIN-SUFFIX,rakuten.com
+# 软银与雅虎日本
+DOMAIN-SUFFIX,softbank.jp
+DOMAIN-SUFFIX,yahoo.co.jp
 
-# 完整域名匹配（API 和服务）
-DOMAIN,api-plus.nhk.jp
-DOMAIN,location-plus.nhk.jp
-DOMAIN,provision-plus.nhk.jp
-DOMAIN,drm.npd.plus.nhk.jp
-DOMAIN,ctl.npd.plus.nhk.jp
-DOMAIN,vod-npd2.cdn.plus.nhk.jp
-DOMAIN,live-npd2.cdn.plus.nhk.jp
-
-# NHK 主站和认证
-DOMAIN,www.nhk.jp
-DOMAIN,agree.auth.nhkid.jp
-
-# 其他 NHK 域名
-DOMAIN,mtcs.nhk.or.jp
-DOMAIN,apps.nhk.or.jp
-
-# 日本 IP 段（APNIC 分配）
-IP-CIDR,1.33.0.0/16
-IP-CIDR,1.72.0.0/14
-IP-CIDR,14.0.0.0/11
-IP-CIDR,27.80.0.0/13
-IP-CIDR,36.0.0.0/11
-IP-CIDR,42.0.0.0/10
-IP-CIDR,49.96.0.0/11
-IP-CIDR,58.0.0.0/10
-IP-CIDR,60.32.0.0/11
-IP-CIDR,101.0.0.0/10
-IP-CIDR,106.128.0.0/10
-IP-CIDR,110.0.0.0/10
-IP-CIDR,118.0.0.0/10
-IP-CIDR,121.80.0.0/13
-IP-CIDR,126.0.0.0/8
-IP-CIDR,133.0.0.0/8
-IP-CIDR,150.0.0.0/8
-IP-CIDR,153.128.0.0/9
-IP-CIDR,160.16.0.0/12
-IP-CIDR,175.0.0.0/8
-IP-CIDR,202.0.0.0/8
-IP-CIDR,210.128.0.0/9
-IP-CIDR,220.0.0.0/8
-
-# 日本 IPv6 段
-IP-CIDR,2400:0000::/20
-IP-CIDR,2404:0000::/20
-IP-CIDR,2406:0000::/20
-IP-CIDR,2408:0000::/20
-IP-CIDR,2409:0000::/20
-IP-CIDR,240b:0000::/20
-IP-CIDR,240c:0000::/20
+# --- 4. 日本 IP 段 (已添加 no-resolve 防止卡顿) ---
+IP-CIDR,1.33.0.0/16,no-resolve
+IP-CIDR,1.72.0.0/14,no-resolve
+IP-CIDR,14.0.0.0/11,no-resolve
+IP-CIDR,27.80.0.0/13,no-resolve
+IP-CIDR,36.0.0.0/11,no-resolve
+IP-CIDR,42.0.0.0/10,no-resolve
+IP-CIDR,49.96.0.0/11,no-resolve
+IP-CIDR,58.0.0.0/10,no-resolve
+IP-CIDR,60.32.0.0/11,no-resolve
+IP-CIDR,101.0.0.0/10,no-resolve
+IP-CIDR,106.128.0.0/10,no-resolve
+IP-CIDR,110.0.0.0/10,no-resolve
+IP-CIDR,118.0.0.0/10,no-resolve
+IP-CIDR,121.80.0.0/13,no-resolve
+IP-CIDR,126.0.0.0/8,no-resolve
+IP-CIDR,133.0.0.0/8,no-resolve
+IP-CIDR,150.0.0.0/8,no-resolve
+IP-CIDR,153.128.0.0/9,no-resolve
+IP-CIDR,160.16.0.0/12,no-resolve
+IP-CIDR,175.0.0.0/8,no-resolve
+IP-CIDR,202.0.0.0/8,no-resolve
+IP-CIDR,203.0.0.0/8,no-resolve
+IP-CIDR,210.128.0.0/9,no-resolve
+IP-CIDR,210.140.0.0/16,no-resolve
+IP-CIDR,211.0.0.0/8,no-resolve
+IP-CIDR,220.0.0.0/8,no-resolve
+IP-CIDR,221.0.0.0/8,no-resolve
+IP-CIDR,222.0.0.0/8,no-resolve
+IP-CIDR,223.0.0.0/8,no-resolve
