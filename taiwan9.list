@@ -1,27 +1,43 @@
-# 台湾域名组 (最终完美版)
+# 台湾域名组 (流媒体加强版)
 # 策略建议：指向台湾 (TW) 节点
-# 覆盖范围：流媒体、网银、电商、民生服务
+# 说明：已补充 ptsplus.tv 等非 .tw 后缀的流媒体
 
 # --- 1. 万能规则 ---
 DOMAIN-SUFFIX,tw
 
-# --- 2. 热门流媒体 ---
+# --- 2. 热门流媒体 (加强补全) ---
+# 公视+ (PTS Plus) - 你刚才漏掉的
+DOMAIN-SUFFIX,ptsplus.tv
+# 巴哈姆特动画疯
 DOMAIN-SUFFIX,bahamut.com.tw
 DOMAIN-SUFFIX,gamer.com.tw
+# LiTV (立视)
+DOMAIN-SUFFIX,litv.tv
+# 四季线上 (4GTV)
+DOMAIN-SUFFIX,4gtv.tv
+# 爱尔达 (ELTA - 体育赛事常用)
+DOMAIN-SUFFIX,elta.tv
+# Vidol (三立电视)
+DOMAIN-SUFFIX,vidol.tv
+# Line TV
+DOMAIN-SUFFIX,linetv.tw
+# Hami Video (中华电信)
+DOMAIN-KEYWORD,hamivideo
+# MyVideo (台湾大哥大)
+DOMAIN-SUFFIX,myvideo.net.tw
+# friDay 影音 (远传电信)
+DOMAIN-SUFFIX,friday.tw
+# CatchPlay+
+DOMAIN-SUFFIX,catchplay.com
+# ofiii (欧飞)
+DOMAIN-SUFFIX,ofiii.com
+# KKTV / KKBOX
 DOMAIN-SUFFIX,kktv.com.tw
 DOMAIN-SUFFIX,kktv.me
 DOMAIN-SUFFIX,kkbox.com
 DOMAIN-SUFFIX,kkbox.com.tw
-DOMAIN-SUFFIX,linetv.tw
-DOMAIN-SUFFIX,litv.tv
-DOMAIN-SUFFIX,ofiii.com
-DOMAIN-SUFFIX,4gtv.tv
-DOMAIN-SUFFIX,catchplay.com
-DOMAIN-SUFFIX,friday.tw
-DOMAIN-SUFFIX,myvideo.net.tw
-DOMAIN-KEYWORD,hamivideo
 
-# --- 3. 金融与支付 ---
+# --- 3. 金融与支付 (非 .tw 后缀) ---
 DOMAIN-SUFFIX,ctbcbank.com
 DOMAIN-SUFFIX,jkos.com
 DOMAIN-SUFFIX,cathaybk.com.tw
