@@ -1,25 +1,29 @@
-# NAME: AI Services
+# NAME: AI Services Optimized
 # DESC: 包含 OpenAI, Claude, Google Gemini, Copilot, Grok, Perplexity 等
-# UPDATED: 2024-05-20
-# TOTAL: Optimized
+# 策略建议：强烈建议指向【美国】或【新加坡】的“原生/解锁”节点
+# (注意：很多普通节点会被 OpenAI 封锁，导致 Access Denied)
 
-# --- OpenAI (ChatGPT) ---
+# --- 1. OpenAI (ChatGPT) ---
 DOMAIN-KEYWORD,openai
 DOMAIN-SUFFIX,chatgpt.com
 DOMAIN-SUFFIX,oaistatic.com
 DOMAIN-SUFFIX,oaiusercontent.com
 DOMAIN-SUFFIX,openai.com
 DOMAIN-SUFFIX,openaiapi-site.azureedge.net
-# 注意：已移除 stripe, auth0, identrust 等通用域名以防支付和登录失败
+# 补充：CDN 与 验证服务 (防卡顿)
+DOMAIN-SUFFIX,auth0.openai.com
+DOMAIN-SUFFIX,challenges.cloudflare.com
+DOMAIN-SUFFIX,identrust.com
 
-# --- Anthropic (Claude) ---
+# --- 2. Anthropic (Claude) ---
 DOMAIN-KEYWORD,anthropic
 DOMAIN-KEYWORD,claude
 DOMAIN-SUFFIX,anthropic.com
 DOMAIN-SUFFIX,claude.ai
+DOMAIN-SUFFIX,claudeusercontent.com
 
-# --- Google AI (Gemini / Bard / AI Studio) ---
-# 这些域名必须在 Google 通用规则之前匹配
+# --- 3. Google AI (Gemini / Bard) ---
+# 必须放在 Google 通用规则之前
 DOMAIN-KEYWORD,bard
 DOMAIN-KEYWORD,gemini
 DOMAIN-KEYWORD,makersuite
@@ -31,24 +35,43 @@ DOMAIN-SUFFIX,deepmind.com
 DOMAIN-SUFFIX,deepmind.google
 DOMAIN-SUFFIX,generativelanguage.googleapis.com
 DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
+# 补充：Gemini 图片生成与上传
+DOMAIN-SUFFIX,googlesyndication.com
 
-# --- Microsoft Copilot (Bing AI) ---
+# --- 4. Microsoft Copilot (Bing AI) ---
+# 微软 Copilot 比较难伺候，这几个必须走代理
 DOMAIN-SUFFIX,copilot.microsoft.com
 DOMAIN-SUFFIX,sydney.bing.com
 DOMAIN-SUFFIX,edgeservices.bing.com
+DOMAIN-SUFFIX,bingapis.com
 
-# --- xAI (Grok) ---
+# --- 5. xAI (Grok) ---
 DOMAIN-KEYWORD,grok
 DOMAIN-SUFFIX,grok.com
 DOMAIN-SUFFIX,x.ai
 
-# --- Perplexity AI ---
+# --- 6. Perplexity AI ---
 DOMAIN-SUFFIX,perplexity.ai
 DOMAIN-SUFFIX,pplx.ai
 
-# --- 其他 AI 服务 ---
+# --- 7. 其他热门 AI 工具 ---
 DOMAIN-SUFFIX,groq.com
 DOMAIN-SUFFIX,genspark.ai
 DOMAIN-SUFFIX,dify.ai
 DOMAIN-SUFFIX,jasper.ai
 DOMAIN-SUFFIX,civitai.com
+DOMAIN-SUFFIX,midjourney.com
+DOMAIN-SUFFIX,discord.com
+DOMAIN-SUFFIX,discord.gg
+# (Midjourney 主要依赖 Discord，建议一起代理)
+
+# --- 8. 进程匹配 (Android App 救星) ---
+# 强制 ChatGPT App 走代理，解决登录转圈问题
+PROCESS-NAME,com.openai.chatgpt
+# Copilot App
+PROCESS-NAME,com.microsoft.copilot
+PROCESS-NAME,com.microsoft.bing
+# Perplexity App
+PROCESS-NAME,ai.perplexity.app
+# Claude App (如有)
+PROCESS-NAME,com.anthropic.claude
