@@ -1,16 +1,26 @@
-# 内容：DIY
-# 域名关键字匹配
-DOMAIN-KEYWORD,lib
+# NAME: DIY (User Custom)
+# 策略建议：指向 代理节点 (Global/Proxy)
+# 说明：包含 国外主流新闻、维基百科、社交媒体(TG/Reddit)、Z-Library、隐私检测、成人CDN
+
+# --- 1. 域名关键字匹配 ---
+# 维基百科 & 知识库
+DOMAIN-KEYWORD,wikipedia
+DOMAIN-KEYWORD,wikimedia
+DOMAIN-KEYWORD,wikileaks
+# 新闻媒体 (CNN/BBC/NYT等)
+DOMAIN-KEYWORD,nytimes
+DOMAIN-KEYWORD,bbctv
+# 电子书与漫画 (Z-Lib)
 DOMAIN-KEYWORD,z-lib
 DOMAIN-KEYWORD,1lib
-DOMAIN-KEYWORD,library
-DOMAIN-KEYWORD,ncdn
-DOMAIN-KEYWORD,chaoyue
+# 隐私与工具
 DOMAIN-KEYWORD,browserleaks
 DOMAIN-KEYWORD,ipleak
 DOMAIN-KEYWORD,dnsleak
 DOMAIN-KEYWORD,whoer
 DOMAIN-KEYWORD,dnscheck
+# 视频与CDN (MissAV/Jable等)
+DOMAIN-KEYWORD,ncdn
 DOMAIN-KEYWORD,saawsedge
 DOMAIN-KEYWORD,doppiocdn
 DOMAIN-KEYWORD,afcdn
@@ -19,16 +29,92 @@ DOMAIN-KEYWORD,myavlive
 DOMAIN-KEYWORD,blcdog
 DOMAIN-KEYWORD,xlivrdr
 DOMAIN-KEYWORD,magsrv
+# 其他
+DOMAIN-KEYWORD,chaoyue
 
-# 域名后缀匹配
-DOMAIN-SUFFIX,ncdn.ec
-DOMAIN-SUFFIX,ygpy.net
+# --- 2. 国外主流新闻媒体 (新增核心) ---
+# 美国 (USA)
+DOMAIN-SUFFIX,nytimes.com       # 纽约时报
+DOMAIN-SUFFIX,nyt.com
+DOMAIN-SUFFIX,wsj.com           # 华尔街日报
+DOMAIN-SUFFIX,dowjones.com
+DOMAIN-SUFFIX,bloomberg.com     # 彭博社
+DOMAIN-SUFFIX,bloomberg.cn
+DOMAIN-SUFFIX,cnn.com           # CNN
+DOMAIN-SUFFIX,cnn.io
+DOMAIN-SUFFIX,washingtonpost.com # 华盛顿邮报
+DOMAIN-SUFFIX,usatoday.com      # 今日美国
+DOMAIN-SUFFIX,apnews.com        # 美联社 (AP)
+DOMAIN-SUFFIX,time.com          # 时代周刊
+DOMAIN-SUFFIX,voachinese.com    # 美国之音 (中文)
+DOMAIN-SUFFIX,voanews.com
+DOMAIN-SUFFIX,rfa.org           # 自由亚洲电台
+
+# 英国 (UK)
+DOMAIN-SUFFIX,bbc.com           # BBC
+DOMAIN-SUFFIX,bbc.co.uk
+DOMAIN-SUFFIX,bbci.co.uk        # BBC 媒体资源
+DOMAIN-SUFFIX,reuters.com       # 路透社
+DOMAIN-SUFFIX,ft.com            # 金融时报 (Financial Times)
+DOMAIN-SUFFIX,economist.com     # 经济学人
+DOMAIN-SUFFIX,theguardian.com   # 卫报
+DOMAIN-SUFFIX,dailymail.co.uk   # 每日邮报
+
+# 欧洲与亚太 (Others)
+DOMAIN-SUFFIX,dw.com            # 德国之声 (DW)
+DOMAIN-SUFFIX,rfi.fr            # 法广 (RFI)
+DOMAIN-SUFFIX,scmp.com          # 南华早报
+DOMAIN-SUFFIX,nikkei.com        # 日经新闻 (英文版)
+DOMAIN-SUFFIX,asia.nikkei.com
+DOMAIN-SUFFIX,aljazeera.com     # 半岛电视台
+
+# --- 3. 维基百科全家桶 ---
+DOMAIN-SUFFIX,wikipedia.org
+DOMAIN-SUFFIX,wikimedia.org
+DOMAIN-SUFFIX,wiktionary.org
+DOMAIN-SUFFIX,wikiquote.org
+DOMAIN-SUFFIX,wikibooks.org
+DOMAIN-SUFFIX,wikisource.org
+DOMAIN-SUFFIX,wikinews.org
+DOMAIN-SUFFIX,wikiversity.org
+DOMAIN-SUFFIX,wikivoyage.org
+DOMAIN-SUFFIX,wikidata.org
+DOMAIN-SUFFIX,mediawiki.org
+DOMAIN-SUFFIX,wikileaks.org
+
+# --- 4. 社交与社区 (除推特/FB外的刚需) ---
+# Telegram (网页版与短链接)
+DOMAIN-SUFFIX,t.me
+DOMAIN-SUFFIX,telegram.org
+DOMAIN-SUFFIX,telegram.me
+DOMAIN-SUFFIX,tdesktop.com
+# Reddit (美国贴吧)
+DOMAIN-SUFFIX,reddit.com
+DOMAIN-SUFFIX,redd.it
+DOMAIN-SUFFIX,redditstatic.com
+# Discord (语音与社区)
+DOMAIN-SUFFIX,discord.com
+DOMAIN-SUFFIX,discord.gg
+DOMAIN-SUFFIX,discordapp.com
+DOMAIN-SUFFIX,discordapp.net
+# Quora (美国知乎)
+DOMAIN-SUFFIX,quora.com
+# Pinterest
+DOMAIN-SUFFIX,pinterest.com
+DOMAIN-SUFFIX,pinimg.com
+# Archive (互联网档案馆)
+DOMAIN-SUFFIX,archive.org
+DOMAIN-SUFFIX,archive.is
+# Twitch
+DOMAIN-SUFFIX,twitch.tv
+DOMAIN-SUFFIX,ttvnw.net
+
+# --- 5. 原有 Z-Library 与 隐私工具 ---
 DOMAIN-SUFFIX,z-library.ec
 DOMAIN-SUFFIX,z-lib.fo
 DOMAIN-SUFFIX,1lib.sk
-DOMAIN-SUFFIX,destiny.to
-DOMAIN-SUFFIX,tv.garden
-DOMAIN-SUFFIX,chaoyue.shop
+DOMAIN-SUFFIX,b-ok.cc
+DOMAIN-SUFFIX,booksc.org
 DOMAIN-SUFFIX,browserleaks.com
 DOMAIN-SUFFIX,ipleak.net
 DOMAIN-SUFFIX,dnsleaktest.com
@@ -38,10 +124,11 @@ DOMAIN-SUFFIX,findip.net
 DOMAIN-SUFFIX,ipx.ac
 DOMAIN-SUFFIX,dnsleak.com
 DOMAIN-SUFFIX,whatismyipaddress.com
-DOMAIN-SUFFIX,mitce.net
-DOMAIN-SUFFIX,help.mitce.net
-DOMAIN-SUFFIX,email.mitce.net
-DOMAIN-SUFFIX,bulianglin.com
+
+# --- 6. 原有 视频站与图床 (MissAV/Jable等) ---
+DOMAIN-SUFFIX,ncdn.ec
+DOMAIN-SUFFIX,destiny.to
+DOMAIN-SUFFIX,tv.garden
 DOMAIN-SUFFIX,client-rapi-missav.recombee.com
 DOMAIN-SUFFIX,fourhoi.com
 DOMAIN-SUFFIX,nineyu.com
@@ -49,6 +136,7 @@ DOMAIN-SUFFIX,surrit.com
 DOMAIN-SUFFIX,tw.xiaoyakankan.com
 DOMAIN-SUFFIX,i1.xiaoyakankan.com
 DOMAIN-SUFFIX,missav.ai
+DOMAIN-SUFFIX,missav.com
 DOMAIN-SUFFIX,xiaoyakankan.com
 DOMAIN-SUFFIX,saawsedge.com
 DOMAIN-SUFFIX,doppiocdn.com
@@ -58,25 +146,35 @@ DOMAIN-SUFFIX,myavlive.com
 DOMAIN-SUFFIX,blcdog.com
 DOMAIN-SUFFIX,xlivrdr.com
 DOMAIN-SUFFIX,magsrv.com
+DOMAIN-SUFFIX,jable.tv
+DOMAIN-SUFFIX,ygpy.net
+DOMAIN-SUFFIX,chaoyue.shop
+DOMAIN-SUFFIX,mitce.net
+DOMAIN-SUFFIX,help.mitce.net
+DOMAIN-SUFFIX,email.mitce.net
+DOMAIN-SUFFIX,bulianglin.com
 
-
-
-# 外国 DNS 服务 IP 地址
+# --- 7. 外国公共 DNS 服务 IP (防劫持) ---
+# Google DNS
 IP-CIDR,8.8.8.8/32,no-resolve
 IP-CIDR,8.8.4.4/32,no-resolve
 IP-CIDR,2001:4860:4860::8888/128,no-resolve
 IP-CIDR,2001:4860:4860::8844/128,no-resolve
+# Cloudflare DNS
 IP-CIDR,1.1.1.1/32,no-resolve
 IP-CIDR,1.0.0.1/32,no-resolve
 IP-CIDR,2606:4700:4700::1111/128,no-resolve
 IP-CIDR,2606:4700:4700::1001/128,no-resolve
+# Quad9 DNS
 IP-CIDR,9.9.9.9/32,no-resolve
 IP-CIDR,149.112.112.112/32,no-resolve
 IP-CIDR,2620:fe::fe/128,no-resolve
+# OpenDNS
 IP-CIDR,208.67.222.222/32,no-resolve
 IP-CIDR,208.67.220.220/32,no-resolve
 IP-CIDR,2620:0:ccc::2/128,no-resolve
 IP-CIDR,2620:0:ccd::2/128,no-resolve
+# 其他常见加密 DNS
 IP-CIDR,185.228.168.168/32,no-resolve
 IP-CIDR,185.228.169.168/32,no-resolve
 IP-CIDR,2a0d:2a00:1::1/128,no-resolve
@@ -85,17 +183,4 @@ IP-CIDR,84.200.69.80/32,no-resolve
 IP-CIDR,84.200.70.40/32,no-resolve
 IP-CIDR,2001:1608:10:25::1c04:b12f/128,no-resolve
 IP-CIDR,2001:1608:10:25::9249:d69a/128,no-resolve
-
-# Google 服务 IP 地址段，防止直连
-IP-CIDR,64.233.160.0/19,no-resolve
-IP-CIDR,66.102.0.0/20,no-resolve
-IP-CIDR,66.249.80.0/20,no-resolve
-IP-CIDR,72.14.192.0/18,no-resolve
-IP-CIDR,74.125.0.0/16,no-resolve
-IP-CIDR,108.177.0.0/17,no-resolve
-IP-CIDR,173.194.0.0/16,no-resolve
-IP-CIDR,209.85.128.0/17,no-resolve
-IP-CIDR,216.58.192.0/19,no-resolve
-IP-CIDR,216.239.32.0/19,no-resolve
-
 
