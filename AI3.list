@@ -1,16 +1,21 @@
 # NAME: AI Services Optimized
-# DESC: 包含 OpenAI, Claude, Google Gemini, Copilot, Grok, Perplexity 等
+# DESC: 包含 OpenAI (Sora/Voice), Claude, Gemini (NotebookLM), Copilot, Grok 等
 # 策略建议：强烈建议指向【美国】或【新加坡】的“原生/解锁”节点
-# (注意：很多普通节点会被 OpenAI 封锁，导致 Access Denied)
 
-# --- 1. OpenAI (ChatGPT) ---
+# --- 1. OpenAI (ChatGPT / Sora) ---
 DOMAIN-KEYWORD,openai
 DOMAIN-SUFFIX,chatgpt.com
 DOMAIN-SUFFIX,oaistatic.com
 DOMAIN-SUFFIX,oaiusercontent.com
 DOMAIN-SUFFIX,openai.com
 DOMAIN-SUFFIX,openaiapi-site.azureedge.net
-# 补充：CDN 与 验证服务 (防卡顿)
+DOMAIN-SUFFIX,sora.com
+DOMAIN-SUFFIX,searchgpt.com
+# 关键补充：高级语音模式 (Advanced Voice Mode) 必须走代理
+DOMAIN-SUFFIX,chatgpt.livekit.cloud
+DOMAIN-SUFFIX,host.livekit.cloud
+DOMAIN-SUFFIX,turn.livekit.cloud
+# 补充：CDN 与 验证服务
 DOMAIN-SUFFIX,auth0.openai.com
 DOMAIN-SUFFIX,challenges.cloudflare.com
 DOMAIN-SUFFIX,identrust.com
@@ -22,8 +27,7 @@ DOMAIN-SUFFIX,anthropic.com
 DOMAIN-SUFFIX,claude.ai
 DOMAIN-SUFFIX,claudeusercontent.com
 
-# --- 3. Google AI (Gemini / Bard) ---
-# 必须放在 Google 通用规则之前
+# --- 3. Google AI (Gemini / NotebookLM) ---
 DOMAIN-KEYWORD,bard
 DOMAIN-KEYWORD,gemini
 DOMAIN-KEYWORD,makersuite
@@ -35,11 +39,12 @@ DOMAIN-SUFFIX,deepmind.com
 DOMAIN-SUFFIX,deepmind.google
 DOMAIN-SUFFIX,generativelanguage.googleapis.com
 DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
+DOMAIN-SUFFIX,notebooklm.google
+DOMAIN-SUFFIX,notebooklm.google.com
 # 补充：Gemini 图片生成与上传
 DOMAIN-SUFFIX,googlesyndication.com
 
 # --- 4. Microsoft Copilot (Bing AI) ---
-# 微软 Copilot 比较难伺候，这几个必须走代理
 DOMAIN-SUFFIX,copilot.microsoft.com
 DOMAIN-SUFFIX,sydney.bing.com
 DOMAIN-SUFFIX,edgeservices.bing.com
@@ -61,17 +66,14 @@ DOMAIN-SUFFIX,dify.ai
 DOMAIN-SUFFIX,jasper.ai
 DOMAIN-SUFFIX,civitai.com
 DOMAIN-SUFFIX,midjourney.com
+DOMAIN-SUFFIX,meta.ai
+DOMAIN-SUFFIX,llama.meta.com
 DOMAIN-SUFFIX,discord.com
 DOMAIN-SUFFIX,discord.gg
-# (Midjourney 主要依赖 Discord，建议一起代理)
 
 # --- 8. 进程匹配 (Android App 救星) ---
-# 强制 ChatGPT App 走代理，解决登录转圈问题
 PROCESS-NAME,com.openai.chatgpt
-# Copilot App
 PROCESS-NAME,com.microsoft.copilot
 PROCESS-NAME,com.microsoft.bing
-# Perplexity App
 PROCESS-NAME,ai.perplexity.app
-# Claude App (如有)
 PROCESS-NAME,com.anthropic.claude
