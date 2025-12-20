@@ -1,37 +1,31 @@
-# NAME: AI Services Optimized (Full Version)
-# DESC: 包含 OpenAI (Sora/Voice App修复版), Microsoft Copilot, Claude, Gemini, Grok 等
-# 策略建议：OpenAI/Copilot 建议指向【美国/新加坡】节点；请务必开启 UDP 转发以支持语音和视频生成
+# NAME: AI Services Optimized (Pro)
+# DESC: 包含 OpenAI (Sora/Voice), Claude, Gemini, Copilot, Grok, Midjourney 等
+# UPDATED: 2025-12
+# 策略建议：OpenAI/Claude/Gemini 必须指向【美国/新加坡】原生解锁节点
 
-# --- 1. OpenAI (ChatGPT / Sora / Voice) ---
+# --- 1. OpenAI (ChatGPT / Sora) ---
 DOMAIN-KEYWORD,openai
 DOMAIN-SUFFIX,chatgpt.com
 DOMAIN-SUFFIX,oaistatic.com
 DOMAIN-SUFFIX,oaiusercontent.com
 DOMAIN-SUFFIX,openai.com
+DOMAIN-SUFFIX,openaiapi-site.azureedge.net
 DOMAIN-SUFFIX,sora.com
 DOMAIN-SUFFIX,searchgpt.com
-DOMAIN-SUFFIX,openaiapi-site.azureedge.net
-DOMAIN-SUFFIX,cdn.openai.com
-
-# [App 修复核心] 缺少这些，Sora/ChatGPT App 会提示无网络或功能缺失
-DOMAIN-SUFFIX,statsig.com
-DOMAIN-SUFFIX,statsigapi.net
-DOMAIN-SUFFIX,featuregates.org
-DOMAIN-SUFFIX,launchdarkly.com
-DOMAIN-SUFFIX,intercom.io
-DOMAIN-SUFFIX,segment.io
-DOMAIN-SUFFIX,sentry.io
-
-# [高级语音模式] Advanced Voice Mode (Realtime API)
+# 高级语音模式 & 实时 API
 DOMAIN-SUFFIX,chatgpt.livekit.cloud
 DOMAIN-SUFFIX,host.livekit.cloud
 DOMAIN-SUFFIX,turn.livekit.cloud
-
-# [验证与CDN]
+DOMAIN-SUFFIX,tcr9i.chat.openai.com
+# CDN、验证、风控相关
 DOMAIN-SUFFIX,auth0.openai.com
 DOMAIN-SUFFIX,challenges.cloudflare.com
 DOMAIN-SUFFIX,identrust.com
 DOMAIN-SUFFIX,client-api.arkoselabs.com
+DOMAIN-SUFFIX,events.statsigapi.net
+DOMAIN-SUFFIX,featuregates.org
+DOMAIN-SUFFIX,browser-intake-datadoghq.com
+DOMAIN-SUFFIX,stripe.com
 
 # --- 2. Anthropic (Claude) ---
 DOMAIN-KEYWORD,anthropic
@@ -39,8 +33,10 @@ DOMAIN-KEYWORD,claude
 DOMAIN-SUFFIX,anthropic.com
 DOMAIN-SUFFIX,claude.ai
 DOMAIN-SUFFIX,claudeusercontent.com
+DOMAIN-SUFFIX,usefathom.com
 
 # --- 3. Google AI (Gemini / NotebookLM) ---
+# 注意：即使有 Google 规则集，建议保留这些，以便将 AI 流量单独分流到“更干净”的节点
 DOMAIN-KEYWORD,bard
 DOMAIN-KEYWORD,gemini
 DOMAIN-KEYWORD,makersuite
@@ -54,7 +50,9 @@ DOMAIN-SUFFIX,generativelanguage.googleapis.com
 DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
 DOMAIN-SUFFIX,notebooklm.google
 DOMAIN-SUFFIX,notebooklm.google.com
-DOMAIN-SUFFIX,googlesyndication.com
+DOMAIN-SUFFIX,ogust.google.com
+# Gemini 图片生成依赖
+DOMAIN-SUFFIX,googleusercontent.com
 
 # --- 4. Microsoft Copilot (Bing AI) ---
 DOMAIN-SUFFIX,copilot.microsoft.com
@@ -63,9 +61,9 @@ DOMAIN-SUFFIX,edgeservices.bing.com
 DOMAIN-SUFFIX,bingapis.com
 DOMAIN-SUFFIX,c.bing.com
 DOMAIN-SUFFIX,r.bing.com
-DOMAIN-SUFFIX,www.bing.com
 
 # --- 5. xAI (Grok) ---
+# 已移除 Twitter/X 通用域名
 DOMAIN-KEYWORD,grok
 DOMAIN-SUFFIX,grok.com
 DOMAIN-SUFFIX,x.ai
@@ -80,15 +78,20 @@ DOMAIN-SUFFIX,genspark.ai
 DOMAIN-SUFFIX,dify.ai
 DOMAIN-SUFFIX,jasper.ai
 DOMAIN-SUFFIX,civitai.com
+# Midjourney (注意：MJ 作图依赖 Discord CDN，如已有 Discord 规则，下方 Discord 域名可删除)
 DOMAIN-SUFFIX,midjourney.com
-DOMAIN-SUFFIX,meta.ai
-DOMAIN-SUFFIX,llama.meta.com
 DOMAIN-SUFFIX,discord.com
 DOMAIN-SUFFIX,discord.gg
+DOMAIN-SUFFIX,discordapp.com
+DOMAIN-SUFFIX,discordapp.net
+DOMAIN-SUFFIX,cdn.discordapp.com
+DOMAIN-SUFFIX,meta.ai
+DOMAIN-SUFFIX,llama.meta.com
 
-# --- 8. 进程匹配 (Android App 救星) ---
+# --- 8. 进程匹配 ---
 PROCESS-NAME,com.openai.chatgpt
 PROCESS-NAME,com.microsoft.copilot
 PROCESS-NAME,com.microsoft.bing
 PROCESS-NAME,ai.perplexity.app
 PROCESS-NAME,com.anthropic.claude
+PROCESS-NAME,com.google.android.apps.bard
