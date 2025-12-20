@@ -1,15 +1,15 @@
-# NAME: NHK & Japan
-# 策略建议：指向日本 (JP) 节点
-# 说明：DOMAIN-SUFFIX,jp 已覆盖所有日本本土域名
+# NAME: NHK & Japan Optimized
+# 策略建议：此 Rule-Set 指向 -> 日本节点
+# 说明：已移除高风险的 IP-CIDR 段，改用 GEOIP 自动识别，杜绝误伤国内流量
 
-# --- 1. 万能规则 (最强) ---
-# 只要是 .jp 结尾的网站，统统走日本节点
+# --- 1. 域名后缀匹配 (最稳) ---
+# 只要是 .jp 结尾的网站，统统匹配
 DOMAIN-SUFFIX,jp
 
-# --- 2. NHK 核心 (防漏) ---
+# --- 2. 关键词匹配 ---
 DOMAIN-KEYWORD,nhk
 
-# --- 3. 必须走日本节点的非 .jp 域名 (重要补充) ---
+# --- 3. 常见日本服务补充 (非 .jp 结尾的) ---
 # Abema TV
 DOMAIN-SUFFIX,abema.io
 DOMAIN-SUFFIX,abema.tv
@@ -34,34 +34,11 @@ DOMAIN-SUFFIX,rakuten.com
 # 软银与雅虎日本
 DOMAIN-SUFFIX,softbank.jp
 DOMAIN-SUFFIX,yahoo.co.jp
+# Line (补充)
+DOMAIN-SUFFIX,line.me
+DOMAIN-SUFFIX,line-apps.com
 
-# --- 4. 日本 IP 段 (已添加 no-resolve 防止卡顿) ---
-IP-CIDR,1.33.0.0/16,no-resolve
-IP-CIDR,1.72.0.0/14,no-resolve
-IP-CIDR,14.0.0.0/11,no-resolve
-IP-CIDR,27.80.0.0/13,no-resolve
-IP-CIDR,36.0.0.0/11,no-resolve
-IP-CIDR,42.0.0.0/10,no-resolve
-IP-CIDR,49.96.0.0/11,no-resolve
-IP-CIDR,58.0.0.0/10,no-resolve
-IP-CIDR,60.32.0.0/11,no-resolve
-IP-CIDR,101.0.0.0/10,no-resolve
-IP-CIDR,106.128.0.0/10,no-resolve
-IP-CIDR,110.0.0.0/10,no-resolve
-IP-CIDR,118.0.0.0/10,no-resolve
-IP-CIDR,121.80.0.0/13,no-resolve
-IP-CIDR,126.0.0.0/8,no-resolve
-IP-CIDR,133.0.0.0/8,no-resolve
-IP-CIDR,150.0.0.0/8,no-resolve
-IP-CIDR,153.128.0.0/9,no-resolve
-IP-CIDR,160.16.0.0/12,no-resolve
-IP-CIDR,175.0.0.0/8,no-resolve
-IP-CIDR,202.0.0.0/8,no-resolve
-IP-CIDR,203.0.0.0/8,no-resolve
-IP-CIDR,210.128.0.0/9,no-resolve
-IP-CIDR,210.140.0.0/16,no-resolve
-IP-CIDR,211.0.0.0/8,no-resolve
-IP-CIDR,220.0.0.0/8,no-resolve
-IP-CIDR,221.0.0.0/8,no-resolve
-IP-CIDR,222.0.0.0/8,no-resolve
-IP-CIDR,223.0.0.0/8,no-resolve
+# --- 4. 智能 IP 识别 (核心修改) ---
+# 这一行会自动识别所有属于日本的 IP 地址
+# no-resolve 意思是：如果没有匹配上面的域名，不要为了匹配 IP 而特意去解析 DNS，防止变慢
+GEOIP,JP,no-resolve
