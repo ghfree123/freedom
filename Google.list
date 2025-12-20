@@ -1,6 +1,6 @@
 # NAME: Google Optimized
 # AUTHOR: blackmatrix7 (Modified)
-# NOTE: 已将 IP 段替换为 GEOIP 自动识别，覆盖更全且无污染
+# NOTE: 已将 IP 段替换为 GEOIP 自动识别，已剔除 YouTube 相关域名
 # TOTAL: Optimized
 
 # --- 核心关键字 ---
@@ -87,6 +87,12 @@ DOMAIN-SUFFIX,widevine.com
 DOMAIN-SUFFIX,withgoogle.com
 DOMAIN-SUFFIX,x.company
 
+# --- 关键补充：解决商店下载问题 ---
+# 这个就是你截图里的那个乱码域名，它承载 Google Play 下载流量
+DOMAIN-SUFFIX,xn--ngstr-lra8j.com
+# GVT2 也是安卓下载核心域名，建议保留
+DOMAIN-SUFFIX,gvt2.com
+
 # --- Google 全球地区域名 ---
 DOMAIN-SUFFIX,google.co.jp
 DOMAIN-SUFFIX,google.co.uk
@@ -101,10 +107,8 @@ DOMAIN-SUFFIX,google.it
 DOMAIN-SUFFIX,google.ru
 DOMAIN-SUFFIX,google.ca
 DOMAIN-SUFFIX,google.com.au
-# (注：已涵盖主要地区，其余地区域名通过 Keyword 规则通常也能匹配)
 
 # --- 广告与追踪 ---
-# 建议保留，避免页面加载不全。如果需要去广告，请使用专门的 Reject 规则集
 DOMAIN-SUFFIX,2mdn.net
 DOMAIN-SUFFIX,admeld.com
 DOMAIN-SUFFIX,admob.com
@@ -128,6 +132,5 @@ PROCESS-NAME,com.google.android.gsf
 PROCESS-NAME,com.google.android.play.games
 PROCESS-NAME,BackupandSync
 
-# --- IP 智能匹配 (替代了手动 IP 段) ---
-# 自动识别属于 Google ASN 的所有 IP
+# --- IP 智能匹配 ---
 GEOIP,GOOGLE,no-resolve
