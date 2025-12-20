@@ -1,12 +1,12 @@
-# 台湾域名组 (流媒体加强版)
+# NAME: Taiwan Media & Web Optimized
 # 策略建议：指向台湾 (TW) 节点
-# 说明：已补充 ptsplus.tv 等非 .tw 后缀的流媒体
+# 说明：保留了流媒体加强版域名，将手动 IP 替换为 GEOIP 自动识别
 
 # --- 1. 万能规则 ---
 DOMAIN-SUFFIX,tw
 
-# --- 2. 热门流媒体 (加强补全) ---
-# 公视+ (PTS Plus) - 你刚才漏掉的
+# --- 2. 热门流媒体 (保留你的加强版) ---
+# 公视+ (PTS Plus)
 DOMAIN-SUFFIX,ptsplus.tv
 # 巴哈姆特动画疯
 DOMAIN-SUFFIX,bahamut.com.tw
@@ -15,9 +15,9 @@ DOMAIN-SUFFIX,gamer.com.tw
 DOMAIN-SUFFIX,litv.tv
 # 四季线上 (4GTV)
 DOMAIN-SUFFIX,4gtv.tv
-# 爱尔达 (ELTA - 体育赛事常用)
+# 爱尔达 (ELTA)
 DOMAIN-SUFFIX,elta.tv
-# Vidol (三立电视)
+# Vidol (三立)
 DOMAIN-SUFFIX,vidol.tv
 # Line TV
 DOMAIN-SUFFIX,linetv.tw
@@ -25,7 +25,7 @@ DOMAIN-SUFFIX,linetv.tw
 DOMAIN-KEYWORD,hamivideo
 # MyVideo (台湾大哥大)
 DOMAIN-SUFFIX,myvideo.net.tw
-# friDay 影音 (远传电信)
+# friDay 影音 (远传)
 DOMAIN-SUFFIX,friday.tw
 # CatchPlay+
 DOMAIN-SUFFIX,catchplay.com
@@ -37,7 +37,7 @@ DOMAIN-SUFFIX,kktv.me
 DOMAIN-SUFFIX,kkbox.com
 DOMAIN-SUFFIX,kkbox.com.tw
 
-# --- 3. 金融与支付 (非 .tw 后缀) ---
+# --- 3. 金融与支付 ---
 DOMAIN-SUFFIX,ctbcbank.com
 DOMAIN-SUFFIX,jkos.com
 DOMAIN-SUFFIX,cathaybk.com.tw
@@ -67,19 +67,6 @@ DOMAIN-SUFFIX,cntv.com.tw
 # --- 6. 关键字匹配 ---
 DOMAIN-KEYWORD,taiwan
 
-# --- 7. 台湾 IP 段 ---
-IP-CIDR,1.34.0.0/15,no-resolve
-IP-CIDR,1.160.0.0/12,no-resolve
-IP-CIDR,36.224.0.0/12,no-resolve
-IP-CIDR,59.112.0.0/12,no-resolve
-IP-CIDR,60.248.0.0/14,no-resolve
-IP-CIDR,61.216.0.0/13,no-resolve
-IP-CIDR,61.224.0.0/13,no-resolve
-IP-CIDR,114.30.32.0/20,no-resolve
-IP-CIDR,175.111.192.0/18,no-resolve
-IP-CIDR,203.160.240.0/20,no-resolve
-IP-CIDR,210.59.0.0/16,no-resolve
-IP-CIDR,211.20.0.0/16,no-resolve
-IP-CIDR,220.128.0.0/16,no-resolve
-IP-CIDR,103.102.0.0/22,no-resolve
-IP-CIDR,103.24.80.0/22,no-resolve
+# --- 7. 智能 IP 识别 (已优化) ---
+# 自动识别所有台湾 IP，比手动列表更全、更准
+GEOIP,TW,no-resolve
