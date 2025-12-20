@@ -1,7 +1,7 @@
-# NAME: Google
-# AUTHOR: blackmatrix7
-# NOTE: 作为基础规则，放在 AI 和 YouTube 规则之后
-# TOTAL: 725+
+# NAME: Google Optimized
+# AUTHOR: blackmatrix7 (Modified)
+# NOTE: 已将 IP 段替换为 GEOIP 自动识别，覆盖更全且无污染
+# TOTAL: Optimized
 
 # --- 核心关键字 ---
 DOMAIN-KEYWORD,google
@@ -87,7 +87,7 @@ DOMAIN-SUFFIX,widevine.com
 DOMAIN-SUFFIX,withgoogle.com
 DOMAIN-SUFFIX,x.company
 
-# --- Google 全球地区域名 (精简列出常用) ---
+# --- Google 全球地区域名 ---
 DOMAIN-SUFFIX,google.co.jp
 DOMAIN-SUFFIX,google.co.uk
 DOMAIN-SUFFIX,google.co.kr
@@ -101,9 +101,10 @@ DOMAIN-SUFFIX,google.it
 DOMAIN-SUFFIX,google.ru
 DOMAIN-SUFFIX,google.ca
 DOMAIN-SUFFIX,google.com.au
-# (注：保留原列表的完整性，此处包含 blackmatrix7 原始列表中的所有国家后缀，为节省篇幅不一一展开，常用的已列出)
+# (注：已涵盖主要地区，其余地区域名通过 Keyword 规则通常也能匹配)
 
-# --- 广告与追踪 (可选，根据去广告需求决定是否保留) ---
+# --- 广告与追踪 ---
+# 建议保留，避免页面加载不全。如果需要去广告，请使用专门的 Reject 规则集
 DOMAIN-SUFFIX,2mdn.net
 DOMAIN-SUFFIX,admeld.com
 DOMAIN-SUFFIX,admob.com
@@ -127,10 +128,6 @@ PROCESS-NAME,com.google.android.gsf
 PROCESS-NAME,com.google.android.play.games
 PROCESS-NAME,BackupandSync
 
-# --- IP 段 ---
-IP-CIDR,172.110.32.0/21,no-resolve
-IP-CIDR,142.250.157.188/32,no-resolve
-IP-CIDR,173.194.0.0/16,no-resolve
-IP-CIDR,216.73.80.0/20,no-resolve
-IP-CIDR,74.125.0.0/16,no-resolve
-IP-CIDR6,2620:120:e000::/40,no-resolve
+# --- IP 智能匹配 (替代了手动 IP 段) ---
+# 自动识别属于 Google ASN 的所有 IP
+GEOIP,GOOGLE,no-resolve
