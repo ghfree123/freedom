@@ -1,97 +1,78 @@
-# NAME: AI Services Optimized (Pro)
-# DESC: 包含 OpenAI (Sora/Voice), Claude, Gemini, Copilot, Grok, Midjourney 等
-# UPDATED: 2025-12
-# 策略建议：OpenAI/Claude/Gemini 必须指向【美国/新加坡】原生解锁节点
+# NAME: AI Services
+# DESC: 包含 OpenAI, Claude, Google Gemini, Copilot, Grok, Midjourney, HuggingFace 等
+# UPDATED: 2025-12-20
+# TOTAL: Optimized
 
-# --- 1. OpenAI (ChatGPT / Sora) ---
-DOMAIN-KEYWORD,openai
+# --- OpenAI (ChatGPT) ---
 DOMAIN-SUFFIX,chatgpt.com
 DOMAIN-SUFFIX,oaistatic.com
 DOMAIN-SUFFIX,oaiusercontent.com
 DOMAIN-SUFFIX,openai.com
 DOMAIN-SUFFIX,openaiapi-site.azureedge.net
-DOMAIN-SUFFIX,sora.com
-DOMAIN-SUFFIX,searchgpt.com
-# 高级语音模式 & 实时 API
-DOMAIN-SUFFIX,chatgpt.livekit.cloud
-DOMAIN-SUFFIX,host.livekit.cloud
-DOMAIN-SUFFIX,turn.livekit.cloud
-DOMAIN-SUFFIX,tcr9i.chat.openai.com
-# CDN、验证、风控相关
-DOMAIN-SUFFIX,auth0.openai.com
-DOMAIN-SUFFIX,challenges.cloudflare.com
-DOMAIN-SUFFIX,identrust.com
-DOMAIN-SUFFIX,client-api.arkoselabs.com
-DOMAIN-SUFFIX,events.statsigapi.net
-DOMAIN-SUFFIX,featuregates.org
-DOMAIN-SUFFIX,browser-intake-datadoghq.com
-DOMAIN-SUFFIX,stripe.com
+DOMAIN-SUFFIX,chatgpt.livekit.cloud  # 新增：用于 ChatGPT 实时语音模式
+DOMAIN-SUFFIX,host.livekit.cloud     # 新增：语音模式底层服务
+DOMAIN,cdn.oaistatic.com
+DOMAIN,files.oaiusercontent.com
 
-# --- 2. Anthropic (Claude) ---
-DOMAIN-KEYWORD,anthropic
-DOMAIN-KEYWORD,claude
+# --- Anthropic (Claude) ---
+# 移除了通用 keyword，防止误匹配
 DOMAIN-SUFFIX,anthropic.com
 DOMAIN-SUFFIX,claude.ai
-DOMAIN-SUFFIX,claudeusercontent.com
-DOMAIN-SUFFIX,usefathom.com
+DOMAIN-SUFFIX,claudeusercontent.com  # 关键新增：修复 Claude 附件、图片上传和 Artifacts 预览
+DOMAIN-SUFFIX,anthropicusercontent.com
 
-# --- 3. Google AI (Gemini / NotebookLM) ---
-# 注意：即使有 Google 规则集，建议保留这些，以便将 AI 流量单独分流到“更干净”的节点
-DOMAIN-KEYWORD,bard
-DOMAIN-KEYWORD,gemini
-DOMAIN-KEYWORD,makersuite
-DOMAIN-SUFFIX,bard.google.com
+# --- Google AI (Gemini / NotebookLM) ---
+# 移除了 dangerous keyword "gemini" (防止误流 Gemini 交易所)
 DOMAIN-SUFFIX,gemini.google.com
-DOMAIN-SUFFIX,makersuite.google.com
+DOMAIN-SUFFIX,bard.google.com
 DOMAIN-SUFFIX,aistudio.google.com
+DOMAIN-SUFFIX,makersuite.google.com
 DOMAIN-SUFFIX,deepmind.com
 DOMAIN-SUFFIX,deepmind.google
+DOMAIN-SUFFIX,notebooklm.google      # 新增：Google 笔记 AI
+DOMAIN-SUFFIX,notebooklm.google.com
 DOMAIN-SUFFIX,generativelanguage.googleapis.com
 DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
-DOMAIN-SUFFIX,notebooklm.google
-DOMAIN-SUFFIX,notebooklm.google.com
-DOMAIN-SUFFIX,ogust.google.com
-# Gemini 图片生成依赖
-DOMAIN-SUFFIX,googleusercontent.com
+DOMAIN-SUFFIX,alkalimakersuite-pa.clients6.google.com # 新增：AI Studio API 调用
 
-# --- 4. Microsoft Copilot (Bing AI) ---
+# --- Microsoft Copilot ---
 DOMAIN-SUFFIX,copilot.microsoft.com
-DOMAIN-SUFFIX,sydney.bing.com
+DOMAIN-SUFFIX,sydney.bing.com        # Copilot 后端核心
 DOMAIN-SUFFIX,edgeservices.bing.com
-DOMAIN-SUFFIX,bingapis.com
-DOMAIN-SUFFIX,c.bing.com
-DOMAIN-SUFFIX,r.bing.com
+DOMAIN-SUFFIX,clara-s.bing.com       # 新增
+DOMAIN-SUFFIX,bing-shopping.microsoft-falcon.io
+# 建议：如果 Copilot 经常断连，可能需要将 www.bing.com 也加入此规则，但会影响 Bing 搜索速度
 
-# --- 5. xAI (Grok) ---
-# 已移除 Twitter/X 通用域名
-DOMAIN-KEYWORD,grok
+# --- xAI (Grok) ---
+# 移除了 keyword "grok" 防止误杀 ngrok 等工具
 DOMAIN-SUFFIX,grok.com
 DOMAIN-SUFFIX,x.ai
+DOMAIN-SUFFIX,api.x.ai
 
-# --- 6. Perplexity AI ---
+# --- Perplexity AI ---
 DOMAIN-SUFFIX,perplexity.ai
 DOMAIN-SUFFIX,pplx.ai
+DOMAIN-SUFFIX,labs.perplexity.ai
 
-# --- 7. 其他热门 AI 工具 ---
+# --- Midjourney (新增) ---
+DOMAIN-SUFFIX,midjourney.com
+DOMAIN-SUFFIX,mj.run
+
+# --- HuggingFace (AI 模型库) ---
+DOMAIN-SUFFIX,huggingface.co
+DOMAIN-SUFFIX,hf.co
+
+# --- Poe (Quora AI 聚合) ---
+DOMAIN-SUFFIX,poe.com
+DOMAIN-SUFFIX,poecdn.net
+
+# --- 其他 AI 服务 ---
 DOMAIN-SUFFIX,groq.com
 DOMAIN-SUFFIX,genspark.ai
 DOMAIN-SUFFIX,dify.ai
 DOMAIN-SUFFIX,jasper.ai
 DOMAIN-SUFFIX,civitai.com
-# Midjourney (注意：MJ 作图依赖 Discord CDN，如已有 Discord 规则，下方 Discord 域名可删除)
-DOMAIN-SUFFIX,midjourney.com
-DOMAIN-SUFFIX,discord.com
-DOMAIN-SUFFIX,discord.gg
-DOMAIN-SUFFIX,discordapp.com
-DOMAIN-SUFFIX,discordapp.net
-DOMAIN-SUFFIX,cdn.discordapp.com
-DOMAIN-SUFFIX,meta.ai
-DOMAIN-SUFFIX,llama.meta.com
-
-# --- 8. 进程匹配 ---
-PROCESS-NAME,com.openai.chatgpt
-PROCESS-NAME,com.microsoft.copilot
-PROCESS-NAME,com.microsoft.bing
-PROCESS-NAME,ai.perplexity.app
-PROCESS-NAME,com.anthropic.claude
-PROCESS-NAME,com.google.android.apps.bard
+DOMAIN-SUFFIX,civitai.content       # 新增：Civitai 图片资源
+DOMAIN-SUFFIX,suno.com              # 新增：Suno 音乐生成
+DOMAIN-SUFFIX,suno.ai
+DOMAIN-SUFFIX,udio.com              # 新增：Udio 音乐生成
