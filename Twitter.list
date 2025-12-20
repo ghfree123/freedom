@@ -1,6 +1,6 @@
-# NAME: Twitter & X
+# NAME: Twitter & X Optimized
 # 策略建议：推荐使用【美国】或【日本】节点
-# (美国节点内容最全，日本节点推特趋势活跃且二次元内容多)
+# 说明：已添加 App 进程规则，优化移动端体验
 
 # --- 核心域名 (X / Twitter) ---
 DOMAIN-SUFFIX,x.com
@@ -14,7 +14,8 @@ DOMAIN-SUFFIX,twimg.org
 DOMAIN-SUFFIX,twttr.com
 DOMAIN-SUFFIX,twttr.net
 
-# --- 广告与数据 (保持开启以防App卡顿) ---
+# --- 广告与数据 ---
+# 建议走代理，否则 App 可能会因为一直在尝试加载广告而卡住
 DOMAIN-SUFFIX,ads-twitter.com
 DOMAIN-SUFFIX,cms-twdigitalassets.com
 DOMAIN-SUFFIX,twitter.biz
@@ -25,14 +26,18 @@ DOMAIN-SUFFIX,twitteroauth.com
 DOMAIN-SUFFIX,twitterstat.us
 DOMAIN-SUFFIX,twtrdns.net
 DOMAIN-SUFFIX,tellapart.com
+DOMAIN-SUFFIX,vine.co
 
 # --- 关键字兜底 ---
 DOMAIN-KEYWORD,twitter
 
-# --- IP 段 (App 优化) ---
-IP-CIDR,192.133.76.0/22,no-resolve
-IP-CIDR,199.59.148.0/22,no-resolve
-IP-CIDR,199.96.56.0/21,no-resolve
-IP-CIDR,202.160.128.0/22,no-resolve
-IP-CIDR,209.237.192.0/19,no-resolve
-IP-CIDR,69.195.160.0/19,no-resolve
+# --- 进程匹配 (新增：对 Android 客户端极其重要) ---
+# 强制 Twitter App 的所有流量走代理，防止漏网
+PROCESS-NAME,com.twitter.android
+PROCESS-NAME,com.twitter.android.lite
+PROCESS-NAME,com.atebits.tweetie2
+PROCESS-NAME,com.twitter.android.tv
+
+# --- 智能 IP 识别 (替代了手动 IP 段) ---
+# 自动识别属于 Twitter/X 的所有 IP
+GEOIP,TWITTER,no-resolve
