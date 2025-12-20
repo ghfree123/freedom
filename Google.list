@@ -1,21 +1,22 @@
-# NAME: Google Optimized
-# AUTHOR: blackmatrix7 (Modified)
-# NOTE: 已将 IP 段替换为 GEOIP 自动识别，已剔除 YouTube 相关域名
-# TOTAL: Optimized
+# NAME: Google Optimized (Final)
+# AUTHOR: User & Gemini
+# NOTE: 1. 基于 GEOIP 自动分流 IP
+#       2. 包含 Google Play 下载修复 (gvt2 & xn--ngstr-lra8j)
+#       3. 已精简冗余的国家地区后缀 (由 Keyword 兜底)
+#       4. 剥离了 YouTube 视频流，但保留了基础图片服务以修复商店图标
 
-# --- 核心关键字 ---
+# --- 核心关键字 (兜底神技) ---
+# 只要域名包含这些词，统统走代理。这能替代几百个国家后缀。
 DOMAIN-KEYWORD,google
 DOMAIN-KEYWORD,gmail
 DOMAIN-KEYWORD,blogspot
 DOMAIN-KEYWORD,recaptcha
 DOMAIN-KEYWORD,appspot
 
-# --- 核心域名 ---
-DOMAIN,voice.telephony.goog
+# --- 核心服务域名 ---
 DOMAIN-SUFFIX,abc.xyz
 DOMAIN-SUFFIX,android.com
 DOMAIN-SUFFIX,androidify.com
-DOMAIN-SUFFIX,appspot.com
 DOMAIN-SUFFIX,blog.google
 DOMAIN-SUFFIX,blogger.com
 DOMAIN-SUFFIX,chrome.com
@@ -26,12 +27,10 @@ DOMAIN-SUFFIX,cloudfunctions.net
 DOMAIN-SUFFIX,dart.dev
 DOMAIN-SUFFIX,deepmind.com
 DOMAIN-SUFFIX,dialogflow.com
-DOMAIN-SUFFIX,doubleclick.net
 DOMAIN-SUFFIX,firebaseapp.com
 DOMAIN-SUFFIX,firebaseio.com
 DOMAIN-SUFFIX,flutter.dev
 DOMAIN-SUFFIX,get.app
-DOMAIN-SUFFIX,gmail.com
 DOMAIN-SUFFIX,gmodules.com
 DOMAIN-SUFFIX,golang.org
 DOMAIN-SUFFIX,goo.gl
@@ -63,12 +62,7 @@ DOMAIN-SUFFIX,googletagmanager.com
 DOMAIN-SUFFIX,googletagservices.com
 DOMAIN-SUFFIX,googleusercontent.com
 DOMAIN-SUFFIX,googleventures.com
-DOMAIN-SUFFIX,gstatic.cn
-DOMAIN-SUFFIX,gstatic.com
 DOMAIN-SUFFIX,gsuite.com
-DOMAIN-SUFFIX,gvt0.com
-DOMAIN-SUFFIX,gvt1.com
-DOMAIN-SUFFIX,gvt3.com
 DOMAIN-SUFFIX,hey.gle
 DOMAIN-SUFFIX,igoogle.com
 DOMAIN-SUFFIX,material.io
@@ -87,32 +81,27 @@ DOMAIN-SUFFIX,widevine.com
 DOMAIN-SUFFIX,withgoogle.com
 DOMAIN-SUFFIX,x.company
 
-# --- 关键补充：解决商店下载问题 ---
-# 这个就是你截图里的那个乱码域名，它承载 Google Play 下载流量
+# --- 关键：Google Play 下载与连接性修复 ---
+# 解决下载一直“等待中”的问题
 DOMAIN-SUFFIX,xn--ngstr-lra8j.com
-# GVT2 也是安卓下载核心域名，建议保留
+DOMAIN-SUFFIX,gvt0.com
+DOMAIN-SUFFIX,gvt1.com
 DOMAIN-SUFFIX,gvt2.com
+DOMAIN-SUFFIX,gvt3.com
+# 解决 Google 账号头像、Play 商店应用图标不显示的问题 (不包含视频流)
+DOMAIN-SUFFIX,ggpht.com
+# 解决 Android 系统连接性检查
+DOMAIN-SUFFIX,gstatic.cn
+DOMAIN-SUFFIX,gstatic.com
 
-# --- Google 全球地区域名 ---
-DOMAIN-SUFFIX,google.co.jp
-DOMAIN-SUFFIX,google.co.uk
-DOMAIN-SUFFIX,google.co.kr
-DOMAIN-SUFFIX,google.com.hk
-DOMAIN-SUFFIX,google.com.tw
-DOMAIN-SUFFIX,google.com.sg
-DOMAIN-SUFFIX,google.de
-DOMAIN-SUFFIX,google.fr
-DOMAIN-SUFFIX,google.es
-DOMAIN-SUFFIX,google.it
-DOMAIN-SUFFIX,google.ru
-DOMAIN-SUFFIX,google.ca
-DOMAIN-SUFFIX,google.com.au
-
-# --- 广告与追踪 ---
+# --- 广告与追踪 (按需选择) ---
+# 如果你想去广告，可以将这些移到 Reject 策略组；
+# 如果你是为了让 Google 联盟广告正常加载，则保留在此。
 DOMAIN-SUFFIX,2mdn.net
 DOMAIN-SUFFIX,admeld.com
 DOMAIN-SUFFIX,admob.com
 DOMAIN-SUFFIX,adsense.com
+DOMAIN-SUFFIX,doubleclick.net
 DOMAIN-SUFFIX,doubleclick-cn.net
 
 # --- 开发与云服务 ---
@@ -125,6 +114,8 @@ DOMAIN-SUFFIX,pkg.go.dev
 DOMAIN-SUFFIX,run.app
 
 # --- 进程匹配 (Windows/Android) ---
+# 注意：在路由器(OpenClash)上，除非开启了复杂的进程匹配模式，
+# 否则这些通常只在手机/电脑端的 Clash 客户端生效。保留无害。
 PROCESS-NAME,GoogleDriveFS.exe
 PROCESS-NAME,com.android.vending
 PROCESS-NAME,com.google.android.gms
@@ -132,5 +123,6 @@ PROCESS-NAME,com.google.android.gsf
 PROCESS-NAME,com.google.android.play.games
 PROCESS-NAME,BackupandSync
 
-# --- IP 智能匹配 ---
+# --- IP 智能匹配 (最后一道防线) ---
+# no-resolve 避免了非必要的 DNS 解析，提升响应速度
 GEOIP,GOOGLE,no-resolve
