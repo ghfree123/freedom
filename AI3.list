@@ -1,6 +1,6 @@
-# NAME: AI Services (No Microsoft) - Sora App Optimized
-# DESC: 包含 OpenAI (Sora/Voice App修复版), Claude, Gemini, Grok, Perplexity 等
-# 策略建议：OpenAI 必须指向【美国/新加坡】的【原生/解锁】节点，且需开启 UDP 转发
+# NAME: AI Services Optimized (Full Version)
+# DESC: 包含 OpenAI (Sora/Voice App修复版), Microsoft Copilot, Claude, Gemini, Grok 等
+# 策略建议：OpenAI/Copilot 建议指向【美国/新加坡】节点；请务必开启 UDP 转发以支持语音和视频生成
 
 # --- 1. OpenAI (ChatGPT / Sora / Voice) ---
 DOMAIN-KEYWORD,openai
@@ -13,7 +13,7 @@ DOMAIN-SUFFIX,searchgpt.com
 DOMAIN-SUFFIX,openaiapi-site.azureedge.net
 DOMAIN-SUFFIX,cdn.openai.com
 
-# [App 修复核心] 缺少这些，App 会提示无网络或功能缺失
+# [App 修复核心] 缺少这些，Sora/ChatGPT App 会提示无网络或功能缺失
 DOMAIN-SUFFIX,statsig.com
 DOMAIN-SUFFIX,statsigapi.net
 DOMAIN-SUFFIX,featuregates.org
@@ -56,16 +56,25 @@ DOMAIN-SUFFIX,notebooklm.google
 DOMAIN-SUFFIX,notebooklm.google.com
 DOMAIN-SUFFIX,googlesyndication.com
 
-# --- 4. xAI (Grok) ---
+# --- 4. Microsoft Copilot (Bing AI) ---
+DOMAIN-SUFFIX,copilot.microsoft.com
+DOMAIN-SUFFIX,sydney.bing.com
+DOMAIN-SUFFIX,edgeservices.bing.com
+DOMAIN-SUFFIX,bingapis.com
+DOMAIN-SUFFIX,c.bing.com
+DOMAIN-SUFFIX,r.bing.com
+DOMAIN-SUFFIX,www.bing.com
+
+# --- 5. xAI (Grok) ---
 DOMAIN-KEYWORD,grok
 DOMAIN-SUFFIX,grok.com
 DOMAIN-SUFFIX,x.ai
 
-# --- 5. Perplexity AI ---
+# --- 6. Perplexity AI ---
 DOMAIN-SUFFIX,perplexity.ai
 DOMAIN-SUFFIX,pplx.ai
 
-# --- 6. 其他热门 AI 工具 ---
+# --- 7. 其他热门 AI 工具 ---
 DOMAIN-SUFFIX,groq.com
 DOMAIN-SUFFIX,genspark.ai
 DOMAIN-SUFFIX,dify.ai
@@ -77,7 +86,9 @@ DOMAIN-SUFFIX,llama.meta.com
 DOMAIN-SUFFIX,discord.com
 DOMAIN-SUFFIX,discord.gg
 
-# --- 7. 进程匹配 (Android App 救星) ---
+# --- 8. 进程匹配 (Android App 救星) ---
 PROCESS-NAME,com.openai.chatgpt
+PROCESS-NAME,com.microsoft.copilot
+PROCESS-NAME,com.microsoft.bing
 PROCESS-NAME,ai.perplexity.app
 PROCESS-NAME,com.anthropic.claude
