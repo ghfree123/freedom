@@ -1,39 +1,40 @@
-# NAME: Spotify
-# AUTHOR: blackmatrix7 (Modified)
+# NAME: Spotify Final
 # UPDATED: 2025-12-23
-# TOTAL: 34
-DOMAIN,audio4-ak-spotify-com.akamaized.net
-DOMAIN,cdn-spotify-experiments.conductrics.com
-DOMAIN,heads-ak-spotify-com.akamaized.net
-DOMAIN,spotify.map.fastly.net
-DOMAIN,spotify.map.fastlylb.net
-# --- 新增/补全日志中漏掉的连接 ---
-DOMAIN,这三个是什么域名spclient.wg.spotify.com:443
-DOMAIN,links.tospotify.com:443
-DOMAIN,spotify.com.edgesuite.net
-DOMAIN-SUFFIX,acast.com
-# -------------------------------
-DOMAIN-SUFFIX,audio-ak-spotify-com.akamaized.net
-DOMAIN-SUFFIX,byspotify.com
-DOMAIN-SUFFIX,heads4-ak-spotify-com.akamaized.net
-DOMAIN-SUFFIX,pscdn.co
-DOMAIN-SUFFIX,scdn.co
-DOMAIN-SUFFIX,spoti.fi
-DOMAIN-SUFFIX,spotify-com.akamaized.net
-DOMAIN-SUFFIX,spotify-everywhere.com
-DOMAIN-SUFFIX,spotify.app.link
+# TOTAL: Optimized & Fixed
+
+# --- 核心主域名 (涵盖了您提到的 /0 /1 /2 等所有连接) ---
 DOMAIN-SUFFIX,spotify.com
-DOMAIN-SUFFIX,spotify.design
+DOMAIN-SUFFIX,spoti.fi
+
+# --- 您要求补充的规则 ---
+DOMAIN-SUFFIX,acast.com
+
+# --- CDN 与资源域名 ---
+DOMAIN-SUFFIX,scdn.co
+DOMAIN-SUFFIX,pscdn.co
 DOMAIN-SUFFIX,spotifycdn.com
 DOMAIN-SUFFIX,spotifycdn.net
+DOMAIN-SUFFIX,spotify-com.akamaized.net
+DOMAIN-SUFFIX,audio-ak-spotify-com.akamaized.net
+DOMAIN-SUFFIX,heads-ak-spotify-com.akamaized.net
+DOMAIN-SUFFIX,heads4-ak-spotify-com.akamaized.net
+DOMAIN,spotify.map.fastly.net
+DOMAIN,spotify.map.fastlylb.net
+
+# --- 其他关联服务 ---
+DOMAIN-SUFFIX,spotify.design
 DOMAIN-SUFFIX,spotifycharts.com
 DOMAIN-SUFFIX,spotifycodes.com
 DOMAIN-SUFFIX,spotifyforbrands.com
 DOMAIN-SUFFIX,spotifyjobs.com
 DOMAIN-SUFFIX,spotifynewsroom.jp
 DOMAIN-SUFFIX,spotilocal.com
-DOMAIN-SUFFIX,tospotify.com
+DOMAIN-SUFFIX,spotify-everywhere.com
+DOMAIN-SUFFIX,spotify.app.link
+
+# --- 兜底关键词 (防止漏网之鱼) ---
 DOMAIN-KEYWORD,spotify
-IP-CIDR,104.154.127.126/32,no-resolve
-IP-CIDR,35.186.224.47/32,no-resolve
-PROCESS-NAME,com.spotify.music
+
+# --- 进程规则 ---
+PROCESS-NAME,Spotify.exe
+PROCESS-NAME,Spotify
