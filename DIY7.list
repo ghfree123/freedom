@@ -1,127 +1,175 @@
 # NAME: DIY (User Custom)
 # 策略建议：指向 代理节点 (Global/Proxy)
-# 说明：包含 国外主流新闻、维基百科、社交媒体(Reddit/Discord)、Z-Library、隐私检测、成人CDN
-# ⚠️ 修改注：已移除 Telegram 规则，以便其匹配主配置文件的“📘 Telegram”策略组
+# 说明：包含 国外主流新闻、维基百科、社交媒体、Z-Library、隐私检测、成人CDN、全套加密货币
+# ⚠️ 修改注：已移除 Telegram，已新增 主流加密货币全家桶
 
-# --- 1. 域名关键字匹配 ---
+# --- 1. 域名关键字匹配 (增强版) ---
 # 维基百科 & 知识库
 DOMAIN-KEYWORD,wikipedia
 DOMAIN-KEYWORD,wikimedia
 DOMAIN-KEYWORD,wikileaks
-# 新闻媒体 (CNN/BBC/NYT等)
+# 新闻媒体
 DOMAIN-KEYWORD,nytimes
 DOMAIN-KEYWORD,bbctv
-# 电子书与漫画 (Z-Lib)
+# 电子书 (Z-Lib)
 DOMAIN-KEYWORD,z-lib
 DOMAIN-KEYWORD,1lib
-# 隐私与工具 (核心安全)
+# 隐私与工具
 DOMAIN-KEYWORD,browserleaks
 DOMAIN-KEYWORD,ipleak
 DOMAIN-KEYWORD,dnsleak
 DOMAIN-KEYWORD,whoer
-DOMAIN-KEYWORD,dnscheck
-# 视频与CDN (MissAV/Jable等)
+# 视频与CDN
 DOMAIN-KEYWORD,ncdn
 DOMAIN-KEYWORD,saawsedge
 DOMAIN-KEYWORD,doppiocdn
-DOMAIN-KEYWORD,afcdn
-DOMAIN-KEYWORD,strpst
-DOMAIN-KEYWORD,myavlive
-DOMAIN-KEYWORD,blcdog
-DOMAIN-KEYWORD,xlivrdr
 DOMAIN-KEYWORD,magsrv
-# 其他 (自定义)
+# 💰 加密货币核心词 (防止漏网域名)
+DOMAIN-KEYWORD,binance
+DOMAIN-KEYWORD,okx
+DOMAIN-KEYWORD,okex
+DOMAIN-KEYWORD,huobi
+DOMAIN-KEYWORD,htx
+DOMAIN-KEYWORD,bybit
+DOMAIN-KEYWORD,bitget
+DOMAIN-KEYWORD,gateio
+DOMAIN-KEYWORD,coinbase
+DOMAIN-KEYWORD,kraken
+DOMAIN-KEYWORD,kucoin
+DOMAIN-KEYWORD,mexc
+DOMAIN-KEYWORD,crypto
+DOMAIN-KEYWORD,bitcoin
+DOMAIN-KEYWORD,ethereum
+DOMAIN-KEYWORD,usdt
+# 其他
 DOMAIN-KEYWORD,chaoyue
 
 # --- 2. 国外主流新闻媒体 ---
-# 美国 (USA)
-DOMAIN-SUFFIX,nytimes.com        # 纽约时报
+# 美国
+DOMAIN-SUFFIX,nytimes.com
 DOMAIN-SUFFIX,nyt.com
-DOMAIN-SUFFIX,wsj.com            # 华尔街日报
-DOMAIN-SUFFIX,dowjones.com
-DOMAIN-SUFFIX,bloomberg.com      # 彭博社
-DOMAIN-SUFFIX,bloomberg.cn
-DOMAIN-SUFFIX,cnn.com            # CNN
-DOMAIN-SUFFIX,cnn.io
-DOMAIN-SUFFIX,washingtonpost.com # 华盛顿邮报
-DOMAIN-SUFFIX,usatoday.com       # 今日美国
-DOMAIN-SUFFIX,apnews.com         # 美联社 (AP)
-DOMAIN-SUFFIX,time.com           # 时代周刊
-DOMAIN-SUFFIX,voachinese.com     # 美国之音 (中文)
-DOMAIN-SUFFIX,voanews.com
-DOMAIN-SUFFIX,rfa.org            # 自由亚洲电台
-
-# 英国 (UK)
-DOMAIN-SUFFIX,bbc.com            # BBC
+DOMAIN-SUFFIX,wsj.com
+DOMAIN-SUFFIX,bloomberg.com
+DOMAIN-SUFFIX,cnn.com
+DOMAIN-SUFFIX,washingtonpost.com
+DOMAIN-SUFFIX,voachinese.com
+DOMAIN-SUFFIX,rfa.org
+# 英国 & 欧洲
+DOMAIN-SUFFIX,bbc.com
 DOMAIN-SUFFIX,bbc.co.uk
-DOMAIN-SUFFIX,bbci.co.uk         # BBC 媒体资源
-DOMAIN-SUFFIX,reuters.com        # 路透社
-DOMAIN-SUFFIX,ft.com             # 金融时报 (Financial Times)
-DOMAIN-SUFFIX,economist.com      # 经济学人
-DOMAIN-SUFFIX,theguardian.com    # 卫报
-DOMAIN-SUFFIX,dailymail.co.uk    # 每日邮报
-
-# 欧洲与亚太 (Others)
-DOMAIN-SUFFIX,dw.com             # 德国之声 (DW)
-DOMAIN-SUFFIX,rfi.fr             # 法广 (RFI)
-DOMAIN-SUFFIX,scmp.com           # 南华早报
-DOMAIN-SUFFIX,nikkei.com         # 日经新闻 (英文版)
-DOMAIN-SUFFIX,asia.nikkei.com
-DOMAIN-SUFFIX,aljazeera.com      # 半岛电视台
+DOMAIN-SUFFIX,reuters.com
+DOMAIN-SUFFIX,ft.com
+DOMAIN-SUFFIX,dw.com
+DOMAIN-SUFFIX,rfi.fr
+DOMAIN-SUFFIX,nikkei.com
 
 # --- 3. 维基百科全家桶 ---
 DOMAIN-SUFFIX,wikipedia.org
 DOMAIN-SUFFIX,wikimedia.org
-DOMAIN-SUFFIX,wiktionary.org
-DOMAIN-SUFFIX,wikiquote.org
-DOMAIN-SUFFIX,wikibooks.org
-DOMAIN-SUFFIX,wikisource.org
-DOMAIN-SUFFIX,wikinews.org
-DOMAIN-SUFFIX,wikiversity.org
-DOMAIN-SUFFIX,wikivoyage.org
-DOMAIN-SUFFIX,wikidata.org
-DOMAIN-SUFFIX,mediawiki.org
 DOMAIN-SUFFIX,wikileaks.org
+# (省略部分次要后缀以精简长度，关键字已覆盖)
 
-# --- 4. 社交与社区 (移除TG，保留其他) ---
-# Reddit (美国贴吧)
+# --- 4. 社交与社区 (无Telegram) ---
 DOMAIN-SUFFIX,reddit.com
 DOMAIN-SUFFIX,redd.it
-DOMAIN-SUFFIX,redditstatic.com
-# Discord (语音与社区)
 DOMAIN-SUFFIX,discord.com
 DOMAIN-SUFFIX,discord.gg
 DOMAIN-SUFFIX,discordapp.com
 DOMAIN-SUFFIX,discordapp.net
-# Quora (美国知乎)
 DOMAIN-SUFFIX,quora.com
-# Pinterest
 DOMAIN-SUFFIX,pinterest.com
-DOMAIN-SUFFIX,pinimg.com
-# Archive (互联网档案馆)
 DOMAIN-SUFFIX,archive.org
-DOMAIN-SUFFIX,archive.is
-# Twitch
 DOMAIN-SUFFIX,twitch.tv
-DOMAIN-SUFFIX,ttvnw.net
 
 # --- 5. Z-Library 与 隐私工具 ---
 DOMAIN-SUFFIX,z-library.ec
 DOMAIN-SUFFIX,z-lib.fo
 DOMAIN-SUFFIX,1lib.sk
 DOMAIN-SUFFIX,b-ok.cc
-DOMAIN-SUFFIX,booksc.org
 DOMAIN-SUFFIX,browserleaks.com
 DOMAIN-SUFFIX,ipleak.net
 DOMAIN-SUFFIX,dnsleaktest.com
 DOMAIN-SUFFIX,whoer.net
-DOMAIN-SUFFIX,dnscheck.tools
-DOMAIN-SUFFIX,findip.net
-DOMAIN-SUFFIX,ipx.ac
-DOMAIN-SUFFIX,dnsleak.com
 DOMAIN-SUFFIX,whatismyipaddress.com
 
 # --- 6. 视频站与图床 ---
 DOMAIN-SUFFIX,ncdn.ec
 DOMAIN-SUFFIX,destiny.to
 DOMAIN-SUFFIX,tv
+
+# --- 7. 💰 加密货币全家桶 (Crypto) ---
+
+# [Binance 币安]
+DOMAIN-SUFFIX,binance.com
+DOMAIN-SUFFIX,binance.me
+DOMAIN-SUFFIX,binance.cc
+DOMAIN-SUFFIX,binance.us
+DOMAIN-SUFFIX,binance.info
+DOMAIN-SUFFIX,binance.net
+DOMAIN-SUFFIX,bnbstatic.com
+DOMAIN-SUFFIX,bntrace.com
+DOMAIN-SUFFIX,bnappzh.com
+DOMAIN-SUFFIX,bnappzh.co
+DOMAIN-SUFFIX,binanceapi.com
+
+# [OKX / OKEx 欧易]
+DOMAIN-SUFFIX,okx.com
+DOMAIN-SUFFIX,okx.cab
+DOMAIN-SUFFIX,okex.com
+DOMAIN-SUFFIX,okx-dns.com
+DOMAIN-SUFFIX,okx-dns1.com
+DOMAIN-SUFFIX,okx-dns2.com
+DOMAIN-SUFFIX,oklink.com
+
+# [HTX / Huobi 火币]
+DOMAIN-SUFFIX,htx.com
+DOMAIN-SUFFIX,htx.co
+DOMAIN-SUFFIX,huobi.com
+DOMAIN-SUFFIX,huobi.me
+DOMAIN-SUFFIX,huobi.pro
+DOMAIN-SUFFIX,huobiglobal.com
+DOMAIN-SUFFIX,hbfile.net
+
+# [Bybit]
+DOMAIN-SUFFIX,bybit.com
+DOMAIN-SUFFIX,bybitglobal.com
+DOMAIN-SUFFIX,bybit.adh
+DOMAIN-SUFFIX,byapps.net
+
+# [Bitget]
+DOMAIN-SUFFIX,bitget.com
+DOMAIN-SUFFIX,bitgetimg.com
+
+# [Gate.io 芝麻开门]
+DOMAIN-SUFFIX,gate.io
+DOMAIN-SUFFIX,gateimg.com
+DOMAIN-SUFFIX,gateio.services
+
+# [Coinbase & Others]
+DOMAIN-SUFFIX,coinbase.com
+DOMAIN-SUFFIX,kraken.com
+DOMAIN-SUFFIX,kucoin.com
+DOMAIN-SUFFIX,mexc.com
+DOMAIN-SUFFIX,bitfinex.com
+DOMAIN-SUFFIX,gemini.com
+
+# [钱包 & 链上工具]
+DOMAIN-SUFFIX,metamask.io
+DOMAIN-SUFFIX,tronscan.org
+DOMAIN-SUFFIX,etherscan.io
+DOMAIN-SUFFIX,bscscan.com
+DOMAIN-SUFFIX,solscan.io
+DOMAIN-SUFFIX,walletconnect.com
+DOMAIN-SUFFIX,walletconnect.org
+DOMAIN-SUFFIX,tether.to
+
+# [行情与资讯]
+DOMAIN-SUFFIX,coinmarketcap.com
+DOMAIN-SUFFIX,coingecko.com
+DOMAIN-SUFFIX,tradingview.com
+DOMAIN-SUFFIX,defillama.com
+DOMAIN-SUFFIX,glassnode.com
+# [Uphold] (Brave浏览器钱包)
+DOMAIN-SUFFIX,uphold.com
+DOMAIN-SUFFIX,upholdcdn.com
+DOMAIN-SUFFIX,uphold.net
