@@ -114,8 +114,6 @@ DOMAIN-SUFFIX,tv
 DOMAIN-SUFFIX,returnyoutubedislikeapi.com
 # [补全] SponsorBlock 插件 API (跳过赞助)
 DOMAIN-SUFFIX,ajay.app
-# [新增] Google AMP CDN 加速
-DOMAIN-SUFFIX,cdn.ampproject.org
 
 # --- 7. 💰 加密货币全家桶 (Crypto) ---
 
