@@ -2,6 +2,7 @@
 # 策略建议：指向 代理节点 (Global/Proxy)
 # 说明：包含 国外主流新闻、维基百科、社交媒体、Z-Library、隐私检测、成人CDN、全套加密货币
 # ⚠️ 修改注：已保留 IP纯净度检测(ping0.cc)及IP查询工具，已移除 Ins/Spotify/Pornhub 合并项
+# ✅ 本次更新：已加入 RevenueCat (订阅验证) 和 Brave SafeBrowsing (安全浏览)
 
 # --- 1. 域名关键字匹配 (增强版) ---
 # 维基百科 & 知识库
@@ -105,6 +106,7 @@ DOMAIN-SUFFIX,doh.opendns.com
 DOMAIN-SUFFIX,opendns.com
 # [补全] Brave 浏览器组件
 DOMAIN-SUFFIX,ads.brave.com
+DOMAIN-SUFFIX,safebrowsing.brave.com
 
 # --- 6. 视频站、图床与组件 ---
 DOMAIN-SUFFIX,ncdn.ec
@@ -114,6 +116,9 @@ DOMAIN-SUFFIX,tv
 DOMAIN-SUFFIX,returnyoutubedislikeapi.com
 # [补全] SponsorBlock 插件 API (跳过赞助)
 DOMAIN-SUFFIX,ajay.app
+# [新增] App订阅与内购验证 (RevenueCat)
+DOMAIN-SUFFIX,revenuecat.com
+DOMAIN-SUFFIX,api.revenuecat.com
 
 # --- 7. 💰 加密货币全家桶 (Crypto) ---
 
