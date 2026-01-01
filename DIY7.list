@@ -1,7 +1,7 @@
 # NAME: DIY (User Custom)
 # 策略建议：指向 代理节点 (Global/Proxy)
 # 说明：包含 国外主流新闻、维基百科、社交媒体、Z-Library、隐私检测、成人CDN、全套加密货币
-# ⚠️ 修改注：已移除 Telegram，已新增 主流加密货币全家桶，已新增 YouTube插件API及AMP CDN
+# ⚠️ 修改注：已保留 IP纯净度检测(ping0.cc)及IP查询工具，已移除 Ins/Spotify/Pornhub 合并项
 
 # --- 1. 域名关键字匹配 (增强版) ---
 # 维基百科 & 知识库
@@ -81,16 +81,30 @@ DOMAIN-SUFFIX,pinterest.com
 DOMAIN-SUFFIX,archive.org
 DOMAIN-SUFFIX,twitch.tv
 
-# --- 5. Z-Library 与 隐私工具 ---
+# --- 5. Z-Library 与 隐私/IP工具 ---
+# 电子书
 DOMAIN-SUFFIX,z-library.ec
 DOMAIN-SUFFIX,z-lib.fo
 DOMAIN-SUFFIX,1lib.sk
 DOMAIN-SUFFIX,b-ok.cc
+# 隐私检测
 DOMAIN-SUFFIX,browserleaks.com
 DOMAIN-SUFFIX,ipleak.net
 DOMAIN-SUFFIX,dnsleaktest.com
 DOMAIN-SUFFIX,whoer.net
 DOMAIN-SUFFIX,whatismyipaddress.com
+# [新增] IP 纯净度与查询
+DOMAIN-SUFFIX,ping0.cc
+DOMAIN-SUFFIX,ip.sb
+DOMAIN-SUFFIX,ipify.org
+DOMAIN-SUFFIX,myip.com
+DOMAIN-SUFFIX,ip-api.com
+DOMAIN-SUFFIX,checkip.amazonaws.com
+# [补全] OpenDNS 加密解析
+DOMAIN-SUFFIX,doh.opendns.com
+DOMAIN-SUFFIX,opendns.com
+# [补全] Brave 浏览器组件
+DOMAIN-SUFFIX,ads.brave.com
 
 # --- 6. 视频站、图床与组件 ---
 DOMAIN-SUFFIX,ncdn.ec
@@ -98,6 +112,8 @@ DOMAIN-SUFFIX,destiny.to
 DOMAIN-SUFFIX,tv
 # [新增] YouTube Dislike 插件 API
 DOMAIN-SUFFIX,returnyoutubedislikeapi.com
+# [补全] SponsorBlock 插件 API (跳过赞助)
+DOMAIN-SUFFIX,ajay.app
 # [新增] Google AMP CDN 加速
 DOMAIN-SUFFIX,cdn.ampproject.org
 
