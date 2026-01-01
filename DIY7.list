@@ -1,7 +1,7 @@
 # NAME: DIY (User Custom)
 # 策略建议：指向 代理节点 (Global/Proxy)
 # 说明：包含 国外主流新闻、维基百科、社交媒体、Z-Library、隐私检测、成人CDN、全套加密货币
-# ⚠️ 修改注：已移除 Telegram，已新增 主流加密货币全家桶
+# ⚠️ 修改注：已移除 Telegram，已新增 主流加密货币全家桶，已新增 YouTube插件API及AMP CDN
 
 # --- 1. 域名关键字匹配 (增强版) ---
 # 维基百科 & 知识库
@@ -92,10 +92,14 @@ DOMAIN-SUFFIX,dnsleaktest.com
 DOMAIN-SUFFIX,whoer.net
 DOMAIN-SUFFIX,whatismyipaddress.com
 
-# --- 6. 视频站与图床 ---
+# --- 6. 视频站、图床与组件 ---
 DOMAIN-SUFFIX,ncdn.ec
 DOMAIN-SUFFIX,destiny.to
 DOMAIN-SUFFIX,tv
+# [新增] YouTube Dislike 插件 API
+DOMAIN-SUFFIX,returnyoutubedislikeapi.com
+# [新增] Google AMP CDN 加速
+DOMAIN-SUFFIX,cdn.ampproject.org
 
 # --- 7. 💰 加密货币全家桶 (Crypto) ---
 
