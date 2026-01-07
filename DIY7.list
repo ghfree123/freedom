@@ -197,3 +197,9 @@ DOMAIN-SUFFIX,glassnode.com
 DOMAIN-SUFFIX,uphold.com
 DOMAIN-SUFFIX,upholdcdn.com
 DOMAIN-SUFFIX,uphold.net
+
+# 1. 修复：强制走代理 (交易所、Bigo、海外统计)
+  # 注意：这里使用了 "🗽 国外" 策略组，如果你想指定特定节点，请修改它
+DOMAIN-SUFFIX,saasexch.info
+DOMAIN-SUFFIX,bscdnweb.com
+DOMAIN-SUFFIX,appsflyersdk.com
