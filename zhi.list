@@ -19,11 +19,19 @@ DOMAIN-SUFFIX,weather.microsoft.com
 DOMAIN-SUFFIX,edge.skype.com
 DOMAIN-SUFFIX,cdp.microsoft.com
 DOMAIN-SUFFIX,time.windows.com
-# 新增：微软登录与流量管理 (修复日志中的漏网)
+# 新增：微软登录、跳转与流量管理
 DOMAIN-SUFFIX,login.live.com
 DOMAIN-SUFFIX,trafficmanager.net
+DOMAIN-SUFFIX,go.microsoft.com
 
 # 2. 🟢 [用户自定义 & 漏网之鱼] MyList
+# 新增：GitHub 国内镜像加速 (必须直连)
+DOMAIN-SUFFIX,gh-proxy.com
+DOMAIN-SUFFIX,ghproxy.net
+
+# 新增：国内下载CDN节点
+DOMAIN-SUFFIX,xyydnode.com
+
 # 新增：快手漏网域名
 DOMAIN-SUFFIX,kuaishouzt.com
 
