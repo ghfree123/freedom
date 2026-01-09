@@ -105,8 +105,6 @@ DOMAIN-SUFFIX,jiasule.com
 DOMAIN-SUFFIX,staticfile.org
 DOMAIN-SUFFIX,upaiyun.com
 DOMAIN-SUFFIX,ajax.aspnetcdn.com
-DOMAIN-SUFFIX,ajax.cloudflare.com
-DOMAIN-SUFFIX,cdnjs.cloudflare.com
 DOMAIN-SUFFIX,code.jquery.com
 
 # 5. 🟢 [特殊IP段]
