@@ -19,6 +19,9 @@ DOMAIN-SUFFIX,weather.microsoft.com
 DOMAIN-SUFFIX,edge.skype.com
 DOMAIN-SUFFIX,cdp.microsoft.com
 DOMAIN-SUFFIX,time.windows.com
+# 新增：微软登录与流量管理 (修复日志中的漏网)
+DOMAIN-SUFFIX,login.live.com
+DOMAIN-SUFFIX,trafficmanager.net
 
 # 2. 🟢 [用户自定义 & 漏网之鱼] MyList
 # 新增：快手漏网域名
@@ -111,3 +114,6 @@ IP-CIDR,219.146.1.66/32,no-resolve
 IP-CIDR,216.40.86.112/24,no-resolve
 IP-CIDR,38.207.169.210/24,no-resolve
 IP-CIDR,45.151.135.201/24,no-resolve
+
+# 新增：腾讯云(北京)网段 - 修复 i/o timeout 报错
+IP-CIDR,43.175.139.0/24,no-resolve
