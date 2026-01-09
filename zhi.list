@@ -115,6 +115,12 @@ DOMAIN-SUFFIX,upaiyun.com
 DOMAIN-SUFFIX,ajax.aspnetcdn.com
 DOMAIN-SUFFIX,code.jquery.com
 
+# 坦克世界插件 
+DOMAIN-SUFFIX,modxvm.com
+DOMAIN-SUFFIX,champi.de
+DOMAIN-SUFFIX,poliroid.me
+DOMAIN-SUFFIX,geforce.com
+
 # 5. 🟢 [特殊IP段]
 IP-CIDR,219.146.1.66/32,no-resolve
 IP-CIDR,216.40.86.112/24,no-resolve
