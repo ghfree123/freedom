@@ -63,6 +63,9 @@ DOMAIN-SUFFIX,udn.com
 DOMAIN-SUFFIX,ltn.com.tw
 DOMAIN-SUFFIX,chinatimes.com
 DOMAIN-SUFFIX,cntv.com.tw
+DOMAIN-SUFFIX,a-p-i.io
+DOMAIN-SUFFIX,gravatar.com
+
 
 # --- 6. 关键字匹配 ---
 DOMAIN-KEYWORD,taiwan
