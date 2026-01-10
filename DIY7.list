@@ -1,10 +1,9 @@
-# NAME: DIY (User Custom)
+# NAME: DIY (User Custom) - 最终完整版
 # 策略建议：指向 代理节点 (Global/Proxy)
-# 说明：包含 国外主流新闻、维基百科、社交媒体、Z-Library、隐私检测、成人CDN、全套加密货币
-# ⚠️ 修改注：已保留 IP纯净度检测(ping0.cc)及IP查询工具，已移除 Ins/Spotify/Pornhub 合并项
-# ✅ 本次更新：已加入 RevenueCat (订阅验证) 和 Brave SafeBrowsing (安全浏览)
+# 更新时间：2026-01-10
+# 包含：国外新闻深度优化、加密货币、维基百科、Z-Lib、隐私检测、社交媒体
 
-# --- 1. 域名关键字匹配 (增强版) ---
+# --- 1. 域名关键字匹配 (兜底策略) ---
 # 维基百科 & 知识库
 DOMAIN-KEYWORD,wikipedia
 DOMAIN-KEYWORD,wikimedia
@@ -25,7 +24,7 @@ DOMAIN-KEYWORD,ncdn
 DOMAIN-KEYWORD,saawsedge
 DOMAIN-KEYWORD,doppiocdn
 DOMAIN-KEYWORD,magsrv
-# 💰 加密货币核心词 (防止漏网域名)
+# 💰 加密货币核心词 (防止漏网)
 DOMAIN-KEYWORD,binance
 DOMAIN-KEYWORD,okx
 DOMAIN-KEYWORD,okex
@@ -45,30 +44,66 @@ DOMAIN-KEYWORD,usdt
 # 其他
 DOMAIN-KEYWORD,chaoyue
 
-# --- 2. 国外主流新闻媒体 ---
-# 美国
-DOMAIN-SUFFIX,nytimes.com
-DOMAIN-SUFFIX,nyt.com
-DOMAIN-SUFFIX,wsj.com
-DOMAIN-SUFFIX,bloomberg.com
-DOMAIN-SUFFIX,cnn.com
-DOMAIN-SUFFIX,washingtonpost.com
-DOMAIN-SUFFIX,voachinese.com
-DOMAIN-SUFFIX,rfa.org
-# 英国 & 欧洲
+# --- 2. 国际新闻 & 海外华语媒体 (深度优化版) ---
+# [BBC 系列 & 音频修复]
 DOMAIN-SUFFIX,bbc.com
 DOMAIN-SUFFIX,bbc.co.uk
-DOMAIN-SUFFIX,reuters.com
-DOMAIN-SUFFIX,ft.com
-DOMAIN-SUFFIX,dw.com
+DOMAIN-SUFFIX,bbci.co.uk
+DOMAIN-SUFFIX,bbcfmt.s.llnwi.net
+DOMAIN-SUFFIX,uk-live.akamaized.net
+DOMAIN-SUFFIX,tritondigital.com  # 修复：BBC音频流/播客托管
+
+# [美国之音 VOA - 深度优化]
+DOMAIN-SUFFIX,voanews.com
+DOMAIN-SUFFIX,voachinese.com
+DOMAIN-SUFFIX,gdb.voanews.com   # 修复：VOA图片和封面加载
+DOMAIN-SUFFIX,voa-story-api.com # 修复：VOA内容接口
+
+# [法国国际广播 RFI & France24]
 DOMAIN-SUFFIX,rfi.fr
-DOMAIN-SUFFIX,nikkei.com
+DOMAIN-SUFFIX,rfi.my
+DOMAIN-SUFFIX,france24.com
+DOMAIN-SUFFIX,fmm.io            # 修复：法广母公司资源加载
+
+# [自由亚洲 RFA]
+DOMAIN-SUFFIX,rfa.org
+DOMAIN-SUFFIX,rfastream.org     # 修复：在线收听流媒体
+
+# [德国之声 DW]
+DOMAIN-SUFFIX,dw.com
+DOMAIN-SUFFIX,dw.de
+
+# [其他主流外媒]
+DOMAIN-SUFFIX,nytimes.com      # 纽约时报
+DOMAIN-SUFFIX,nyt.com
+DOMAIN-SUFFIX,wsj.com          # 华尔街日报
+DOMAIN-SUFFIX,wsj.net
+DOMAIN-SUFFIX,bloomberg.com    # 彭博社
+DOMAIN-SUFFIX,cnn.com          # CNN
+DOMAIN-SUFFIX,washingtonpost.com # 华盛顿邮报
+DOMAIN-SUFFIX,reuters.com      # 路透社
+DOMAIN-SUFFIX,ft.com           # 金融时报
+DOMAIN-SUFFIX,nikkei.com       # 日经
+DOMAIN-SUFFIX,aljazeera.com    # 半岛电视台
+DOMAIN-SUFFIX,aljazeera.net
+DOMAIN-SUFFIX,nhk.or.jp        # NHK
+
+# [港台及海外中文资讯]
+DOMAIN-SUFFIX,cna.com.tw       # 台湾中央社
+DOMAIN-SUFFIX,theinitium.com   # 端传媒
+DOMAIN-SUFFIX,wenxuecity.com   # 文学城
+DOMAIN-SUFFIX,creaders.net     # 万维读者网
+DOMAIN-SUFFIX,aboluowang.com   # 阿波罗网
+DOMAIN-SUFFIX,bannedbook.org   # 禁书网
+DOMAIN-SUFFIX,chinadigitaltimes.net # 中国数字时代
+DOMAIN-SUFFIX,secretchina.com  # 看中国
+DOMAIN-SUFFIX,epochtimes.com   # 大纪元
+DOMAIN-SUFFIX,ntdtv.com        # 新唐人
 
 # --- 3. 维基百科全家桶 ---
 DOMAIN-SUFFIX,wikipedia.org
 DOMAIN-SUFFIX,wikimedia.org
 DOMAIN-SUFFIX,wikileaks.org
-# (省略部分次要后缀以精简长度，关键字已覆盖)
 
 # --- 4. 社交与社区 (无Telegram) ---
 DOMAIN-SUFFIX,reddit.com
@@ -81,8 +116,8 @@ DOMAIN-SUFFIX,quora.com
 DOMAIN-SUFFIX,pinterest.com
 DOMAIN-SUFFIX,archive.org
 DOMAIN-SUFFIX,twitch.tv
-DOMAIN-SUFFIX,wenxuecity.com
 DOMAIN-SUFFIX,ygpy.net
+DOMAIN-SUFFIX,medium.com
 
 # --- 5. Z-Library 与 隐私/IP工具 ---
 # 电子书
@@ -90,23 +125,21 @@ DOMAIN-SUFFIX,z-library.ec
 DOMAIN-SUFFIX,z-lib.fo
 DOMAIN-SUFFIX,1lib.sk
 DOMAIN-SUFFIX,b-ok.cc
-# 隐私检测
+# 隐私检测与IP查询
 DOMAIN-SUFFIX,browserleaks.com
 DOMAIN-SUFFIX,ipleak.net
 DOMAIN-SUFFIX,dnsleaktest.com
 DOMAIN-SUFFIX,whoer.net
 DOMAIN-SUFFIX,whatismyipaddress.com
-# [新增] IP 纯净度与查询
 DOMAIN-SUFFIX,ping0.cc
 DOMAIN-SUFFIX,ip.sb
 DOMAIN-SUFFIX,ipify.org
 DOMAIN-SUFFIX,myip.com
 DOMAIN-SUFFIX,ip-api.com
 DOMAIN-SUFFIX,checkip.amazonaws.com
-# [补全] OpenDNS 加密解析
+# 安全解析与浏览
 DOMAIN-SUFFIX,doh.opendns.com
 DOMAIN-SUFFIX,opendns.com
-# [补全] Brave 浏览器组件
 DOMAIN-SUFFIX,ads.brave.com
 DOMAIN-SUFFIX,safebrowsing.brave.com
 
@@ -114,16 +147,17 @@ DOMAIN-SUFFIX,safebrowsing.brave.com
 DOMAIN-SUFFIX,ncdn.ec
 DOMAIN-SUFFIX,destiny.to
 DOMAIN-SUFFIX,tv
-# [新增] YouTube Dislike 插件 API
-DOMAIN-SUFFIX,returnyoutubedislikeapi.com
-# [补全] SponsorBlock 插件 API (跳过赞助)
-DOMAIN-SUFFIX,ajay.app
-# [新增] App订阅与内购验证 (RevenueCat)
-DOMAIN-SUFFIX,revenuecat.com
+DOMAIN-SUFFIX,imgur.com
+DOMAIN-SUFFIX,returnyoutubedislikeapi.com # YouTube Dislike显示
+DOMAIN-SUFFIX,ajay.app                    # SponsorBlock跳过赞助
+DOMAIN-SUFFIX,revenuecat.com              # App内购验证
 DOMAIN-SUFFIX,api.revenuecat.com
+# 媒体CDN补充
+DOMAIN-SUFFIX,hls.ttvnw.net
+DOMAIN-SUFFIX,ttvnw.net
+DOMAIN-SUFFIX,jwpcdn.com
 
 # --- 7. 💰 加密货币全家桶 (Crypto) ---
-
 # [Binance 币安]
 DOMAIN-SUFFIX,binance.com
 DOMAIN-SUFFIX,binance.me
@@ -194,17 +228,14 @@ DOMAIN-SUFFIX,coingecko.com
 DOMAIN-SUFFIX,tradingview.com
 DOMAIN-SUFFIX,defillama.com
 DOMAIN-SUFFIX,glassnode.com
-# [Uphold] (Brave浏览器钱包)
 DOMAIN-SUFFIX,uphold.com
 DOMAIN-SUFFIX,upholdcdn.com
 DOMAIN-SUFFIX,uphold.net
 
-# 1. 修复：强制走代理 (交易所、Bigo、海外统计)
-  # 注意：这里使用了 "🗽 国外" 策略组，如果你想指定特定节点，请修改它
+# [其他杂项与修复]
 DOMAIN-SUFFIX,saasexch.info
 DOMAIN-SUFFIX,bscdnweb.com
 DOMAIN-SUFFIX,appsflyersdk.com
-DOMAIN-SUFFIX,imgur.com
 DOMAIN-SUFFIX,giscus.app
 DOMAIN-SUFFIX,brave.com
 DOMAIN-SUFFIX,bravesoftware.com
