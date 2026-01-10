@@ -149,8 +149,9 @@ DOMAIN-SUFFIX,destiny.to
 DOMAIN-SUFFIX,tv
 DOMAIN-SUFFIX,imgur.com
 DOMAIN-SUFFIX,returnyoutubedislikeapi.com # YouTube Dislike显示
-DOMAIN-SUFFIX,ajay.app                    # SponsorBlock跳过赞助
-DOMAIN-SUFFIX,revenuecat.com              # App内购验证
+DOMAIN-SUFFIX,ajay.app
+DOMAIN-SUFFIX,sponsor.ajay.app
+DOMAIN-SUFFIX,revenuecat.com              
 DOMAIN-SUFFIX,api.revenuecat.com
 # 媒体CDN补充
 DOMAIN-SUFFIX,hls.ttvnw.net
