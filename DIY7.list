@@ -1,7 +1,7 @@
 # NAME: DIY (User Custom) - 最终完整版
 # 策略建议：指向 代理节点 (Global/Proxy)
-# 更新时间：2026-01-10
-# 包含：国外新闻深度优化、加密货币、维基百科、Z-Lib、隐私检测、社交媒体
+# 更新时间：2026-01-11
+# 包含：国外新闻深度优化、加密货币、维基百科、Z-Lib、隐私检测、社交媒体、开发资源CDN
 
 # --- 1. 域名关键字匹配 (兜底策略) ---
 # 维基百科 & 知识库
@@ -19,11 +19,13 @@ DOMAIN-KEYWORD,browserleaks
 DOMAIN-KEYWORD,ipleak
 DOMAIN-KEYWORD,dnsleak
 DOMAIN-KEYWORD,whoer
-# 视频与CDN
+# 视频与CDN & 开发资源
 DOMAIN-KEYWORD,ncdn
 DOMAIN-KEYWORD,saawsedge
 DOMAIN-KEYWORD,doppiocdn
 DOMAIN-KEYWORD,magsrv
+DOMAIN-KEYWORD,unpkg
+DOMAIN-KEYWORD,intercom
 # 💰 加密货币核心词 (防止漏网)
 DOMAIN-KEYWORD,binance
 DOMAIN-KEYWORD,okx
@@ -66,36 +68,36 @@ DOMAIN-SUFFIX,france24.com
 DOMAIN-SUFFIX,fmm.io            
 # [自由亚洲 RFA]
 DOMAIN-SUFFIX,rfa.org
-DOMAIN-SUFFIX,rfastream.org     
+DOMAIN-SUFFIX,rfastream.org      
 
 # [德国之声 DW]
 DOMAIN-SUFFIX,dw.com
 DOMAIN-SUFFIX,dw.de
 
 # [其他主流外媒]
-DOMAIN-SUFFIX,nytimes.com      
+DOMAIN-SUFFIX,nytimes.com       
 DOMAIN-SUFFIX,nyt.com
-DOMAIN-SUFFIX,wsj.com          
+DOMAIN-SUFFIX,wsj.com           
 DOMAIN-SUFFIX,wsj.net
-DOMAIN-SUFFIX,bloomberg.com   
-DOMAIN-SUFFIX,cnn.com          
+DOMAIN-SUFFIX,bloomberg.com    
+DOMAIN-SUFFIX,cnn.com           
 DOMAIN-SUFFIX,washingtonpost.com 
-DOMAIN-SUFFIX,reuters.com      
-DOMAIN-SUFFIX,ft.com           
-DOMAIN-SUFFIX,nikkei.com       
-DOMAIN-SUFFIX,aljazeera.com    
+DOMAIN-SUFFIX,reuters.com       
+DOMAIN-SUFFIX,ft.com            
+DOMAIN-SUFFIX,nikkei.com        
+DOMAIN-SUFFIX,aljazeera.com     
 DOMAIN-SUFFIX,aljazeera.net
 
 # [港台及海外中文资讯]
-DOMAIN-SUFFIX,theinitium.com   # 端传媒
-DOMAIN-SUFFIX,wenxuecity.com   # 文学城
-DOMAIN-SUFFIX,creaders.net     # 万维读者网
-DOMAIN-SUFFIX,aboluowang.com   # 阿波罗网
-DOMAIN-SUFFIX,bannedbook.org   # 禁书网
+DOMAIN-SUFFIX,theinitium.com    # 端传媒
+DOMAIN-SUFFIX,wenxuecity.com    # 文学城
+DOMAIN-SUFFIX,creaders.net      # 万维读者网
+DOMAIN-SUFFIX,aboluowang.com    # 阿波罗网
+DOMAIN-SUFFIX,bannedbook.org    # 禁书网
 DOMAIN-SUFFIX,chinadigitaltimes.net # 中国数字时代
-DOMAIN-SUFFIX,secretchina.com  # 看中国
-DOMAIN-SUFFIX,epochtimes.com   # 大纪元
-DOMAIN-SUFFIX,ntdtv.com        # 新唐人
+DOMAIN-SUFFIX,secretchina.com   # 看中国
+DOMAIN-SUFFIX,epochtimes.com    # 大纪元
+DOMAIN-SUFFIX,ntdtv.com         # 新唐人
 
 # --- 3. 维基百科全家桶 ---
 DOMAIN-SUFFIX,wikipedia.org
@@ -140,7 +142,7 @@ DOMAIN-SUFFIX,opendns.com
 DOMAIN-SUFFIX,ads.brave.com
 DOMAIN-SUFFIX,safebrowsing.brave.com
 
-# --- 6. 视频站、图床与组件 ---
+# --- 6. 视频站、组件与开发资源 (新增) ---
 DOMAIN-SUFFIX,ncdn.ec
 DOMAIN-SUFFIX,destiny.to
 DOMAIN-SUFFIX,tv
@@ -150,6 +152,10 @@ DOMAIN-SUFFIX,ajay.app
 DOMAIN-SUFFIX,sponsor.ajay.app
 DOMAIN-SUFFIX,revenuecat.com              
 DOMAIN-SUFFIX,api.revenuecat.com
+# 开发CDN与客服组件 (New)
+DOMAIN-SUFFIX,unpkg.com
+DOMAIN-SUFFIX,intercom.io
+DOMAIN-SUFFIX,intercomcdn.com
 # 媒体CDN补充
 DOMAIN-SUFFIX,hls.ttvnw.net
 DOMAIN-SUFFIX,ttvnw.net
@@ -235,5 +241,7 @@ DOMAIN-SUFFIX,saasexch.info
 DOMAIN-SUFFIX,bscdnweb.com
 DOMAIN-SUFFIX,appsflyersdk.com
 DOMAIN-SUFFIX,giscus.app
+# Brave 浏览器完整支持 (New)
 DOMAIN-SUFFIX,brave.com
 DOMAIN-SUFFIX,bravesoftware.com
+DOMAIN-SUFFIX,brave-http-only.com
