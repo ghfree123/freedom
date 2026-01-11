@@ -1,6 +1,6 @@
 # NAME: AI Services
-# DESC: 包含 OpenAI, Claude, Google Gemini, Copilot, Grok, Midjourney, HuggingFace 等
-# UPDATED: 2025-12-20
+# DESC: 包含 OpenAI, Claude, Copilot, Grok, Midjourney, HuggingFace 等
+# UPDATED: 2026-01-11
 # TOTAL: Optimized & Enhanced
 
 # --- OpenAI (ChatGPT) ---
@@ -9,37 +9,29 @@ DOMAIN-SUFFIX,oaistatic.com
 DOMAIN-SUFFIX,oaiusercontent.com
 DOMAIN-SUFFIX,openai.com
 DOMAIN-SUFFIX,openaiapi-site.azureedge.net
-DOMAIN-SUFFIX,openaiassets.com       # 新增：新版前端资源
-DOMAIN-SUFFIX,openai-cdn.com         # 新增：部分 A/B 测试资源
-DOMAIN-SUFFIX,chatgpt.livekit.cloud  # 实时语音模式 (Realtime API)
-DOMAIN-SUFFIX,host.livekit.cloud     # 语音模式底层
+DOMAIN-SUFFIX,openaiassets.com
+DOMAIN-SUFFIX,openai-cdn.com
+DOMAIN-SUFFIX,ai.com                 # 短链接跳转
+DOMAIN-SUFFIX,searchgpt.com          # SearchGPT 搜索入口
+DOMAIN-SUFFIX,chatgpt.livekit.cloud  # 实时语音模式
+DOMAIN-SUFFIX,host.livekit.cloud
+DOMAIN-SUFFIX,turn.livekit.cloud     # 语音模式中继
+DOMAIN-SUFFIX,identity.livekit.cloud # 语音模式验证
 
 # --- Anthropic (Claude) ---
 DOMAIN-SUFFIX,anthropic.com
 DOMAIN-SUFFIX,claude.ai
-DOMAIN-SUFFIX,claudeusercontent.com  # 关键：Artifacts 预览与文件上传
+DOMAIN-SUFFIX,claude.site            # Artifacts 分享页面
+DOMAIN-SUFFIX,claudeusercontent.com  # Artifacts 预览与文件上传
 DOMAIN-SUFFIX,anthropicusercontent.com
-
-# --- Google AI (Gemini / NotebookLM) ---
-DOMAIN-SUFFIX,gemini.google.com
-DOMAIN-SUFFIX,bard.google.com
-DOMAIN-SUFFIX,aistudio.google.com
-DOMAIN-SUFFIX,makersuite.google.com
-DOMAIN-SUFFIX,deepmind.com
-DOMAIN-SUFFIX,deepmind.google
-DOMAIN-SUFFIX,notebooklm.google      # 涵盖了 notebooklm.google.com
-DOMAIN-SUFFIX,generativelanguage.googleapis.com
-DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
-DOMAIN-SUFFIX,alkalimakersuite-pa.clients6.google.com
-DOMAIN-SUFFIX,ai.google.dev          # Google AI 开发者文档与 API
 
 # --- Microsoft Copilot ---
 DOMAIN-SUFFIX,copilot.microsoft.com
-DOMAIN-SUFFIX,sydney.bing.com        # 核心后端
+DOMAIN-SUFFIX,sydney.bing.com        # Copilot 核心后端
 DOMAIN-SUFFIX,edgeservices.bing.com
 DOMAIN-SUFFIX,clara-s.bing.com
 DOMAIN-SUFFIX,bing-shopping.microsoft-falcon.io
-# 注意：Copilot 依赖 login.live.com 和 www.bing.com，建议在全局规则而非此处处理
+# 注意：Copilot 依赖 login.live.com 和 www.bing.com，通常由全局规则处理
 
 # --- xAI (Grok) ---
 DOMAIN-SUFFIX,grok.com
@@ -52,8 +44,8 @@ DOMAIN-SUFFIX,pplx.ai
 # --- Midjourney ---
 DOMAIN-SUFFIX,midjourney.com
 DOMAIN-SUFFIX,mj.run
-DOMAIN-SUFFIX,discord.com            # 保留：Midjourney 主要依赖 Discord
-DOMAIN-SUFFIX,discordapp.com         # 保留：Discord 资源 CDN
+DOMAIN-SUFFIX,discord.com            # Midjourney 主要依赖 Discord
+DOMAIN-SUFFIX,discordapp.com         # Discord 资源 CDN
 
 # --- HuggingFace ---
 DOMAIN-SUFFIX,huggingface.co
