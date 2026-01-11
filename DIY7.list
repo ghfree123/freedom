@@ -51,45 +51,42 @@ DOMAIN-SUFFIX,bbc.co.uk
 DOMAIN-SUFFIX,bbci.co.uk
 DOMAIN-SUFFIX,bbcfmt.s.llnwi.net
 DOMAIN-SUFFIX,uk-live.akamaized.net
-DOMAIN-SUFFIX,tritondigital.com  # 修复：BBC音频流/播客托管
+DOMAIN-SUFFIX,tritondigital.com  
 
 # [美国之音 VOA - 深度优化]
 DOMAIN-SUFFIX,voanews.com
 DOMAIN-SUFFIX,voachinese.com
-DOMAIN-SUFFIX,gdb.voanews.com   # 修复：VOA图片和封面加载
-DOMAIN-SUFFIX,voa-story-api.com # 修复：VOA内容接口
+DOMAIN-SUFFIX,gdb.voanews.com   
+DOMAIN-SUFFIX,voa-story-api.com 
 
 # [法国国际广播 RFI & France24]
 DOMAIN-SUFFIX,rfi.fr
 DOMAIN-SUFFIX,rfi.my
 DOMAIN-SUFFIX,france24.com
-DOMAIN-SUFFIX,fmm.io            # 修复：法广母公司资源加载
-
+DOMAIN-SUFFIX,fmm.io            
 # [自由亚洲 RFA]
 DOMAIN-SUFFIX,rfa.org
-DOMAIN-SUFFIX,rfastream.org     # 修复：在线收听流媒体
+DOMAIN-SUFFIX,rfastream.org     
 
 # [德国之声 DW]
 DOMAIN-SUFFIX,dw.com
 DOMAIN-SUFFIX,dw.de
 
 # [其他主流外媒]
-DOMAIN-SUFFIX,nytimes.com      # 纽约时报
+DOMAIN-SUFFIX,nytimes.com      
 DOMAIN-SUFFIX,nyt.com
-DOMAIN-SUFFIX,wsj.com          # 华尔街日报
+DOMAIN-SUFFIX,wsj.com          
 DOMAIN-SUFFIX,wsj.net
-DOMAIN-SUFFIX,bloomberg.com    # 彭博社
-DOMAIN-SUFFIX,cnn.com          # CNN
-DOMAIN-SUFFIX,washingtonpost.com # 华盛顿邮报
-DOMAIN-SUFFIX,reuters.com      # 路透社
-DOMAIN-SUFFIX,ft.com           # 金融时报
-DOMAIN-SUFFIX,nikkei.com       # 日经
-DOMAIN-SUFFIX,aljazeera.com    # 半岛电视台
+DOMAIN-SUFFIX,bloomberg.com   
+DOMAIN-SUFFIX,cnn.com          
+DOMAIN-SUFFIX,washingtonpost.com 
+DOMAIN-SUFFIX,reuters.com      
+DOMAIN-SUFFIX,ft.com           
+DOMAIN-SUFFIX,nikkei.com       
+DOMAIN-SUFFIX,aljazeera.com    
 DOMAIN-SUFFIX,aljazeera.net
-DOMAIN-SUFFIX,nhk.or.jp        # NHK
 
 # [港台及海外中文资讯]
-DOMAIN-SUFFIX,cna.com.tw       # 台湾中央社
 DOMAIN-SUFFIX,theinitium.com   # 端传媒
 DOMAIN-SUFFIX,wenxuecity.com   # 文学城
 DOMAIN-SUFFIX,creaders.net     # 万维读者网
