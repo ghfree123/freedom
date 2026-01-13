@@ -121,10 +121,6 @@ DOMAIN-SUFFIX,champi.de
 DOMAIN-SUFFIX,poliroid.me
 DOMAIN-SUFFIX,geforce.com
 
-# 机场官网 (防止节点挂了打不开网站)
-DOMAIN-SUFFIX,mitce.net
-DOMAIN-SUFFIX,chatwoot.com
-
 # 5. 🟢 [特殊IP段]
 IP-CIDR,219.146.1.66/32,no-resolve
 IP-CIDR,216.40.86.112/24,no-resolve
