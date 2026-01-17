@@ -120,6 +120,8 @@ DOMAIN-SUFFIX,modxvm.com
 DOMAIN-SUFFIX,champi.de
 DOMAIN-SUFFIX,poliroid.me
 DOMAIN-SUFFIX,geforce.com
+DOMAIN,cat-cn.wargaming.net
+DOMAIN-SUFFIX,wargaming.net
 
 # 5. 🟢 [特殊IP段]
 IP-CIDR,219.146.1.66/32,no-resolve
