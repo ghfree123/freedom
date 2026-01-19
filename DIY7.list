@@ -1,6 +1,6 @@
 # NAME: DIY (User Custom) - 最终完整版
 # 策略建议：指向 代理节点 (Global/Proxy)
-# 更新时间：2026-01-11
+# 更新时间：2026-01-19
 # 包含：国外新闻深度优化、加密货币、维基百科、Z-Lib、隐私检测、社交媒体、开发资源CDN
 
 # --- 1. 域名关键字匹配 (兜底策略) ---
@@ -131,13 +131,14 @@ DOMAIN-SUFFIX,dnsleaktest.com
 DOMAIN-SUFFIX,whoer.net
 DOMAIN-SUFFIX,whatismyipaddress.com
 DOMAIN-SUFFIX,ping0.cc
-DOMAIN-SUFFIX,ip.sb
-DOMAIN-SUFFIX,ipify.org
 DOMAIN-SUFFIX,myip.com
 DOMAIN-SUFFIX,ip-api.com
 DOMAIN-SUFFIX,checkip.amazonaws.com
-# 安全解析与浏览
-DOMAIN-SUFFIX,opendns.com
+# ✅ [新增] 补全 IP 查询工具
+DOMAIN-SUFFIX,ip.sb
+DOMAIN-SUFFIX,ipify.org
+
+# 安全解析与浏览 (Brave相关)
 DOMAIN-SUFFIX,ads.brave.com
 DOMAIN-SUFFIX,safebrowsing.brave.com
 
@@ -151,6 +152,8 @@ DOMAIN-SUFFIX,ajay.app
 DOMAIN-SUFFIX,sponsor.ajay.app
 DOMAIN-SUFFIX,revenuecat.com              
 DOMAIN-SUFFIX,api.revenuecat.com
+# ✅ [新增] GitHub 静态资源 (修复样式错乱)
+DOMAIN-SUFFIX,githubassets.com
 # 开发CDN与客服组件 (New)
 DOMAIN-SUFFIX,unpkg.com
 DOMAIN-SUFFIX,intercom.io
