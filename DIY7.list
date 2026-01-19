@@ -68,7 +68,7 @@ DOMAIN-SUFFIX,france24.com
 DOMAIN-SUFFIX,fmm.io            
 # [自由亚洲 RFA]
 DOMAIN-SUFFIX,rfa.org
-DOMAIN-SUFFIX,rfastream.org      
+DOMAIN-SUFFIX,rfastream.org       
 
 # [德国之声 DW]
 DOMAIN-SUFFIX,dw.com
@@ -77,15 +77,15 @@ DOMAIN-SUFFIX,dw.de
 # [其他主流外媒]
 DOMAIN-SUFFIX,nytimes.com       
 DOMAIN-SUFFIX,nyt.com
-DOMAIN-SUFFIX,wsj.com           
+DOMAIN-SUFFIX,wsj.com            
 DOMAIN-SUFFIX,wsj.net
-DOMAIN-SUFFIX,bloomberg.com    
-DOMAIN-SUFFIX,cnn.com           
+DOMAIN-SUFFIX,bloomberg.com     
+DOMAIN-SUFFIX,cnn.com            
 DOMAIN-SUFFIX,washingtonpost.com 
-DOMAIN-SUFFIX,reuters.com       
-DOMAIN-SUFFIX,ft.com            
+DOMAIN-SUFFIX,reuters.com        
+DOMAIN-SUFFIX,ft.com             
 DOMAIN-SUFFIX,nikkei.com        
-DOMAIN-SUFFIX,aljazeera.com     
+DOMAIN-SUFFIX,aljazeera.com      
 DOMAIN-SUFFIX,aljazeera.net
 
 # [港台及海外中文资讯]
@@ -127,121 +127,4 @@ DOMAIN-SUFFIX,b-ok.cc
 # 隐私检测与IP查询
 DOMAIN-SUFFIX,browserleaks.com
 DOMAIN-SUFFIX,ipleak.net
-DOMAIN-SUFFIX,dnsleaktest.com
-DOMAIN-SUFFIX,whoer.net
-DOMAIN-SUFFIX,whatismyipaddress.com
-DOMAIN-SUFFIX,ping0.cc
-DOMAIN-SUFFIX,ip.sb
-DOMAIN-SUFFIX,ipify.org
-DOMAIN-SUFFIX,myip.com
-DOMAIN-SUFFIX,ip-api.com
-DOMAIN-SUFFIX,checkip.amazonaws.com
-# 安全解析与浏览
-DOMAIN-SUFFIX,doh.opendns.com
-DOMAIN-SUFFIX,opendns.com
-DOMAIN-SUFFIX,ads.brave.com
-DOMAIN-SUFFIX,safebrowsing.brave.com
-
-# --- 6. 视频站、组件与开发资源 (新增) ---
-DOMAIN-SUFFIX,ncdn.ec
-DOMAIN-SUFFIX,destiny.to
-DOMAIN-SUFFIX,tv
-DOMAIN-SUFFIX,imgur.com
-DOMAIN-SUFFIX,returnyoutubedislikeapi.com # YouTube Dislike显示
-DOMAIN-SUFFIX,ajay.app
-DOMAIN-SUFFIX,sponsor.ajay.app
-DOMAIN-SUFFIX,revenuecat.com              
-DOMAIN-SUFFIX,api.revenuecat.com
-# 开发CDN与客服组件 (New)
-DOMAIN-SUFFIX,unpkg.com
-DOMAIN-SUFFIX,intercom.io
-DOMAIN-SUFFIX,intercomcdn.com
-# 媒体CDN补充
-DOMAIN-SUFFIX,hls.ttvnw.net
-DOMAIN-SUFFIX,ttvnw.net
-DOMAIN-SUFFIX,jwpcdn.com
-
-# --- 7. 💰 加密货币全家桶 (Crypto) ---
-# [Binance 币安]
-DOMAIN-SUFFIX,binance.com
-DOMAIN-SUFFIX,binance.me
-DOMAIN-SUFFIX,binance.cc
-DOMAIN-SUFFIX,binance.us
-DOMAIN-SUFFIX,binance.info
-DOMAIN-SUFFIX,binance.net
-DOMAIN-SUFFIX,bnbstatic.com
-DOMAIN-SUFFIX,bntrace.com
-DOMAIN-SUFFIX,bnappzh.com
-DOMAIN-SUFFIX,bnappzh.co
-DOMAIN-SUFFIX,binanceapi.com
-
-# [OKX / OKEx 欧易]
-DOMAIN-SUFFIX,okx.com
-DOMAIN-SUFFIX,okx.cab
-DOMAIN-SUFFIX,okex.com
-DOMAIN-SUFFIX,okx-dns.com
-DOMAIN-SUFFIX,okx-dns1.com
-DOMAIN-SUFFIX,okx-dns2.com
-DOMAIN-SUFFIX,oklink.com
-
-# [HTX / Huobi 火币]
-DOMAIN-SUFFIX,htx.com
-DOMAIN-SUFFIX,htx.co
-DOMAIN-SUFFIX,huobi.com
-DOMAIN-SUFFIX,huobi.me
-DOMAIN-SUFFIX,huobi.pro
-DOMAIN-SUFFIX,huobiglobal.com
-DOMAIN-SUFFIX,hbfile.net
-
-# [Bybit]
-DOMAIN-SUFFIX,bybit.com
-DOMAIN-SUFFIX,bybitglobal.com
-DOMAIN-SUFFIX,bybit.adh
-DOMAIN-SUFFIX,byapps.net
-
-# [Bitget]
-DOMAIN-SUFFIX,bitget.com
-DOMAIN-SUFFIX,bitgetimg.com
-
-# [Gate.io 芝麻开门]
-DOMAIN-SUFFIX,gate.io
-DOMAIN-SUFFIX,gateimg.com
-DOMAIN-SUFFIX,gateio.services
-
-# [Coinbase & Others]
-DOMAIN-SUFFIX,coinbase.com
-DOMAIN-SUFFIX,kraken.com
-DOMAIN-SUFFIX,kucoin.com
-DOMAIN-SUFFIX,mexc.com
-DOMAIN-SUFFIX,bitfinex.com
-DOMAIN-SUFFIX,gemini.com
-
-# [钱包 & 链上工具]
-DOMAIN-SUFFIX,metamask.io
-DOMAIN-SUFFIX,tronscan.org
-DOMAIN-SUFFIX,etherscan.io
-DOMAIN-SUFFIX,bscscan.com
-DOMAIN-SUFFIX,solscan.io
-DOMAIN-SUFFIX,walletconnect.com
-DOMAIN-SUFFIX,walletconnect.org
-DOMAIN-SUFFIX,tether.to
-
-# [行情与资讯]
-DOMAIN-SUFFIX,coinmarketcap.com
-DOMAIN-SUFFIX,coingecko.com
-DOMAIN-SUFFIX,tradingview.com
-DOMAIN-SUFFIX,defillama.com
-DOMAIN-SUFFIX,glassnode.com
-DOMAIN-SUFFIX,uphold.com
-DOMAIN-SUFFIX,upholdcdn.com
-DOMAIN-SUFFIX,uphold.net
-
-# [其他杂项与修复]
-DOMAIN-SUFFIX,saasexch.info
-DOMAIN-SUFFIX,bscdnweb.com
-DOMAIN-SUFFIX,appsflyersdk.com
-DOMAIN-SUFFIX,giscus.app
-# Brave 浏览器完整支持 (New)
-DOMAIN-SUFFIX,brave.com
-DOMAIN-SUFFIX,bravesoftware.com
-DOMAIN-SUFFIX,brave-http-only.com
+DOMAIN-SUFFIX,
