@@ -26,20 +26,3 @@ DOMAIN-SUFFIX,graph.facebook.com
 DOMAIN-SUFFIX,scontent.cdninstagram.com
 DOMAIN-SUFFIX,scontent.xx.fbcdn.net
 
-# --- IP 段匹配 (仅限 classical 模式) ---
-# 注意：在 List 文件中，结尾不需要写策略组名称，Clash 会自动匹配 provider 对应的组
-IP-CIDR,31.13.24.0/21,no-resolve
-IP-CIDR,31.13.64.0/18,no-resolve
-IP-CIDR,45.64.40.0/22,no-resolve
-IP-CIDR,66.220.144.0/20,no-resolve
-IP-CIDR,69.63.176.0/20,no-resolve
-IP-CIDR,69.171.224.0/19,no-resolve
-IP-CIDR,74.119.76.0/22,no-resolve
-IP-CIDR,102.132.96.0/20,no-resolve
-IP-CIDR,103.4.96.0/22,no-resolve
-IP-CIDR,129.134.0.0/17,no-resolve
-IP-CIDR,157.240.0.0/17,no-resolve
-IP-CIDR,173.252.64.0/18,no-resolve
-IP-CIDR,179.60.192.0/22,no-resolve
-IP-CIDR,185.60.216.0/22,no-resolve
-IP-CIDR,204.15.20.0/22,no-resolve
