@@ -1,21 +1,24 @@
-# NAME: Twitter & X Optimized
-# 策略建议：推荐使用【美国】或【日本】节点
-# 说明：已添加 App 进程规则，优化移动端体验
+# NAME: Twitter & X (Enhanced Protection Version)
+# UPDATED: 2026-02-05
+# 策略建议：推荐固定使用【美国】或【日本】节点，防封号效果最佳
 
-# --- 核心域名 (X / Twitter) ---
+# --- 1. 核心域名 (X / Twitter) ---
 DOMAIN-SUFFIX,x.com
 DOMAIN-SUFFIX,twitter.com
 DOMAIN-SUFFIX,t.co
 DOMAIN-SUFFIX,twimg.com
+DOMAIN-SUFFIX,periscope.tv
+DOMAIN-SUFFIX,pscp.tv
 
-# --- 辅助与短链接 ---
+# --- 2. 辅助与品牌更名补丁 ---
 DOMAIN-SUFFIX,twimg.co
 DOMAIN-SUFFIX,twimg.org
 DOMAIN-SUFFIX,twttr.com
 DOMAIN-SUFFIX,twttr.net
+DOMAIN-SUFFIX,x-twitter.com
+DOMAIN-SUFFIX,twittercloud.net
 
-# --- 广告与数据 ---
-# 建议走代理，否则 App 可能会因为一直在尝试加载广告而卡住
+# --- 3. 广告、数据与 API (App 正常运行必需) ---
 DOMAIN-SUFFIX,ads-twitter.com
 DOMAIN-SUFFIX,cms-twdigitalassets.com
 DOMAIN-SUFFIX,twitter.biz
@@ -27,17 +30,27 @@ DOMAIN-SUFFIX,twitterstat.us
 DOMAIN-SUFFIX,twtrdns.net
 DOMAIN-SUFFIX,tellapart.com
 DOMAIN-SUFFIX,vine.co
+DOMAIN-SUFFIX,crashlytics.com      # Twitter 崩溃分析（App 启动时常调用）
 
-# --- 关键字兜底 ---
+# --- 4. 关键字兜底 ---
 DOMAIN-KEYWORD,twitter
+DOMAIN-KEYWORD,twimg
 
-# --- 进程匹配 (新增：对 Android 客户端极其重要) ---
-# 强制 Twitter App 的所有流量走代理，防止漏网
+# --- 5. 进程匹配 (针对 Android/iOS 客户端) ---
 PROCESS-NAME,com.twitter.android
 PROCESS-NAME,com.twitter.android.lite
 PROCESS-NAME,com.atebits.tweetie2
 PROCESS-NAME,com.twitter.android.tv
 
-# --- 智能 IP 识别 (替代了手动 IP 段) ---
-# 自动识别属于 Twitter/X 的所有 IP
+# --- 6. 核心 IP 段补丁 (解决 199.16.158.182 漏网问题) ---
+# 注意：仅当 behavior 为 classical 时生效。若为 domain 请删除本段并将 IP 写在 YAML 的 rules 中。
+# 覆盖 Twitter 绝大部分核心数据中心
+IP-CIDR,199.16.156.0/22,no-resolve
+IP-CIDR,199.59.148.0/22,no-resolve
+IP-CIDR,199.96.56.0/21,no-resolve
+IP-CIDR,204.92.112.0/22,no-resolve
+IP-CIDR,104.244.42.0/21,no-resolve
+IP-CIDR,69.195.160.0/19,no-resolve
+
+# --- 7. 地理识别 (作为最后防线) ---
 GEOIP,TWITTER,no-resolve
