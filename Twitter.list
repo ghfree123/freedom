@@ -45,12 +45,6 @@ PROCESS-NAME,com.twitter.android.tv
 # --- 6. 核心 IP 段补丁 (解决 199.16.158.182 漏网问题) ---
 # 注意：仅当 behavior 为 classical 时生效。若为 domain 请删除本段并将 IP 写在 YAML 的 rules 中。
 # 覆盖 Twitter 绝大部分核心数据中心
-IP-CIDR,199.16.156.0/22,no-resolve
-IP-CIDR,199.59.148.0/22,no-resolve
-IP-CIDR,199.96.56.0/21,no-resolve
-IP-CIDR,204.92.112.0/22,no-resolve
-IP-CIDR,104.244.42.0/21,no-resolve
-IP-CIDR,69.195.160.0/19,no-resolve
 
 # --- 7. 地理识别 (作为最后防线) ---
 GEOIP,TWITTER,no-resolve
