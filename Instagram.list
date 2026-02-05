@@ -1,25 +1,45 @@
-# NAME: Instagram & Threads
-# 策略建议：推荐使用【台湾】节点
-# Meta系应用(IG/FB)在台湾节点下通常加载速度极快，且音乐/Reels功能全开。
+# NAME: Instagram & Threads (Classical Enhanced)
+# 适用范围：Instagram, Threads, Facebook, Messenger
 
-# --- 关键字匹配 (防漏) ---
+# --- 域名匹配 ---
 DOMAIN-KEYWORD,instagram
 DOMAIN-KEYWORD,threads
-# 注意：fbcdn 是 Meta 共用的，如果不加这行，IG 图片可能加载不出来
 DOMAIN-KEYWORD,fbcdn
-
-# --- Instagram 核心 ---
+DOMAIN-KEYWORD,facebook
 DOMAIN-SUFFIX,instagram.com
 DOMAIN-SUFFIX,cdninstagram.com
 DOMAIN-SUFFIX,igcdn.com
 DOMAIN-SUFFIX,instagr.am
-
-# --- Threads 核心 ---
+DOMAIN-SUFFIX,ig.me
 DOMAIN-SUFFIX,threads.net
-
-# --- Meta 共享基础设施 (CDN/API) ---
-# IG 和 Threads 的图片、头像、视频流全在这里
 DOMAIN-SUFFIX,fbcdn.net
+DOMAIN-SUFFIX,fbsbx.com
+DOMAIN-SUFFIX,fb.com
 DOMAIN-SUFFIX,facebook.com
 DOMAIN-SUFFIX,facebook.net
 DOMAIN-SUFFIX,meta.com
+DOMAIN-SUFFIX,messenger.com
+DOMAIN-SUFFIX,akamaihd.net
+DOMAIN-SUFFIX,m.me
+DOMAIN-SUFFIX,graph.instagram.com
+DOMAIN-SUFFIX,graph.facebook.com
+DOMAIN-SUFFIX,scontent.cdninstagram.com
+DOMAIN-SUFFIX,scontent.xx.fbcdn.net
+
+# --- IP 段匹配 (仅限 classical 模式) ---
+# 注意：在 List 文件中，结尾不需要写策略组名称，Clash 会自动匹配 provider 对应的组
+IP-CIDR,31.13.24.0/21,no-resolve
+IP-CIDR,31.13.64.0/18,no-resolve
+IP-CIDR,45.64.40.0/22,no-resolve
+IP-CIDR,66.220.144.0/20,no-resolve
+IP-CIDR,69.63.176.0/20,no-resolve
+IP-CIDR,69.171.224.0/19,no-resolve
+IP-CIDR,74.119.76.0/22,no-resolve
+IP-CIDR,102.132.96.0/20,no-resolve
+IP-CIDR,103.4.96.0/22,no-resolve
+IP-CIDR,129.134.0.0/17,no-resolve
+IP-CIDR,157.240.0.0/17,no-resolve
+IP-CIDR,173.252.64.0/18,no-resolve
+IP-CIDR,179.60.192.0/22,no-resolve
+IP-CIDR,185.60.216.0/22,no-resolve
+IP-CIDR,204.15.20.0/22,no-resolve
