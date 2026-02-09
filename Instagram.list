@@ -29,3 +29,4 @@ DOMAIN-SUFFIX,scontent.xx.fbcdn.net
 # --- IP 地址匹配 ---
 # Meta / Facebook 具体节点 (加上 no-resolve)
 IP-CIDR,31.13.106.4/32,no-resolve
+IP-CIDR,31.13.88.26,no-resolve
