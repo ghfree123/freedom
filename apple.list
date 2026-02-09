@@ -20,8 +20,9 @@ DOMAIN-KEYWORD,icloud-content
 
 # --- Apple 遥测与追踪拦截 (建议策略：REJECT) ---
 # 核心遥测上报 (行为记录仪)
-DOMAIN-KEYWORD,vortex.data.apple
-DOMAIN-KEYWORD,vortex-events
+- DOMAIN,vortex.data.apple.com
+- DOMAIN-SUFFIX,vortex.data.apple.com
+- DOMAIN-KEYWORD,vortex-events
 # 广告系统与追踪
 DOMAIN-KEYWORD,iadsdk.apple
 DOMAIN-KEYWORD,api-adservices.apple
