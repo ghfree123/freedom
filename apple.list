@@ -1,6 +1,31 @@
-# NAME: apple
-# 策略建议：指向 代理节点 (Global/Proxy)
-# 说明：包含 
+# --- Apple 隐私保护核心 (建议指向：代理节点) ---
+# 账户验证与身份隔离
+DOMAIN-KEYWORD,appleid
+DOMAIN-KEYWORD,idmsa.apple
+DOMAIN-KEYWORD,gsa.apple
+# iCloud 隐私遮蔽与私密转送 (Private Relay)
+DOMAIN-KEYWORD,apple-dns
+DOMAIN-KEYWORD,mask.icloud
+DOMAIN-KEYWORD,mask-h2.icloud
+DOMAIN-KEYWORD,mask-api.icloud
+# 高级数据保护与密钥同步
+DOMAIN,keyvalueservice.icloud.com
+DOMAIN-KEYWORD,apple-cloudkit
+# 地理位置与查找服务
+DOMAIN-KEYWORD,findmy.apple
+DOMAIN-SUFFIX,ls.apple.com
+# iCloud 数据同步 (防止国内 CDN 留痕)
+DOMAIN-KEYWORD,icloud.com
+DOMAIN-KEYWORD,icloud-content
 
-# --- 1. 域名关键字匹配 ---
-DOMAIN-KEYWORD,
+# --- Apple 遥测与追踪拦截 (建议策略：REJECT) ---
+# 核心遥测上报 (行为记录仪)
+DOMAIN-KEYWORD,vortex.data.apple
+DOMAIN-KEYWORD,vortex-events
+# 广告系统与追踪
+DOMAIN-KEYWORD,iadsdk.apple
+DOMAIN-KEYWORD,api-adservices.apple
+DOMAIN,apple.comscoreresearch.com
+
+# --- App Store 下载 (根据流量情况决定：代理或直连) ---
+#DOMAIN,iosapps.itunes.apple.com
