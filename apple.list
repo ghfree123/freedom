@@ -1,5 +1,5 @@
 # ==========================================
-# Apple 隐私安全与 Apple Intelligence 完整代理集
+# Apple 隐私安全、Apple Intelligence 与 News 完整代理集
 # ==========================================
 
 # [1] 账户与身份验证 (用户隐私规则：流量极小，必须保留)
@@ -29,8 +29,12 @@ DOMAIN,guzzoni.apple.com                  # Siri 与听写核心
 DOMAIN,seed.siri.apple.com                # Siri 系统级请求端点
 DOMAIN-SUFFIX,v.aaplimg.com               # Siri 视觉与相关资源加载
 
-# [6] ChatGPT 集成服务 (Siri 调用 ChatGPT 扩展必加)
-DOMAIN-SUFFIX,chatgpt.com
-DOMAIN-SUFFIX,openai.com
-DOMAIN-SUFFIX,oaistatic.com
-DOMAIN-SUFFIX,oaiusercontent.com
+# [6] Apple News 资讯服务 (必须配合美区/海外节点，且设备需处于无国内 SIM 卡状态或开启飞行模式+WiFi)
+DOMAIN-SUFFIX,apple.news
+DOMAIN,news-client.apple.com
+DOMAIN,news-client-search.apple.com
+DOMAIN,news-edge.apple.com
+DOMAIN,news-events.apple.com
+DOMAIN,news-search-api.apple.com
+DOMAIN,news-today.apple.com
+DOMAIN,news.iadsdk.apple.com
