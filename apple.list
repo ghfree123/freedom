@@ -1,11 +1,36 @@
-# [1] 账户与身份验证 (流量极小，必须保留)
+# ==========================================
+# Apple 隐私安全与 Apple Intelligence 完整代理集
+# ==========================================
+
+# [1] 账户与身份验证 (用户隐私规则：流量极小，必须保留)
 DOMAIN-KEYWORD,appleid
 DOMAIN-KEYWORD,idmsa.apple
 DOMAIN-KEYWORD,gsa.apple
 
-# [2] 密钥与高级数据保护 (涉及加密钥匙，建议保留)
+# [2] 密钥与高级数据保护 (用户隐私规则：涉及加密钥匙，建议保留)
 DOMAIN,keyvalueservice.icloud.com
 
-# [3] 地理位置 (防止 IP 直接暴露物理位置)
+# [3] 地理位置与环境伪装 (合并规则：防止 IP 暴露与区域回退)
 DOMAIN-KEYWORD,findmy.apple
-DOMAIN-SUFFIX,ls.apple.com
+DOMAIN-SUFFIX,ls.apple.com                # 已完美覆盖 gspe1-ssl.ls.apple.com 定位伪装
+DOMAIN,apple-relay.mask.apple-dns.net     # iCloud 隐私代理验证
+DOMAIN,gateway.icloud.com                 # 核心网关 (首次激活 AI 或区域受限时防风控)
+DOMAIN,gateway.fe2.apple-dns.net          # 网关辅助域名
+
+# [4] Apple Intelligence 核心私有云计算 (PCC 必加：处理复杂 AI 任务)
+DOMAIN,apple-relay.apple.com
+DOMAIN,apple-relay.cloudflare.com
+DOMAIN,apple-relay.fastly-edge.com
+DOMAIN,cp4.cloudflare.com
+
+# [5] 新版 Siri 与 搜索增强 (Siri 基础对话、语义理解、屏幕感知)
+DOMAIN-SUFFIX,smoot.apple.com             # 覆盖所有 Spotlight/Lookup/Safari 搜索服务
+DOMAIN,guzzoni.apple.com                  # Siri 与听写核心
+DOMAIN,seed.siri.apple.com                # Siri 系统级请求端点
+DOMAIN-SUFFIX,v.aaplimg.com               # Siri 视觉与相关资源加载
+
+# [6] ChatGPT 集成服务 (Siri 调用 ChatGPT 扩展必加)
+DOMAIN-SUFFIX,chatgpt.com
+DOMAIN-SUFFIX,openai.com
+DOMAIN-SUFFIX,oaistatic.com
+DOMAIN-SUFFIX,oaiusercontent.com
