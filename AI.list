@@ -1,6 +1,6 @@
 # NAME: AI Services
 # DESC: 包含 OpenAI, Claude, Copilot, Grok, Midjourney, HuggingFace 等
-# UPDATED: 2026-01-11
+# UPDATED: 2026-05-01
 # TOTAL: Optimized & Enhanced
 
 # --- OpenAI (ChatGPT) ---
@@ -24,6 +24,9 @@ DOMAIN-SUFFIX,claude.ai
 DOMAIN-SUFFIX,claude.site            # Artifacts 分享页面
 DOMAIN-SUFFIX,claudeusercontent.com  # Artifacts 预览与文件上传
 DOMAIN-SUFFIX,anthropicusercontent.com
+DOMAIN-SUFFIX,siftscience.com        # Claude 风控防机器人验证（必须走代理）
+DOMAIN-SUFFIX,datadoghq.com          # Claude 网页性能监控遥测
+DOMAIN-SUFFIX,sentry.io              # Claude 网页错误与崩溃日志收集
 
 # --- Microsoft Copilot ---
 DOMAIN-SUFFIX,copilot.microsoft.com
