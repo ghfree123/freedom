@@ -1,40 +1,103 @@
-# NAME: Spotify Final
-# UPDATED: 2025-12-23
-# TOTAL: Optimized & Fixed
+# NAME: Privacy Protection & Anti-Fraud Blocklist
+# UPDATED: 2026-05-17
+# TOTAL: Optimized & Consolidated
 
-# --- 核心主域名 (涵盖了您提到的 /0 /1 /2 等所有连接) ---
-DOMAIN-SUFFIX,spotify.com
-DOMAIN-SUFFIX,spoti.fi
+# --- 1. 核心反诈中心后台及官方接入点 ---
+DOMAIN-SUFFIX,gjfzpt.cn
+DOMAIN-SUFFIX,gjfz.gov.cn
 
-# --- 您要求补充的规则 ---
-DOMAIN-SUFFIX,acast.com
+# --- 2. 小米 / 澎湃OS (MIUI / HyperOS) 核心云控与安全审计 ---
+DOMAIN-SUFFIX,sec.miui.com
+DOMAIN,api.installer.xiaomi.com
+DOMAIN-SUFFIX,mistat.xiaomi.com
+DOMAIN-SUFFIX,tracking.miui.com
+DOMAIN-SUFFIX,tracking.xiaomi.com
+DOMAIN,fcanr.tracking.miui.com
 
-# --- CDN 与资源域名 ---
-DOMAIN-SUFFIX,scdn.co
-DOMAIN-SUFFIX,pscdn.co
-DOMAIN-SUFFIX,spotifycdn.com
-DOMAIN-SUFFIX,spotifycdn.net
-DOMAIN-SUFFIX,spotify-com.akamaized.net
-DOMAIN-SUFFIX,audio-ak-spotify-com.akamaized.net
-DOMAIN-SUFFIX,heads-ak-spotify-com.akamaized.net
-DOMAIN-SUFFIX,heads4-ak-spotify-com.akamaized.net
-DOMAIN,spotify.map.fastly.net
-DOMAIN,spotify.map.fastlylb.net
+# --- 3. 华为 / 荣耀 (HarmonyOS / MagicOS) 云控审计 ---
+DOMAIN-SUFFIX,metrics.data.hicloud.com
+DOMAIN-SUFFIX,logservice.hicloud.com
+DOMAIN-SUFFIX,logservice1.hicloud.com
 
-# --- 其他关联服务 ---
-DOMAIN-SUFFIX,spotify.design
-DOMAIN-SUFFIX,spotifycharts.com
-DOMAIN-SUFFIX,spotifycodes.com
-DOMAIN-SUFFIX,spotifyforbrands.com
-DOMAIN-SUFFIX,spotifyjobs.com
-DOMAIN-SUFFIX,spotifynewsroom.jp
-DOMAIN-SUFFIX,spotilocal.com
-DOMAIN-SUFFIX,spotify-everywhere.com
-DOMAIN-SUFFIX,spotify.app.link
+# --- 4. OPPO / 一加 / 真我 (ColorOS / RealmeUI) 云控审计 ---
+DOMAIN-SUFFIX,heytap.com
+DOMAIN-SUFFIX,heytapdownload.com
+DOMAIN-SUFFIX,nearme.com.cn
+DOMAIN,log.realme.com
 
-# --- 兜底关键词 (防止漏网之鱼) ---
-DOMAIN-KEYWORD,spotify
+# --- 5. vivo / iQOO (OriginOS) 云控审计 ---
+DOMAIN-SUFFIX,vicos.vc.vivo.com.cn
+DOMAIN,dr.vivo.com.cn
+DOMAIN,itc.vivo.com.cn
 
-# --- 进程规则 ---
-PROCESS-NAME,Spotify.exe
-PROCESS-NAME,Spotify
+# --- 6. 魅族 (Flyme) 云控服务 ---
+DOMAIN-SUFFIX,flyme.cn
+
+# --- 7. 苹果公司 (iOS / macOS 专属遥测) ---
+DOMAIN,vortex.data.apple.com
+DOMAIN,vortex-win.data.apple.com
+DOMAIN-SUFFIX,metrics.apple.com
+DOMAIN-SUFFIX,iadsdk.apple.com
+
+# --- 8. 第三方安全内核与网址审计服务商 ---
+DOMAIN-SUFFIX,urlshare.cn
+DOMAIN-SUFFIX,urlsec.qq.com
+DOMAIN-SUFFIX,avlyun.com
+DOMAIN-SUFFIX,360safe.com
+DOMAIN-SUFFIX,shouji.360.cn
+DOMAIN,cloud.360.cn
+DOMAIN,anquan.baidu.com
+
+# --- 9. 微信 (WeChat) 广告与遥测净化 ---
+DOMAIN,wup.imtt.qq.com
+DOMAIN,tpstelemetry.tencent.com
+DOMAIN,log.umsns.com
+DOMAIN-SUFFIX,gdt.qq.com
+DOMAIN-SUFFIX,trace.qq.com
+
+# --- 10. 拼多多 (Pinduoduo) 隐私嗅探与数据上报 ---
+DOMAIN,meta.pinduoduo.com
+DOMAIN,stats.pinduoduo.com
+DOMAIN,log.pinduoduo.com
+DOMAIN,omg.pinduoduo.com
+
+# --- 11. 抖音 & 字节系 (Douyin / ByteDance) 广告遥测 ---
+DOMAIN,log.snssdk.com
+DOMAIN,toblog.snssdk.com
+DOMAIN,ichis.snssdk.com
+DOMAIN-SUFFIX,pangolin-sdk-va.com
+DOMAIN-SUFFIX,pglstatp.com
+
+# --- 12. 快手 (Kuaishou) 广告与日志 ---
+DOMAIN,log-sdk.gifshow.com
+DOMAIN,e.kuaishou.com
+DOMAIN,analytics.yximgs.com
+
+# --- 13. 网易云音乐 (NetEase Music) 广告素材与上报 ---
+DOMAIN,iad.music.163.com
+DOMAIN,log.music.163.com
+DOMAIN-SUFFIX,iadmat.nosdn.127.net
+
+# --- 14. WPS Office 弹窗、云控与隐私追踪 ---
+DOMAIN,log.wps.cn
+DOMAIN,py.wps.cn
+DOMAIN,ups.kmo.wps.cn
+DOMAIN-SUFFIX,pc.wps.com.cn
+
+# --- 15. 哔哩哔哩 (Bilibili) 广告与行为追踪 ---
+DOMAIN,cm.bilibili.com
+DOMAIN,cclog.bilibili.com
+DOMAIN,data.bilibili.com
+DOMAIN,log.bilibili.com
+DOMAIN,tracking.bilibili.com
+
+# --- 16. 跨应用通用第三方广告与审计 SDK ---
+DOMAIN-SUFFIX,umeng.com
+DOMAIN-SUFFIX,umengcloud.com
+DOMAIN-SUFFIX,jpush.cn
+DOMAIN-SUFFIX,jiguang.cn
+DOMAIN-SUFFIX,talkingdata.com
+DOMAIN-SUFFIX,miaozhen.com
+DOMAIN-SUFFIX,admonitor.net
+DOMAIN-SUFFIX,mmstat.com
+DOMAIN-SUFFIX,tanx.com
