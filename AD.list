@@ -1,6 +1,6 @@
-# NAME: Privacy Protection & Anti-Fraud Blocklist
+# NAME: Privacy Protection & Anti-Fraud Blocklist (Pro Max)
 # UPDATED: 2026-05-17
-# TOTAL: Optimized & Consolidated
+# TOTAL: Optimized, Consolidated & Expanded for All Major CN Apps
 
 # --- 1. 核心反诈中心后台及官方接入点 ---
 DOMAIN-SUFFIX,gjfzpt.cn
@@ -48,50 +48,86 @@ DOMAIN-SUFFIX,shouji.360.cn
 DOMAIN,cloud.360.cn
 DOMAIN,anquan.baidu.com
 
-# --- 9. 微信 (WeChat) 广告与遥测净化 ---
+# --- 9. 微信 & 腾讯全局 (WeChat / Tencent) 广告与遥测净化 ---
 DOMAIN,wup.imtt.qq.com
 DOMAIN,tpstelemetry.tencent.com
 DOMAIN,log.umsns.com
 DOMAIN-SUFFIX,gdt.qq.com
 DOMAIN-SUFFIX,trace.qq.com
+DOMAIN,beacon.qq.com
+DOMAIN,bugly.qq.com
+DOMAIN-SUFFIX,e.qq.com
 
-# --- 10. 拼多多 (Pinduoduo) 隐私嗅探与数据上报 ---
+# --- 10. 闲鱼 & 阿里全局 (Xianyu / Alibaba) 深度隐私探测 ---
+DOMAIN-SUFFIX,ut.taobao.com
+DOMAIN,apoll.m.taobao.com
+DOMAIN,tunion-api.m.taobao.com
+DOMAIN,err.taobao.com
+DOMAIN-SUFFIX,alimama.com
+
+# --- 11. 微博 (Weibo) 开屏广告与高频追踪 ---
+DOMAIN,sax.sina.com.cn
+DOMAIN,saxs.sina.com.cn
+DOMAIN,beacon.sina.com.cn
+DOMAIN,log.sina.com.cn
+DOMAIN,tj.biz.weibo.com
+DOMAIN,tui.weibo.com
+
+# --- 12. 拼多多 (Pinduoduo) 隐私嗅探与数据上报 ---
 DOMAIN,meta.pinduoduo.com
 DOMAIN,stats.pinduoduo.com
 DOMAIN,log.pinduoduo.com
 DOMAIN,omg.pinduoduo.com
 
-# --- 11. 抖音 & 字节系 (Douyin / ByteDance) 广告遥测 ---
+# --- 13. 抖音 & 字节系 (Douyin / ByteDance) 广告遥测 ---
 DOMAIN,log.snssdk.com
 DOMAIN,toblog.snssdk.com
 DOMAIN,ichis.snssdk.com
 DOMAIN-SUFFIX,pangolin-sdk-va.com
 DOMAIN-SUFFIX,pglstatp.com
 
-# --- 12. 快手 (Kuaishou) 广告与日志 ---
+# --- 14. 快手 (Kuaishou) 广告与日志 ---
 DOMAIN,log-sdk.gifshow.com
 DOMAIN,e.kuaishou.com
 DOMAIN,analytics.yximgs.com
 
-# --- 13. 网易云音乐 (NetEase Music) 广告素材与上报 ---
+# --- 15. 小红书 (Xiaohongshu) 行为追踪与数据分析 ---
+DOMAIN,xhs-track.xiaohongshu.com
+DOMAIN,metrics.xiaohongshu.com
+
+# --- 16. 知乎 (Zhihu) 广告与崩溃上报 ---
+DOMAIN,sugar.zhihu.com
+DOMAIN,appcloud2.in.zhihu.com
+DOMAIN,crash2.zhihu.com
+
+# --- 17. 美团 & 京东 (Meituan / JD) 后台数据上报 ---
+DOMAIN,dreport.meituan.net
+DOMAIN,alogs.meituan.net
+DOMAIN,mercury.jd.com
+DOMAIN,wl.jd.com
+
+# --- 18. 网易云音乐 (NetEase Music) 广告素材与上报 ---
 DOMAIN,iad.music.163.com
 DOMAIN,log.music.163.com
 DOMAIN-SUFFIX,iadmat.nosdn.127.net
 
-# --- 14. WPS Office 弹窗、云控与隐私追踪 ---
-DOMAIN,log.wps.cn
-DOMAIN,py.wps.cn
-DOMAIN,ups.kmo.wps.cn
-DOMAIN-SUFFIX,pc.wps.com.cn
-
-# --- 15. 哔哩哔哩 (Bilibili) 广告与行为追踪 ---
+# --- 19. 哔哩哔哩 (Bilibili) 广告与行为追踪 ---
 DOMAIN,cm.bilibili.com
 DOMAIN,cclog.bilibili.com
 DOMAIN,data.bilibili.com
 DOMAIN,log.bilibili.com
 DOMAIN,tracking.bilibili.com
 
-# --- 16. 跨应用通用第三方广告与审计 SDK ---
+# --- 20. WPS Office 弹窗、云控与隐私追踪 ---
+DOMAIN,log.wps.cn
+DOMAIN,py.wps.cn
+DOMAIN,ups.kmo.wps.cn
+DOMAIN-SUFFIX,pc.wps.com.cn
+
+# --- 21. 百度与跨应用通用第三方广告审计 SDK ---
+DOMAIN,hm.baidu.com
+DOMAIN,pos.baidu.com
+DOMAIN,wn.pos.baidu.com
 DOMAIN-SUFFIX,umeng.com
 DOMAIN-SUFFIX,umengcloud.com
 DOMAIN-SUFFIX,jpush.cn
