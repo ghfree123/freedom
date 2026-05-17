@@ -1,0 +1,40 @@
+# NAME: Spotify Final
+# UPDATED: 2025-12-23
+# TOTAL: Optimized & Fixed
+
+# --- 核心主域名 (涵盖了您提到的 /0 /1 /2 等所有连接) ---
+DOMAIN-SUFFIX,spotify.com
+DOMAIN-SUFFIX,spoti.fi
+
+# --- 您要求补充的规则 ---
+DOMAIN-SUFFIX,acast.com
+
+# --- CDN 与资源域名 ---
+DOMAIN-SUFFIX,scdn.co
+DOMAIN-SUFFIX,pscdn.co
+DOMAIN-SUFFIX,spotifycdn.com
+DOMAIN-SUFFIX,spotifycdn.net
+DOMAIN-SUFFIX,spotify-com.akamaized.net
+DOMAIN-SUFFIX,audio-ak-spotify-com.akamaized.net
+DOMAIN-SUFFIX,heads-ak-spotify-com.akamaized.net
+DOMAIN-SUFFIX,heads4-ak-spotify-com.akamaized.net
+DOMAIN,spotify.map.fastly.net
+DOMAIN,spotify.map.fastlylb.net
+
+# --- 其他关联服务 ---
+DOMAIN-SUFFIX,spotify.design
+DOMAIN-SUFFIX,spotifycharts.com
+DOMAIN-SUFFIX,spotifycodes.com
+DOMAIN-SUFFIX,spotifyforbrands.com
+DOMAIN-SUFFIX,spotifyjobs.com
+DOMAIN-SUFFIX,spotifynewsroom.jp
+DOMAIN-SUFFIX,spotilocal.com
+DOMAIN-SUFFIX,spotify-everywhere.com
+DOMAIN-SUFFIX,spotify.app.link
+
+# --- 兜底关键词 (防止漏网之鱼) ---
+DOMAIN-KEYWORD,spotify
+
+# --- 进程规则 ---
+PROCESS-NAME,Spotify.exe
+PROCESS-NAME,Spotify
