@@ -74,6 +74,8 @@ DOMAIN,beacon.sina.com.cn
 DOMAIN,log.sina.com.cn
 DOMAIN,tj.biz.weibo.com
 DOMAIN,tui.weibo.com
+DOMAIN,seeds-sina.xycdn.com
+DOMAIN-SUFFIX,xycdn.com
 
 # --- 12. 拼多多 (Pinduoduo) 隐私嗅探与数据上报 ---
 DOMAIN,meta.pinduoduo.com
