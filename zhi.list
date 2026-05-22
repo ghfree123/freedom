@@ -71,6 +71,7 @@ DOMAIN-SUFFIX,futo-on.com
 DOMAIN-SUFFIX,digicert.com
 DOMAIN-SUFFIX,globalsign.com
 DOMAIN-SUFFIX,rapidssl.com
+DOMAIN-SUFFIX,checktrustworthiness.com
 
 # 4. 🟢 [各类机场/VPN/私有服务]
 # ⚠️ 注意：以下域名解析会经过国内 DNS，存在隐私暴露风险
