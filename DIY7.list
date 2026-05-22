@@ -20,7 +20,7 @@ DOMAIN-KEYWORD,ipleak
 DOMAIN-KEYWORD,dnsleak
 DOMAIN-KEYWORD,whoer
 # 视频与CDN & 开发资源
-DOMAIN-KEYWORD,ncdn
+#DOMAIN-KEYWORD,ncdn
 DOMAIN-KEYWORD,saawsedge
 DOMAIN-KEYWORD,doppiocdn
 DOMAIN-KEYWORD,magsrv
@@ -143,7 +143,7 @@ DOMAIN-SUFFIX,ads.brave.com
 DOMAIN-SUFFIX,safebrowsing.brave.com
 
 # --- 6. 视频站、组件与开发资源 (新增) ---
-#DOMAIN-SUFFIX,ncdn.ec
+DOMAIN-SUFFIX,ncdn.ec
 DOMAIN-SUFFIX,destiny.to
 DOMAIN-SUFFIX,tv
 DOMAIN-SUFFIX,imgur.com
