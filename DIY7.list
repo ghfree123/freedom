@@ -142,7 +142,7 @@ DOMAIN-SUFFIX,ads.brave.com
 DOMAIN-SUFFIX,safebrowsing.brave.com
 
 # --- 6. 视频站、组件与开发资源 (新增) ---
-#DOMAIN-SUFFIX,ncdn.ec
+DOMAIN-SUFFIX,ncdn.ec
 DOMAIN-SUFFIX,destiny.to
 DOMAIN-SUFFIX,tv
 DOMAIN-SUFFIX,imgur.com
