@@ -66,6 +66,7 @@ DOMAIN,tunion-api.m.taobao.com
 DOMAIN,err.taobao.com
 DOMAIN-SUFFIX,alimama.com
 
+
 # --- 11. 微博 (Weibo) 开屏广告与高频追踪 ---
 DOMAIN,sax.sina.com.cn
 DOMAIN,saxs.sina.com.cn
@@ -86,6 +87,7 @@ DOMAIN,toblog.snssdk.com
 DOMAIN,ichis.snssdk.com
 DOMAIN-SUFFIX,pangolin-sdk-va.com
 DOMAIN-SUFFIX,pglstatp.com
+DOMAIN-SUFFIX,ctobsnssdk.com
 
 # --- 14. 快手 (Kuaishou) 广告与日志 ---
 DOMAIN,log-sdk.gifshow.com
