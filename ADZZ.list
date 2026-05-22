@@ -87,7 +87,7 @@ DOMAIN,toblog.snssdk.com
 DOMAIN,ichis.snssdk.com
 DOMAIN-SUFFIX,pangolin-sdk-va.com
 DOMAIN-SUFFIX,pglstatp.com
-DOMAIN-SUFFIX,ctobsnssdk.com
+DOMAIN-SUFFIX,toblog.ctobsnssdk.com
 
 # --- 14. 快手 (Kuaishou) 广告与日志 ---
 DOMAIN,log-sdk.gifshow.com
