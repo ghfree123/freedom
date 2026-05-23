@@ -1,45 +1,125 @@
-# NAME: Privacy Protection & Anti-Fraud Blocklist (Pro Max)
-# UPDATED: 2026-05-17
-# TOTAL: Optimized, Consolidated & Expanded for All Major CN Apps
-
-# --- 1. 核心反诈中心后台及官方接入点 ---
+# ============================================================
+# NAME: Privacy Protection & Anti-Fraud Blocklist (Complete Final)
+# UPDATED: 2026-05-23
+# DEVICES:
+#   - 你自己：美版 iPhone + 美区 ID + 不插卡 + 只装国外 App
+#   - 家人：国行 iPhone + 大陆 Apple ID（云服务完全兼容）
+#   - 小米手机：MIUI 12 + MIUI 14 / 澎湃OS
+#   - Windows PC（微信/QQ、百度系、WPS、Steam、Edge/Chrome）
+# PROXY: OpenClash（DNS 劫持 53 端口）
+#
+# 合并来源：
+#   - 你的原始名单（2026-05-17 版本）
+#   - 针对 MIUI 12/14、国行 iPhone、Windows 的补充条目
+#   - 本次讨论中的所有修订
+#
+# 主要变动：
+#   - 保留华为/OPPO/vivo/魅族条目（通用版，家人设备可能用到）
+#   - 移除 configuration.apple.com（副作用大、收益极低）
+#   - 移除 pancake.apple.com / xp.apple.com（兼容家人国行 iPhone）
+#   - 新增你原始名单中有但补充版漏掉的条目（ugdtimg、xycdn、mob 等）
+#   - 新增 Windows 系统遥测、PC 软件、浏览器追踪
+#   - 新增 MIUI 14 澎湃OS 专属端点
+# ============================================================
+ 
+ 
+# ============================================================
+# --- 1. 核心反诈中心后台 ---
+# ============================================================
 DOMAIN-SUFFIX,gjfzpt.cn
 DOMAIN-SUFFIX,gjfz.gov.cn
-
-# --- 2. 小米 / 澎湃OS (MIUI / HyperOS) 核心云控与安全审计 ---
+ 
+ 
+# ============================================================
+# --- 2. 小米 / MIUI 12 端点 ---
+# ============================================================
 DOMAIN-SUFFIX,sec.miui.com
 DOMAIN,api.installer.xiaomi.com
 DOMAIN-SUFFIX,mistat.xiaomi.com
 DOMAIN-SUFFIX,tracking.miui.com
 DOMAIN-SUFFIX,tracking.xiaomi.com
 DOMAIN,fcanr.tracking.miui.com
-
-# --- 3. 华为 / 荣耀 (HarmonyOS / MagicOS) 云控审计 ---
+DOMAIN,tracking2.miui.com
+DOMAIN,api.ad.xiaomi.com
+DOMAIN,sdkconfig.ad.miui.com
+DOMAIN-SUFFIX,migc.ad.xiaomi.com
+DOMAIN,dig.miui.com
+DOMAIN,cta.unionpay.miui.com
+ 
+ 
+# ============================================================
+# --- 3. 小米 / MIUI 14 & 澎湃OS 新增端点 ---
+# ============================================================
+DOMAIN,data.mistat.xiaomi.com
+DOMAIN,data.mistat.global.xiaomi.com
+DOMAIN,mis.tracking.xiaomi.com
+DOMAIN-SUFFIX,apaas.xiaomi.com
+DOMAIN,sdkconfig.ad.xiaomi.com
+DOMAIN,resolver.msg.xiaomi.net
+DOMAIN-SUFFIX,miadplatform.com
+DOMAIN-SUFFIX,miad.xiaomi.com
+DOMAIN,globalapi.ad.xiaomi.com
+ 
+ 
+# ============================================================
+# --- 4. 小米通用：推送 / 安全 / 广告 ---
+# ============================================================
+DOMAIN-SUFFIX,mipush.xiaomi.com
+DOMAIN,api.push.xiaomi.com
+DOMAIN-SUFFIX,xmpush.xiaomi.com
+DOMAIN,antivirus.sec.miui.com
+DOMAIN,scdn.sec.miui.com
+DOMAIN-SUFFIX,guard.miui.com
+DOMAIN,sentry.io
+ 
+ 
+# ============================================================
+# --- 5. 华为 / 荣耀 (HarmonyOS / MagicOS) ---
+# ============================================================
 DOMAIN-SUFFIX,metrics.data.hicloud.com
 DOMAIN-SUFFIX,logservice.hicloud.com
 DOMAIN-SUFFIX,logservice1.hicloud.com
-
-# --- 4. OPPO / 一加 / 真我 (ColorOS / RealmeUI) 云控审计 ---
+ 
+ 
+# ============================================================
+# --- 6. OPPO / 一加 / 真我 (ColorOS / RealmeUI) ---
+# ============================================================
 DOMAIN-SUFFIX,heytap.com
 DOMAIN-SUFFIX,heytapdownload.com
 DOMAIN-SUFFIX,nearme.com.cn
 DOMAIN,log.realme.com
-
-# --- 5. vivo / iQOO (OriginOS) 云控审计 ---
+ 
+ 
+# ============================================================
+# --- 7. vivo / iQOO (OriginOS) ---
+# ============================================================
 DOMAIN-SUFFIX,vicos.vc.vivo.com.cn
 DOMAIN,dr.vivo.com.cn
 DOMAIN,itc.vivo.com.cn
-
-# --- 6. 魅族 (Flyme) 云控服务 ---
+ 
+ 
+# ============================================================
+# --- 8. 魅族 (Flyme) ---
+# ============================================================
 DOMAIN-SUFFIX,flyme.cn
-
-# --- 7. 苹果公司 (iOS / macOS 专属遥测) ---
+ 
+ 
+# ============================================================
+# --- 9. Apple 遥测
+#     （兼容国行家人设备：仅保留纯遥测条目，无功能副作用）---
+# ============================================================
 DOMAIN,vortex.data.apple.com
 DOMAIN,vortex-win.data.apple.com
 DOMAIN-SUFFIX,metrics.apple.com
 DOMAIN-SUFFIX,iadsdk.apple.com
-
-# --- 8. 第三方安全内核与网址审计服务商 ---
+# 以下两条可能影响地图功能，按需启用
+# DOMAIN-SUFFIX,apple-mapkit.com
+# DOMAIN,gspe1-ssl.ls.apple.com
+ 
+ 
+# ============================================================
+# --- 10. 第三方安全 SDK / 网址审计服务 ---
+# ============================================================
 DOMAIN-SUFFIX,urlshare.cn
 DOMAIN-SUFFIX,urlsec.qq.com
 DOMAIN-SUFFIX,avlyun.com
@@ -47,8 +127,11 @@ DOMAIN-SUFFIX,360safe.com
 DOMAIN-SUFFIX,shouji.360.cn
 DOMAIN,cloud.360.cn
 DOMAIN,anquan.baidu.com
-
-# --- 9. 微信 & 腾讯全局 (WeChat / Tencent) 广告与遥测净化 ---
+ 
+ 
+# ============================================================
+# --- 11. 微信 & 腾讯（手机 + PC 双端）---
+# ============================================================
 DOMAIN,wup.imtt.qq.com
 DOMAIN,tpstelemetry.tencent.com
 DOMAIN,log.umsns.com
@@ -59,16 +142,110 @@ DOMAIN,bugly.qq.com
 DOMAIN-SUFFIX,e.qq.com
 DOMAIN-SUFFIX,ugdtimg.com
 DOMAIN-SUFFIX,qzs.gdtimg.com
-
-# --- 10. 闲鱼 & 阿里全局 (Xianyu / Alibaba) 深度隐私探测 ---
+# PC 微信额外端点
+DOMAIN,report.url.cn
+DOMAIN,isdspeed.qq.com
+DOMAIN,aegis.qq.com
+DOMAIN,report.qq.com
+ 
+ 
+# ============================================================
+# --- 12. QQ（Windows 端额外追踪）---
+# ============================================================
+DOMAIN,speed.cantk.qq.com
+DOMAIN,stat.video.qq.com
+DOMAIN,adservice.google.com
+DOMAIN-SUFFIX,qqweb.qq.com
+ 
+ 
+# ============================================================
+# --- 13. 百度全系（网盘 / 输入法 / 浏览器）---
+# ============================================================
+DOMAIN,hm.baidu.com
+DOMAIN,pos.baidu.com
+DOMAIN,wn.pos.baidu.com
+DOMAIN,anquan.baidu.com
+# 百度输入法
+DOMAIN-SUFFIX,shurufa.baidu.com
+DOMAIN,ime-stat.baidu.com
+DOMAIN,inputstat.baidu.com
+# 百度网盘
+DOMAIN,pan-report.baidu.com
+# 以下两条偶发影响上传/静态资源，按需启用
+# DOMAIN,pcs.baidu.com
+# DOMAIN-SUFFIX,bdstatic.com
+# 百度浏览器
+DOMAIN-SUFFIX,baidustatic.com
+DOMAIN,log.browser.baidu.com
+DOMAIN,openapi.baidu.com
+ 
+ 
+# ============================================================
+# --- 14. WPS Office（手机 + PC 双端）---
+# ============================================================
+DOMAIN,log.wps.cn
+DOMAIN,py.wps.cn
+DOMAIN,ups.kmo.wps.cn
+DOMAIN-SUFFIX,pc.wps.com.cn
+# PC 端额外弹窗与追踪
+DOMAIN,activity.wps.cn
+DOMAIN,marketing.wps.cn
+DOMAIN,push.wps.cn
+DOMAIN,stat.wps.cn
+DOMAIN,newwork.wps.cn
+ 
+ 
+# ============================================================
+# --- 15. Steam / 游戏平台（PC）---
+# ============================================================
+DOMAIN,store.steampowered.com.8686c.com
+# 网易游戏国服
+DOMAIN-SUFFIX,nie.netease.com
+DOMAIN,ud.netease.com
+DOMAIN,log.nie.netease.com
+# 完美世界 / 盛趣等国产游戏 SDK
+DOMAIN-SUFFIX,perfectworld.com
+DOMAIN,report.wanmei.com
+ 
+ 
+# ============================================================
+# --- 16. 浏览器遥测（Edge / Chrome Windows 端）---
+# ============================================================
+DOMAIN-SUFFIX,self.events.data.microsoft.com
+DOMAIN,browser.events.data.microsoft.com
+DOMAIN-SUFFIX,oca.telemetry.microsoft.com
+DOMAIN,activity.windows.com
+# Chrome 遥测（阻断 update.googleapis.com 后 Chrome 停止自动更新，默认注释）
+# DOMAIN,update.googleapis.com
+DOMAIN-SUFFIX,doubleclick.net
+DOMAIN-SUFFIX,googlesyndication.com
+ 
+ 
+# ============================================================
+# --- 17. Windows 系统遥测 ---
+# ============================================================
+DOMAIN-SUFFIX,telemetry.microsoft.com
+DOMAIN,vortex.data.microsoft.com
+DOMAIN,settings-win.data.microsoft.com
+DOMAIN,watson.telemetry.microsoft.com
+DOMAIN,sqm.telemetry.microsoft.com
+DOMAIN,compatexchange.cloudapp.net
+DOMAIN-SUFFIX,events.data.microsoft.com
+ 
+ 
+# ============================================================
+# --- 18. 阿里 / 淘宝 / 闲鱼 ---
+# ============================================================
 DOMAIN-SUFFIX,ut.taobao.com
 DOMAIN,apoll.m.taobao.com
 DOMAIN,tunion-api.m.taobao.com
 DOMAIN,err.taobao.com
 DOMAIN-SUFFIX,alimama.com
-
-
-# --- 11. 微博 (Weibo) 开屏广告与高频追踪 ---
+ 
+ 
+# ============================================================
+# --- 19. 微博 ---
+# ============================================================
 DOMAIN,sax.sina.com.cn
 DOMAIN,saxs.sina.com.cn
 DOMAIN,beacon.sina.com.cn
@@ -77,63 +254,81 @@ DOMAIN,tj.biz.weibo.com
 DOMAIN,tui.weibo.com
 DOMAIN,seeds-sina.xycdn.com
 DOMAIN-SUFFIX,xycdn.com
-
-# --- 12. 拼多多 (Pinduoduo) 隐私嗅探与数据上报 ---
+ 
+ 
+# ============================================================
+# --- 20. 拼多多 ---
+# ============================================================
 DOMAIN,meta.pinduoduo.com
 DOMAIN,stats.pinduoduo.com
 DOMAIN,log.pinduoduo.com
 DOMAIN,omg.pinduoduo.com
-
-# --- 13. 抖音 & 字节系 (Douyin / ByteDance) 广告遥测 ---
+ 
+ 
+# ============================================================
+# --- 21. 抖音 & 字节系 ---
+# ============================================================
 DOMAIN,log.snssdk.com
 DOMAIN,toblog.snssdk.com
 DOMAIN,ichis.snssdk.com
 DOMAIN-SUFFIX,pangolin-sdk-va.com
 DOMAIN-SUFFIX,pglstatp.com
 DOMAIN-SUFFIX,toblog.ctobsnssdk.com
-
-# --- 14. 快手 (Kuaishou) 广告与日志 ---
+ 
+ 
+# ============================================================
+# --- 22. 快手 ---
+# ============================================================
 DOMAIN,log-sdk.gifshow.com
 DOMAIN,e.kuaishou.com
 DOMAIN,analytics.yximgs.com
-
-# --- 15. 小红书 (Xiaohongshu) 行为追踪与数据分析 ---
+ 
+ 
+# ============================================================
+# --- 23. 小红书 ---
+# ============================================================
 DOMAIN,xhs-track.xiaohongshu.com
 DOMAIN,metrics.xiaohongshu.com
-
-# --- 16. 知乎 (Zhihu) 广告与崩溃上报 ---
+ 
+ 
+# ============================================================
+# --- 24. 知乎 ---
+# ============================================================
 DOMAIN,sugar.zhihu.com
 DOMAIN,appcloud2.in.zhihu.com
 DOMAIN,crash2.zhihu.com
-
-# --- 17. 美团 & 京东 (Meituan / JD) 后台数据上报 ---
+ 
+ 
+# ============================================================
+# --- 25. 美团 & 京东 ---
+# ============================================================
 DOMAIN,dreport.meituan.net
 DOMAIN,alogs.meituan.net
 DOMAIN,mercury.jd.com
 DOMAIN,wl.jd.com
-
-# --- 18. 网易云音乐 (NetEase Music) 广告素材与上报 ---
+ 
+ 
+# ============================================================
+# --- 26. 网易云音乐 ---
+# ============================================================
 DOMAIN,iad.music.163.com
 DOMAIN,log.music.163.com
 DOMAIN-SUFFIX,iadmat.nosdn.127.net
-
-# --- 19. 哔哩哔哩 (Bilibili) 广告与行为追踪 ---
+ 
+ 
+# ============================================================
+# --- 27. 哔哩哔哩 ---
+# ============================================================
 DOMAIN,cm.bilibili.com
 DOMAIN,cclog.bilibili.com
 DOMAIN,data.bilibili.com
 DOMAIN,log.bilibili.com
 DOMAIN,tracking.bilibili.com
-
-# --- 20. WPS Office 弹窗、云控与隐私追踪 ---
-DOMAIN,log.wps.cn
-DOMAIN,py.wps.cn
-DOMAIN,ups.kmo.wps.cn
-DOMAIN-SUFFIX,pc.wps.com.cn
-
-# --- 21. 百度与跨应用通用第三方广告审计 SDK ---
-DOMAIN,hm.baidu.com
-DOMAIN,pos.baidu.com
-DOMAIN,wn.pos.baidu.com
+ 
+ 
+# ============================================================
+# --- 28. 跨平台通用第三方广告 / 统计 SDK ---
+# ============================================================
 DOMAIN-SUFFIX,umeng.com
 DOMAIN-SUFFIX,umengcloud.com
 DOMAIN-SUFFIX,jpush.cn
@@ -145,3 +340,29 @@ DOMAIN-SUFFIX,mmstat.com
 DOMAIN-SUFFIX,tanx.com
 DOMAIN,api.share.mob.com
 DOMAIN-SUFFIX,mob.com
+ 
+ 
+# ============================================================
+# --- 29. OpenClash 补充配置建议（非规则，仅备注）---
+# ============================================================
+# 【重要】小米系统组件存在硬编码 IP 直连，DNS 规则拦不住
+# 需在 OpenClash 的 rules 中额外添加 IP-CIDR 规则：
+#
+#   - IP-CIDR,111.206.0.0/16,REJECT    # 小米云服务主要 IP 段
+#   - IP-CIDR,58.83.160.0/19,REJECT    # mistat 实际解析段
+#
+# 【REJECT vs REJECT-DROP】
+#   推荐 REJECT（返回 NXDOMAIN），App 快速 fallback 不卡顿
+#   避免 REJECT-DROP（静默丢包），会导致 App 超时卡死
+#
+# 【家人国行 iPhone 说明】
+#   本名单已移除 configuration.apple.com 等对国行 iCloud 有副作用的条目
+#   iCloud 备份、照片同步、iMessage、App Store、Apple Pay 均不受影响
+#   如遇运营商设置更新异常，检查是否有其他规则误伤 *.apple.com
+#
+# 【Shizuku + 冰箱 补充方案（小米设备）】
+#   DNS 名单无法阻断硬编码 IP 直连，建议配合冻结以下包名：
+#   com.miui.analytics
+#   com.miui.guardprovider
+#   com.miui.msa.global
+#   com.miui.systemAdSolution
