@@ -58,6 +58,7 @@ DOMAIN,beacon.qq.com
 DOMAIN,bugly.qq.com
 DOMAIN-SUFFIX,e.qq.com
 DOMAIN-SUFFIX,ugdtimg.com
+DOMAIN-SUFFIX,qzs.gdtimg.com
 
 # --- 10. 闲鱼 & 阿里全局 (Xianyu / Alibaba) 深度隐私探测 ---
 DOMAIN-SUFFIX,ut.taobao.com
