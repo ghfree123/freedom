@@ -2,25 +2,7 @@
 # NAME: Privacy Protection & Anti-Fraud Blocklist (Complete Final)
 # UPDATED: 2026-05-23
 # DEVICES:
-#   - 你自己：美版 iPhone + 美区 ID + 不插卡 + 只装国外 App
-#   - 家人：国行 iPhone + 大陆 Apple ID（云服务完全兼容）
-#   - 小米手机：MIUI 12 + MIUI 14 / 澎湃OS
-#   - Windows PC（微信/QQ、百度系、WPS、Steam、Edge/Chrome）
-# PROXY: OpenClash（DNS 劫持 53 端口）
-#
-# 合并来源：
-#   - 你的原始名单（2026-05-17 版本）
-#   - 针对 MIUI 12/14、国行 iPhone、Windows 的补充条目
-#   - 本次讨论中的所有修订
-#
-# 主要变动：
-#   - 保留华为/OPPO/vivo/魅族条目（通用版，家人设备可能用到）
-#   - 移除 configuration.apple.com（副作用大、收益极低）
-#   - 移除 pancake.apple.com / xp.apple.com（兼容家人国行 iPhone）
-#   - 新增你原始名单中有但补充版漏掉的条目（ugdtimg、xycdn、mob 等）
-#   - 新增 Windows 系统遥测、PC 软件、浏览器追踪
-#   - 新增 MIUI 14 澎湃OS 专属端点
-# ============================================================
+
  
  
 # ============================================================
@@ -342,27 +324,4 @@ DOMAIN,api.share.mob.com
 DOMAIN-SUFFIX,mob.com
  
  
-# ============================================================
-# --- 29. OpenClash 补充配置建议（非规则，仅备注）---
-# ============================================================
-# 【重要】小米系统组件存在硬编码 IP 直连，DNS 规则拦不住
-# 需在 OpenClash 的 rules 中额外添加 IP-CIDR 规则：
-#
-#   - IP-CIDR,111.206.0.0/16,REJECT    # 小米云服务主要 IP 段
-#   - IP-CIDR,58.83.160.0/19,REJECT    # mistat 实际解析段
-#
-# 【REJECT vs REJECT-DROP】
-#   推荐 REJECT（返回 NXDOMAIN），App 快速 fallback 不卡顿
-#   避免 REJECT-DROP（静默丢包），会导致 App 超时卡死
-#
-# 【家人国行 iPhone 说明】
-#   本名单已移除 configuration.apple.com 等对国行 iCloud 有副作用的条目
-#   iCloud 备份、照片同步、iMessage、App Store、Apple Pay 均不受影响
-#   如遇运营商设置更新异常，检查是否有其他规则误伤 *.apple.com
-#
-# 【Shizuku + 冰箱 补充方案（小米设备）】
-#   DNS 名单无法阻断硬编码 IP 直连，建议配合冻结以下包名：
-#   com.miui.analytics
-#   com.miui.guardprovider
-#   com.miui.msa.global
-#   com.miui.systemAdSolution
+
