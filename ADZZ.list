@@ -41,6 +41,7 @@ DOMAIN,resolver.msg.xiaomi.net
 DOMAIN-SUFFIX,miadplatform.com
 DOMAIN-SUFFIX,miad.xiaomi.com
 DOMAIN,globalapi.ad.xiaomi.com
+DOMAIN-SUFFIX,a.market.xiaomi.com
  
  
 # ============================================================
