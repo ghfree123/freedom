@@ -1,15 +1,19 @@
 # ============================================================
-# NAME: Privacy Protection & Anti-Fraud Blocklist (Complete Final)
-# UPDATED: 2026-05-23
-# DEVICES:
+# NAME: Privacy Protection & Anti-Fraud Blocklist (Comprehensive Final)
+# UPDATED: 2026-06-05
+# DEVICES: Android (Xiaomi, Samsung, Huawei, OV), iOS, PC
+# ============================================================
 
  
  
 # ============================================================
-# --- 1. 核心反诈中心后台 ---
+# --- 1. 核心反诈中心后台与骨干网 ---
 # ============================================================
 DOMAIN-SUFFIX,gjfzpt.cn
 DOMAIN-SUFFIX,gjfz.gov.cn
+DOMAIN-SUFFIX,fzpt.org.cn
+DOMAIN-SUFFIX,caict.ac.cn
+DOMAIN,anti-fraud.cstnet.cn
  
  
 # ============================================================
@@ -85,35 +89,61 @@ DOMAIN,itc.vivo.com.cn
 # --- 8. 魅族 (Flyme) ---
 # ============================================================
 DOMAIN-SUFFIX,flyme.cn
+
+
+# ============================================================
+# --- 9. 三星 / One UI (国行特供端点) ---
+# ============================================================
+DOMAIN-SUFFIX,samsungcloud.cn
+DOMAIN-SUFFIX,samsungapps.com.cn
+DOMAIN,chinatrace.samsungcloud.cn
+DOMAIN,log-us.samsungcloudplatform.com
+DOMAIN,pms.samsungapps.com
+DOMAIN,b2b.samsungcloudplatform.com
  
  
 # ============================================================
-# --- 9. Apple 遥测
-#     （兼容国行家人设备：仅保留纯遥测条目，无功能副作用）---
+# --- 10. Apple 遥测与国行特供审计
+#      （兼容国行家人设备：仅保留纯遥测条目，无功能副作用）---
 # ============================================================
 DOMAIN,vortex.data.apple.com
 DOMAIN,vortex-win.data.apple.com
 DOMAIN-SUFFIX,metrics.apple.com
 DOMAIN-SUFFIX,iadsdk.apple.com
+# 阻断 Safari 腾讯网址安全检查与云上贵州特供遥测
+DOMAIN,safebrowsing.urlsec.qq.com
+DOMAIN,safebrowsing.platform.tencent.com
+DOMAIN-SUFFIX,icloud.com.cn
+DOMAIN-SUFFIX,apple.com.cn
+DOMAIN,configuration.apple.com.cn
+DOMAIN,xp.apple.com.cn
 # 以下两条可能影响地图功能，按需启用
 # DOMAIN-SUFFIX,apple-mapkit.com
 # DOMAIN,gspe1-ssl.ls.apple.com
  
  
 # ============================================================
-# --- 10. 第三方安全 SDK / 网址审计服务 ---
+# --- 11. 第三方安全 SDK / 网址审计服务 (安天、360等) ---
 # ============================================================
 DOMAIN-SUFFIX,urlshare.cn
 DOMAIN-SUFFIX,urlsec.qq.com
 DOMAIN-SUFFIX,avlyun.com
+DOMAIN-SUFFIX,antiy.com
+DOMAIN-SUFFIX,antiy.cn
+DOMAIN,antivirus.avlsec.com
+DOMAIN,update.avlyun.com
+DOMAIN,query.avlyun.com
 DOMAIN-SUFFIX,360safe.com
+DOMAIN-SUFFIX,360.cn
 DOMAIN-SUFFIX,shouji.360.cn
 DOMAIN,cloud.360.cn
+DOMAIN,cloudscan.360.cn
+DOMAIN,urlnet.360.cn
 DOMAIN,anquan.baidu.com
  
  
 # ============================================================
-# --- 11. 微信 & 腾讯（手机 + PC 双端）---
+# --- 12. 微信 & 腾讯（手机 + PC + 云安全双端）---
 # ============================================================
 DOMAIN,wup.imtt.qq.com
 DOMAIN,tpstelemetry.tencent.com
@@ -125,15 +155,22 @@ DOMAIN,bugly.qq.com
 DOMAIN-SUFFIX,e.qq.com
 DOMAIN-SUFFIX,ugdtimg.com
 DOMAIN-SUFFIX,qzs.gdtimg.com
-# PC 微信额外端点
+# PC 微信额外端点与违规上报
 DOMAIN,report.url.cn
 DOMAIN,isdspeed.qq.com
 DOMAIN,aegis.qq.com
 DOMAIN,report.qq.com
+# 腾讯云安全/天御补充节点
+DOMAIN-SUFFIX,yunjiasu.com
+DOMAIN-SUFFIX,qcloud.com
+DOMAIN-SUFFIX,tencentcloudapi.com
+DOMAIN,csec.gdt.qq.com
+DOMAIN,captcha.guard.qcloud.com
+DOMAIN,aq.qq.com
  
  
 # ============================================================
-# --- 12. QQ（Windows 端额外追踪）---
+# --- 13. QQ（Windows 端额外追踪）---
 # ============================================================
 DOMAIN,speed.cantk.qq.com
 DOMAIN,stat.video.qq.com
@@ -142,7 +179,7 @@ DOMAIN-SUFFIX,qqweb.qq.com
  
  
 # ============================================================
-# --- 13. 百度全系（网盘 / 输入法 / 浏览器）---
+# --- 14. 百度全系（网盘 / 输入法 / 浏览器）---
 # ============================================================
 DOMAIN,hm.baidu.com
 DOMAIN,pos.baidu.com
@@ -164,7 +201,7 @@ DOMAIN,openapi.baidu.com
  
  
 # ============================================================
-# --- 14. WPS Office（手机 + PC 双端）---
+# --- 15. WPS Office（手机 + PC 双端）---
 # ============================================================
 DOMAIN,log.wps.cn
 DOMAIN,py.wps.cn
@@ -179,7 +216,7 @@ DOMAIN,newwork.wps.cn
  
  
 # ============================================================
-# --- 15. Steam / 游戏平台（PC）---
+# --- 16. Steam / 游戏平台（PC）---
 # ============================================================
 DOMAIN,store.steampowered.com.8686c.com
 # 网易游戏国服
@@ -192,7 +229,7 @@ DOMAIN,report.wanmei.com
  
  
 # ============================================================
-# --- 16. 浏览器遥测（Edge / Chrome Windows 端）---
+# --- 17. 浏览器遥测（Edge / Chrome Windows 端）---
 # ============================================================
 DOMAIN-SUFFIX,self.events.data.microsoft.com
 DOMAIN,browser.events.data.microsoft.com
@@ -205,7 +242,7 @@ DOMAIN-SUFFIX,googlesyndication.com
  
  
 # ============================================================
-# --- 17. Windows 系统遥测 ---
+# --- 18. Windows 系统遥测 ---
 # ============================================================
 DOMAIN-SUFFIX,telemetry.microsoft.com
 DOMAIN,vortex.data.microsoft.com
@@ -217,17 +254,21 @@ DOMAIN-SUFFIX,events.data.microsoft.com
  
  
 # ============================================================
-# --- 18. 阿里 / 淘宝 / 闲鱼 ---
+# --- 19. 阿里 / 淘宝 / 闲鱼 (含聚安全设备指纹) ---
 # ============================================================
 DOMAIN-SUFFIX,ut.taobao.com
 DOMAIN,apoll.m.taobao.com
 DOMAIN,tunion-api.m.taobao.com
 DOMAIN,err.taobao.com
 DOMAIN-SUFFIX,alimama.com
+DOMAIN,ynuf.alipay.com
+DOMAIN,os.alipayobjects.com
+DOMAIN,saf.lm.taobao.com
+DOMAIN,sec.taobao.com
  
  
 # ============================================================
-# --- 19. 微博 ---
+# --- 20. 微博 ---
 # ============================================================
 DOMAIN,sax.sina.com.cn
 DOMAIN,saxs.sina.com.cn
@@ -240,7 +281,7 @@ DOMAIN-SUFFIX,xycdn.com
  
  
 # ============================================================
-# --- 20. 拼多多 ---
+# --- 21. 拼多多 ---
 # ============================================================
 DOMAIN,meta.pinduoduo.com
 DOMAIN,stats.pinduoduo.com
@@ -249,7 +290,7 @@ DOMAIN,omg.pinduoduo.com
  
  
 # ============================================================
-# --- 21. 抖音 & 字节系 ---
+# --- 22. 抖音 & 字节系 ---
 # ============================================================
 DOMAIN,log.snssdk.com
 DOMAIN,toblog.snssdk.com
@@ -260,7 +301,7 @@ DOMAIN-SUFFIX,toblog.ctobsnssdk.com
  
  
 # ============================================================
-# --- 22. 快手 ---
+# --- 23. 快手 ---
 # ============================================================
 DOMAIN,log-sdk.gifshow.com
 DOMAIN,e.kuaishou.com
@@ -268,14 +309,14 @@ DOMAIN,analytics.yximgs.com
  
  
 # ============================================================
-# --- 23. 小红书 ---
+# --- 24. 小红书 ---
 # ============================================================
 DOMAIN,xhs-track.xiaohongshu.com
 DOMAIN,metrics.xiaohongshu.com
  
  
 # ============================================================
-# --- 24. 知乎 ---
+# --- 25. 知乎 ---
 # ============================================================
 DOMAIN,sugar.zhihu.com
 DOMAIN,appcloud2.in.zhihu.com
@@ -283,7 +324,7 @@ DOMAIN,crash2.zhihu.com
  
  
 # ============================================================
-# --- 25. 美团 & 京东 ---
+# --- 26. 美团 & 京东 ---
 # ============================================================
 DOMAIN,dreport.meituan.net
 DOMAIN,alogs.meituan.net
@@ -292,7 +333,7 @@ DOMAIN,wl.jd.com
  
  
 # ============================================================
-# --- 26. 网易云音乐 ---
+# --- 27. 网易云音乐 ---
 # ============================================================
 DOMAIN,iad.music.163.com
 DOMAIN,log.music.163.com
@@ -300,7 +341,7 @@ DOMAIN-SUFFIX,iadmat.nosdn.127.net
  
  
 # ============================================================
-# --- 27. 哔哩哔哩 ---
+# --- 28. 哔哩哔哩 ---
 # ============================================================
 DOMAIN,cm.bilibili.com
 DOMAIN,cclog.bilibili.com
@@ -310,7 +351,7 @@ DOMAIN,tracking.bilibili.com
  
  
 # ============================================================
-# --- 28. 跨平台通用第三方广告 / 统计 SDK ---
+# --- 29. 跨平台通用第三方广告 / 统计 SDK ---
 # ============================================================
 DOMAIN-SUFFIX,umeng.com
 DOMAIN-SUFFIX,umengcloud.com
@@ -323,6 +364,3 @@ DOMAIN-SUFFIX,mmstat.com
 DOMAIN-SUFFIX,tanx.com
 DOMAIN,api.share.mob.com
 DOMAIN-SUFFIX,mob.com
- 
- 
-
