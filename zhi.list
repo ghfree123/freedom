@@ -27,6 +27,10 @@ DOMAIN-SUFFIX,douyin.com
 DOMAIN-SUFFIX,snssdk.com
 
 # 3. 🟢 [用户自定义 & 漏网之鱼] MyList
+# 截图日志中拦截的国内媒体与推送服务（新增）
+DOMAIN-SUFFIX,fengshows.com
+DOMAIN-SUFFIX,easytomessage.com
+
 # GitHub 国内镜像加速 (必须直连)
 DOMAIN-SUFFIX,gh-proxy.com
 DOMAIN-SUFFIX,ghproxy.net
@@ -72,7 +76,6 @@ DOMAIN-SUFFIX,digicert.com
 DOMAIN-SUFFIX,globalsign.com
 DOMAIN-SUFFIX,rapidssl.com
 DOMAIN-SUFFIX,checktrustworthiness.com
-DOMAIN-SUFFIX,digicert.com
 
 # 4. 🟢 [各类机场/VPN/私有服务]
 # ⚠️ 注意：以下域名解析会经过国内 DNS，存在隐私暴露风险
