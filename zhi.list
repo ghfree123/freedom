@@ -32,8 +32,8 @@ DOMAIN-SUFFIX,jpush.io
 DOMAIN-SUFFIX,aliapp.org
 DOMAIN-SUFFIX,ncechina.com
 DOMAIN-SUFFIX,dutils.com
-DOMAIN-SUFFIX,aliapp.org
-DOMAIN-SUFFIX,jpush.io
+
+
 
 # GitHub 国内镜像加速 (必须直连)
 DOMAIN-SUFFIX,gh-proxy.com
