@@ -29,6 +29,7 @@ DOMAIN-SUFFIX,fengshows.com
 DOMAIN-SUFFIX,easytomessage.com
 DOMAIN-SUFFIX,fengshows-cdn.com
 DOMAIN-SUFFIX,jpush.io
+DOMAIN-SUFFIX,aliapp.org
 
 # GitHub 国内镜像加速 (必须直连)
 DOMAIN-SUFFIX,gh-proxy.com
