@@ -28,6 +28,7 @@ DOMAIN-SUFFIX,snssdk.com
 DOMAIN-SUFFIX,fengshows.com
 DOMAIN-SUFFIX,easytomessage.com
 DOMAIN-SUFFIX,fengshows-cdn.com
+DOMAIN-SUFFIX,jpush.io
 
 # GitHub 国内镜像加速 (必须直连)
 DOMAIN-SUFFIX,gh-proxy.com
