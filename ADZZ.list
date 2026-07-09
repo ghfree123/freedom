@@ -104,7 +104,7 @@ DOMAIN,b2b.samsungcloudplatform.com
  
 # ============================================================
 # --- 10. Apple 遥测与国行特供审计
-#      （兼容国行家人设备：仅保留纯遥测条目，无功能副作用）---
+#       （兼容国行家人设备：仅保留纯遥测条目，无功能副作用）---
 # ============================================================
 DOMAIN,vortex.data.apple.com
 DOMAIN,vortex-win.data.apple.com
@@ -223,7 +223,7 @@ DOMAIN,store.steampowered.com.8686c.com
 DOMAIN-SUFFIX,nie.netease.com
 DOMAIN,ud.netease.com
 DOMAIN,log.nie.netease.com
-# 完美世界 / 盛趣等国产游戏 SDK
+# 完美世界 / 盛盛趣等国产游戏 SDK
 DOMAIN-SUFFIX,perfectworld.com
 DOMAIN,report.wanmei.com
  
@@ -306,6 +306,7 @@ DOMAIN-SUFFIX,toblog.ctobsnssdk.com
 DOMAIN,log-sdk.gifshow.com
 DOMAIN,e.kuaishou.com
 DOMAIN,analytics.yximgs.com
+DOMAIN-SUFFIX,adukwai.com
  
  
 # ============================================================
@@ -364,3 +365,22 @@ DOMAIN-SUFFIX,mmstat.com
 DOMAIN-SUFFIX,tanx.com
 DOMAIN,api.share.mob.com
 DOMAIN-SUFFIX,mob.com
+
+
+# ============================================================
+# --- 30. 日志捕获补充拦截（流氓软件 / 广告联盟 / 未知遥测） ---
+# ============================================================
+# 广告聚合平台、移动出海广告大厂与实时竞价网络
+DOMAIN-SUFFIX,anythinktech.com
+DOMAIN-SUFFIX,takuad.com
+DOMAIN-SUFFIX,fancydsp.com
+DOMAIN-SUFFIX,fancyapi.com
+DOMAIN-SUFFIX,1rtb.net
+DOMAIN-SUFFIX,funlinkads.com
+# 细分高频第三方通用广告追踪及行为统计
+DOMAIN-SUFFIX,statisticslinks.com
+DOMAIN-SUFFIX,medproad.com
+# 2345 广告分发、弹窗流氓插件全家桶
+DOMAIN-SUFFIX,2345.com
+# 捕获的异常暗度陈仓行为追踪/PCDN未知端点
+DOMAIN-SUFFIX,puata.info
