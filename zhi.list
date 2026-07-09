@@ -80,6 +80,9 @@ DOMAIN-SUFFIX,digicert.com
 DOMAIN-SUFFIX,globalsign.com
 DOMAIN-SUFFIX,rapidssl.com
 DOMAIN-SUFFIX,checktrustworthiness.com
+# --- 智能家居与安防摄像头 (直连) ---
+DOMAIN-SUFFIX,aiseebling.com
+DOMAIN-SUFFIX,attrsense.com
 
 # 4. 🟢 [各类机场/VPN/私有服务]
 # ⚠️ 注意：以下域名解析会经过国内 DNS，存在隐私暴露风险
