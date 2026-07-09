@@ -384,3 +384,6 @@ DOMAIN-SUFFIX,medproad.com
 DOMAIN-SUFFIX,2345.com
 # 捕获的异常暗度陈仓行为追踪/PCDN未知端点
 DOMAIN-SUFFIX,puata.info
+#监控计费
+DOMAIN-SUFFIX,aiseebling.com
+
