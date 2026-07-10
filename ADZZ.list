@@ -274,10 +274,13 @@ DOMAIN,sax.sina.com.cn
 DOMAIN,saxs.sina.com.cn
 DOMAIN,beacon.sina.com.cn
 DOMAIN,log.sina.com.cn
-DOMAIN,tj.biz.weibo.com
 DOMAIN,tui.weibo.com
 DOMAIN,seeds-sina.xycdn.com
 DOMAIN-SUFFIX,xycdn.com
+# --- 整合精简后的泛域名拦截 ---
+DOMAIN-SUFFIX,biz.weibo.com
+DOMAIN-SUFFIX,uve.weibo.com
+DOMAIN,dns.weibo.cn
  
  
 # ============================================================
