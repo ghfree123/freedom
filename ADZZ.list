@@ -291,6 +291,10 @@ DOMAIN,meta.pinduoduo.com
 DOMAIN,stats.pinduoduo.com
 DOMAIN,log.pinduoduo.com
 DOMAIN,omg.pinduoduo.com
+DOMAIN,apm-a.pinduoduo.com
+DOMAIN,ta-a.pinduoduo.com
+DOMAIN,th-a.pinduoduo.com
+DOMAIN,abtk.pinduoduo.com
  
  
 # ============================================================
