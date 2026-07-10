@@ -58,6 +58,7 @@ DOMAIN,antivirus.sec.miui.com
 DOMAIN,scdn.sec.miui.com
 DOMAIN-SUFFIX,guard.miui.com
 DOMAIN,sentry.io
+DOMAIN,qsb.browser.miui.com
  
  
 # ============================================================
@@ -344,7 +345,6 @@ DOMAIN,log.music.163.com
 DOMAIN-SUFFIX,iadmat.nosdn.127.net
  
  
-# ============================================================
 # --- 28. 哔哩哔哩 ---
 # ============================================================
 DOMAIN,cm.bilibili.com
@@ -352,6 +352,8 @@ DOMAIN,cclog.bilibili.com
 DOMAIN,data.bilibili.com
 DOMAIN,log.bilibili.com
 DOMAIN,tracking.bilibili.com
+DOMAIN,dataflow.biliapi.com
+DOMAIN,line1-log.biligame.net
  
  
 # ============================================================
