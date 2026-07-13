@@ -11,12 +11,16 @@ DOMAIN-SUFFIX,openai.com
 DOMAIN-SUFFIX,openaiapi-site.azureedge.net
 DOMAIN-SUFFIX,openaiassets.com
 DOMAIN-SUFFIX,openai-cdn.com
-DOMAIN-SUFFIX,ai.com                 # 短链接跳转
-DOMAIN-SUFFIX,searchgpt.com          # SearchGPT 搜索入口
-DOMAIN-SUFFIX,chatgpt.livekit.cloud  # 实时语音模式
+DOMAIN-SUFFIX,ai.com                 
+DOMAIN-SUFFIX,searchgpt.com          
+DOMAIN-SUFFIX,chatgpt.livekit.cloud  
 DOMAIN-SUFFIX,host.livekit.cloud
-DOMAIN-SUFFIX,turn.livekit.cloud     # 语音模式中继
-DOMAIN-SUFFIX,identity.livekit.cloud # 语音模式验证
+DOMAIN-SUFFIX,turn.livekit.cloud     
+DOMAIN-SUFFIX,identity.livekit.cloud 
+DOMAIN,api.revenuecat.com            
+IP-CIDR,20.168.48.117/32,no-resolve  
+IP-CIDR,4.155.146.196/32,no-resolve  
+IP-CIDR,40.118.236.137/32,no-resolve 
 
 # --- Anthropic (Claude) ---
 DOMAIN-SUFFIX,anthropic.com
