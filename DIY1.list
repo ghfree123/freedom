@@ -150,7 +150,6 @@ DOMAIN-SUFFIX,returnyoutubedislikeapi.com # YouTube Dislike显示
 DOMAIN-SUFFIX,ajay.app
 DOMAIN-SUFFIX,sponsor.ajay.app
 DOMAIN-SUFFIX,revenuecat.com              
-DOMAIN-SUFFIX,api.revenuecat.com
 # ✅ [新增] GitHub 静态资源 (修复样式错乱)
 DOMAIN-SUFFIX,githubassets.com
 # 开发CDN与客服组件 (New)
