@@ -149,6 +149,9 @@ DOMAIN-SUFFIX,tencentcloudapi.com
 DOMAIN,csec.gdt.qq.com
 DOMAIN,captcha.guard.qcloud.com
 DOMAIN,aq.qq.com
+DOMAIN,sdkquic.e.qq.com
+DOMAIN,v2mi.gdt.qq.com
+DOMAIN,v3.gdt.qq.com
 
 # ============================================================
 # --- 13. QQ（Windows 端额外追踪）---
@@ -265,18 +268,14 @@ DOMAIN,ichis.snssdk.com
 DOMAIN-SUFFIX,pangolin-sdk-va.com
 DOMAIN-SUFFIX,pglstatp.com
 DOMAIN-SUFFIX,toblog.ctobsnssdk.com
-# 抓包补充：穿山甲广告与静态资源
-DOMAIN,api-access.pangolin-sdk-toutiao.com
 DOMAIN,api-access.pangolin-sdk-toutiao1.com
-DOMAIN,sf3-fe-tos.pglstatp-toutiao.com
-DOMAIN,sf6-fe-tos.pglstatp-toutiao.com
-# 抓包补充：火山引擎APM性能监控与遥测日志
+DOMAIN-SUFFIX,pangolin-sdk-toutiao.com
+DOMAIN-SUFFIX,pglstatp-toutiao.com
 DOMAIN,apmplus.volces.com
-DOMAIN,klink.volceapplog.com
-DOMAIN,toblog.volceapplog.com
-DOMAIN,log-report.rtc.volcvideo.com
 DOMAIN,mssdk.volces.com
 DOMAIN,neptune-api.volces.com
+DOMAIN-SUFFIX,volceapplog.com
+DOMAIN,log-report.rtc.volcvideo.com
 DOMAIN,tnc3-alisc1.zijieapi.com
 
 # ============================================================
