@@ -1,11 +1,9 @@
 # ============================================================
 # NAME: Privacy Protection & Anti-Fraud Blocklist (Comprehensive Final)
-# UPDATED: 2026-06-05
+# UPDATED: 2026-07-13
 # DEVICES: Android (Xiaomi, Samsung, Huawei, OV), iOS, PC
 # ============================================================
 
- 
- 
 # ============================================================
 # --- 1. 核心反诈中心后台与骨干网 ---
 # ============================================================
@@ -14,8 +12,7 @@ DOMAIN-SUFFIX,gjfz.gov.cn
 DOMAIN-SUFFIX,fzpt.org.cn
 DOMAIN-SUFFIX,caict.ac.cn
 DOMAIN,anti-fraud.cstnet.cn
- 
- 
+
 # ============================================================
 # --- 2. 小米 / MIUI 12 端点 ---
 # ============================================================
@@ -31,8 +28,7 @@ DOMAIN,sdkconfig.ad.miui.com
 DOMAIN-SUFFIX,migc.ad.xiaomi.com
 DOMAIN,dig.miui.com
 DOMAIN,cta.unionpay.miui.com
- 
- 
+
 # ============================================================
 # --- 3. 小米 / MIUI 14 & 澎湃OS 新增端点 ---
 # ============================================================
@@ -46,8 +42,7 @@ DOMAIN-SUFFIX,miadplatform.com
 DOMAIN-SUFFIX,miad.xiaomi.com
 DOMAIN,globalapi.ad.xiaomi.com
 DOMAIN-SUFFIX,a.market.xiaomi.com
- 
- 
+
 # ============================================================
 # --- 4. 小米通用：推送 / 安全 / 广告 ---
 # ============================================================
@@ -59,16 +54,14 @@ DOMAIN,scdn.sec.miui.com
 DOMAIN-SUFFIX,guard.miui.com
 DOMAIN,sentry.io
 DOMAIN,qsb.browser.miui.com
- 
- 
+
 # ============================================================
 # --- 5. 华为 / 荣耀 (HarmonyOS / MagicOS) ---
 # ============================================================
 DOMAIN-SUFFIX,metrics.data.hicloud.com
 DOMAIN-SUFFIX,logservice.hicloud.com
 DOMAIN-SUFFIX,logservice1.hicloud.com
- 
- 
+
 # ============================================================
 # --- 6. OPPO / 一加 / 真我 (ColorOS / RealmeUI) ---
 # ============================================================
@@ -76,21 +69,18 @@ DOMAIN-SUFFIX,heytap.com
 DOMAIN-SUFFIX,heytapdownload.com
 DOMAIN-SUFFIX,nearme.com.cn
 DOMAIN,log.realme.com
- 
- 
+
 # ============================================================
 # --- 7. vivo / iQOO (OriginOS) ---
 # ============================================================
 DOMAIN-SUFFIX,vicos.vc.vivo.com.cn
 DOMAIN,dr.vivo.com.cn
 DOMAIN,itc.vivo.com.cn
- 
- 
+
 # ============================================================
 # --- 8. 魅族 (Flyme) ---
 # ============================================================
 DOMAIN-SUFFIX,flyme.cn
-
 
 # ============================================================
 # --- 9. 三星 / One UI (国行特供端点) ---
@@ -101,28 +91,21 @@ DOMAIN,chinatrace.samsungcloud.cn
 DOMAIN,log-us.samsungcloudplatform.com
 DOMAIN,pms.samsungapps.com
 DOMAIN,b2b.samsungcloudplatform.com
- 
- 
+
 # ============================================================
-# --- 10. Apple 遥测与国行特供审计
-#       （兼容国行家人设备：仅保留纯遥测条目，无功能副作用）---
+# --- 10. Apple 遥测与国行特供审计 ---
 # ============================================================
 DOMAIN,vortex.data.apple.com
 DOMAIN,vortex-win.data.apple.com
 DOMAIN-SUFFIX,metrics.apple.com
 DOMAIN-SUFFIX,iadsdk.apple.com
-# 阻断 Safari 腾讯网址安全检查与云上贵州特供遥测
 DOMAIN,safebrowsing.urlsec.qq.com
 DOMAIN,safebrowsing.platform.tencent.com
 DOMAIN-SUFFIX,icloud.com.cn
 DOMAIN-SUFFIX,apple.com.cn
 DOMAIN,configuration.apple.com.cn
 DOMAIN,xp.apple.com.cn
-# 以下两条可能影响地图功能，按需启用
-# DOMAIN-SUFFIX,apple-mapkit.com
-# DOMAIN,gspe1-ssl.ls.apple.com
- 
- 
+
 # ============================================================
 # --- 11. 第三方安全 SDK / 网址审计服务 (安天、360等) ---
 # ============================================================
@@ -141,35 +124,32 @@ DOMAIN,cloud.360.cn
 DOMAIN,cloudscan.360.cn
 DOMAIN,urlnet.360.cn
 DOMAIN,anquan.baidu.com
- 
- 
+
 # ============================================================
-# --- 12. 微信 & 腾讯（手机 + PC + 云安全双端）---
+# --- 12. 微信 & 腾讯（含广点通联盟补充）---
 # ============================================================
 DOMAIN,wup.imtt.qq.com
 DOMAIN,tpstelemetry.tencent.com
 DOMAIN,log.umsns.com
 DOMAIN-SUFFIX,gdt.qq.com
+DOMAIN,c3.gdt.qq.com
 DOMAIN-SUFFIX,trace.qq.com
 DOMAIN,beacon.qq.com
 DOMAIN,bugly.qq.com
 DOMAIN-SUFFIX,e.qq.com
 DOMAIN-SUFFIX,ugdtimg.com
 DOMAIN-SUFFIX,qzs.gdtimg.com
-# PC 微信额外端点与违规上报
 DOMAIN,report.url.cn
 DOMAIN,isdspeed.qq.com
 DOMAIN,aegis.qq.com
 DOMAIN,report.qq.com
-# 腾讯云安全/天御补充节点
 DOMAIN-SUFFIX,yunjiasu.com
 DOMAIN-SUFFIX,qcloud.com
 DOMAIN-SUFFIX,tencentcloudapi.com
 DOMAIN,csec.gdt.qq.com
 DOMAIN,captcha.guard.qcloud.com
 DOMAIN,aq.qq.com
- 
- 
+
 # ============================================================
 # --- 13. QQ（Windows 端额外追踪）---
 # ============================================================
@@ -177,8 +157,7 @@ DOMAIN,speed.cantk.qq.com
 DOMAIN,stat.video.qq.com
 DOMAIN,adservice.google.com
 DOMAIN-SUFFIX,qqweb.qq.com
- 
- 
+
 # ============================================================
 # --- 14. 百度全系（网盘 / 输入法 / 浏览器）---
 # ============================================================
@@ -186,21 +165,14 @@ DOMAIN,hm.baidu.com
 DOMAIN,pos.baidu.com
 DOMAIN,wn.pos.baidu.com
 DOMAIN,anquan.baidu.com
-# 百度输入法
 DOMAIN-SUFFIX,shurufa.baidu.com
 DOMAIN,ime-stat.baidu.com
 DOMAIN,inputstat.baidu.com
-# 百度网盘
 DOMAIN,pan-report.baidu.com
-# 以下两条偶发影响上传/静态资源，按需启用
-# DOMAIN,pcs.baidu.com
-# DOMAIN-SUFFIX,bdstatic.com
-# 百度浏览器
 DOMAIN-SUFFIX,baidustatic.com
 DOMAIN,log.browser.baidu.com
 DOMAIN,openapi.baidu.com
- 
- 
+
 # ============================================================
 # --- 15. WPS Office（手机 + PC 双端）---
 # ============================================================
@@ -208,27 +180,22 @@ DOMAIN,log.wps.cn
 DOMAIN,py.wps.cn
 DOMAIN,ups.kmo.wps.cn
 DOMAIN-SUFFIX,pc.wps.com.cn
-# PC 端额外弹窗与追踪
 DOMAIN,activity.wps.cn
 DOMAIN,marketing.wps.cn
 DOMAIN,push.wps.cn
 DOMAIN,stat.wps.cn
 DOMAIN,newwork.wps.cn
- 
- 
+
 # ============================================================
 # --- 16. Steam / 游戏平台（PC）---
 # ============================================================
 DOMAIN,store.steampowered.com.8686c.com
-# 网易游戏国服
 DOMAIN-SUFFIX,nie.netease.com
 DOMAIN,ud.netease.com
 DOMAIN,log.nie.netease.com
-# 完美世界 / 盛盛趣等国产游戏 SDK
 DOMAIN-SUFFIX,perfectworld.com
 DOMAIN,report.wanmei.com
- 
- 
+
 # ============================================================
 # --- 17. 浏览器遥测（Edge / Chrome Windows 端）---
 # ============================================================
@@ -236,12 +203,9 @@ DOMAIN-SUFFIX,self.events.data.microsoft.com
 DOMAIN,browser.events.data.microsoft.com
 DOMAIN-SUFFIX,oca.telemetry.microsoft.com
 DOMAIN,activity.windows.com
-# Chrome 遥测（阻断 update.googleapis.com 后 Chrome 停止自动更新，默认注释）
-# DOMAIN,update.googleapis.com
 DOMAIN-SUFFIX,doubleclick.net
 DOMAIN-SUFFIX,googlesyndication.com
- 
- 
+
 # ============================================================
 # --- 18. Windows 系统遥测 ---
 # ============================================================
@@ -252,8 +216,7 @@ DOMAIN,watson.telemetry.microsoft.com
 DOMAIN,sqm.telemetry.microsoft.com
 DOMAIN,compatexchange.cloudapp.net
 DOMAIN-SUFFIX,events.data.microsoft.com
- 
- 
+
 # ============================================================
 # --- 19. 阿里 / 淘宝 / 闲鱼 (含聚安全设备指纹) ---
 # ============================================================
@@ -266,8 +229,7 @@ DOMAIN,ynuf.alipay.com
 DOMAIN,os.alipayobjects.com
 DOMAIN,saf.lm.taobao.com
 DOMAIN,sec.taobao.com
- 
- 
+
 # ============================================================
 # --- 20. 微博 ---
 # ============================================================
@@ -278,12 +240,10 @@ DOMAIN,log.sina.com.cn
 DOMAIN,tui.weibo.com
 DOMAIN,seeds-sina.xycdn.com
 DOMAIN-SUFFIX,xycdn.com
-# --- 整合精简后的泛域名拦截 ---
 DOMAIN-SUFFIX,biz.weibo.com
 DOMAIN-SUFFIX,uve.weibo.com
 DOMAIN,dns.weibo.cn
- 
- 
+
 # ============================================================
 # --- 21. 拼多多 ---
 # ============================================================
@@ -295,10 +255,9 @@ DOMAIN,apm-a.pinduoduo.com
 DOMAIN,ta-a.pinduoduo.com
 DOMAIN,th-a.pinduoduo.com
 DOMAIN,abtk.pinduoduo.com
- 
- 
+
 # ============================================================
-# --- 22. 抖音 & 字节系 ---
+# --- 22. 抖音 & 字节系 (含穿山甲联盟与火山引擎遥测) ---
 # ============================================================
 DOMAIN,log.snssdk.com
 DOMAIN,toblog.snssdk.com
@@ -306,8 +265,20 @@ DOMAIN,ichis.snssdk.com
 DOMAIN-SUFFIX,pangolin-sdk-va.com
 DOMAIN-SUFFIX,pglstatp.com
 DOMAIN-SUFFIX,toblog.ctobsnssdk.com
- 
- 
+# 抓包补充：穿山甲广告与静态资源
+DOMAIN,api-access.pangolin-sdk-toutiao.com
+DOMAIN,api-access.pangolin-sdk-toutiao1.com
+DOMAIN,sf3-fe-tos.pglstatp-toutiao.com
+DOMAIN,sf6-fe-tos.pglstatp-toutiao.com
+# 抓包补充：火山引擎APM性能监控与遥测日志
+DOMAIN,apmplus.volces.com
+DOMAIN,klink.volceapplog.com
+DOMAIN,toblog.volceapplog.com
+DOMAIN,log-report.rtc.volcvideo.com
+DOMAIN,mssdk.volces.com
+DOMAIN,neptune-api.volces.com
+DOMAIN,tnc3-alisc1.zijieapi.com
+
 # ============================================================
 # --- 23. 快手 ---
 # ============================================================
@@ -315,23 +286,20 @@ DOMAIN,log-sdk.gifshow.com
 DOMAIN,e.kuaishou.com
 DOMAIN,analytics.yximgs.com
 DOMAIN-SUFFIX,adukwai.com
- 
- 
+
 # ============================================================
 # --- 24. 小红书 ---
 # ============================================================
 DOMAIN,xhs-track.xiaohongshu.com
 DOMAIN,metrics.xiaohongshu.com
- 
- 
+
 # ============================================================
 # --- 25. 知乎 ---
 # ============================================================
 DOMAIN,sugar.zhihu.com
 DOMAIN,appcloud2.in.zhihu.com
 DOMAIN,crash2.zhihu.com
- 
- 
+
 # ============================================================
 # --- 26. 美团 & 京东 ---
 # ============================================================
@@ -339,16 +307,15 @@ DOMAIN,dreport.meituan.net
 DOMAIN,alogs.meituan.net
 DOMAIN,mercury.jd.com
 DOMAIN,wl.jd.com
- 
- 
+
 # ============================================================
 # --- 27. 网易云音乐 ---
 # ============================================================
 DOMAIN,iad.music.163.com
 DOMAIN,log.music.163.com
 DOMAIN-SUFFIX,iadmat.nosdn.127.net
- 
- 
+
+# ============================================================
 # --- 28. 哔哩哔哩 ---
 # ============================================================
 DOMAIN,cm.bilibili.com
@@ -358,10 +325,9 @@ DOMAIN,log.bilibili.com
 DOMAIN,tracking.bilibili.com
 DOMAIN,dataflow.biliapi.com
 DOMAIN,line1-log.biligame.net
- 
- 
+
 # ============================================================
-# --- 29. 跨平台通用第三方广告 / 统计 SDK ---
+# --- 29. 跨平台通用第三方广告 / 统计 SDK (含抓包新增) ---
 # ============================================================
 DOMAIN-SUFFIX,umeng.com
 DOMAIN-SUFFIX,umengcloud.com
@@ -374,29 +340,50 @@ DOMAIN-SUFFIX,mmstat.com
 DOMAIN-SUFFIX,tanx.com
 DOMAIN,api.share.mob.com
 DOMAIN-SUFFIX,mob.com
-
+# 抓包补充：Sigmob、灵犀、及其他杂项可疑追踪
+DOMAIN-SUFFIX,sigmob.cn
+DOMAIN-SUFFIX,linghitai.com
+DOMAIN-SUFFIX,tengzhihh.com
+DOMAIN-SUFFIX,cl2009.com
+DOMAIN-SUFFIX,dutils.com
+DOMAIN-SUFFIX,jh131.cn
 
 # ============================================================
 # --- 30. 日志捕获补充拦截（流氓软件 / 广告联盟 / 未知遥测） ---
 # ============================================================
-# 广告聚合平台、移动出海广告大厂与实时竞价网络
 DOMAIN-SUFFIX,anythinktech.com
 DOMAIN-SUFFIX,takuad.com
 DOMAIN-SUFFIX,fancydsp.com
 DOMAIN-SUFFIX,fancyapi.com
 DOMAIN-SUFFIX,1rtb.net
 DOMAIN-SUFFIX,funlinkads.com
-# 细分高频第三方通用广告追踪及行为统计
 DOMAIN-SUFFIX,statisticslinks.com
 DOMAIN-SUFFIX,medproad.com
-# --- Telemetry & Analytics (后台遥测与崩溃日志拦截) ---
 DOMAIN,o33249.ingest.us.sentry.io    
 DOMAIN-SUFFIX,sentry.io              
 DOMAIN-SUFFIX,datadoghq.com          
-# 2345 广告分发、弹窗流氓插件全家桶
 DOMAIN-SUFFIX,2345.com
-# 捕获的异常暗度陈仓行为追踪/PCDN未知端点
 DOMAIN-SUFFIX,puata.info
-#监控计费
 DOMAIN-SUFFIX,aiseebling.com
 
+# ============================================================
+# --- 31. 全球主流独立广告联盟与通用崩溃遥测 (全新补充) ---
+# ============================================================
+# 移动端主流第三方归因与数据分析平台
+DOMAIN-SUFFIX,appsflyer.com
+DOMAIN-SUFFIX,appsflyersdk.com
+DOMAIN-SUFFIX,adjust.com
+DOMAIN-SUFFIX,kochava.com
+# 游戏/应用内插屏激励广告核心平台
+DOMAIN-SUFFIX,applovin.com
+DOMAIN-SUFFIX,applvn.com
+DOMAIN-SUFFIX,rayjump.com
+DOMAIN-SUFFIX,vungle.com
+DOMAIN-SUFFIX,chartboost.com
+DOMAIN,ads.unity3d.com
+DOMAIN-SUFFIX,supersonicads.com
+# 全球通用崩溃日志上传（防止应用借崩溃日志夹带私货）
+DOMAIN-SUFFIX,crashlytics.com
+DOMAIN-SUFFIX,fabric.io
+DOMAIN-SUFFIX,instabug.com
+DOMAIN-SUFFIX,bugsnag.com
