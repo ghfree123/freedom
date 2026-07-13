@@ -389,6 +389,10 @@ DOMAIN-SUFFIX,funlinkads.com
 # 细分高频第三方通用广告追踪及行为统计
 DOMAIN-SUFFIX,statisticslinks.com
 DOMAIN-SUFFIX,medproad.com
+# --- Telemetry & Analytics (后台遥测与崩溃日志拦截) ---
+DOMAIN,o33249.ingest.us.sentry.io    
+DOMAIN-SUFFIX,sentry.io              
+DOMAIN-SUFFIX,datadoghq.com          
 # 2345 广告分发、弹窗流氓插件全家桶
 DOMAIN-SUFFIX,2345.com
 # 捕获的异常暗度陈仓行为追踪/PCDN未知端点
