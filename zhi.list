@@ -143,3 +143,15 @@ IP-CIDR,216.40.86.112/24,no-resolve
 IP-CIDR,38.207.169.210/24,no-resolve
 IP-CIDR,45.151.135.201/24,no-resolve
 IP-CIDR,43.175.139.0/24,no-resolve
+
+# 7. 🟢 [国内影视App组件与切片CDN] (补充直连)
+# 影视切片/播放解析节点
+DOMAIN-SUFFIX,rrcdnbf4.com
+DOMAIN-SUFFIX,ryplay6.com
+DOMAIN-SUFFIX,modujx17.com
+DOMAIN-SUFFIX,bfllvip.com
+# 影视App后台纯IP请求直连
+IP-CIDR,118.107.41.231/32,no-resolve
+IP-CIDR,37.77.85.2/32,no-resolve
+IP-CIDR,52.217.69.200/32,no-resolve
+IP-CIDR,85.149.234.42/32,no-resolve
