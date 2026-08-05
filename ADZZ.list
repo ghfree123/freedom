@@ -381,6 +381,9 @@ DOMAIN-SUFFIX,vungle.com
 DOMAIN-SUFFIX,chartboost.com
 DOMAIN,ads.unity3d.com
 DOMAIN-SUFFIX,supersonicads.com
+# 拦截疑似影视App的广告与追踪域名
+DOMAIN-SUFFIX,lkxaal.com,REJECT
+DOMAIN-SUFFIX,u361bpkc.com,REJECT
 # 全球通用崩溃日志上传（防止应用借崩溃日志夹带私货）
 DOMAIN-SUFFIX,crashlytics.com
 DOMAIN-SUFFIX,fabric.io
