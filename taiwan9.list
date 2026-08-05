@@ -36,6 +36,9 @@ DOMAIN-SUFFIX,kktv.com.tw
 DOMAIN-SUFFIX,kktv.me
 DOMAIN-SUFFIX,kkbox.com
 DOMAIN-SUFFIX,kkbox.com.tw
+DOMAIN-SUFFIX,zendesk.com
+DOMAIN-SUFFIX,approovr.io
+DOMAIN-SUFFIX,survicate-cdn.com
 
 # --- 3. 金融与支付 ---
 DOMAIN-SUFFIX,ctbcbank.com
