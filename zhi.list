@@ -2,7 +2,7 @@
 # 精简版直连列表 (优化版 - 剔除慢速 CDN + 修复抖音偷跑)
 # ====================================================
 
-# 1. 🟢 [核心修复] Windows/证书/连接性检查
+# 1. [核心修复] Windows/证书/连接性检查
 DOMAIN-SUFFIX,msftconnecttest.com
 DOMAIN-SUFFIX,wns.windows.com
 DOMAIN-SUFFIX,ctldl.windowsupdate.com
@@ -20,7 +20,7 @@ DOMAIN-SUFFIX,login.live.com
 DOMAIN-SUFFIX,trafficmanager.net
 DOMAIN-SUFFIX,go.microsoft.com
 
-# 2. 🟢 [字节跳动/抖音 流量修复] 防止国内短视频消耗代理流量
+# 2. [字节跳动/抖音 流量修复] 防止国内短视频消耗代理流量
 DOMAIN-SUFFIX,bytegecko.com
 DOMAIN-SUFFIX,douyinvod.com
 DOMAIN-SUFFIX,douyin.com
@@ -84,8 +84,8 @@ DOMAIN-SUFFIX,checktrustworthiness.com
 DOMAIN-SUFFIX,aiseebling.com
 DOMAIN-SUFFIX,attrsense.com
 
-# 4. 🟢 [各类机场/VPN/私有服务]
-# ⚠️ 注意：以下域名解析会经过国内 DNS，存在隐私暴露风险
+# 4. [各类机场/VPN/私有服务]
+# 注意：以下域名解析会经过国内 DNS，存在隐私暴露风险
 DOMAIN-SUFFIX,quickcht3.club
 DOMAIN-SUFFIX,kuaimao2.club
 DOMAIN-SUFFIX,kuaimaonodebgp.com
@@ -121,7 +121,7 @@ DOMAIN-SUFFIX,YOUSUTONG.XYZ
 DOMAIN-SUFFIX,izenny.com
 DOMAIN-SUFFIX,1yuan.sbs
 
-# 5. 🟢 [公共CDN] (国内部分)
+# 5. [公共CDN] (国内部分)
 # 删除了 unstable 的国外 CDN，保留国内优质 CDN
 DOMAIN-SUFFIX,baomitu.com
 DOMAIN-SUFFIX,bootcss.com
@@ -137,14 +137,14 @@ DOMAIN-SUFFIX,geforce.com
 DOMAIN,cat-cn.wargaming.net
 DOMAIN-SUFFIX,wargaming.net
 
-# 6. 🟢 [特殊IP段]
+# 6. [特殊IP段]
 IP-CIDR,219.146.1.66/32,no-resolve
 IP-CIDR,216.40.86.112/24,no-resolve
 IP-CIDR,38.207.169.210/24,no-resolve
 IP-CIDR,45.151.135.201/24,no-resolve
 IP-CIDR,43.175.139.0/24,no-resolve
 
-# 7. 🟢 [国内影视App组件与切片CDN] (补充直连)
+# 7. [国内影视App组件与切片CDN] (补充直连)
 # 影视切片/播放解析节点
 DOMAIN-SUFFIX,rrcdnbf4.com
 DOMAIN-SUFFIX,ryplay6.com
