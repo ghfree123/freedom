@@ -1,5 +1,5 @@
 # NAME: AI Services (Anti-Risk Control Enhanced)
-# DESC: 包含 OpenAI, Claude, Copilot, Grok, Gemini, Perplexity 等，已深度优化防风控规则
+# DESC: 包含 OpenAI, Claude, Copilot, Grok, Perplexity 等，已深度优化防风控规则
 # UPDATED: 2026-05-01
 # TOTAL: Optimized & Enhanced
 
@@ -31,6 +31,9 @@ DOMAIN-SUFFIX,segment.io
 DOMAIN-SUFFIX,anthropic.com
 DOMAIN-SUFFIX,api.anthropic.com
 DOMAIN-SUFFIX,statsig.anthropic.com
+DOMAIN-SUFFIX,clau.de
+DOMAIN-SUFFIX,claudemcpclient.com
+DOMAIN-SUFFIX,claudemcpcontent.com
 DOMAIN-SUFFIX,siftscience.com
 DOMAIN-SUFFIX,datadoghq.com
 DOMAIN-KEYWORD,claude
@@ -42,7 +45,12 @@ DOMAIN-SUFFIX,claudeusercontent.com       # Artifacts 预览与文件上传
 DOMAIN-SUFFIX,anthropicusercontent.com
 DOMAIN-SUFFIX,datadoghq.com               # Claude 网页性能监控遥测
 DOMAIN-SUFFIX,browser-intake-datadoghq.com
+DOMAIN,browser-intake-us5-datadoghq.com
+DOMAIN-KEYWORD,datadog
 DOMAIN-SUFFIX,sentry.io                   # Claude 网页错误与崩溃日志收集
+IP-CIDR,160.79.104.0/21,no-resolve
+IP-CIDR6,2607:6bc0::/32,no-resolve
+IP-ASN,399358,no-resolve
 
 # --- OpenAI (ChatGPT) ---
 DOMAIN-SUFFIX,chatgpt.com
@@ -126,3 +134,5 @@ DOMAIN-SUFFIX,civitai.com
 DOMAIN-SUFFIX,suno.com
 DOMAIN-SUFFIX,suno.ai
 DOMAIN-SUFFIX,udio.com
+
+
