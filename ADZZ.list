@@ -346,6 +346,9 @@ DOMAIN-SUFFIX,tengzhihh.com
 DOMAIN-SUFFIX,cl2009.com
 DOMAIN-SUFFIX,dutils.com
 DOMAIN-SUFFIX,jh131.cn
+DOMAIN-SUFFIX,survicate.com
+DOMAIN-KEYWORD,adservice
+DOMAIN,ads.example.com
 
 # ============================================================
 # --- 30. 日志捕获补充拦截（流氓软件 / 广告联盟 / 未知遥测） ---
