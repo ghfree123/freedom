@@ -22,6 +22,7 @@ DOMAIN-SUFFIX,intercomcdn.com
 DOMAIN-SUFFIX,stripe.com                  # 绑卡/订阅支付防风控 (Stripe)
 DOMAIN-SUFFIX,stripe.network
 DOMAIN-SUFFIX,pay.stripe.com
+DOMAIN-SUFFIX,hcaptcha.com
 
 # --- Anthropic (Claude) ---
 DOMAIN-SUFFIX,anthropic.com
