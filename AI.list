@@ -30,6 +30,8 @@ DOMAIN,prod.otel.kaizen.nvidia.com
 DOMAIN-SUFFIX,anthropic.com
 DOMAIN-SUFFIX,api.anthropic.com
 DOMAIN-SUFFIX,statsig.anthropic.com
+DOMAIN-SUFFIX,siftscience.com
+DOMAIN-SUFFIX,datadoghq.com
 DOMAIN-KEYWORD,claude
 DOMAIN-REGEX,^.*claude.*$
 DOMAIN-SUFFIX,claude.com
