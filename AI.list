@@ -28,6 +28,10 @@ DOMAIN,prod.otel.kaizen.nvidia.com
 
 # --- Anthropic (Claude) ---
 DOMAIN-SUFFIX,anthropic.com
+DOMAIN-SUFFIX,api.anthropic.com
+DOMAIN-SUFFIX,statsig.anthropic.com
+DOMAIN-KEYWORD,claude
+DOMAIN-REGEX,^.*claude.*$
 DOMAIN-SUFFIX,claude.com
 DOMAIN-SUFFIX,claude.ai
 DOMAIN-SUFFIX,claude.site                 # Artifacts 分享页面
@@ -51,7 +55,27 @@ DOMAIN-SUFFIX,chatgpt.livekit.cloud       # Voice Mode 语音交互
 DOMAIN-SUFFIX,host.livekit.cloud
 DOMAIN-SUFFIX,turn.livekit.cloud
 DOMAIN-SUFFIX,identity.livekit.cloud
-DOMAIN,api.revenuecat.com                 # iOS 内购验证
+DOMAIN,api.revenuecat.com   # iOS 内购验证
+DOMAIN-SUFFIX,auth.openai.com
+DOMAIN-SUFFIX,auth0.openai.com
+DOMAIN-SUFFIX,chat.openai.com
+DOMAIN-SUFFIX,desktop.chat.openai.com
+DOMAIN-SUFFIX,ios.chat.openai.com
+DOMAIN-SUFFIX,android.chat.openai.com
+DOMAIN-SUFFIX,ct.sendgrid.net
+DOMAIN-SUFFIX,oaistatsig.com
+DOMAIN-SUFFIX,cdn.openaimerge.com
+DOMAIN-SUFFIX,cdn.workos.com
+DOMAIN-SUFFIX,forwarder.workos.com
+DOMAIN-SUFFIX,setup.auth.openai.com
+DOMAIN-SUFFIX,setup.workos.com
+DOMAIN-SUFFIX,images.workoscdn.com
+DOMAIN-SUFFIX,workos.imgix.net
+DOMAIN-SUFFIX,js.intercomcdn.com
+DOMAIN-SUFFIX,js.stripe.com
+DOMAIN-SUFFIX,rum.browser-intake-datadoghq.com
+DOMAIN-SUFFIX,ingest.sentry.io
+DOMAIN,ws.chatgpt.com
 IP-CIDR,20.168.48.117/32,no-resolve
 IP-CIDR,4.155.146.196/32,no-resolve
 IP-CIDR,40.118.236.137/32,no-resolve
