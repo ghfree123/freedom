@@ -156,6 +156,8 @@ DOMAIN-SUFFIX,githubassets.com
 DOMAIN-SUFFIX,unpkg.com
 DOMAIN-SUFFIX,intercom.io
 DOMAIN-SUFFIX,intercomcdn.com
+DOMAIN-SUFFIX,akamaiedge.net
+DOMAIN-SUFFIX,jsdelivr.net
 # 媒体CDN补充
 DOMAIN-SUFFIX,hls.ttvnw.net
 DOMAIN-SUFFIX,ttvnw.net
