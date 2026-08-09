@@ -149,7 +149,6 @@ DOMAIN-SUFFIX,imgur.com
 DOMAIN-SUFFIX,returnyoutubedislikeapi.com # YouTube Dislike显示
 DOMAIN-SUFFIX,ajay.app
 DOMAIN-SUFFIX,sponsor.ajay.app
-DOMAIN-SUFFIX,revenuecat.com              
 # ✅ [新增] GitHub 静态资源 (修复样式错乱)
 DOMAIN-SUFFIX,githubassets.com
 # 开发CDN与客服组件 (New)
@@ -241,7 +240,6 @@ DOMAIN-SUFFIX,uphold.net
 # [其他杂项与修复]
 DOMAIN-SUFFIX,saasexch.info
 DOMAIN-SUFFIX,bscdnweb.com
-DOMAIN-SUFFIX,appsflyersdk.com
 DOMAIN-SUFFIX,giscus.app
 # Brave 浏览器完整支持 (New)
 DOMAIN-SUFFIX,brave.com
