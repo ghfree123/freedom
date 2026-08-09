@@ -86,13 +86,6 @@ IP-CIDR,172.203.39.49/32,no-resolve
 IP-CIDR,172.214.226.198/32,no-resolve
 IP-CIDR,4.151.200.38/32,no-resolve
 
-# --- Google Gemini / Bard ---
-DOMAIN-SUFFIX,gemini.google.com
-DOMAIN-SUFFIX,bard.google.com
-DOMAIN-SUFFIX,generativelanguage.googleapis.com
-DOMAIN-SUFFIX,alkalinetaiwan-pa.googleapis.com
-DOMAIN-SUFFIX,deepmind.com
-DOMAIN-SUFFIX,deepmind.google
 
 # --- Microsoft Copilot ---
 DOMAIN-SUFFIX,copilot.microsoft.com
@@ -123,8 +116,6 @@ DOMAIN-SUFFIX,hf.co
 DOMAIN-SUFFIX,poe.com
 DOMAIN-SUFFIX,poecdn.net
 
-# --- DeepSeek ---
-DOMAIN-SUFFIX,deepseek.com
 
 # --- Other AI Services ---
 DOMAIN-SUFFIX,groq.com
