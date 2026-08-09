@@ -25,6 +25,7 @@ DOMAIN-SUFFIX,pay.stripe.com
 DOMAIN-SUFFIX,hcaptcha.com
 DOMAIN,ocsp.sectigo.com
 DOMAIN,prod.otel.kaizen.nvidia.com
+DOMAIN-SUFFIX,segment.io
 
 # --- Anthropic (Claude) ---
 DOMAIN-SUFFIX,anthropic.com
