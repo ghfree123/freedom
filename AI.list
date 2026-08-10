@@ -140,6 +140,22 @@ DOMAIN-SUFFIX,hf.co
 DOMAIN-SUFFIX,poe.com
 DOMAIN-SUFFIX,poecdn.net
 
+# --- Meta AI ---
+DOMAIN-SUFFIX,meta.ai
+
+# --- Mistral AI ---
+DOMAIN-SUFFIX,mistral.ai
+DOMAIN-SUFFIX,chat.mistral.ai
+DOMAIN-SUFFIX,console.mistral.ai
+
+# --- AI 编程助手 (Cursor / GitHub Copilot / Cline) ---
+# 既然使用 Claude Code，极大概率会用到其他代码辅助工具
+DOMAIN-SUFFIX,cursor.com
+DOMAIN-SUFFIX,cursor.sh
+DOMAIN-SUFFIX,api.githubcopilot.com
+DOMAIN-SUFFIX,copilot-proxy.githubusercontent.com
+DOMAIN-SUFFIX,githubcopilot.com
+
 
 # --- Other AI Services ---
 DOMAIN-SUFFIX,groq.com
