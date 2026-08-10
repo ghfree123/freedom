@@ -48,6 +48,10 @@ DOMAIN-SUFFIX,browser-intake-datadoghq.com
 DOMAIN,browser-intake-us5-datadoghq.com
 DOMAIN-KEYWORD,datadog
 DOMAIN-SUFFIX,sentry.io                   # Claude 网页错误与崩溃日志收集
+DOMAIN,servd-anthropic-website.b-cdn.net  # 静态资源 CDN
+DOMAIN,anthropic.com.cdn.cloudflare.net   # CF 节点
+DOMAIN,anthropic-com.ghost.io             # 博客内容
+DOMAIN,cdn.usefathom.com
 IP-CIDR,160.79.104.0/21,no-resolve
 IP-CIDR6,2607:6bc0::/32,no-resolve
 IP-ASN,399358,no-resolve
