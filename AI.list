@@ -1,31 +1,29 @@
 # NAME: AI Services (Anti-Risk Control Enhanced)
 # DESC: 包含 OpenAI, Claude, Copilot, Grok, Perplexity 等，已深度优化防风控规则
-# UPDATED: 2026-05-01
+# UPDATED: 2026-08-11
 # TOTAL: Optimized & Enhanced
 
 # ===================================================
-# --- AI Common Infrastructure & Risk Control (通用风控与人机验证) ---
-# 警告：以下域名必须与 AI 主站分配至【同一个节点】，否则会导致 IP 不一致触发封号
-# ===================================================
-DOMAIN-SUFFIX,challenges.cloudflare.com   # Cloudflare Turnstile 验证码 (Claude/OpenAI 必走)
-DOMAIN-SUFFIX,siftscience.com             # Sift 行为/设备指纹识别 (Claude 核心风控)
-DOMAIN-SUFFIX,sift.com                    # Sift 备用域名
-DOMAIN-SUFFIX,arkoselabs.com              # Arkose/Funcaptcha 防机器人验证 (OpenAI 核心风控)
-DOMAIN-SUFFIX,funcaptcha.com              # Arkose 备用域名
-DOMAIN-SUFFIX,statsig.com                 # Statsig 行为遥测与 AB 测试 (Claude/OpenAI)
+DOMAIN,challenges.cloudflare.com
+DOMAIN,brunhild.challenges.cloudflare.com
+
+DOMAIN-SUFFIX,siftscience.com              # Sift 行为/设备指纹识别 (Claude 核心风控)
+DOMAIN-SUFFIX,sift.com                     # Sift 备用域名
+DOMAIN-SUFFIX,arkoselabs.com               # Arkose/Funcaptcha 防机器人验证 (OpenAI 核心风控)
+DOMAIN-SUFFIX,funcaptcha.com               # Arkose 备用域名
+DOMAIN-SUFFIX,statsig.com                  # Statsig 行为遥测与 AB 测试 (Claude/OpenAI)
 DOMAIN-SUFFIX,statsigapi.net
-DOMAIN-SUFFIX,featuregates.org            # Statsig 边缘服务
-DOMAIN-SUFFIX,segment.io                  # 用户行为轨迹分析
+DOMAIN-SUFFIX,featuregates.org             # Statsig 边缘服务
+DOMAIN-SUFFIX,segment.io                   # 用户行为轨迹分析
 DOMAIN-SUFFIX,segment.com
-DOMAIN-SUFFIX,intercom.io                 # Claude 客服系统与身份关联
+DOMAIN-SUFFIX,intercom.io                  # Claude 客服系统与身份关联
 DOMAIN-SUFFIX,intercomcdn.com
-DOMAIN-SUFFIX,stripe.com                  # 绑卡/订阅支付防风控 (Stripe)
+DOMAIN-SUFFIX,stripe.com                   # 绑卡/订阅支付防风控 (Stripe)
 DOMAIN-SUFFIX,stripe.network
 DOMAIN-SUFFIX,pay.stripe.com
 DOMAIN-SUFFIX,hcaptcha.com
 DOMAIN,ocsp.sectigo.com
 DOMAIN,prod.otel.kaizen.nvidia.com
-DOMAIN-SUFFIX,segment.io
 
 # --- Anthropic (Claude) ---
 DOMAIN-SUFFIX,anthropic.com
@@ -34,23 +32,21 @@ DOMAIN-SUFFIX,statsig.anthropic.com
 DOMAIN-SUFFIX,clau.de
 DOMAIN-SUFFIX,claudemcpclient.com
 DOMAIN-SUFFIX,claudemcpcontent.com
-DOMAIN-SUFFIX,siftscience.com
 DOMAIN-SUFFIX,datadoghq.com
 DOMAIN-KEYWORD,claude
 DOMAIN-REGEX,^.*claude.*$
 DOMAIN-SUFFIX,claude.com
 DOMAIN-SUFFIX,claude.ai
-DOMAIN-SUFFIX,claude.site                 # Artifacts 分享页面
-DOMAIN-SUFFIX,claudeusercontent.com       # Artifacts 预览与文件上传
+DOMAIN-SUFFIX,claude.site                  # Artifacts 分享页面
+DOMAIN-SUFFIX,claudeusercontent.com        # Artifacts 预览与文件上传
 DOMAIN-SUFFIX,anthropicusercontent.com
-DOMAIN-SUFFIX,datadoghq.com               # Claude 网页性能监控遥测
 DOMAIN-SUFFIX,browser-intake-datadoghq.com
 DOMAIN,browser-intake-us5-datadoghq.com
 DOMAIN-KEYWORD,datadog
-DOMAIN-SUFFIX,sentry.io                   # Claude 网页错误与崩溃日志收集
-DOMAIN,servd-anthropic-website.b-cdn.net  # 静态资源 CDN
-DOMAIN,anthropic.com.cdn.cloudflare.net   # CF 节点
-DOMAIN,anthropic-com.ghost.io             # 博客内容
+DOMAIN-SUFFIX,sentry.io                    # Claude 网页错误与崩溃日志收集
+DOMAIN,servd-anthropic-website.b-cdn.net   # 静态资源 CDN
+DOMAIN,anthropic.com.cdn.cloudflare.net    # CF 节点
+DOMAIN,anthropic-com.ghost.io              # 博客内容
 DOMAIN,cdn.usefathom.com
 IP-CIDR,160.79.104.0/21,no-resolve
 IP-CIDR6,2607:6bc0::/32,no-resolve
@@ -66,11 +62,11 @@ DOMAIN-SUFFIX,openaiassets.com
 DOMAIN-SUFFIX,openai-cdn.com
 DOMAIN-SUFFIX,ai.com
 DOMAIN-SUFFIX,searchgpt.com
-DOMAIN-SUFFIX,chatgpt.livekit.cloud       # Voice Mode 语音交互
+DOMAIN-SUFFIX,chatgpt.livekit.cloud        # Voice Mode 语音交互
 DOMAIN-SUFFIX,host.livekit.cloud
 DOMAIN-SUFFIX,turn.livekit.cloud
 DOMAIN-SUFFIX,identity.livekit.cloud
-DOMAIN,api.revenuecat.com   # iOS 内购验证
+DOMAIN,api.revenuecat.com    # iOS 内购验证
 DOMAIN-SUFFIX,auth.openai.com
 DOMAIN-SUFFIX,auth0.openai.com
 DOMAIN-SUFFIX,chat.openai.com
@@ -102,7 +98,6 @@ DOMAIN-SUFFIX,openaicomproductionae4b.blob.core.windows.net
 DOMAIN-SUFFIX,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
 DOMAIN-SUFFIX,client-api.arkoselabs.com
 DOMAIN,openai-api.arkoselabs.com
-DOMAIN-SUFFIX,webpubsub.azure.com
 IP-CIDR,20.168.48.117/32,no-resolve
 IP-CIDR,4.155.146.196/32,no-resolve
 IP-CIDR,40.118.236.137/32,no-resolve
@@ -110,10 +105,9 @@ IP-CIDR,172.203.39.49/32,no-resolve
 IP-CIDR,172.214.226.198/32,no-resolve
 IP-CIDR,4.151.200.38/32,no-resolve
 
-
 # --- Microsoft Copilot ---
 DOMAIN-SUFFIX,copilot.microsoft.com
-DOMAIN-SUFFIX,sydney.bing.com             # Copilot 核心后端
+DOMAIN-SUFFIX,sydney.bing.com              # Copilot 核心后端
 DOMAIN-SUFFIX,edgeservices.bing.com
 DOMAIN-SUFFIX,clara-s.bing.com
 DOMAIN-SUFFIX,bing-shopping.microsoft-falcon.io
@@ -129,7 +123,7 @@ DOMAIN-SUFFIX,pplx.ai
 # --- Midjourney ---
 DOMAIN-SUFFIX,midjourney.com
 DOMAIN-SUFFIX,mj.run
-DOMAIN-SUFFIX,discord.com                 # Midjourney 主要依赖 Discord
+DOMAIN-SUFFIX,discord.com                  # Midjourney 主要依赖 Discord
 DOMAIN-SUFFIX,discordapp.com
 
 # --- HuggingFace ---
@@ -149,13 +143,11 @@ DOMAIN-SUFFIX,chat.mistral.ai
 DOMAIN-SUFFIX,console.mistral.ai
 
 # --- AI 编程助手 (Cursor / GitHub Copilot / Cline) ---
-# 既然使用 Claude Code，极大概率会用到其他代码辅助工具
 DOMAIN-SUFFIX,cursor.com
 DOMAIN-SUFFIX,cursor.sh
 DOMAIN-SUFFIX,api.githubcopilot.com
 DOMAIN-SUFFIX,copilot-proxy.githubusercontent.com
 DOMAIN-SUFFIX,githubcopilot.com
-
 
 # --- Other AI Services ---
 DOMAIN-SUFFIX,groq.com
