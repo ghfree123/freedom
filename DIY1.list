@@ -48,6 +48,7 @@ DOMAIN-KEYWORD,chaoyue
 # --- 2. 国际新闻 & 海外华语媒体 (深度优化版) ---
 # [BBC 系列 & 音频修复]
 DOMAIN-SUFFIX,bbc.com
+DOMAIN-SUFFIX,bbc.in
 DOMAIN-SUFFIX,bbc.co.uk
 DOMAIN-SUFFIX,bbci.co.uk
 DOMAIN-SUFFIX,bbcfmt.s.llnwi.net
