@@ -32,6 +32,7 @@ DOMAIN-SUFFIX,jpush.io
 DOMAIN-SUFFIX,aliapp.org
 DOMAIN-SUFFIX,ncechina.com
 DOMAIN-SUFFIX,dutils.com
+DOMAIN-SUFFIX,stacksnet.com
 
 
 
@@ -155,3 +156,4 @@ IP-CIDR,118.107.41.231/32,no-resolve
 IP-CIDR,37.77.85.2/32,no-resolve
 IP-CIDR,52.217.69.200/32,no-resolve
 IP-CIDR,85.149.234.42/32,no-resolve
+IP-CIDR,174.142.241.159/32,no-resolve
