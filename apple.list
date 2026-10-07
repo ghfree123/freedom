@@ -22,6 +22,8 @@ DOMAIN,apple-relay.apple.com
 DOMAIN,apple-relay.cloudflare.com
 DOMAIN,apple-relay.fastly-edge.com
 DOMAIN,cp4.cloudflare.com
+DOMAIN-SUFFIX,mathsolver.apple.com        # Apple Intelligence 數學與計算機 Siri 增強
+DOMAIN-KEYWORD,apple-intelligence         # 捕捉未來新增的 AI 專屬端點
 
 # [5] 新版 Siri 与 搜索增强 (Siri 基础对话、语义理解、屏幕感知)
 DOMAIN-SUFFIX,smoot.apple.com             # 覆盖所有 Spotlight/Lookup/Safari 搜索服务
